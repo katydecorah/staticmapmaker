@@ -99,7 +99,7 @@
 </div>
 
 <div class="static">
-  <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{e.location.split(' ').join('+')}}&zoom={{e.zoom}}&scale={{scale}}&size={{e.width}}x{{e.height}}&maptype={{e.mapType}}&sensor=false&key={{e.API}}&format={{e.format}}&visual_refresh={{visual}}{{ showMarker == 'true' && '&markers=size:'+e.markerSize+'%7Ccolor:'+e.markerColor+'%7C'+e.location.split(' ').join('+') || '' }}" alt="" class="map" id="map">
+  <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{e.location.split(' ').join('+')}}&zoom={{e.zoom}}&scale={{scale}}&size={{e.width}}x{{e.height}}&maptype={{e.mapType}}&sensor=false{{ e.API !== '' && '&key='+e.API || '' }}&format={{e.format}}&visual_refresh={{visual}}{{ showMarker == 'true' && '&markers=size:'+e.markerSize+'%7Ccolor:'+e.markerColor+'%7C'+e.location.split(' ').join('+') || '' }}" alt="" class="map" id="map">
 </div>
 </div>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
