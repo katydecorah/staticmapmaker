@@ -1,110 +1,96 @@
 <!DOCTYPE html>
 <html class="ng-app">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Google Static Map Maker</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="twitter:card" content="summary">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Google Static Map Maker</title>
+<meta name="description" content="Need a static map? You got it. Type in a location, customize, and get the map.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="katydecorah">
 <meta name="twitter:title" content="Static Map Maker">
 <meta name="twitter:description" content="Need a static map? You got it. Type in a location, customize, and get the map.">
 <meta name="twitter:creator" content="katydecorah">
 <meta name="twitter:image:src" content="http://i.cdpn.io.s3.amazonaws.com/6362.Klieu.a3ab1cc0-a1a3-47dc-9988-e5c38e34730e.png">
 <meta name="twitter:domain" content="http://katydecorah.com/staticmapmaker/">
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
-  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-  <div ng-controller="controller">
-    <h1>Static Map Maker
-      <a href="https://developers.google.com/maps/documentation/staticmaps/"><i class="icon-link"></i> Static Maps API Documentation</a>
-      <a href="http://katydecorah.com"><i class="icon-link"></i> Made by Katy DeCorah</a>
-      <a href="https://twitter.com/share/?text=Google%20Static%20Map%20Maker&amp;url=http%3A%2F%2Fkatydecorah.com%2Fstaticmapmaker" class="twitter-share-button text-right pull-right"><i class="icon-twitter"></i> Tweet</a>
-    </h1>
-    <div class="controls">
-      <div class="container">
-        <fieldset>
-          <label for="location">Location
-            <i class="icon-question-sign" data-toggle="popover" data-content="{{e.locationAbout}}"></i>
-            <input type="text" ng-model="e.location" id="location">
-          </label>
-          <label for="api">
-            <a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
-            <i class="icon-question-sign" data-toggle="popover" data-content="{{e.APIAbout}}"></i>
-            <input type="text" ng-model="e.API" id="api" placeholder="API Key"></label>
-          </fieldset>
-
-          <fieldset>
-            <label for="zoom">Zoom
-              <input type="range" name="input" ng-model="e.zoom" min="{{e.minZoom}}" max="{{e.maxZoom}}" id="zoom">
-            </label>
-
-            <label for="scale">Scale (2x)
-              <i class="icon-question-sign" data-toggle="popover" data-content="{{e.scaleAbout}}"></i>
-              <input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'">
-            </label>
-
-            <label for="width"> Width
-              <i class="icon-question-sign" data-toggle="popover" data-content="{{e.sizeAbout}}"></i>
-              <input type="number" ng-model="e.width" min="0" max="{{e.maxSize}}" id="width">
-            </label>
-
-            <label for="height">
-              Height <i class="icon-question-sign" data-toggle="popover" data-content="{{e.sizeAbout}}"></i>
-              <input type="number" ng-model="e.height" min="0" max="{{e.maxSize}}" id="height">
-            </label>
-          </fieldset>
-
-          <fieldset>
-            <label for="showMarker"> Map Marker
-              <input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker">
-            </label>
-
-            <ng-switch on="showMarker">
-            <ng-switch ng-switch-when="true">
-            <label for="markerColor"> Marker Color
-              <select ng-model="e.markerColor"
-              ng-options="color for color in colors" id="markerColor">
-            </select>
-          </label>
-          <label for="markerSize"> Marker Size
-            <select ng-model="e.markerSize"
-            ng-options="markerSize for markerSize in markerSizes" id="markerSize">
-          </select>
-        </label>
-      </ng-switch>
-    </ng-switch>
-
-  </fieldset>
-
-  <fieldset>
-    <label for="mapType"> Map Type
-      <select ng-model="e.mapType"
-      ng-options="mapType for mapType in mapTypes" id="mapType">
-    </select>
-  </label>
-  <label for="format"> Format
-    <select ng-model="e.format"
-    ng-options="format for format in formats" id="format">
-  </select>
+<div ng-controller="controller">
+<h1>Static Map Maker
+<a href="https://developers.google.com/maps/documentation/staticmaps/"><i class="icon-link"></i> Static Maps API Documentation</a>
+<a href="http://katydecorah.com"><i class="icon-link"></i> Made by Katy DeCorah</a>
+<a href="https://twitter.com/share/?text=Google%20Static%20Map%20Maker&amp;url=http%3A%2F%2Fkatydecorah.com%2Fstaticmapmaker" class="twitter-share-button text-right pull-right"><i class="icon-twitter"></i> Tweet</a>
+</h1>
+<div class="controls">
+<div class="container">
+<fieldset>
+<label for="location">Location
+<i class="icon-question-sign" data-toggle="popover" data-content="{{e.locationAbout}}"></i>
+<input type="text" ng-model="e.location" id="location">
+</label>
+<label for="api">
+<a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
+<i class="icon-question-sign" data-toggle="popover" data-content="{{e.APIAbout}}"></i>
+<input type="text" ng-model="e.API" id="api" placeholder="API Key"></label>
+</fieldset>
+<fieldset>
+<label for="zoom">Zoom
+<input type="range" name="input" ng-model="e.zoom" min="{{e.minZoom}}" max="{{e.maxZoom}}" id="zoom">
+</label>
+<label for="scale">Scale (2x)
+<i class="icon-question-sign" data-toggle="popover" data-content="{{e.scaleAbout}}"></i>
+<input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'">
+</label>
+<label for="width"> Width
+<i class="icon-question-sign" data-toggle="popover" data-content="{{e.sizeAbout}}"></i>
+<input type="number" ng-model="e.width" min="0" max="{{e.maxSize}}" id="width">
+</label>
+<label for="height">Height 
+<i class="icon-question-sign" data-toggle="popover" data-content="{{e.sizeAbout}}"></i>
+<input type="number" ng-model="e.height" min="0" max="{{e.maxSize}}" id="height">
+</label>
+</fieldset>
+<fieldset>
+<label for="showMarker"> Map Marker
+<input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker">
+</label>
+<ng-switch on="showMarker">
+<ng-switch ng-switch-when="true">
+<label for="markerColor"> Marker Color
+<select ng-model="e.markerColor" ng-options="color for color in colors" id="markerColor">
+</select>
+</label>
+<label for="markerSize"> Marker Size
+<select ng-model="e.markerSize" ng-options="markerSize for markerSize in markerSizes" id="markerSize">
+</select>
+</label>
+</ng-switch>
+</ng-switch>
+</fieldset>
+<fieldset>
+<label for="mapType"> Map Type
+<select ng-model="e.mapType" ng-options="mapType for mapType in mapTypes" id="mapType">
+</select>
+</label>
+<label for="format"> Format
+<select ng-model="e.format" ng-options="format for format in formats" id="format">
+</select>
 </label>
 <label for="visual"> Visual Refresh
-  <input type="checkbox" ng-model="visual" ng-true-value="true" ng-false-value="false" ng-init="visual='true'" id="visual">
+<input type="checkbox" ng-model="visual" ng-true-value="true" ng-false-value="false" ng-init="visual='true'" id="visual">
 </label>
 </fieldset>
-
 <fieldset>
-  <label for="gimme">Gimme  <i class="icon-question-sign" data-toggle="popover" data-content="{{e.gimmeAbout}}"></i>
-    <textarea id="gimme"></textarea>
-  </label>
+<label for="gimme">Gimme  <i class="icon-question-sign" data-toggle="popover" data-content="{{e.gimmeAbout}}"></i>
+<textarea id="gimme"></textarea>
+</label>
 </fieldset>
 </div>
 </div>
-
 <div class="static">
   <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{e.location.split(' ').join('+')}}&zoom={{e.zoom}}&scale={{scale}}&size={{e.width}}x{{e.height}}&maptype={{e.mapType}}&sensor=false&key={{e.API}}&format={{e.format}}&visual_refresh={{visual}}{{ showMarker == 'true' && '&markers=size:'+e.markerSize+'%7Ccolor:'+e.markerColor+'%7C'+e.location.split(' ').join('+') || '' }}" alt="" class="map" id="map">
 </div>
@@ -117,10 +103,8 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
 ga('create', 'UA-44264627-1', 'katydecorah.com');
 ga('send', 'pageview');
-
 </script>
 </body>
 </html>
