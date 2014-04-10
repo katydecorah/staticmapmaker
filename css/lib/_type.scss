@@ -1,0 +1,16 @@
+h1 {
+  font-size: 1.2em;
+  color: white;
+  font-weight: 200;
+}
+
+a {
+  text-decoration:none;
+  color:complement($orange);
+  &:hover {color:$orange;}
+}
+pre {
+  max-width: 30em;
+  word-break: break-word;
+  font-family: "Courier New";
+}

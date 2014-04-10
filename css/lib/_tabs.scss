@@ -1,0 +1,21 @@
+.tabs {
+position: relative;
+width: 100%;
+min-height: 10em;
+}
+.tab {
+  position: relative;
+  width: 100%;
+  padding: 2em;
+  background: white;
+
+  &:before {
+    content: attr(data-tab);
+    position: absolute;
+    top: -2.25em;
+    background: white;
+    display: inline-block;
+    padding: 0.75em 1em;
+  }
+
+}

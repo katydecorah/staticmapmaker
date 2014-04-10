@@ -1,0 +1,58 @@
+input[type=checkbox] { margin-top:0.5em;}
+
+
+input, select, textarea {
+  font-family: $sansFontFamily;
+  background: rgba(white,0.9);
+  border: none;
+  border-radius: 0.2em;
+  padding: 0.35em 0.5em;
+  margin: 0;
+  float: right;
+  position: relative;
+}
+input[type=text],select, input[type=number]{
+  font-size:1em;
+}
+input[type=range] {
+  width:7em;
+  &:before, &:after {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    font-size: 1.2em;
+    top:0.3em;
+  }
+  &:before {
+    content:"\f010";
+    left:-1em;
+  }
+  &:after {
+    content:"\f00e";
+    right:-1em;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  vertical-align: middle;
+  line-height: 2;
+  padding: 0.2em;
+  color: $controlsColor;
+}
+
+
+fieldset {
+  margin: 0 0 0.5em;
+  padding: 1em;
+  width: 100%;
+  display: block;
+  border-radius: 0.1em;
+  color: $controlsColor;
+  border: 1px solid rgba(black,0.15);
+  background: rgba(black,0.1);
+}

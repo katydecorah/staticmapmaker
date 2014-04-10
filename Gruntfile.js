@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         },
       },
       css: {
-        files: ['css/*.scss'],
+        files: ['css/lib/*.scss'],
         tasks: ['sass','autoprefixer'],
         options: {
           spawn: false,
