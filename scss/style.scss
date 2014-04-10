@@ -23,41 +23,6 @@ body {
   @include box-pack(center);
 }
 
-input, select, textarea {
-  font-family: 'Raleway', sans-serif;
-  background:rgba(white,0.65);
-  border:none;
-  padding:0.35em 0.5em;
-  margin:0;
-  float:right;
-  position:relative;
-}
-input[type=text],select, input[type=number]{
-  font-size:1em;
-}
-input[type=range] {
-  width:8em;
-  &:before, &:after {
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: inherit;
-    -webkit-font-smoothing: antialiased;
-    position:relative;
-    font-size:1em;
-    top:.1em;
-  }
-  &:before {
-    content:"\f146";
-    left:-1.5em;
-  }
-  &:after {
-    content:"\f0fe";
-    right:-1.5em;
-  }
-}
-input[type=checkbox] { margin-top:0.5em;}
-
 h1 {
   position:absolute;
   top:0.5em;
@@ -74,6 +39,44 @@ h1 {
     margin-top:0.5em;
   }
 }
+
+input, select, textarea {
+  font-family: 'Raleway', sans-serif;
+  background:rgba(white,0.65);
+  border:none;
+  padding:0.35em 0.5em;
+  margin:0;
+  float:right;
+  position:relative;
+}
+input[type=text],select, input[type=number]{
+  font-size:1em;
+}
+input[type=range] {
+  width:7em;
+  &:before, &:after {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    position:absolute;
+    font-size:1.2em;
+    color:rgba(#222,0.1);
+    top:0.3em;
+  }
+  &:before {
+    content:"\f010";
+    left:-1em;
+  }
+  &:after {
+    content:"\f00e";
+    right:-1em;
+  }
+}
+input[type=checkbox] { margin-top:0.5em;}
+
+
 label {
   display:block;
   margin-bottom:0.5em;
@@ -106,7 +109,7 @@ fieldset {
 }
 
 .controls {
-  width:25%;
+  width:22em;
   min-height:100%;
   padding:0.5em 0.7em;
   position:absolute;
