@@ -1,10 +1,12 @@
-@import "compass/css3";
+@import "reset";
 
 $bg: #f1f1f1;
-$orange:#f99d24;
-$textColor:#222;
+$orange: #f99d24;
+$textColor: #222;
+
+
 * {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 html {
   width:100%;
@@ -18,9 +20,10 @@ body {
   width:100%;
   height:100%;
   min-height:100%;
-  @include display-box;
-  @include box-align(center);
-  @include box-pack(center);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate3d(0, 0, 0);
 }
 
 h1 {
@@ -122,17 +125,17 @@ fieldset {
   .map {
     display:block;
     margin:1em auto;
-    @include transition(all 1s linear);
+    transition: all 1s linear;
   }
 }
 
 [data-toggle=popover]{
   cursor:help;
   color:lighten($textColor,50%);
-  @include transition(color .5s);
+  transition: color .5s;
   &:hover {
     color:$textColor;
-    @include transition(color .5s);
+    transition: color .5s;
   }
 }
 

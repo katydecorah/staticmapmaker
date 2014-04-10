@@ -4,17 +4,16 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Google Static Map Maker</title>
-<meta name="description" content="Need a static map? You got it. Type in a location, customize, and get the map.">
+<meta name="description" content="Need a Google static map? You got it. Type in a location, customize, and get the map.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@katydecorah">
 <meta name="twitter:title" content="Google Static Map Maker">
-<meta name="twitter:description" content="Need a static map? You got it. Type in a location, customize, and get the map.">
+<meta name="twitter:description" content="Need a Google static map? You got it. Type in a location, customize, and get the map.">
 <meta name="twitter:creator" content="@katydecorah">
 <meta name="twitter:image:src" content="http://i.cdpn.io.s3.amazonaws.com/6362.Klieu.a3ab1cc0-a1a3-47dc-9988-e5c38e34730e.png">
 <meta name="twitter:domain" content="http://katydecorah.com/staticmapmaker/">
-<link href="css/reset.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
 <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -95,9 +94,10 @@
 <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{e.location.split(' ').join('+')}}&zoom={{e.zoom}}&scale={{scale}}&size={{e.width}}x{{e.height}}&maptype={{e.mapType}}&sensor=false{{ e.API !== '' && '&key='+e.API || '' }}&format={{e.format}}&visual_refresh={{visual}}{{ showMarker == 'true' && '&markers=size:'+e.markerSize+'%7Ccolor:'+e.markerColor+'%7C'+e.location.split(' ').join('+') || '' }}" alt="" class="map" id="map">
 </div>
 </div>
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js'></script><script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
-<script src="js/index.js"></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js'></script>
+<script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
+<script src="js/main.js"></script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
