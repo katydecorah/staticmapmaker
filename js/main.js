@@ -62,7 +62,7 @@ $("[data-toggle=popover]").popover({
 });
 
 var mapSrc = $("#map").attr('ng-src');
-$("#gimme").html(mapSrc);
+$(".print-code").html(mapSrc);
 
 // Bootstrap Tooltips & Twitter not for mobile-ish
 if ($(window).width() > 800) {

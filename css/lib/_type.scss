@@ -2,15 +2,32 @@ h1 {
   font-size: 1.2em;
   color: white;
   font-weight: 200;
+  background: $bgDark;
+  padding: 1em;
+
+  @include bp(no-columns){
+    padding: 1em;
+  }
+
+}
+h2 {
+  font-size: 1.1em;
+  font-weight: 200;
+  margin: 1em 0;
 }
 
 a {
   text-decoration:none;
-  color:complement($orange);
-  &:hover {color:$orange;}
+  color: $link-color;
+  &:hover { color: lighten($link-color,10%);}
 }
 pre {
-  max-width: 30em;
+  margin: 1em 0;
+  max-width: 40em;
   word-break: break-word;
   font-family: "Courier New";
+  &::selection {
+    background: $link-color;
+    color: white;
+  }
 }

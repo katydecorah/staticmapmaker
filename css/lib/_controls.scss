@@ -1,6 +1,45 @@
+
+.toggle, .open-it {
+  display: none;
+}
+
+
+
+.label-toggle {
+  color: rgba(white,0.5);
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  top: 4em;
+  left: 1em;
+  cursor: pointer;
+  &:hover {
+    color: $link-color;
+  }
+}
+
+@include bp(no-columns){
+  .label-toggle {display:none;}
+}
+
+
+input[type="checkbox"].toggle:checked {
+  & ~ .main .col-left {
+    //trans: -100%;
+    transition: .2s;
+    transform: translateX(-100%);
+  }
+  & ~ .main .col-right {
+    //float: none;
+    width: 100%;
+  }
+  + label {color: $link-color;}
+  + label .close-it { display: none}
+  + label .open-it { display: inline-block;}
+}
+
+
 input[type=checkbox] { margin-top:0.5em;}
-
-
 input, select, textarea {
   font-family: $sansFontFamily;
   background: rgba(white,0.9);
@@ -8,11 +47,19 @@ input, select, textarea {
   border-radius: 0.2em;
   padding: 0.35em 0.5em;
   margin: 0;
-  float: right;
   position: relative;
+  @include bp(papa-bear){
+    float: right;
+  }
+  @include bp(mama-bear){
+    display: block;
+  }
+
 }
-input[type=text],select, input[type=number]{
-  font-size:1em;
+@include bp(papa-bear){
+  input[type=text],select, input[type=number]{
+    font-size:1em;
+  }
 }
 input[type=range] {
   width:7em;
@@ -35,14 +82,16 @@ input[type=range] {
     right:-1em;
   }
 }
-
-label {
-  display: block;
-  margin-bottom: 0.5em;
-  vertical-align: middle;
-  line-height: 2;
-  padding: 0.2em;
-  color: $controlsColor;
+.controls {
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+    vertical-align: middle;
+    line-height: 2;
+    padding: 0.2em;
+    color: $controlsColor;
+  }
+  //a { color: #fff;}
 }
 
 
@@ -53,6 +102,6 @@ fieldset {
   display: block;
   border-radius: 0.1em;
   color: $controlsColor;
-  border: 1px solid rgba(black,0.15);
-  background: rgba(black,0.1);
+  border: 1px solid darken($control-inner,5%);
+  background: $control-inner;
 }

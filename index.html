@@ -12,130 +12,101 @@
 <meta name="twitter:description" content="Need a Google static map? You got it. Type in a location, customize, and get the map.">
 <meta name="twitter:creator" content="@katydecorah">
 <meta name="twitter:image:src" content="http://i.cdpn.io.s3.amazonaws.com/6362.Klieu.a3ab1cc0-a1a3-47dc-9988-e5c38e34730e.png">
-<meta name="twitter:domain" content="http://katydecorah.com/staticmapmaker/">
+<meta name="twitter:domain" content="http://staticmapmaker.com/">
 <link href="css/main.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-
+<h1>Static Map Maker</h1>
+<input type="checkbox" class="toggle" id="toggle">
+<label for="toggle" class="label-toggle">
+<span class="close-it">&larr;</span>
+<span class="open-it">&rarr;</span>
+Controls
+</label>
 <div class="main" ng-controller="controller">
-  <div class="col-left col" id="hideControls">
-    <a class="hideControls btn" href="#hideControls"><i class="fa fa-arrow-circle-left"></i></a>
-    <a class="showControls btn" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-    <div class="controls">
-      <div class="container">
-        <fieldset>
-          <label for="location">Location
-            <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.locationAbout}}"></i>
-            <input type="text" ng-model="e.location" id="location">
-          </label>
-          <label for="api">
-            <a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
-            <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.APIAbout}}"></i>
-            <input type="text" ng-model="e.API" id="api" placeholder="API Key"></label>
-        </fieldset>
-
-
-        <fieldset>
-          <label for="zoom">Zoom
-            <input type="range" name="input" ng-model="e.zoom" min="{{e.minZoom}}" max="{{e.maxZoom}}" id="zoom">
-          </label>
-
-          <label for="scale">Scale (2x)
-            <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.scaleAbout}}"></i>
-            <input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'">
-          </label>
-
-          <label for="width"> Width
-            <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.sizeAbout}}"></i>
-            <input type="number" ng-model="e.width" min="0" max="{{e.maxSize}}" id="width">
-          </label>
-
-          <label for="height">
-            Height <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.sizeAbout}}"></i>
-            <input type="number" ng-model="e.height" min="0" max="{{e.maxSize}}" id="height">
-          </label>
-        </fieldset>
-
-
-
-        <fieldset>
-          <label for="showMarker"> Map Marker
-            <input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker">
-          </label>
-
-          <ng-switch on="showMarker">
-            <ng-switch ng-switch-when="true">
-              <label for="markerColor"> Marker Color
-                <select ng-model="e.markerColor"
-                        ng-options="color for color in colors" id="markerColor">
-                </select>
-              </label>
-              <label for="markerSize"> Marker Size
-                <select ng-model="e.markerSize"
-                        ng-options="markerSize for markerSize in markerSizes" id="markerSize">
-                </select>
-              </label>
-            </ng-switch>
-          </ng-switch>
-
-
-
-
-
-        </fieldset>
-
-
-        <fieldset>
-          <label for="mapType"> Map Type
-            <select ng-model="e.mapType"
-                    ng-options="mapType for mapType in mapTypes" id="mapType">
-            </select>
-          </label>
-          <label for="format"> Format
-            <select ng-model="e.format"
-                    ng-options="format for format in formats" id="format">
-            </select>
-          </label>
-          <label for="visual"> Visual Refresh
-            <input type="checkbox" ng-model="visual" ng-true-value="true" ng-false-value="false" ng-init="visual='true'" id="visual">
-          </label>
-        </fieldset>
-        <!--
-        <fieldset>
-          <label for="gimme">Gimme  <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.gimmeAbout}}"></i>
-            <textarea id="gimme"></textarea>
-          </label>
-        </fieldset>-->
-      </div>
-    </div>
-  </div>
-  <div class="col-right col">
-    <header>
-      <h1>Static Map Maker</h1>
-    </header>
-    <div class="static">
-      <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{e.location.split(' ').join('+')}}&zoom={{e.zoom}}&scale={{scale}}&size={{e.width}}x{{e.height}}&maptype={{e.mapType}}&sensor=false{{ e.API !== '' && '&key='+e.API || '' }}&format={{e.format}}&visual_refresh={{visual}}{{ showMarker == 'true' && '&markers=size:'+e.markerSize+'%7Ccolor:'+e.markerColor+'%7C'+e.location.split(' ').join('+') || '' }}" alt="" class="map" id="map">
-    </div>
-
+<div class="col-left col" id="hideControls">
+<div class="controls">
+<div class="container">
+<fieldset>
+<label for="location">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.locationAbout}}"></i>
+<input type="text" ng-model="e.location" id="location">
+</label>
+<label for="api">
+<a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
+<i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.APIAbout}}"></i>
+<input type="text" ng-model="e.API" id="api" placeholder="API Key"></label>
+</fieldset>
+<fieldset>
+<label for="zoom">Zoom <input type="range" name="input" ng-model="e.zoom" min="{{e.minZoom}}" max="{{e.maxZoom}}" id="zoom">
+</label>
+<label for="scale">Scale (2x) <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.scaleAbout}}"></i>
+<input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'">
+</label>
+<label for="width">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.sizeAbout}}"></i>
+<input type="number" ng-model="e.width" min="0" max="{{e.maxSize}}" id="width">
+</label>
+<label for="height">Height <i class="fa fa-question-circle" data-toggle="popover" data-content="{{e.sizeAbout}}"></i>
+<input type="number" ng-model="e.height" min="0" max="{{e.maxSize}}" id="height">
+</label>
+</fieldset>
+<fieldset>
+<label for="showMarker">Map Marker <input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker">
+</label>
+<ng-switch on="showMarker">
+<ng-switch ng-switch-when="true">
+<label for="markerColor"> Marker Color
+<select ng-model="e.markerColor"
+ng-options="color for color in colors" id="markerColor">
+</select>
+</label>
+<label for="markerSize"> Marker Size
+<select ng-model="e.markerSize"
+ng-options="markerSize for markerSize in markerSizes" id="markerSize">
+</select>
+</label>
+</ng-switch>
+</ng-switch>
+</fieldset>
+<fieldset>
+<label for="mapType"> Map Type
+<select ng-model="e.mapType"
+ng-options="mapType for mapType in mapTypes" id="mapType">
+</select>
+</label>
+<label for="format"> Format
+<select ng-model="e.format"
+ng-options="format for format in formats" id="format">
+</select>
+</label>
+<label for="visual"> Visual Refresh
+<input type="checkbox" ng-model="visual" ng-true-value="true" ng-false-value="false" ng-init="visual='true'" id="visual">
+</label>
+</fieldset>
+</div>
+</div>
+</div>
+<div class="col-right col">
+<div class="static">
+<img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{e.location.split(' ').join('+')}}&zoom={{e.zoom}}&scale={{scale}}&size={{e.width}}x{{e.height}}&maptype={{e.mapType}}&sensor=false{{ e.API !== '' && '&key='+e.API || '' }}&format={{e.format}}&visual_refresh={{visual}}{{ showMarker == 'true' && '&markers=size:'+e.markerSize+'%7Ccolor:'+e.markerColor+'%7C'+e.location.split(' ').join('+') || '' }}" alt="" class="map" id="map">
+</div>
 <div class="tabs">
-    <div class="code tab" data-tab="code">
-      <pre id="gimme"></pre>
-    </div>
-     <div class="usage tab" data-tab="usage">
-      <pre id="gimme"></pre>
-    </div>
+<input id="code" name="tab" type="radio" class="tab-input" checked>
+<label for="code" class="tab-link">Code</label>
+<div id="tab-code" class="tab"><pre class="print-code"></pre></div>
+<input id="usage" name="tab" type="radio" class="tab-input">
+<label for="usage" class="tab-link">Usage</label>
+<div id="tab-usage" class="tab">
+<p>You can place the code in an <code>img</code> tag or use as a <code>background-image</code>.</p>
+<h2>HTML</h2>
+<pre>&lt;img src="<span class="print-code"></span>"&gt;</pre>
+<h2>CSS</h2>
+<pre>background-image:url(<span class="print-code"></span>);</pre>
 </div>
-
-    <footer>
-      <a href="https://developers.google.com/maps/documentation/staticmaps/"><i class="icon-link"></i> Static Maps API Documentation</a>
-      <a href="http://katydecorah.com/staticmapmaker"><i class="icon-link"></i> katydecorah.com/staticmapmaker</a>
-    </footer>
-  </div>
 </div>
-
-
+<footer>
+<p>Made by <a href="http://katydecorah.com/">Katy DeCorah</a>. Colors by <a href="http://flatuicolors.com/">Flat UI Colors</a>. Icons by <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a>.</p>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js'></script>
 <script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
@@ -148,5 +119,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-44264627-1', 'katydecorah.com');
 ga('send', 'pageview');
 </script>
+</footer>
+</div>
+</div>
 </body>
 </html>
