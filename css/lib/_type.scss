@@ -26,6 +26,7 @@ pre {
   max-width: 40em;
   word-break: break-word;
   font-family: "Courier New";
+  white-space: pre-wrap;
   &::selection {
     background: $link-color;
     color: white;
