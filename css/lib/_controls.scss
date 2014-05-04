@@ -62,7 +62,7 @@ input, select, textarea {
   }
 }
 input[type=range] {
-  width:7em;
+  width: 9em;
   &:before, &:after {
     font-family: FontAwesome;
     font-weight: normal;

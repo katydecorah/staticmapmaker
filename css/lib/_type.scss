@@ -1,14 +1,17 @@
 h1 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: white;
   font-weight: 200;
   background: $bgDark;
-  padding: 1em;
+  padding: 0.5em 1em;
 
   @include bp(no-columns){
     padding: 1em;
   }
-
+  .fa-map-marker {
+    color: #F1C40F;
+font-size: 0.9em;
+  }
 }
 h2 {
   font-size: 1.1em;
