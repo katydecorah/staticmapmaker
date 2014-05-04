@@ -5,12 +5,9 @@ h1 {
   background: $bgDark;
   padding: 0.5em 1em;
 
-  @include bp(no-columns){
-    padding: 1em;
-  }
   .fa-map-marker {
-    color: #F1C40F;
-font-size: 0.9em;
+    color: $yellow;
+    font-size: 0.9em;
   }
 }
 h2 {

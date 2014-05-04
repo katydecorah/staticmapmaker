@@ -25,12 +25,10 @@
 
 input[type="checkbox"].toggle:checked {
   & ~ .main .col-left {
-    //trans: -100%;
     transition: .2s;
     transform: translateX(-100%);
   }
   & ~ .main .col-right {
-    //float: none;
     width: 100%;
   }
   + label {color: $link-color;}
@@ -38,9 +36,9 @@ input[type="checkbox"].toggle:checked {
   + label .open-it { display: inline-block;}
 }
 
-
 input[type=checkbox] { margin-top:0.5em;}
 input, select, textarea {
+  font-size: 1em;
   font-family: $sansFontFamily;
   background: rgba(white,0.9);
   border: none;
@@ -54,13 +52,8 @@ input, select, textarea {
   @include bp(mama-bear){
     display: block;
   }
+}
 
-}
-@include bp(papa-bear){
-  input[type=text],select, input[type=number]{
-    font-size:1em;
-  }
-}
 input[type=range] {
   width: 9em;
   &:before, &:after {
@@ -91,7 +84,6 @@ input[type=range] {
     padding: 0.2em;
     color: $controlsColor;
   }
-  //a { color: #fff;}
 }
 
 
