@@ -4,14 +4,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    concat: {
-      dist: {
-        src: [
-        'js/lib/*.js' // All JS in the libs folder
-        ],
-        dest: 'js/main.js',
-      }
+  concat: {
+    options: {
+      separator: ';',
     },
+    dist: {
+      src: ['js/lib/main.js', 'js/lib/bootstrap.js'],
+      dest: 'js/main.js',
+    },
+  },
 
     uglify: {
       build: {
