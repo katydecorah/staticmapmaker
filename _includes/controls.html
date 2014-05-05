@@ -1,59 +1,76 @@
 <div class="controls">
 <div class="container">
 <fieldset>
-<label for="location">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.locationAbout]]"></i>
+<div class="form-group">
+<label for="location">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.locationAbout]]"></i></label>
 <input type="text" ng-model="e.location" id="location">
-</label>
+</div>
+<div class="form-group">
 <label for="api">
 <a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
-<i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.APIAbout]]"></i>
-<input type="text" ng-model="e.API" id="api" placeholder="API Key"></label>
+<i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.APIAbout]]"></i></label>
+<input type="text" ng-model="e.API" id="api" placeholder="API Key">
+</div>
 </fieldset>
 <fieldset>
-<label for="zoom">Zoom <input type="range" name="input" ng-model="e.zoom" min="[[e.minZoom]]" max="[[e.maxZoom]]" id="zoom">
-</label>
+<div class="form-group">
+<label for="zoom">Zoom</label>
+<input type="range" name="input" ng-model="e.zoom" min="[[e.minZoom]]" max="[[e.maxZoom]]" id="zoom">
+</div>
+<div class="form-group">
 <label for="scale">Scale (2x) <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.scaleAbout]]"></i>
+</label>
 <input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'">
-</label>
-<label for="width">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i>
+</div>
+<div class="form-group">
+<label for="width">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i></label>
 <input type="number" ng-model="e.width" min="0" max="[[e.maxSize]]" id="width">
-</label>
+</div>
+<div class="form-group">
 <label for="height">Height <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i>
-<input type="number" ng-model="e.height" min="0" max="[[e.maxSize]]" id="height">
 </label>
+<input type="number" ng-model="e.height" min="0" max="[[e.maxSize]]" id="height">
+</div>
 </fieldset>
 <fieldset>
-<label for="showMarker">Map Marker <input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker">
-</label>
+<div class="form-group">
+<label for="showMarker">Map Marker</label>
+<input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker">
+</div>
 <ng-switch on="showMarker">
 <ng-switch ng-switch-when="true">
-<label for="markerColor"> Marker Color
+<div class="form-group">
+<label for="markerColor"> Marker Color</label>
 <select ng-model="e.markerColor"
 ng-options="color for color in colors" id="markerColor">
 </select>
-</label>
-<label for="markerSize"> Marker Size
+</div>
+<div class="form-group">
+<label for="markerSize"> Marker Size</label>
 <select ng-model="e.markerSize"
 ng-options="markerSize for markerSize in markerSizes" id="markerSize">
 </select>
-</label>
+</div>
 </ng-switch>
 </ng-switch>
 </fieldset>
 <fieldset>
-<label for="mapType"> Map Type
+<div class="form-group">
+<label for="mapType"> Map Type</label>
 <select ng-model="e.mapType"
 ng-options="mapType for mapType in mapTypes" id="mapType">
 </select>
-</label>
-<label for="format"> Format
+</div>
+<div class="form-group">
+<label for="format"> Format</label>
 <select ng-model="e.format"
 ng-options="format for format in formats" id="format">
 </select>
-</label>
-<label for="visual"> Visual Refresh
+</div>
+<div class="form-group">
+<label for="visual"> Visual Refresh</label>
 <input type="checkbox" ng-model="visual" ng-true-value="true" ng-false-value="false" ng-init="visual='true'" id="visual">
-</label>
+</div>
 </fieldset>
 <p class="colophon">Made by <a href="http://katydecorah.com/">Katy DeCorah</a>. Colors by <a href="http://flatuicolors.com/">Flat UI Colors</a>. Icons by <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a>.</p>
 </div>
