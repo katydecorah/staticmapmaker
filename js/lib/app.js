@@ -38,9 +38,9 @@ var controller = function($scope) {
   ];
   $scope.markerSizes =
   [
-  "tiny",
-  "small",
-  "mid"
+   { "value": "tiny", "text": "small" },
+   { "value": "small", "text": "medium" },
+   { "value": "mid", "text": "large" }
   ];
   $scope.mapTypes =
   [

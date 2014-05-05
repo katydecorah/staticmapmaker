@@ -6,11 +6,17 @@
 .form-group {
   margin-bottom: 0.75em;
   @extend .clearfix;
+  @include bp(papa-bear){
   label {
     display: block;
     float: left;
-    width: 10em;
+    width:40%;
   }
+  .form-control {
+    float: left;
+    width: 60%;
+  }
+}
 }
 
 .label-toggle {
@@ -58,6 +64,7 @@ input, select, textarea {
   border-radius: 0.2em;
   padding: 0.35em 0.5em;
   margin: 0;
+  width: 100%;
   position: relative;
   @include bp(papa-bear){
     float: left;
@@ -68,7 +75,7 @@ input, select, textarea {
 }
 
 input[type=range] {
-  width: 9em;
+  width: 100%;
 }
 
 

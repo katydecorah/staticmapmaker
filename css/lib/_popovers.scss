@@ -6,6 +6,7 @@
   cursor: help;
   color: $accent;
   transition: color .5s;
+  margin-left: 0.25em;
   &:hover {
     color: lighten($accent,10%);
     transition: color .5s;

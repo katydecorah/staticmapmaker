@@ -2,7 +2,6 @@
 .main {
   position: relative;
   @extend .clearfix;
-  height: 100%;
 }
 
 
@@ -20,7 +19,8 @@
   @include bp(with-columns){
     width: 30%;
     position: absolute;
-    height: 100%;
+    top: 0;
+    bottom: 0;
   }
   transition: .2s;
   background: $bg-dark;
