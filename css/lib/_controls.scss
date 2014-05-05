@@ -4,7 +4,8 @@
 }
 
 .form-group {
-  margin-bottom: 0.75em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
   @extend .clearfix;
   @include bp(papa-bear){
   label {
@@ -78,7 +79,9 @@ input[type=range] {
   width: 100%;
 }
 
-
+.cushion {
+  margin-top: 0.3em;
+}
 
 fieldset {
   margin: 0 0 0.5em;
