@@ -1,7 +1,7 @@
 h1 {
   font-size: 1.5em;
   color: white;
-  font-weight: 200;
+  font-weight: normal;
   background: $bgDark;
   padding: 0.5em 1em;
 
@@ -12,7 +12,7 @@ h1 {
 }
 h2 {
   font-size: 1.1em;
-  font-weight: 200;
+  font-weight: normal;
   margin: 1em 0;
 }
 
@@ -21,10 +21,13 @@ a {
   color: $link-color;
   &:hover { color: lighten($link-color,10%);}
 }
+code, pre {
+  font-family: $monoFontFamily;
+
+}
 pre {
   margin: 1em 0;
   word-break: break-word;
-  font-family: "Courier New",monospace;
   white-space: pre-wrap;
   &::selection {
     background: $link-color;
