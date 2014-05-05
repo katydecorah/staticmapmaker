@@ -3,11 +3,11 @@
 <form>
 <fieldset>
 <div class="form-group">
-<label for="location">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.locationAbout]]"></i></label>
+<label for="location" class="cushion">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.locationAbout]]"></i></label>
 <div class="form-control"><input type="text" ng-model="e.location" id="location"></div>
 </div>
 <div class="form-group">
-<label for="api">
+<label for="api" class="cushion">
 <a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
 <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.APIAbout]]"></i></label>
 <div class="form-control"><input type="text" ng-model="e.API" id="api" placeholder="API Key"></div>
@@ -24,11 +24,11 @@
 <div class="form-control"><input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'"></div>
 </div>
 <div class="form-group">
-<label for="width">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i></label>
+<label for="width" class="cushion">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i></label>
 <div class="form-control"><input type="number" ng-model="e.width" min="0" max="[[e.maxSize]]" id="width"></div>
 </div>
 <div class="form-group">
-<label for="height">Height <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i>
+<label for="height" class="cushion">Height <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i>
 </label>
 <div class="form-control"><input type="number" ng-model="e.height" min="0" max="[[e.maxSize]]" id="height"></div>
 </div>

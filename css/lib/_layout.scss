@@ -1,6 +1,7 @@
 
 .main {
   position: relative;
+  min-height: 100%;
   @extend .clearfix;
 }
 
@@ -21,6 +22,8 @@
     position: absolute;
     top: 0;
     bottom: 0;
+    left: 0;
+    height: auto;
   }
   transition: .2s;
   background: $bg-dark;
