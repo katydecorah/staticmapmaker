@@ -10,9 +10,14 @@
   display: block;
   position: absolute;
   z-index: 2000;
-  top: 4em;
-  left: 1em;
+  top: 3em;
+  right: -1.25em;
   cursor: pointer;
+  background: $bgDark;
+  font-size: 1.5em;
+  padding: 0.5em 0.25em;
+  line-height: 1;
+  border-radius: 0 0.25em 0.25em;
   &:hover {
     color: $link-color;
   }
@@ -26,14 +31,14 @@
 input[type="checkbox"].toggle:checked {
   & ~ .main .col-left {
     transition: .2s;
-    transform: translateX(-100%);
+    transform: translateX(-98%);
+    z-index: 1;
   }
-  & ~ .main .col-right {
+  & ~ .main .col-right, & ~ header .col-right {
     width: 100%;
   }
-  + label {color: $link-color;}
-  + label .close-it { display: none}
-  + label .open-it { display: inline-block;}
+  & ~ .main .close-it { display: none}
+  & ~ .main .open-it { display: block;}
 }
 
 input[type=checkbox] { margin-top:0.5em;}

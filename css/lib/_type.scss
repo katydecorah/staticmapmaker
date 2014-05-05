@@ -23,12 +23,13 @@ a {
 }
 pre {
   margin: 1em 0;
-  max-width: 40em;
   word-break: break-word;
-  font-family: "Courier New";
+  font-family: "Courier New",monospace;
   white-space: pre-wrap;
   &::selection {
     background: $link-color;
     color: white;
   }
 }
+
+small { font-size: 0.8em; }
