@@ -29,6 +29,10 @@ pre {
   margin: 1em 0;
   word-break: break-word;
   white-space: pre-wrap;
+  padding: 1em;
+  background: $bg;
+  border-left: 3px solid darken($bg,10%);
+  border-radius: 0.2em;
   &::selection {
     background: $link-color;
     color: white;
