@@ -1,0 +1,59 @@
+<div class="controls">
+<div class="container">
+<fieldset>
+<label for="location">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.locationAbout]]"></i>
+<input type="text" ng-model="e.location" id="location">
+</label>
+<label for="api">
+<a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
+<i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.APIAbout]]"></i>
+<input type="text" ng-model="e.API" id="api" placeholder="API Key"></label>
+</fieldset>
+<fieldset>
+<label for="zoom">Zoom <input type="range" name="input" ng-model="e.zoom" min="[[e.minZoom]]" max="[[e.maxZoom]]" id="zoom">
+</label>
+<label for="scale">Scale (2x) <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.scaleAbout]]"></i>
+<input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'">
+</label>
+<label for="width">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i>
+<input type="number" ng-model="e.width" min="0" max="[[e.maxSize]]" id="width">
+</label>
+<label for="height">Height <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i>
+<input type="number" ng-model="e.height" min="0" max="[[e.maxSize]]" id="height">
+</label>
+</fieldset>
+<fieldset>
+<label for="showMarker">Map Marker <input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker">
+</label>
+<ng-switch on="showMarker">
+<ng-switch ng-switch-when="true">
+<label for="markerColor"> Marker Color
+<select ng-model="e.markerColor"
+ng-options="color for color in colors" id="markerColor">
+</select>
+</label>
+<label for="markerSize"> Marker Size
+<select ng-model="e.markerSize"
+ng-options="markerSize for markerSize in markerSizes" id="markerSize">
+</select>
+</label>
+</ng-switch>
+</ng-switch>
+</fieldset>
+<fieldset>
+<label for="mapType"> Map Type
+<select ng-model="e.mapType"
+ng-options="mapType for mapType in mapTypes" id="mapType">
+</select>
+</label>
+<label for="format"> Format
+<select ng-model="e.format"
+ng-options="format for format in formats" id="format">
+</select>
+</label>
+<label for="visual"> Visual Refresh
+<input type="checkbox" ng-model="visual" ng-true-value="true" ng-false-value="false" ng-init="visual='true'" id="visual">
+</label>
+</fieldset>
+</div>
+</div>

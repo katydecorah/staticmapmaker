@@ -1,3 +1,8 @@
+var myApp = angular.module('myApp', [], function($interpolateProvider) {
+    $interpolateProvider.startSymbol('[[');
+    $interpolateProvider.endSymbol(']]');
+});
+
 var controller = function($scope) {
   $scope.e = {
     location:"Albany, NY",
@@ -54,11 +59,7 @@ var controller = function($scope) {
   ];
 
 };
-
-
-
-
-var mapSrc = $("#map").attr('ng-src');
+;var mapSrc = $("#map").attr('ng-src');
 $(".print-code").html(mapSrc);
 
 $( document ).ready(function() {
