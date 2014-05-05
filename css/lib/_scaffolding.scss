@@ -11,27 +11,17 @@ body {
   line-height: 1.4;
   font-weight: 400;
   background: white;
-  color: $textColor;
+  color: $text-color;
   font-family: $sansFontFamily;
 
 }
 
 
-.btn {
-  position: absolute;
-  display: block;
-  right: -0.5em;
-  top: 0.1em;
-  padding: 0.5em 0.6em;
-  z-index: 1;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.5em;
-}
 
 @media (max-width:40em) {
   .pull-right,.pull-left {float:none !important;}
   .controls {
-    width:100%;
+    width: 100%;
     position:relative;
   }
   .map {max-width:100%;}

@@ -4,10 +4,10 @@
 
 [data-toggle=popover]{
   cursor: help;
-  color: #1abc9c;
+  color: $accent;
   transition: color .5s;
   &:hover {
-    color: lighten(#1abc9c,10%);
+    color: lighten($accent,10%);
     transition: color .5s;
   }
 }

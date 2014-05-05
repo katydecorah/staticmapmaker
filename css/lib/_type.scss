@@ -2,11 +2,11 @@ h1 {
   font-size: 1.5em;
   color: white;
   font-weight: normal;
-  background: $bgDark;
+  background: $bg-dark;
   padding: 0.5em 1em;
 
   .fa-map-marker {
-    color: $yellow;
+    color: $accent;
     font-size: 0.9em;
   }
 }
@@ -17,7 +17,7 @@ h2 {
 }
 
 a {
-  text-decoration:none;
+  text-decoration: none;
   color: $link-color;
   &:hover { color: lighten($link-color,10%);}
 }
@@ -34,8 +34,7 @@ pre {
   border-left: 3px solid darken($bg,10%);
   border-radius: 0.2em;
   &::selection {
-    background: $link-color;
-    color: white;
+    background: $accent;
   }
 }
 

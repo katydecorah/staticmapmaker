@@ -1,13 +1,18 @@
 $bg:              #ecf0f1;
-$bgDark:          #2c3e50;
+$bg-dark:         #285A98;
+
+$accent:          #F1C40F;
+
+
 $orange:          #f99d24;
-$textColor:       #222;
-$controlsColor:   #fff;
-$control-inner:   #34495e;
+$static-inner:    #F2F0ED;
+$text-color:       #222;
+
+$controls-color:   #fff;
+$control-inner:   darken($bg-dark,5%);
 $sansFontFamily:  'Source Sans Pro', sans-serif;
 $monoFontFamily:  'Oxygen Mono', 'Courier New', monospace;
-$link-color:      #e74c3c;
+$link-color:       #98c0ff;
 
-$yellow:          #F1C40F;
 
 $rightTransition:  width .2s 0.25s;

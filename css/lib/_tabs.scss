@@ -18,7 +18,7 @@
   position: absolute;
   top: -2.35em;
   left: 1em;
-  background: $bg;
+  background: $static-inner;
   display: inline-block;
   padding: 0.5em 1em;
   cursor: pointer;
@@ -28,7 +28,6 @@
   }
   &:hover {
     background: $link-color;
-    color: white;
   }
 }
 

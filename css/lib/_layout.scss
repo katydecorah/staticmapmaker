@@ -23,7 +23,7 @@
     height: 100%;
   }
   transition: .2s;
-  background: $bgDark;
+  background: $bg-dark;
 
 }
 .col-right {
@@ -38,7 +38,7 @@
 
 
 .controls {
-  background: $bgDark;
+  background: $bg-dark;
   padding: 0.5em;
   z-index: 100;
 
@@ -47,12 +47,14 @@
 }
 .static {
   padding: 1em 1em 5em;
-  background: $bg;
+  background: $static-inner;
+}
 
-  .map {
-    display: block;
-    transition: 1s;
-    max-width: 100%;
-    margin: 0 auto;
-  }
+.static-map {
+  display: block;
+  transition: 1s;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 0.25em solid white;
+  border-radius: 0.2em;
 }
