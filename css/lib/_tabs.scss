@@ -16,9 +16,9 @@
 
 .tab-link {
   position: absolute;
-  top: -2.25em;
+  top: -2.35em;
   left: 1em;
-  background: white;
+  background: $bg;
   display: inline-block;
   padding: 0.5em 1em;
   cursor: pointer;
@@ -26,10 +26,15 @@
   &:nth-of-type(2) {
     left: 6em;
   }
+  &:hover {
+    background: $link-color;
+    color: white;
+  }
 }
 
 input[type="radio"]:checked + label {
-  font-weight: bold;
+  cursor: default;
+  background: white;
 }
 
 input[type="radio"]:checked + label + .tab {
