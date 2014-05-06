@@ -46,3 +46,11 @@ small { font-size: 0.8em; }
   margin-top: 3em;
   margin-bottom: 1em;
 }
+
+.link {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  color: white;
+  z-index: 1;
+}

@@ -62,7 +62,7 @@ select, .form-control {
     transform: translateX(-98%);
     z-index: 1;
   }
-  & ~ .main .col-right, & ~ header .col-right {
+  & ~ .main .col-right, & ~ .col-right {
     width: 100%;
   }
   & ~ .main .close-it { display: none }
