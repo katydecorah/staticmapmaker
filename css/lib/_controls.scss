@@ -8,16 +8,20 @@
   margin-top: 0.5em;
   @extend .clearfix;
   @include bp(papa-bear){
-  label {
-    display: block;
-    float: left;
-    width:40%;
-  }
-  .form-control {
-    float: left;
-    width: 60%;
+    label {
+      display: block;
+      float: left;
+      width:40%;
+    }
+    .form-control {
+      float: left;
+      width: 60%;
+    }
   }
 }
+
+select, .form-control {
+  height: 2em;
 }
 
 .label-toggle {
@@ -43,7 +47,7 @@
 }
 
 
-input[type="checkbox"].toggle:checked {
+.toggle:checked {
   & ~ .main .col-left {
     transition: .2s;
     transform: translateX(-98%);
@@ -56,7 +60,6 @@ input[type="checkbox"].toggle:checked {
   & ~ .main .open-it { display: block;}
 }
 
-input[type=checkbox] { margin-top:0.25em;}
 input, select, textarea {
   font-size: 1em;
   font-family: $monoFontFamily;;
@@ -75,11 +78,8 @@ input, select, textarea {
   }
 }
 
-input[type=range] {
-  width: 100%;
-}
 
-.cushion {
+.cushion, input[type="checkbox"] {
   margin-top: 0.3em;
 }
 
@@ -90,6 +90,10 @@ fieldset {
   display: block;
   border-radius: 0.1em;
   color: $controls-color;
-  //border: 1px solid darken($control-inner,5%);
   background: $control-inner;
+}
+
+
+:focus {
+  outline: $accent auto 5px;
 }
