@@ -1,4 +1,13 @@
 
+.controls {
+  background: $bg-dark;
+  padding: 0.5em;
+  z-index: 100;
+  color: white;
+  position: relative;
+  @include bp(no-columns) { width: 100%; }
+}
+
 .toggle, .open-it {
   display: none;
 }
@@ -7,7 +16,7 @@
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   @extend .clearfix;
-  @include bp(papa-bear){
+  @include bp(big-with-columns){
     label {
       display: block;
       float: left;
@@ -38,7 +47,7 @@ select, .form-control {
   line-height: 1;
   border-radius: 0 0.25em 0.25em;
   &:hover {
-    color: $link-color;
+    color: #fff;
   }
 }
 
@@ -56,8 +65,8 @@ select, .form-control {
   & ~ .main .col-right, & ~ header .col-right {
     width: 100%;
   }
-  & ~ .main .close-it { display: none}
-  & ~ .main .open-it { display: block;}
+  & ~ .main .close-it { display: none }
+  & ~ .main .open-it { display: block; }
 }
 
 input, select, textarea {
@@ -70,7 +79,7 @@ input, select, textarea {
   margin: 0;
   width: 100%;
   position: relative;
-  @include bp(papa-bear){
+  @include bp(big-with-columns){
     float: left;
   }
   @include bp(mama-bear){

@@ -1,5 +1,5 @@
 @mixin bp($point) {
-  @if $point == papa-bear {
+  @if $point == big-with-columns {
     @media (min-width: 900px) { @content; }
   }
   @else if $point == with-columns {
@@ -7,5 +7,18 @@
   }
   @else if $point == no-columns {
     @media (max-width: 650px)  { @content; }
+  }
+}
+
+.clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
   }
 }

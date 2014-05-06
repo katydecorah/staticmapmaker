@@ -30,7 +30,6 @@
 
 }
 .col-right {
-
   @include bp(with-columns){
     width: 70%;
     float: right;
@@ -40,14 +39,6 @@
 }
 
 
-.controls {
-  background: $bg-dark;
-  padding: 0.5em;
-  z-index: 100;
-
-  color: white;
-  position: relative;
-}
 .static {
   padding: 1em 1em 5em;
   background: $static-inner;

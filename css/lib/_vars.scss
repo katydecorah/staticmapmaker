@@ -1,18 +1,12 @@
+$bg-body:         #fff;
 $bg:              #ecf0f1;
 $bg-dark:         #285A98;
-
 $accent:          #F1C40F;
-
-
 $orange:          #f99d24;
 $static-inner:    #F2F0ED;
-$text-color:       #222;
-
-$controls-color:   #fff;
+$text-color:      #222;
+$controls-color:  #fff;
 $control-inner:   darken($bg-dark,5%);
 $sansFontFamily:  'Source Sans Pro', sans-serif;
 $monoFontFamily:  'Oxygen Mono', 'Courier New', monospace;
-$link-color:       #98c0ff;
-
-
-$rightTransition:  width .2s 0.25s;
+$link-color:      #98c0ff;
