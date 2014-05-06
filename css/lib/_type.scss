@@ -39,3 +39,9 @@ pre {
 }
 
 small { font-size: 0.8em; }
+
+.colophon {
+  @extend small;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
