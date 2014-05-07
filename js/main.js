@@ -52,10 +52,10 @@ var controller = function($scope) {
   $scope.formats =
   [
   "png",
-  "png32",
+  //"png32",
   "gif",
-  "jpg",
-  "jpg-baseline"
+  "jpg"
+  //"jpg-baseline"
   ];
 
 };
