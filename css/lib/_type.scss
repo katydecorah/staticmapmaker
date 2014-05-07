@@ -16,6 +16,10 @@ h2 {
   margin: 1em 0;
 }
 
+p {
+  margin: 0 0 1.3em;
+  max-width: 35em;
+}
 a {
   text-decoration: none;
   color: $link-color;

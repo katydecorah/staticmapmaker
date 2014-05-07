@@ -86,6 +86,9 @@ input, select, textarea {
     display: block;
   }
 }
+input[type="checkbox"] {
+  width: auto;
+}
 
 
 .cushion, input[type="checkbox"] {

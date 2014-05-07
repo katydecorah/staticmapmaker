@@ -25,7 +25,10 @@
   cursor: pointer;
   border-radius: 0.25em 0.25em 0 0;
   &:nth-of-type(2) {
-    left: 6em;
+    left: 5.5em;
+  }
+  &:nth-of-type(3) {
+    left: 12.5em;
   }
   &:hover {
     background: $accent;

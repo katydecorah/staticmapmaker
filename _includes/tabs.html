@@ -3,10 +3,11 @@
 <input id="code" name="tab" type="radio" class="tab-input" checked>
 <label for="code" class="tab-link">Code</label>
 <div id="tab-code" class="tab"><pre class="print-code"></pre></div>
+
 <input id="usage" name="tab" type="radio" class="tab-input">
-<label for="usage" class="tab-link">Usage</label>
+<label for="usage" class="tab-link">How to Use</label>
 <div id="tab-usage" class="tab">
-<p>You can place the code in an <code>img</code> tag or use it as a <code>background-image</code>.</p>
+<p>You can copy and paste the code below into an HTML document or in CSS.</p>
 <h2>HTML</h2>
 <pre>&lt;img src="{{ mapcode }}" alt="Google Map of [[e.location]]"&gt;</pre>
 <h2>CSS</h2>
@@ -15,6 +16,16 @@
     background-image: url({{ mapcode }});
   }
 </pre>
+</div>
+
+
+<input id="about" name="tab" type="radio" class="tab-input">
+<label for="about" class="tab-link">About</label>
+<div id="tab-about" class="tab">
+<p>You can add a Google static map to any website with simple HTML and no JavaScript. Using URL parameters you can describe to Google the type of map that you want and Google will send it back.</p>
+<p>The Static Map Maker helps you configure the parameters and gives you the code in real time.</p>
+<p>If your site receives high traffic, you might need an <a href="https://console.developers.google.com/">API key</a>. According to Google, &ldquo;Most website and applications may use the Google Static Maps API free of charge.&rdquo; <a href="https://developers.google.com/maps/documentation/staticmaps/?csw=1#Limits">Read more about usage limits.</a></p>
+<p>Check out the <a href="https://developers.google.com/maps/documentation/staticmaps/?csw=1">Static Maps API</a> for more information.</p>
 </div>
 </form>
 <p class="colophon">Made by <a href="http://katydecorah.com/">Katy DeCorah</a>. Powered by Jekyll and Angular, hosted on <a href="https://github.com/katydecorah/staticmapmaker">Github</a>.</p>
