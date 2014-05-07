@@ -3,34 +3,34 @@
 <form>
 <fieldset>
 <div class="form-group">
-<label for="location" class="cushion">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.locationAbout]]"></i></label>
-<div class="form-control"><input type="text" ng-model="e.location" id="location"></div>
+<label for="location" class="cushion">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="Try an address, a city, a place, or even latitude and longitude."></i></label>
+<div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
 </div>
 <div class="form-group">
 <label for="api" class="cushion">
 <a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
-<i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.APIAbout]]"></i></label>
-<div class="form-control"><input type="text" ng-model="e.API" id="api" placeholder="API Key"></div>
+<i class="fa fa-question-circle" data-toggle="popover" data-content="You don't always need an API Key for Static Maps, but it's easy to acquire one. Without a key you might receive an error image instead of a map. Follow the link to the API Console."></i></label>
+<div class="form-control"><input type="text" ng-model="base.API" id="api" ng-init="base.API=''" placeholder="API Key"></div>
 </div>
 </fieldset>
 <fieldset>
 <div class="form-group">
 <label for="zoom">Zoom</label>
-<div class="form-control"><input type="range" name="input" ng-model="e.zoom" min="[[e.minZoom]]" max="[[e.maxZoom]]" id="zoom"></div>
+<div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom"></div>
 </div>
 <div class="form-group">
-<label for="scale">Scale (2x) <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.scaleAbout]]"></i>
+<label for="scale">Scale (2x) <i class="fa fa-question-circle" data-toggle="popover" data-content="Scale will double the stated height and width. This is good for when you need a width or height larger than 640px."></i>
 </label>
 <div class="form-control"><input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'"></div>
 </div>
 <div class="form-group">
-<label for="width" class="cushion">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i></label>
-<div class="form-control"><input type="number" ng-model="e.width" min="0" max="[[e.maxSize]]" id="width"></div>
+<label for="width" class="cushion">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="Maximum width is 640px or 1280px when scale 2x."></i></label>
+<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[base.maxSize]]" id="width"></div>
 </div>
 <div class="form-group">
-<label for="height" class="cushion">Height <i class="fa fa-question-circle" data-toggle="popover" data-content="[[e.sizeAbout]]"></i>
+<label for="height" class="cushion">Height <i class="fa fa-question-circle" data-toggle="popover" data-content="Maximum height is 640px or 1280px when scale 2x."></i>
 </label>
-<div class="form-control"><input type="number" ng-model="e.height" min="0" max="[[e.maxSize]]" id="height"></div>
+<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[base.maxSize]]" id="height"></div>
 </div>
 </fieldset>
 <fieldset>
@@ -42,13 +42,13 @@
 <ng-switch ng-switch-when="true">
 <div class="form-group">
 <label for="markerColor">Marker color</label>
-<div class="form-control"><select ng-model="e.markerColor"
+<div class="form-control"><select ng-model="base.markerColor"
 ng-options="color for color in colors" id="markerColor">
 </select></div>
 </div>
 <div class="form-group">
 <label for="markerSize">Marker size</label>
-<div class="form-control"><select ng-model="e.markerSize"
+<div class="form-control"><select ng-model="base.markerSize"
 ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
 </select></div>
 </div>
@@ -58,13 +58,13 @@ ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" i
 <fieldset>
 <div class="form-group">
 <label for="mapType">Map type</label>
-<div class="form-control"><select ng-model="e.mapType"
+<div class="form-control"><select ng-model="base.mapType"
 ng-options="mapType for mapType in mapTypes" id="mapType">
 </select></div>
 </div>
 <div class="form-group">
 <label for="format">Image format</label>
-<div class="form-control"><select ng-model="e.format"
+<div class="form-control"><select ng-model="base.format"
 ng-options="format for format in formats" id="format">
 </select></div>
 </div>
