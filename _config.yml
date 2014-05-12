@@ -1,7 +1,7 @@
 name: Google Static Map Maker
 markdown: redcarpet
 highlighter: pygments
-description: "Need a Google static map? You got it. Type in a location, customize, and get the map."
+description: "Need a Google static map? You got it. Type in a location, customize, and get the map. The Static Map Maker helps you access the Google Static Maps API and gives you the code in real time."
 url: "http://staticmapmaker.com"
 permalink: pretty
 
