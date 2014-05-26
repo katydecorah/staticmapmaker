@@ -1,2 +1,0 @@
-{% capture mapcode %}http://api.tiles.mapbox.com/v3/[[ base.mapID ]][[ showMarker == 'true' && '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('') + '(' + base.location + ')' || '' ]]/[[ base.location ]],[[ base.zoom ]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]]{% endcapture %}
-<img ng-src="{{ mapcode }}" alt="Mapbox map of [[base.location]]" class="static-map" id="map">

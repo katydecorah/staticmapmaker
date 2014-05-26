@@ -7,11 +7,11 @@
 <div class="main" ng-controller="{{ page.title | downcase }}Controller">
 <div class="col-left col">
 {% include toggle.html %}
-{% if page.title == 'Google' %}{% include controls.html %}{% else %}{% include controls-mb.html %}{% endif %}
+{% include controls.html %}
 </div>
 <div class="col-right col">
 <div class="static">
-{% if page.title == 'Google' %}{% include map.html %}{% else %}{% include map-mb.html %}{% endif %}
+{% include map.html %}
 </div>
 {% include tabs.html %}
 </div>
