@@ -7,6 +7,10 @@
 <p>You can copy and paste the code below into an HTML document or in CSS.</p>
 <h2>HTML</h2>
 <pre>&lt;img src="{{ mapcode }}" alt="Google Map of [[base.location]]"&gt;</pre>
+{% if page.title == "Google" %}
+<h3>Image link to Google Maps</h3>
+<pre>&lt;a href="https://www.google.com/maps/place/[[ base.location.split(' ').join('') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="Google Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
+{% endif %}
 <h2>CSS</h2>
 <pre>background-image: url({{ mapcode }});</pre>
 </div>
