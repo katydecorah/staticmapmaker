@@ -19,9 +19,11 @@
 <label for="usage" class="tab-link">How to Use</label>
 <div id="tab-usage" class="tab">
 <ol>
+{% if page.title == 'Mapbox' %}<li>You will need to create a <a href="https://www.mapbox.com/">Mapbox account</a> to generate a map ID. This will allow you to create a customize map and remove the &ldquo;Example&rdquo; watermark.</li>{% endif %}
+{% if page.title == 'Google' %}<li>If your site receives high traffic then you may need an <a href="https://console.developers.google.com/">API key</a> to create your map. <a href="https://developers.google.com/maps/documentation/staticmaps/?csw=1#Limits">Read more about Google&rsquo;s usage limits.</a></li>{% endif %}
 <li>Customize the fields to build your map.</li>
-<li>The &ldquo;Code&rdquo; tab holds the code for your map including examples of how to use the code.</li>
-<li>Copy and paste the code into your HTML document or in a stylesheet.</li>
+<li>The &ldquo;Code&rdquo; tab contains the code for your map including examples of how to use the code.</li>
+<li>Copy and paste the code into your HTML document or a stylesheet.</li>
 </ol>
 </div>
 
@@ -33,7 +35,6 @@
 
 <p>The Static Map Maker helps you configure the {{ page.title }} API parameters and gives you the code in real time.</p>
 {% if page.title == 'Google' %}
-<p>If your site receives high traffic, you might need an <a href="https://console.developers.google.com/">API key</a>. According to Google, &ldquo;Most website and applications may use the Google Static Maps API free of charge.&rdquo; <a href="https://developers.google.com/maps/documentation/staticmaps/?csw=1#Limits">Read more about usage limits.</a></p>
 <p>Check out the <a href="https://developers.google.com/maps/documentation/staticmaps/">Static Maps API by Google</a>.</p>
 {% else %}
 <p>Check out the <a href="https://www.mapbox.com/developers/api/static/">Static Maps API by Mapbox</a>.
