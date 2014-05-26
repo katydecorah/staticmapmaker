@@ -4,14 +4,14 @@
 {% include head.html %}
 <body ng-app="staticMapMaker">
 {% include header.html %}
-<div class="main" ng-controller="googleController">
+<div class="main" ng-controller="{{ page.title | downcase }}Controller">
 <div class="col-left col">
 {% include toggle.html %}
-{% include controls.html %}
+{% if page.title == 'Google' %}{% include controls.html %}{% else %}{% include controls-mb.html %}{% endif %}
 </div>
 <div class="col-right col">
 <div class="static">
-{% include map.html %}
+{% if page.title == 'Google' %}{% include map.html %}{% else %}{% include map-mb.html %}{% endif %}
 </div>
 {% include tabs.html %}
 </div>
