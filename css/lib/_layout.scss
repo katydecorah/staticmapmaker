@@ -9,6 +9,30 @@
   position: relative;
 
 }
+header {
+  background: $bg-dark;
+  padding: 1em;
+  z-index: 100;
+}
+
+.switch {
+  color: $text-color;
+  background-color: $accent;
+  padding: 0.3em 0.75em;
+  border-radius: 0.2em;
+  margin-top: 0.2em;
+  display: inline-block;
+  &:hover {
+    background-color: lighten($accent,10%);
+    color: inherit;
+  }
+  @include bp(with-columns){ 
+    float: right;
+  }
+  @include bp(no-columns){ 
+    margin-top: 1em;
+  }
+}
 
 .col-left {
   @include bp(with-columns){

@@ -2,9 +2,7 @@ h1 {
   font-size: 1.5em;
   color: white;
   font-weight: normal;
-  background: $bg-dark;
-  padding: 0.5em 1em;
-
+  @include bp(with-columns){ float: left; }
   .fa-map-marker {
     color: $accent;
     font-size: 0.9em;

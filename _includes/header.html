@@ -1,4 +1,5 @@
 <input type="checkbox" class="toggle" id="toggle">
 <header class="col col-right">
-<h1><i class="fa fa-map-marker"></i> Static Map Maker</h1>
+<h1><i class="fa fa-map-marker"></i> {{ page.title}} Static Map Maker</h1>
+<a class="switch btn" href="/{% if page.title == 'Google' %}mapbox{% else %}google{% endif %}">create a {% if page.title == 'Google' %}Mapbox{% else %}Google{% endif %} static map</a>
 </header>

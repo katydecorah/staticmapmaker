@@ -2,30 +2,37 @@
 <form>
 <input id="code" name="tab" type="radio" class="tab-input" checked>
 <label for="code" class="tab-link">Code</label>
-<div id="tab-code" class="tab"><pre class="print-code"></pre></div>
-
-<input id="usage" name="tab" type="radio" class="tab-input">
-<label for="usage" class="tab-link">How to Use</label>
-<div id="tab-usage" class="tab">
+<div id="tab-code" class="tab">
+<pre>{{ mapcode }}</pre>
 <p>You can copy and paste the code below into an HTML document or in CSS.</p>
 <h2>HTML</h2>
 <pre>&lt;img src="{{ mapcode }}" alt="Google Map of [[base.location]]"&gt;</pre>
 <h2>CSS</h2>
-<pre>
-  {
-    background-image: url({{ mapcode }});
-  }
-</pre>
+<pre>background-image: url({{ mapcode }});</pre>
+</div>
+
+<input id="usage" name="tab" type="radio" class="tab-input">
+<label for="usage" class="tab-link">How to Use</label>
+<div id="tab-usage" class="tab">
+<ol>
+<li>Customize the fields to build your map.</li>
+<li>The &ldquo;Code&rdquo; tab holds the code for your map including examples of how to use the code.</li>
+<li>Copy and paste the code into your HTML document or in a stylesheet.</li>
+</ol>
 </div>
 
 
 <input id="about" name="tab" type="radio" class="tab-input">
 <label for="about" class="tab-link">About</label>
 <div id="tab-about" class="tab">
-<p>You can add a Google static map to any website with simple HTML and no JavaScript. Using URL parameters you can describe to Google the type of map that you want and Google will send it back.</p>
-<p>The Static Map Maker helps you configure the parameters and gives you the code in real time.</p>
+<p>You can add a static map to any website with simple HTML and no JavaScript. Using URL parameters you can describe the type of map that you want and Google or Mapbox will send it back.</p>
+<p>The Static Map Maker helps you configure the parameters and gives you the code in real time. Create a <a href="/google">Google static map</a> or a <a href="/mapbox">Mapbox static map</a>.</p>
+{% if page.title == 'Google' %}
 <p>If your site receives high traffic, you might need an <a href="https://console.developers.google.com/">API key</a>. According to Google, &ldquo;Most website and applications may use the Google Static Maps API free of charge.&rdquo; <a href="https://developers.google.com/maps/documentation/staticmaps/?csw=1#Limits">Read more about usage limits.</a></p>
-<p>Check out the <a href="https://developers.google.com/maps/documentation/staticmaps/?csw=1">Static Maps API</a> for more information.</p>
+<p>Check out the <a href="https://developers.google.com/maps/documentation/staticmaps/">Static Maps API by Google</a>.</p>
+{% else %}
+<p>Check out the <a href="https://www.mapbox.com/developers/api/static/">Static Maps API by Mapbox</a>.
+{% endif %}
 </div>
 </form>
 <p class="colophon">Made by <a href="http://katydecorah.com/">Katy DeCorah</a>. Powered by Jekyll and Angular, hosted on <a href="https://github.com/katydecorah/staticmapmaker">Github</a>.</p>
