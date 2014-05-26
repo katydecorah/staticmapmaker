@@ -1,0 +1,635 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"com",
+				"com"
+			],
+			[
+				"list-",
+				"list-style-type"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"dark",
+				"darkAccent"
+			],
+			[
+				"post-next",
+				"post-next-container"
+			],
+			[
+				"post-prev",
+				"post-prev-container"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"transpa",
+				"transparent"
+			],
+			[
+				"paddig",
+				"padding-bottom"
+			],
+			[
+				"block",
+				"blockquote"
+			],
+			[
+				"no",
+				"normal"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"pull",
+				"pull-left"
+			],
+			[
+				"webkit-tra",
+				"webkit-transition"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"assignment",
+				"assignment_id"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/SASS Build/SASS.sublime-build",
+	"command_palette":
+	{
+		"height": 87.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"save",
+				"Project: Save As"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-05-25-huyck-preserve.md",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/post-map-header.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/mapbox.html",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-05-17-papscanee-island-nature-preserve.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-02-24-washington-dc.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-05-25-huyck-preserve.md",
+		"/Applications/MAMP/htdocs/katydecorah/_data/resume.yml",
+		"/Applications/MAMP/htdocs/katydecorah/resume/index.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/resume/education.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/resume/experience.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/resume/notables.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/resume/other-experience.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/resume/skills.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/resume/speaking.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/resume/volunteer.html",
+		"/Applications/MAMP/htdocs/katydecorah/index.html",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-03-14-the-east-wing.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-03-14-leadership-letters.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-03-13-the-east-wing.md",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_resume.scss",
+		"/Applications/MAMP/htdocs/katydecorah/_data/balancing.md",
+		"/Applications/MAMP/htdocs/katydecorah/_config.yml",
+		"/Applications/MAMP/htdocs/katydecorah/Gemfile.lock",
+		"/Applications/MAMP/htdocs/katydecorah/Gemfile",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_postsMap.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_posts.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_type.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_layout.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_scaffolding.scss",
+		"/Applications/MAMP/htdocs/katydecorah/var.csv",
+		"/Applications/MAMP/htdocs/katydecorah/_drafts/names.md",
+		"/Users/kdecorah/Downloads/feedly.opml",
+		"/Applications/MAMP/htdocs/katydecorah/_drafts/jekyll-data-playlists.md",
+		"/Applications/MAMP/htdocs/katydecorah/_drafts/black-bean-burgers.md",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_print.scss",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/header.html",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_nav.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_header.scss",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/top.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/footer.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/end.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/links.html",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/style.scss",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-01-01-z-index-and-transform.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-01-30-power-up-preloader.md",
+		"/Applications/MAMP/htdocs/katydecorah/Gruntfile.js",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_mixins.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_playlists.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_front-page.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_accessibility.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/lib/_buttons.scss",
+		"/Applications/MAMP/htdocs/katydecorah/css/style.css",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-03-20-winter.md",
+		"/Applications/MAMP/htdocs/katydecorah/_layouts/post.html",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/single-playlist.html",
+		"/Applications/MAMP/htdocs/katydecorah/playlist-master/index.html",
+		"/Applications/MAMP/htdocs/katydecorah/feed.xml",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2012-12-21-fall.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-03-19-winter.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2012-09-21-summer.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2012-06-21-spring.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2012-03-20-winter.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2011-12-21-fall.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2011-09-21-summer.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2011-06-21-spring.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2011-03-20-winter.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2010-12-21-fall.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2010-09-21-summer.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2010-06-21-spring.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2010-03-20-winter.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2009-12-21-fall.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2009-09-21-summer.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2009-06-21-spring.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2009-03-20-winter.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2008-12-21-fall.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2008-09-21-summer.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2008-06-21-spring.md",
+		"/Applications/MAMP/htdocs/katydecorah/_data/playlists.yml",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2005-06-20-high-school-favorites.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-12-21-fall.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-06-21-spring.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-09-21-summer.md",
+		"/Applications/MAMP/htdocs/katydecorah/_drafts/2014-03-20-winter.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-03-19-dots.md",
+		"/Applications/MAMP/htdocs/katydecorah/playlist-mama/index.html",
+		"/Applications/MAMP/htdocs/katydecorah/_data/working.yml",
+		"/Applications/MAMP/htdocs/katydecorah/_data/playlists2.yml",
+		"/Applications/MAMP/htdocs/katydecorah/_layouts/no-header.html",
+		"/Applications/MAMP/htdocs/katydecorah/tags/index.html",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-01-15-escape-by-carla-corrales.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-03-07-slidey-background.md",
+		"/Applications/MAMP/htdocs/katydecorah/_layouts/resume.html",
+		"/Applications/MAMP/htdocs/katydecorah/_drafts/2014-03-21-winter.md",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/resume/outreach.html",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-03-13-leadership-letters.md",
+		"/Applications/MAMP/htdocs/katydecorah/resume/index.md",
+		"/Applications/MAMP/htdocs/katydecorah/_drafts/haml.md",
+		"/Users/kdecorah/Dropbox/projects/katygit.sublime-project",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-01-03-flat-icon-by-bosco.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-12-23-food-by-nos.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-12-19-holiday-trees.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-12-17-holiday-treats.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-12-09-animation-direction.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-12-06-heroes-queue.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-12-04-simple-box.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-11-20-rabbit-by-beard-chicken.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-11-05-scalable-balloons.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-11-01-ice-cream-pattern.md",
+		"/Applications/MAMP/htdocs/katydecorah/_includes/paginator.html",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-24-palmertown-mountain-range.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2014-02-14-calc-you-and-me.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-10-10-navigation-bar.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-09-29-incrementally-awesome-sass-labels.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-09-06-google-maps-images-api-for-jekyll.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-09-05-haml-clock.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-26-haml-calendar.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-19-optical-illusion.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-07-forebruary.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-06-triangles.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-05-font-awesome-buttons.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-01-octagon.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-01-diamond.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-08-01-bicycle-wheel.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-07-03-google-font-explorer.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-07-01-fairytale-beginnings.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-05-28-line-lengthicator.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-05-16-hug-o-war.md",
+		"/Applications/MAMP/htdocs/katydecorah/_posts/2013-01-09-sass-adjust-hue-reference.md"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Applications/MAMP/htdocs/katydecorah/css/lib",
+			"/Applications/MAMP/htdocs/katydecorah/",
+			"/Applications/MAMP/htdocs/katydecorah/_posts",
+			"/Applications/MAMP/htdocs/katydecorah/css/lib",
+			"/Applications/MAMP/htdocs/katydecorah/",
+			"/Applications/MAMP/htdocs/katydecorah/_layouts",
+			"/Applications/MAMP/htdocs/katydecorah/",
+			"/Applications/MAMP/htdocs/katydecorah/,*.scss",
+			"/Applications/MAMP/htdocs/katydecorah/",
+			"/Applications/MAMP/htdocs/katydecorah/_site/",
+			"/Applications/MAMP/htdocs/katydecorah/",
+			"/Applications/MAMP/htdocs/katydecorah/_posts",
+			"/Applications/MAMP/htdocs/katydecorah/posts",
+			"/Applications/MAMP/htdocs/katydecorah/",
+			"/Applications/MAMP/htdocs/katydecorah/_posts",
+			"/Applications/MAMP/htdocs/katydecorah/",
+			"/Applications/MAMP/htdocs/katydecorah/_posts/",
+			"/Applications/MAMP/htdocs/katydecorah-new/",
+			"/Applications/MAMP/htdocs/katydecorah-new/_posts/",
+			"/Applications/MAMP/htdocs/katydecorah-new/posts/",
+			"/Applications/MAMP/htdocs/katydecorah-new/",
+			"/Applications/MAMP/htdocs/katydecorah-new/_posts",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"width=\"1024\" height=\"768\"",
+			".",
+			";",
+			",",
+			",*/",
+			",},",
+			",color:,",
+			",{,",
+			",/*",
+			",,.",
+			"*/",
+			",.",
+			",,",
+			" ",
+			".",
+			" */",
+			"} /* ",
+			"^.*(?=(\\}))",
+			"^.*(?=(\\/*))",
+			"/^(.*?)\\}",
+			"/.*",
+			"\"}\"",
+			"}",
+			"@include opacity(1);",
+			"@include translate",
+			"box-shadow",
+			"box-sizing",
+			"columns",
+			"transition:",
+			"@include transition(.25s);",
+			"Winter",
+			"\\n",
+			",",
+			" $accent",
+			"QXaYuDMrJl8",
+			"link",
+			"playlist",
+			"€œ",
+			"â",
+			"€",
+			"&amp;amp;",
+			"&",
+			"<",
+			"#",
+			"#x009d",
+			"<Unknown>",
+			"name:",
+			"  - name:",
+			"- name:",
+			"7'",
+			"7\"",
+			"7\"\"",
+			"  albumn:",
+			"  artist:",
+			"- track:",
+			"  tracks:",
+			"- name: ",
+			"#",
+			" <unknown>",
+			"  albumn:",
+			"  artist: ",
+			"- track:",
+			"  tracks:",
+			"- name:",
+			"plain.html",
+			"dropb",
+			"13012960323_b657ebc39d_o",
+			"src=\"/",
+			"dl.",
+			"katydecorah.com/img",
+			"category: edibles",
+			"\\t",
+			"social",
+			"main-logo",
+			"main-header",
+			"header",
+			"baseurl",
+			"post-date",
+			"center",
+			"text-center",
+			"post-meta",
+			"0.85em",
+			"0.75em",
+			"0.7em",
+			"0.8em",
+			"btn",
+			"btn-circle",
+			"icon",
+			"navbar",
+			"class=\"hello\"",
+			"@extend code-type;",
+			"@extend headings-type;",
+			"@extend body-type;",
+			"@extend big-type;",
+			"text-align:",
+			"text-align: cen",
+			"baseurl",
+			"https://dl.dropbox.com/",
+			"width=\"768\" height=\"1024\"",
+			"animation",
+			"\"",
+			"baseurl",
+			"nav.html",
+			"baseurl",
+			"cp_embed_iframe",
+			"<noscript></noscript>",
+			"$red",
+			":after1",
+			":before1",
+			":before",
+			":after",
+			"`",
+			"above",
+			"below",
+			"&nbsp;",
+			"</a> \\n",
+			"</a>\\n",
+			"icon-",
+			"       ",
+			"of course",
+			"just",
+			"however",
+			"easy",
+			"so",
+			"basically",
+			"clearly",
+			"add",
+			"obviously"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"\",\"",
+			"\"",
+			",",
+			"",
+			",",
+			"",
+			": ;",
+			"$highlight",
+			"",
+			"opacity: 1;",
+			"transfrom: translate",
+			"transition: 0.25s;",
+			"",
+			",\\n",
+			"",
+			"&amp;",
+			"",
+			"playlist:",
+			"playlist: ",
+			"  playlist:\n  - name:",
+			"7",
+			"7'",
+			"7'\"",
+			"      album:",
+			"      artist:",
+			"    - track:",
+			"    tracks:",
+			"  - name: ",
+			"",
+			"      album:",
+			"      artist: ",
+			"    - track:",
+			"    tracks:",
+			"  - name:",
+			"src=\"http://bmxfeed.com/",
+			"category: epicurean",
+			"",
+			"social-link",
+			"btn",
+			"@extend .code-type;",
+			"@extend .headings-type;",
+			"@extend .body-type;",
+			"@extend .big-type;",
+			"@extend b.ig-type;",
+			"class=\"img-half\"",
+			"'",
+			"",
+			":before",
+			":after",
+			":before1",
+			":after1",
+			"",
+			" ",
+			"",
+			"</a>",
+			"fa fa-",
+			"",
+			"</a><a",
+			"",
+			", ",
+			"",
+			", ",
+			"",
+			"</a>\\n",
+			"</a>",
+			" ",
+			"",
+			"%li.\\1",
+			"",
+			"%h2",
+			"%h1 ",
+			"%h3 ",
+			"\", :class=>\"",
+			"\", :title=>\"",
+			"%a{:href=\"",
+			"%li.view-css",
+			"%ul",
+			"%nav",
+			"%aside.",
+			"%footer",
+			"%p ",
+			"%p",
+			"{:role=>\"\\1\"}",
+			"{:role=>\"\\1",
+			"%header",
+			"%section.",
+			"%h3.",
+			"#",
+			".",
+			"",
+			"img{:alt=>\"\",:src=>",
+			"img{:alt=>\"\",",
+			"class=\"img-half\"",
+			"",
+			"unstyled text-center",
+			"",
+			"fa fa-",
+			"",
+			"class=\"img-half\"",
+			"",
+			"class=\"img-half\"",
+			" class=\"img-half\"",
+			"category: playlists",
+			"category: edibles",
+			"category: adventures",
+			"category: edibles",
+			"tags",
+			"class=\"img-half\"",
+			" class=\"img-half\"",
+			"locations",
+			"categories",
+			"category",
+			"",
+			"label",
+			"category",
+			"&amp;",
+			"class=\"img-half\" ",
+			" class=\"img-half\"",
+			"archive",
+			"class=\"img-half\"",
+			"",
+			"&amp;",
+			"category: weekends",
+			"class=\"img-half\"",
+			"locations:",
+			"class=\"img-fourths\"",
+			"class=\"img-thirds\""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.sftp":
+	{
+		"height": 184.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 390.0,
+	"status_bar_visible": true
+}

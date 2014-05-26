@@ -9,6 +9,19 @@
   position: relative;
 
 }
+header {
+  background: $bg-dark;
+  padding: 1em;
+  z-index: 100;
+}
+
+.switch {
+  color: #ddd;
+  @include bp(with-columns){ 
+    float: right;
+    padding-top: 0.5em;
+  }
+}
 
 .col-left {
   @include bp(with-columns){
