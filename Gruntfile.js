@@ -1,18 +1,17 @@
 module.exports = function(grunt) {
 
-  // 1. All configuration goes here
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-  concat: {
-    options: {
-      separator: ';',
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['js/lib/app.js','js/lib/main.js', 'js/lib/bootstrap.js'],
+        dest: 'js/main.js',
+      },
     },
-    dist: {
-      src: ['js/lib/app.js','js/lib/main.js', 'js/lib/bootstrap.js'],
-      dest: 'js/main.js',
-    },
-  },
 
     uglify: {
       build: {
@@ -58,17 +57,11 @@ module.exports = function(grunt) {
     }
 
   });
-
-  // 3. Where we tell Grunt we plan to use this plug-in.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
-
-
-
-  // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
   grunt.registerTask('default', ['concat', 'uglify','sass','autoprefixer','watch']);
 
 };
