@@ -16,10 +16,21 @@ header {
 }
 
 .switch {
-  color: #ddd;
+  color: $text-color;
+  background-color: $accent;
+  padding: 0.3em 0.75em;
+  border-radius: 0.2em;
+  margin-top: 0.2em;
+  display: inline-block;
+  &:hover {
+    background-color: lighten($accent,10%);
+    color: inherit;
+  }
   @include bp(with-columns){ 
     float: right;
-    padding-top: 0.5em;
+  }
+  @include bp(no-columns){ 
+    margin-top: 1em;
   }
 }
 

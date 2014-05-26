@@ -4,6 +4,18 @@
 {% include head.html %}
 <body ng-app="staticMapMaker">
 {% include header.html %}
-{{ content }}
+<div class="main" ng-controller="mapboxController">
+<div class="col-left col">
+{% include toggle.html %}
+{% include controls-mb.html %}
+</div>
+<div class="col-right col">
+<div class="static">
+{% include map-mb.html %}
+</div>
+{% include tabs.html %}
+</div>
+</div>
+{% include footer.html %}
 </body>
 </html>
