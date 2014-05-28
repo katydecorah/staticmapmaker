@@ -9,3 +9,7 @@ mapboxAPI: https://www.mapbox.com/developers/api/static/
 googleAPI: https://developers.google.com/maps/documentation/staticmaps/
 
 exclude: ["node_modules", ".sass-cache","package.json","Gruntfile.js"]
+
+gems:
+  - jekyll-sitemap
+  - jekyll-redirect-from
