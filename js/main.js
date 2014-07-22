@@ -15,7 +15,8 @@ var googleController = function ($scope) {
     markerColor: "red",
     mapType: "roadmap",
     format: "png",
-    markerSize: "mid"
+    markerSize: "mid",
+    autoCenter: false
   };
   $scope.colors = [ "black", "brown", "green", "purple", "yellow", "blue", "gray", "orange", "red", "white" ];
   $scope.markerSizes = [
