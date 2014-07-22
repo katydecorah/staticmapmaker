@@ -52,6 +52,15 @@
 ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
 </select></div>
 </div>
+<ng-switch on="base.markerSize">
+<ng-switch ng-switch-when="mid">
+<div class="form-group">
+<label for="markerSize">Marker label</label>
+<div class="form-control"><input ng-model="base.markerLabel" type="text" id="markerLabel" maxlength="1" placeholder="A single digit or letter."></div>
+</div>
+</ng-switch>
+</ng-switch>
+
 </ng-switch>
 </ng-switch>
 </fieldset>
