@@ -43,8 +43,7 @@
 <ng-switch ng-switch-when="true">
 <div class="form-group">
 <label for="markerColor">Marker color</label>
-<div class="form-control"><select ng-model="base.markerColor"
-ng-options="color for color in colors" id="markerColor">
+<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor">
 </select></div>
 </div>
 <div class="form-group">
@@ -53,6 +52,19 @@ ng-options="color for color in colors" id="markerColor">
 ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
 </select></div>
 </div>
+<ng-switch on="base.markerSize">
+<ng-switch ng-switch-when="mid">
+<div class="form-group">
+<label for="markerSize">Marker label</label>
+<div class="form-control"><input ng-model="base.markerLabel" type="text" id="markerLabel" maxlength="1" placeholder="Single digit or letter." capitalize></div>
+</div>
+</ng-switch>
+</ng-switch>
+<div class="form-group">
+<label for="autoCenter">Auto-center map?</label>
+<input type="checkbox" ng-model="base.autoCenter" id="autoCenter" ng-true-value="true" ng-false-value="false">
+</div>
+
 </ng-switch>
 </ng-switch>
 </fieldset>
