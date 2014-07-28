@@ -4,12 +4,14 @@
 <label for="code" class="tab-link">Code</label>
 <div id="tab-code" class="tab">
 <pre>{{ mapcode }}</pre>
-<p>You can copy and paste the code below into an HTML document or in CSS.</p>
+<p>Treat the code like an image. You can use HTML or CSS to display it.</p>
 <h2>HTML</h2>
-<pre>&lt;img src="{{ mapcode }}" alt="Google Map of [[base.location]]"&gt;</pre>
+<pre>&lt;img src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]"&gt;</pre>
 {% if page.title == "Google" %}
-<h3>Image link to Google Maps</h3>
-<pre>&lt;a href="https://www.google.com/maps/place/[[ base.location.split(' ').join('+') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="Google Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
+<h3>Map with link to Google Maps</h3>
+<pre>&lt;a href="https://www.google.com/maps/place/[[ base.location.split(' ').join('+') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
+<h3>Map with link to Google Maps directions</h3>
+<pre>&lt;a href="https://www.google.com/maps/dir//[[ base.location.split(' ').join('+') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
 {% endif %}
 <h2>CSS</h2>
 <pre>background-image: url({{ mapcode }});</pre>
@@ -19,7 +21,7 @@
 <label for="usage" class="tab-link">How to Use</label>
 <div id="tab-usage" class="tab">
 <ol>
-{% if page.title == 'Mapbox' %}<li>You will need to create a <a href="https://www.mapbox.com/">Mapbox account</a> to generate a map ID. This will allow you to create a custom map without the the &ldquo;Example&rdquo; watermark.</li>{% endif %}
+{% if page.title == 'Mapbox' %}<li>You must create a <a href="https://www.mapbox.com/">Mapbox account</a> to generate a map ID and to get a public API token.</li>{% endif %}
 {% if page.title == 'Google' %}<li>If your site receives high traffic then you may need an <a href="https://console.developers.google.com/">API key</a> to create your map. <a href="https://developers.google.com/maps/documentation/staticmaps/?csw=1#Limits">Read more about Google&rsquo;s usage limits.</a></li>{% endif %}
 <li>Customize the fields to build your map.</li>
 <li>The &ldquo;Code&rdquo; tab contains the code for your map including examples.</li>

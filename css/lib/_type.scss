@@ -1,3 +1,10 @@
+h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+
 h1 {
   font-size: 1.5em;
   color: white;
@@ -8,16 +15,18 @@ h1 {
     font-size: 0.9em;
   }
 }
-h2 {
-  font-size: 1.1em;
-  font-weight: normal;
-  margin: 1em 0;
-}
+
+h2 {font-size: 1.424em;}
+
+h3 {font-size: 1.266em;}
+
+h4 {font-size: 1.125em;}
 
 p {
   margin: 0 0 1.3em;
   max-width: 35em;
 }
+
 a {
   text-decoration: none;
   color: $link-color;
@@ -59,4 +68,13 @@ small { font-size: 0.8em; }
 
 ol {
   margin-left: 1.25em;
+}
+
+.alert {
+  text-align: center;
+  background: #c0392b;
+  color: white;
+  padding: 1em;
+  margin-bottom: 1em;
+  a { color: white}
 }
