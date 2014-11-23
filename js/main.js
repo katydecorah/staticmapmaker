@@ -39,6 +39,8 @@ var mapboxController = function ($scope) {
     maxSize: 1280,
     format: "png",
     markerSize: "s",
+    API: "pk.eyJ1Ijoia2F0eWRlY29yYWgiLCJhIjoiNGxUd0FiRSJ9.W6JiC41LhSNbMQjuF3NGhA",
+    mapID: "katydecorah.ea4ce3c1",
     markerColor: "285A98",
     markerLabel: "heart"
   };
@@ -61,14 +63,24 @@ myApp.directive('capitalize', function() {
            if(capitalized !== inputValue) {
               modelCtrl.$setViewValue(capitalized);
               modelCtrl.$render();
-            }         
+            }
             return capitalized;
          }
          modelCtrl.$parsers.push(capitalize);
          capitalize(scope[attrs.ngModel]);  // capitalize initial value
      }
    };
-});;$( document ).ready(function() {
+});
+
+myApp.filter('nospace', function () {
+  return function (value) {
+    return (!value) ? '' : value.replace(/ /g, '');
+  };
+});
+myApp.filter('escape', function() {
+  return window.escape;
+});
+;$( document ).ready(function() {
 	$("[data-toggle=popover]").popover({
 		placement : 'right',
 		trigger:'hover'

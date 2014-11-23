@@ -12,10 +12,9 @@
     <div class="alert"><i class="fa fa-warning"></i> You need a public API token. <a href="https://www.mapbox.com/account/apps/">Let's go get it.</a></div>
   </ng-switch>
 </ng-switch>
-{% capture mapcode %}http://api.tiles.mapbox.com/v4/[[ base.mapID ]][[ showMarker == 'true' && '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('') + '(' + base.location + ')' || '' ]]/[[ base.location ]],[[ base.zoom ]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]]?access_token=[[ base.API ]]{% endcapture %}
+{% capture mapcode %}http://api.tiles.mapbox.com/v4/[[ base.mapID ]][[ geojson != '' && '/geojson('+geojson+')' || '' | nospace | escape]][[ showMarker == 'true' && '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('') + '(' + base.location + ')' || '' ]]/[[ auto == 'true' && 'auto' || base.location+','+base.zoom]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]]?access_token=[[ base.API ]]{% endcapture %}
 <div ng-if="base.mapID != '' && base.API != ''">
   <img ng-src="{{ mapcode }}" alt="Mapbox map of [[base.location]]" class="static-map" id="map">
   {% include attribution.html %}
 </div>
-
 {% endif %}

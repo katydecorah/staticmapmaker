@@ -89,14 +89,14 @@ ng-options="format for format in formats" id="format">
 <div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
 </div>
 <div class="form-group">
-<label for="api" class="cushion"><a href="https://www.mapbox.com/projects/">Map ID</a> <i class="fa fa-question-circle" data-toggle="popover" data-content="Create a Mapbox account to customize a map. Enter the map ID here. Use your own map to remove the 'Example' watermark."></i></label>
-<div class="form-control"><input type="text" ng-model="base.mapID" id="api" ng-init="base.mapID=''" placeholder="Map ID"></div>
+<label for="mapid" class="cushion"><a href="https://www.mapbox.com/projects/">Map ID</a> <i class="fa fa-question-circle" data-toggle="popover" data-content="Create a Mapbox account to customize a map. Enter the map ID here. Use your own map to remove the 'Example' watermark."></i></label>
+<div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="Map ID"></div>
 </div>
 <div class="form-group">
 <label for="api" class="cushion">
 <a href="https://www.mapbox.com/account/apps/" target="_blank">Public API token</a>
 <i class="fa fa-question-circle" data-toggle="popover" data-content="You need a public API token to use static Mapbox API. Follow the link to access your public token from your Mapbox account."></i></label>
-<div class="form-control"><input type="text" ng-model="base.API" id="api" ng-init="base.API=''" placeholder="Public API Key"></div>
+<div class="form-control"><input type="text" ng-model="base.API" id="api" placeholder="Public API Key"></div>
 </div>
 </fieldset>
 <fieldset>
@@ -116,6 +116,12 @@ ng-options="format for format in formats" id="format">
 </fieldset>
 <fieldset>
 <div class="form-group">
+<h2>Data</h2>
+<div class="form-group" ng-hide="showMarker=='true'">
+<label for="geojson">GeoJSON</label>
+<textarea id="geojson" name="geojson" ng-model="geojson" rows="3" ng-init="geojson=''"></textarea>
+</div>
+<div class="form-group" ng-hide="geojson!=''">
 <label for="showMarker">Add a map marker?</label>
 <div class="form-control"><input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker"></div>
 </div>
@@ -137,6 +143,10 @@ ng-options="format for format in formats" id="format">
 </div>
 </ng-switch>
 </ng-switch>
+<div class="form-group" ng-hide="geojson == '' || showMarker == 'true'">
+<label for="auto">Adjust map to data?</label>
+<div class="form-control"><input type="checkbox" ng-model="auto" ng-true-value="true" ng-false-value="false" id="auto"></div>
+</div>
 </fieldset>
 <fieldset>
 <div class="form-group">
