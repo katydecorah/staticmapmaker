@@ -39,8 +39,8 @@ var mapboxController = function ($scope) {
     maxSize: 1280,
     format: "png",
     markerSize: "s",
-    API: "pk.eyJ1Ijoia2F0eWRlY29yYWgiLCJhIjoiNGxUd0FiRSJ9.W6JiC41LhSNbMQjuF3NGhA",
-    mapID: "katydecorah.ea4ce3c1",
+    API: "",
+    mapID: "",
     markerColor: "285A98",
     markerLabel: "heart"
   };
