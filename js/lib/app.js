@@ -30,14 +30,15 @@ var googleController = function ($scope) {
 
 var mapboxController = function ($scope) {
   $scope.base = {
-    location: "-73.75,42.65",
+    location: "",
     zoom: 13,
     minZoom: 0,
     maxZoom: 22,
     width: 600,
     height: 300,
     maxSize: 1280,
-    format: "png",
+    auto: true,
+    format: "@2x.png",
     markerSize: "s",
     API: "",
     mapID: "",

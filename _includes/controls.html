@@ -85,10 +85,6 @@ ng-options="format for format in formats" id="format">
 {% else %}
 <fieldset>
 <div class="form-group">
-<label for="location" class="cushion">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="Enter the longitude and latitude of the location."></i></label>
-<div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
-</div>
-<div class="form-group">
 <label for="mapid" class="cushion"><a href="https://www.mapbox.com/projects/">Map ID</a> <i class="fa fa-question-circle" data-toggle="popover" data-content="Create a Mapbox account to customize a map. Enter the map ID here. Use your own map to remove the 'Example' watermark."></i></label>
 <div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="Map ID"></div>
 </div>
@@ -100,10 +96,6 @@ ng-options="format for format in formats" id="format">
 </div>
 </fieldset>
 <fieldset>
-<div class="form-group">
-<label for="zoom">Zoom</label>
-<div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom"></div>
-</div>
 <div class="form-group">
 <label for="width" class="cushion">Width <i class="fa fa-question-circle" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640."></i></label>
 <div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[ base.format !== '@2x.png' && base.maxSize || '640' ]]" id="width"></div>
@@ -117,36 +109,54 @@ ng-options="format for format in formats" id="format">
 <fieldset>
 <div class="form-group">
 <h2>Data</h2>
+<div class="form-group">
+
+  <div class="form-group">
+    <label for="auto">Auto adjust the map to data? <i class="fa fa-question-circle" data-toggle="popover" data-content="Make the map fit all your data on your mapid or the GeoJSON you enter below. Uncheck to manually enter coordinates and a zoom."></i></label>
+    <div class="form-control"><input type="checkbox" ng-model="base.auto" ng-init="base.auto='true'" ng-true-value="true" ng-false-value="false" id="auto"></div>
+  </div>
+<div ng-hide="base.auto=='true'">
+<div clas="form-control">
+<label for="location" class="cushion">Location <i class="fa fa-question-circle" data-toggle="popover" data-content="Enter the longitude and latitude of the location."></i></label>
+  <div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
+</div>
+<div class="form-group">
+  <label for="zoom">Zoom</label>
+  <div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom"></div>
+</div>
+</div>
+
+
+<div class="form-group" ng-hide="geojson !='' || base.auto == 'true'">
+  <label for="showMarker">Add a marker?</label>
+  <div class="form-control"><input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker"></div>
+</div>
+<ng-switch on="showMarker">
+  <ng-switch ng-switch-when="true">
+    <div class="form-group">
+      <label for="markerColor">Marker color</label>
+      <div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor"></div>
+    </div>
+    <div class="form-group">
+      <label for="markerLabel">Marker label</label>
+      <div class="form-control"><select ng-model="base.markerLabel" ng-options="label for label in labels" id="markerLabel">
+      </select></div>
+    </div>
+    <div class="form-group">
+      <label for="markerSize">Marker size</label>
+      <div class="form-control"><select ng-model="base.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
+      </select></div>
+    </div>
+  </ng-switch>
+</ng-switch>
+
+
 <div class="form-group" ng-hide="showMarker=='true'">
 <label for="geojson">GeoJSON</label>
 <textarea id="geojson" name="geojson" ng-model="geojson" rows="3" ng-init="geojson=''"></textarea>
 </div>
-<div class="form-group" ng-hide="geojson!=''">
-<label for="showMarker">Add a map marker?</label>
-<div class="form-control"><input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker"></div>
-</div>
-<ng-switch on="showMarker">
-<ng-switch ng-switch-when="true">
-<div class="form-group">
-<label for="markerColor">Marker color</label>
-<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor"></div>
-</div>
-<div class="form-group">
-<label for="markerLabel">Marker label</label>
-<div class="form-control"><select ng-model="base.markerLabel" ng-options="label for label in labels" id="markerLabel">
-</select></div>
-</div>
-<div class="form-group">
-<label for="markerSize">Marker size</label>
-<div class="form-control"><select ng-model="base.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
-</select></div>
-</div>
-</ng-switch>
-</ng-switch>
-<div class="form-group" ng-hide="geojson == '' || showMarker == 'true'">
-<label for="auto">Adjust map to data?</label>
-<div class="form-control"><input type="checkbox" ng-model="auto" ng-true-value="true" ng-false-value="false" id="auto"></div>
-</div>
+
+
 </fieldset>
 <fieldset>
 <div class="form-group">
