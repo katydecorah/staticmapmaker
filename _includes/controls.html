@@ -85,13 +85,13 @@ ng-options="format for format in formats" id="format">
 {% else %}
 <fieldset>
 <div class="form-group">
-<label for="mapid" class="cushion"><a href="https://www.mapbox.com/projects/">Map ID</a> <i class="fa fa-question-circle" data-toggle="popover" data-content="Create a Mapbox account to customize a map. Enter the map ID here. Use your own map to remove the 'Example' watermark."></i></label>
+<label for="mapid" class="cushion"><a href="https://www.mapbox.com/projects/">Map ID</a> <i class="fa fa-question-circle" data-toggle="popover" data-content="Which one of your projects, styles, or data would you like to work with? Enter the map id here."></i></label>
 <div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="Map ID"></div>
 </div>
 <div class="form-group">
 <label for="api" class="cushion">
 <a href="https://www.mapbox.com/account/apps/" target="_blank">Public API token</a>
-<i class="fa fa-question-circle" data-toggle="popover" data-content="You need a public API token to use static Mapbox API. Follow the link to access your public token from your Mapbox account."></i></label>
+<i class="fa fa-question-circle" data-toggle="popover" data-content="You need a public API token to access the Mapbox static API. Follow the link to access your public token."></i></label>
 <div class="form-control"><input type="text" ng-model="base.API" id="api" placeholder="Public API Key"></div>
 </div>
 </fieldset>
