@@ -113,7 +113,7 @@ ng-options="format for format in formats" id="format">
 
   <div class="form-group">
     <label for="auto">Auto adjust the map to data? <i class="fa fa-question-circle" data-toggle="popover" data-content="Make the map fit all your data on your mapid or the GeoJSON you enter below. Uncheck to manually enter coordinates and a zoom."></i></label>
-    <div class="form-control"><input type="checkbox" ng-model="base.auto" ng-init="base.auto='true'" ng-true-value="true" ng-false-value="false" id="auto"></div>
+    <div class="form-control"><input type="checkbox" ng-model="base.auto" ng-init="base.auto='true'" ng-true-value="true" ng-false-value="false" id="auto" ng-change="showMarker = !true"></div>
   </div>
 <div ng-hide="base.auto=='true'">
 <div clas="form-control">
