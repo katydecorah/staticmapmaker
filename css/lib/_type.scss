@@ -71,10 +71,20 @@ ol {
 }
 
 .alert {
-  text-align: center;
+  //text-align: center;
   background: #c0392b;
   color: white;
-  padding: 1em;
+  max-width: 21em;
+  padding: 0.5em 1em;
   margin-bottom: 1em;
-  a { color: white}
+  a {
+    text-decoration: underline;
+    color: white;
+  }
+}
+
+.attribution {
+  @extend small;
+  text-align: right;
+  a {color: $text-color;}
 }
