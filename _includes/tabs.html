@@ -6,7 +6,7 @@
 <pre>{{ mapcode }}</pre>
 <p>Treat the code like an image. You can use HTML or CSS to display it.</p>
 <h2>HTML</h2>
-<pre>&lt;img src="{{ mapcode }}" alt="{{page.title}} Map[[base.location != '' && ' of '+ base.location || '' ]]"&gt;</pre>
+<pre>&lt;img src="{{ mapcode }}" alt="{{page.title}} Map[[base.auto != 'true' && ' of '+ base.location || '' ]]"&gt;</pre>
 {% if page.title == "Google" %}
 <h3>Map with link to Google Maps</h3>
 <pre>&lt;a href="https://www.google.com/maps/place/[[ base.location.split(' ').join('+') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
