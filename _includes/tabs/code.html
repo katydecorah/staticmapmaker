@@ -1,0 +1,16 @@
+<input id="code" name="tab" type="radio" class="tab-input" checked>
+<label for="code" class="tab-link">Code</label>
+<div id="tab-code" class="tab">
+<pre>{{ mapcode }}</pre>
+<p>Treat the code like an image. You can use HTML or CSS to display it.</p>
+<h2>HTML</h2>
+<pre>&lt;img src="{{ mapcode }}" alt="{{page.title}} Map[[base.auto != 'true' && ' of '+ base.location || '' ]]"&gt;</pre>
+{% if page.title == "Google" %}<!-- Google -->
+<h3>Map with link to Google Maps</h3>
+<pre>&lt;a href="https://www.google.com/maps/place/[[ base.location.split(' ').join('+') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
+<h3>Map with link to Google Maps directions</h3>
+<pre>&lt;a href="https://www.google.com/maps/dir//[[ base.location.split(' ').join('+') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
+{% endif %}
+<h2>CSS</h2>
+<pre>background-image: url({{ mapcode }});</pre>
+</div>

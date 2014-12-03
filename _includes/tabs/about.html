@@ -1,0 +1,12 @@
+<input id="about" name="tab" type="radio" class="tab-input">
+<label for="about" class="tab-link">About</label>
+<div id="tab-about" class="tab">
+<p>You can add a static map to any website with simple HTML and no JavaScript. Using URL parameters, you can describe the type of map that you want and {% if page.title == 'Mapbox' %}<a href="https://www.mapbox.com/">Mapbox</a>{% else %}Google{% endif %} will send it back.</p>
+<p>The Static Map Maker helps you configure the {{ page.title }} API parameters and gives you the code in real time.</p>
+{% if page.title == 'Google' %}<!-- Google -->
+<p>Check out the <a href="https://developers.google.com/maps/documentation/staticmaps/">Static Maps API by Google</a>.</p>
+{% else %}<!-- Mapbox -->
+<p>Check out the <a href="https://www.mapbox.com/developers/api/static/">Static Maps API by Mapbox</a>.
+{% endif %}
+<p>Create a <a href="{{ site.url }}/google">Google static map</a> or a <a href="{{ site.url }}/mapbox">Mapbox static map</a>.</p>
+</div>

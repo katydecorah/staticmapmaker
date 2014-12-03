@@ -1,47 +1,8 @@
 <div class="tabs">
 <form>
-<input id="code" name="tab" type="radio" class="tab-input" checked>
-<label for="code" class="tab-link">Code</label>
-<div id="tab-code" class="tab">
-<pre>{{ mapcode }}</pre>
-<p>Treat the code like an image. You can use HTML or CSS to display it.</p>
-<h2>HTML</h2>
-<pre>&lt;img src="{{ mapcode }}" alt="{{page.title}} Map[[base.auto != 'true' && ' of '+ base.location || '' ]]"&gt;</pre>
-{% if page.title == "Google" %}
-<h3>Map with link to Google Maps</h3>
-<pre>&lt;a href="https://www.google.com/maps/place/[[ base.location.split(' ').join('+') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
-<h3>Map with link to Google Maps directions</h3>
-<pre>&lt;a href="https://www.google.com/maps/dir//[[ base.location.split(' ').join('+') ]]/"&gt;&lt;img src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]"&gt;&lt;/a&gt;</pre>
-{% endif %}
-<h2>CSS</h2>
-<pre>background-image: url({{ mapcode }});</pre>
-</div>
-
-<input id="usage" name="tab" type="radio" class="tab-input">
-<label for="usage" class="tab-link">How to Use</label>
-<div id="tab-usage" class="tab">
-<ol>
-{% if page.title == 'Mapbox' %}<li>You need a <a href="https://www.mapbox.com/">Mapbox account</a> to generate a map ID and to get a public API token.</li>{% endif %}
-{% if page.title == 'Google' %}<li>If your site receives high traffic then you may need an <a href="https://console.developers.google.com/">API key</a> to create your map. <a href="https://developers.google.com/maps/documentation/staticmaps/?csw=1#Limits">Read more about Google&rsquo;s usage limits.</a></li>{% endif %}
-<li>Customize the fields to build your map.</li>
-<li>The &ldquo;Code&rdquo; tab contains the code for your map including examples.</li>
-<li>Copy and paste the code into your HTML document or a stylesheet.</li>
-{% if page.title == 'Mapbox' %}<li><a href="https://www.mapbox.com/about/maps/">Attribute</a> the OpenStreetMap contributors on your website for the static map.</li>{% endif %}
-</ol>
-</div>
-<input id="about" name="tab" type="radio" class="tab-input">
-<label for="about" class="tab-link">About</label>
-<div id="tab-about" class="tab">
-<p>You can add a static map to any website with simple HTML and no JavaScript. Using URL parameters, you can describe the type of map that you want and {% if page.title == 'Mapbox' %}<a href="https://www.mapbox.com/">Mapbox</a>{% else %}Google{% endif %} will send it back.</p>
-
-<p>The Static Map Maker helps you configure the {{ page.title }} API parameters and gives you the code in real time.</p>
-{% if page.title == 'Google' %}
-<p>Check out the <a href="https://developers.google.com/maps/documentation/staticmaps/">Static Maps API by Google</a>.</p>
-{% else %}
-<p>Check out the <a href="https://www.mapbox.com/developers/api/static/">Static Maps API by Mapbox</a>.
-{% endif %}
-<p>Create a <a href="{{ site.url }}/google">Google static map</a> or a <a href="{{ site.url }}/mapbox">Mapbox static map</a>.</p>
-</div>
+{% include tabs/code.html %}
+{% include tabs/usage.html %}
+{% include tabs/about.html %}
 </form>
 <p class="colophon">Made by <a href="http://katydecorah.com/">Katy DeCorah</a>. Powered by Jekyll and Angular and hosted on <a href="https://github.com/katydecorah/staticmapmaker">Github</a>.</p>
 </div>
