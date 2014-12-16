@@ -9,6 +9,13 @@
   h2 {
     margin-top: 0;
   }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+      color: #ddd;
+    }
+  }
 }
 
 .toggle, .open-it {
@@ -16,14 +23,19 @@
 }
 
 .form-group {
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  &:hover [data-toggle] {
+    color: #ddd;
+  }
   @extend .clearfix;
+    border-bottom: 1px solid rgba(black,0.2);
+    padding: 0.5em 0.25em 0.25em;
+    min-height: 3em;
+
   @include bp(big-with-columns){
     label {
       display: block;
       float: left;
-      width:40%;
+      width: 40%;
     }
     .form-control {
       float: left;
@@ -99,13 +111,13 @@ input[type="checkbox"] {
 }
 
 fieldset {
-  margin: 0 0 0.5em;
-  padding: 1em;
+  //margin: 0 0 0.5em;
+  //padding: 1em;
   width: 100%;
   display: block;
-  border-radius: 0.1em;
+  //border-radius: 0.1em;
   color: $controls-color;
-  background: $control-inner;
+  //background: $control-inner;
 }
 
 

@@ -30,8 +30,8 @@ var googleController = function ($scope) {
 
 var mapboxController = function ($scope) {
   $scope.base = {
-    location: "0,0",
-    zoom: 1,
+    location: "-73.7638,42.6564",
+    zoom: 14,
     minZoom: 0,
     maxZoom: 22,
     width: 600,

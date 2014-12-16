@@ -1,0 +1,70 @@
+<fieldset>
+<div class="form-group">
+<label for="mapid" class="cushion" data-toggle="popover" data-content="Which one of your projects, styles, or data would you like to work with? Enter the map id here."><a href="https://www.mapbox.com/projects/">Map ID</a></label>
+<div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="Map ID"></div>
+</div>
+<div class="form-group">
+<label for="api" class="cushion" data-toggle="popover" data-content="You need a public API token to access the Mapbox static API. Follow the link to access your public token.">
+<a href="https://www.mapbox.com/account/apps/" target="_blank">Public API token</a></label>
+<div class="form-control"><input type="text" ng-model="base.API" id="api" placeholder="Public API Key"></div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="width" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640.">Width</label>
+<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[ base.format !== '@2x.png' && base.maxSize || '640' ]]" id="width"></div>
+</div>
+<div class="form-group">
+<label for="height" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640.">Height</label>
+<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[ base.format !== '@2x.png' && base.maxSize || '640' ]]" id="height"></div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="auto" data-toggle="popover" data-content="Make the map fit all the data from your mapid or the GeoJSON you enter below. Uncheck to manually enter coordinates and a zoom.">Auto adjust the map?</label>
+<div class="form-control"><input type="checkbox" ng-model="base.auto" ng-init="base.auto='true'" ng-true-value="true" ng-false-value="false" id="auto" ng-change="showMarker = !true"></div>
+</div>
+<div ng-hide="base.auto=='true'">
+<div class="form-group">
+<label for="location" class="cushion" data-toggle="popover" data-content="Enter the longitude and latitude of the location.">Longitude,Latitude</label>
+<div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
+</div>
+<div class="form-group">
+<label for="zoom">Zoom</label>
+<div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom"></div>
+</div>
+</div>
+<div class="form-group" ng-hide="geojson !='' || base.auto == 'true'">
+<label for="showMarker">Add a marker?</label>
+<div class="form-control"><input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker"></div>
+</div>
+<ng-switch on="showMarker">
+<ng-switch ng-switch-when="true">
+<div class="form-group">
+<label for="markerColor">Marker color</label>
+<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor"></div>
+</div>
+<div class="form-group">
+<label for="markerLabel">Marker label</label>
+<div class="form-control"><select ng-model="base.markerLabel" ng-options="label for label in labels" id="markerLabel">
+</select></div>
+</div>
+<div class="form-group">
+<label for="markerSize">Marker size</label>
+<div class="form-control"><select ng-model="base.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
+</select></div>
+</div>
+</ng-switch>
+</ng-switch>
+<div class="form-group" ng-hide="showMarker=='true'">
+<label for="geojson" data-toggle="popover" data-content="Paste in GeoJSON to add markers, lines, or polygons to the map.">GeoJSON</label>
+<textarea id="geojson" name="geojson" ng-model="geojson" rows="3" ng-init="geojson=''"></textarea>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="format">Format</label>
+<div class="form-control"><select ng-model="base.format" ng-options="format for format in formats" id="format">
+</select></div>
+</div>
+</fieldset>

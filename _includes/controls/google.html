@@ -1,0 +1,76 @@
+<fieldset>
+<div class="form-group">
+<label for="location" class="cushion" data-toggle="popover" data-content="Try an address, a city, a place, or even latitude and longitude.">Location</label>
+<div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
+</div>
+<div class="form-group">
+<label for="api" class="cushion" data-toggle="popover" data-content="You don't always need an API Key for Static Maps, but it's easy to acquire one. Without a key you might receive an error image instead of a map. Follow the link to the API Console.">
+<a href="https://code.google.com/apis/console/" target="_blank">API Key</a></label>
+<div class="form-control"><input type="text" ng-model="base.API" id="api" ng-init="base.API=''" placeholder="API Key"></div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="zoom">Zoom</label>
+<div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom"></div>
+</div>
+<div class="form-group">
+<label for="scale" data-toggle="popover" data-content="Scale will double the stated height and width. This is good for when you need a width or height larger than 640px.">Scale (2x)</label>
+<div class="form-control"><input type="checkbox" ng-model="scale" ng-true-value="2" ng-false-value="1" id="scale" ng-init="scale='false'"></div>
+</div>
+<div class="form-group">
+<label for="width" class="cushion" data-toggle="popover" data-content="Maximum width is 640px or 1280px when scale 2x.">Width</label>
+<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[base.maxSize]]" id="width"></div>
+</div>
+<div class="form-group">
+<label for="height" class="cushion" data-toggle="popover" data-content="Maximum height is 640px or 1280px when scale 2x.">Height</label>
+<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[base.maxSize]]" id="height"></div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="showMarker">Add a map marker?</label>
+<div class="form-control"><input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker"></div>
+</div>
+<ng-switch on="showMarker">
+<ng-switch ng-switch-when="true">
+<div class="form-group">
+<label for="markerColor">Marker color</label>
+<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor">
+</select></div>
+</div>
+<div class="form-group">
+<label for="markerSize">Marker size</label>
+<div class="form-control"><select ng-model="base.markerSize"
+ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
+</select></div>
+</div>
+<ng-switch on="base.markerSize">
+<ng-switch ng-switch-when="mid">
+<div class="form-group">
+<label for="markerSize">Marker label</label>
+<div class="form-control"><input ng-model="base.markerLabel" type="text" id="markerLabel" maxlength="1" placeholder="Single digit or letter." capitalize></div>
+</div>
+</ng-switch>
+</ng-switch>
+<div class="form-group">
+<label for="autoCenter">Auto-center map?</label>
+<input type="checkbox" ng-model="base.autoCenter" id="autoCenter" ng-true-value="true" ng-false-value="false">
+</div>
+</ng-switch>
+</ng-switch>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="mapType">Map type</label>
+<div class="form-control"><select ng-model="base.mapType"
+ng-options="mapType for mapType in mapTypes" id="mapType">
+</select></div>
+</div>
+<div class="form-group">
+<label for="format">Image format</label>
+<div class="form-control"><select ng-model="base.format"
+ng-options="format for format in formats" id="format">
+</select></div>
+</div>
+</fieldset>
