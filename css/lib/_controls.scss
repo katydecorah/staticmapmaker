@@ -6,9 +6,6 @@
   color: white;
   position: relative;
   @include bp(no-columns) { width: 100%; }
-  h2 {
-    margin-top: 0;
-  }
   a {
     color: inherit;
     text-decoration: underline;

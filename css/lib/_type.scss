@@ -10,17 +10,11 @@ h1 {
   color: white;
   font-weight: normal;
   @include bp(with-columns){ float: left; }
-  .fa-map-marker {
-    color: $accent;
-    font-size: 0.9em;
-  }
 }
 
 h2 {font-size: 1.424em;}
 
 h3 {font-size: 1.266em;}
-
-h4 {font-size: 1.125em;}
 
 p {
   margin: 0 0 1.3em;
