@@ -1,6 +1,6 @@
 name: Static Map Maker
 description: "Create a Google static map or Mapbox static map with Static Map Maker. Type in a location, customize, and get the map."
-url: http://staticmapmaker.com
+url: http://0.0.0.0:4000
 permalink: pretty
 
 mapboxAPI: https://www.mapbox.com/developers/api/static/
@@ -14,4 +14,3 @@ gems:
 
 angularjs: 1.3.8
 jquery: 2.1.3
-fontawesome: 4.2.0

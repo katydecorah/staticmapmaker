@@ -15,6 +15,18 @@ header {
   z-index: 100;
 }
 
+.header-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  font-size: 1.25em;
+  position: relative;
+  top: 0.2em;
+  path {
+    fill: white;
+  }
+}
+
 .switch {
   color: $text-color;
   background-color: $accent;
@@ -26,10 +38,10 @@ header {
     background-color: lighten($accent,10%);
     color: inherit;
   }
-  @include bp(with-columns){ 
+  @include bp(with-columns){
     float: right;
   }
-  @include bp(no-columns){ 
+  @include bp(no-columns){
     margin-top: 1em;
   }
 }
@@ -58,7 +70,7 @@ header {
 
 
 .static {
-  padding: 1em 1em 5em;
+  padding: 1em 3.5em 5em;
   background: $static-inner;
 }
 

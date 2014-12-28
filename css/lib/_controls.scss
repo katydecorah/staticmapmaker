@@ -49,20 +49,27 @@ select, .form-control {
 }
 
 .label-toggle {
-  color: rgba(white,0.5);
   display: block;
   position: absolute;
-  z-index: 2000;
+  z-index: 10;
   top: 3em;
   right: -1.25em;
   cursor: pointer;
   background: $bg-dark;
   font-size: 1.5em;
   padding: 0.5em 0.25em;
-  line-height: 1;
-  border-radius: 0 0.25em 0.25em;
-  &:hover {
-    color: #fff;
+  border-radius: 0 0.25em 0.25em 0;
+  height: 48px;
+  &:hover path {
+    fill: white;
+  }
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+  path {
+    fill: white;
+    fill: rgba(white,0.5);
   }
 }
 
