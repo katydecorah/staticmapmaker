@@ -28,9 +28,11 @@ p {
 }
 
 a {
-  text-decoration: none;
   color: $link-color;
-  &:hover { color: lighten($link-color,10%);}
+  &:hover {
+    color: lighten($link-color,10%);
+    text-decoration: none;
+  }
 }
 code, pre {
   font-family: $monoFontFamily;
