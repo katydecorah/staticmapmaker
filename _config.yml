@@ -1,6 +1,6 @@
 name: Static Map Maker
 description: "Create a Google static map or Mapbox static map with Static Map Maker. Type in a location, customize, and get the map."
-url: http://0.0.0.0:4000
+url: http://staticmapmaker.com
 permalink: pretty
 
 mapboxAPI: https://www.mapbox.com/developers/api/static/
