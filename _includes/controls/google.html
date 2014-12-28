@@ -30,10 +30,10 @@
 <fieldset>
 <div class="form-group">
 <label for="showMarker">Add a map marker?</label>
-<div class="form-control"><input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker"></div>
+<div class="form-control"><input type="checkbox" ng-model="showMarker" id="showMarker"></div>
 </div>
-<ng-switch on="showMarker">
-<ng-switch ng-switch-when="true">
+
+<div ng-show="showMarker">
 <div class="form-group">
 <label for="markerColor">Marker color</label>
 <div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor">
@@ -51,14 +51,11 @@ ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" i
 <label for="markerSize">Marker label</label>
 <div class="form-control"><input ng-model="base.markerLabel" type="text" id="markerLabel" maxlength="1" placeholder="Single digit or letter." capitalize></div>
 </div>
-</ng-switch>
-</ng-switch>
 <div class="form-group">
 <label for="autoCenter">Auto-center map?</label>
 <input type="checkbox" ng-model="base.autoCenter" id="autoCenter" ng-true-value="true" ng-false-value="false">
 </div>
-</ng-switch>
-</ng-switch>
+</div>
 </fieldset>
 <fieldset>
 <div class="form-group">

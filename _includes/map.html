@@ -1,5 +1,5 @@
 {% if page.title == 'Google' %}
-{% capture mapcode %}http://maps.googleapis.com/maps/api/staticmap[[ base.autoCenter == 'true' && showMarker == 'true' && '?' || '?center='+base.location.split(' ').join('+')+'&zoom='+base.zoom+'&' ]]scale=[[scale]]&size=[[base.width]]x[[base.height]]&maptype=[[base.mapType]]&sensor=false[[ base.API !== '' && '&key='+base.API || '' ]]&format=[[base.format]]&visual_refresh=true[[ showMarker == 'true' && '&markers=size:'+base.markerSize+'%7Ccolor:'+base.markerColor.split('#').join('0x')+'%7Clabel:'+base.markerLabel+'%7C'+base.location.split(' ').join('+') || '' ]]{% endcapture %}
+{% capture mapcode %}http://maps.googleapis.com/maps/api/staticmap[[ base.autoCenter == true && showMarker == true && '?' || '?center='+base.location.split(' ').join('+')+'&zoom='+base.zoom+'&' ]]scale=[[scale]]&size=[[base.width]]x[[base.height]]&maptype=[[base.mapType]]&sensor=false[[ base.API !== '' && '&key='+base.API || '' ]]&format=[[base.format]]&visual_refresh=true[[ showMarker == true && '&markers=size:'+base.markerSize+'%7Ccolor:'+base.markerColor.split('#').join('0x')+'%7Clabel:'+base.markerLabel+'%7C'+base.location.split(' ').join('+') || '' ]]{% endcapture %}
 <img ng-src="{{ mapcode }}" alt="Google Map of [[base.location]]" class="static-map" id="map">
 {% else %}
 <ng-switch on="base.mapID">
@@ -15,7 +15,7 @@
 
 <div class="alert" ng-show="base.auto !='true' && base.location == ''"><i class="fa fa-warning"></i> You need to enter a location.</a></div>
 
-{% capture mapcode %}http://api.tiles.mapbox.com/v4/[[ base.mapID ]][[ geojson != '' && '/geojson('+geojson+')' || '' | nospace | escape ]][[ showMarker == 'true' && '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('') + '(' + base.location + ')' || '' | nospace]]/[[ base.auto == 'true' && 'auto' || base.location+','+base.zoom | nospace ]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]]?access_token=[[ base.API ]]{% endcapture %}
+{% capture mapcode %}http://api.tiles.mapbox.com/v4/[[ base.mapID ]][[ geojson != '' && '/geojson('+geojson+')' || '' | nospace | escape ]][[ showMarker == true && '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('') + '(' + base.location + ')' || '' | nospace]]/[[ base.auto == true && 'auto' || base.location+','+base.zoom | nospace ]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]]?access_token=[[ base.API ]]{% endcapture %}
 <div ng-if="base.mapID != '' && base.API != ''">
   <img ng-src="{{ mapcode }}" alt="Mapbox map" class="static-map" id="map">
   {% include attribution.html %}

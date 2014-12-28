@@ -22,9 +22,9 @@
 <fieldset>
 <div class="form-group">
 <label for="auto" data-toggle="popover" data-content="Make the map fit all the data from your mapid or the GeoJSON you enter below. Uncheck to manually enter coordinates and a zoom.">Auto adjust the map?</label>
-<div class="form-control"><input type="checkbox" ng-model="base.auto" ng-init="base.auto='true'" ng-true-value="true" ng-false-value="false" id="auto" ng-change="showMarker = !true"></div>
+<div class="form-control"><input type="checkbox" ng-model="base.auto" id="auto"></div>
 </div>
-<div ng-hide="base.auto=='true'">
+<div ng-hide="base.auto">
 <div class="form-group">
 <label for="location" class="cushion" data-toggle="popover" data-content="Enter the longitude and latitude of the location.">Longitude,Latitude</label>
 <div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
@@ -35,11 +35,13 @@
 </div>
 </div>
 <div class="form-group" ng-hide="geojson !='' || base.auto == 'true'">
+
+
 <label for="showMarker">Add a marker?</label>
-<div class="form-control"><input type="checkbox" ng-model="showMarker" ng-true-value="true" ng-false-value="false" id="showMarker"></div>
+<div class="form-control"><input type="checkbox" ng-model="showMarker" id="showMarker"></div>
 </div>
-<ng-switch on="showMarker">
-<ng-switch ng-switch-when="true">
+<div ng-show="showMarker">
+
 <div class="form-group">
 <label for="markerColor">Marker color</label>
 <div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor"></div>
@@ -54,9 +56,9 @@
 <div class="form-control"><select ng-model="base.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
 </select></div>
 </div>
-</ng-switch>
-</ng-switch>
-<div class="form-group" ng-hide="showMarker=='true'">
+</div>
+
+<div class="form-group" ng-hide="showMarker">
 <label for="geojson" data-toggle="popover" data-content="Paste in GeoJSON to add markers, lines, or polygons to the map.">GeoJSON</label>
 <textarea id="geojson" name="geojson" ng-model="geojson" rows="3" ng-init="geojson=''"></textarea>
 </div>
