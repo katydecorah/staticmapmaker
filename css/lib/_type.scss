@@ -21,6 +21,10 @@ p {
   max-width: 35em;
 }
 
+li {
+  max-width: 35em;
+}
+
 a {
   color: $link-color;
   &:hover {
@@ -30,7 +34,7 @@ a {
 }
 code, pre {
   font-family: $monoFontFamily;
-
+  font-weight: $mono-font-weight;
 }
 pre {
   margin: 1em 0;
@@ -67,10 +71,9 @@ ol {
 }
 
 .alert {
-  //text-align: center;
   background: #c0392b;
   color: white;
-  max-width: 21em;
+  max-width: 35em;
   padding: 0.5em 1em;
   margin-bottom: 1em;
   a {

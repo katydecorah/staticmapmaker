@@ -7,9 +7,9 @@ html,body {
 }
 
 body {
-  font-size: 100%;
   line-height: 1.4;
-  font-weight: 400;
+  font-weight: $font-weight;
+  font-size: $font-size;
   background: $bg-body;
   color: $text-color;
   font-family: $sansFontFamily;

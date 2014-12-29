@@ -34,6 +34,7 @@ header {
   border-radius: 0.2em;
   margin-top: 0.2em;
   display: inline-block;
+  text-decoration: none;
   &:hover {
     background-color: lighten($accent,10%);
     color: inherit;
