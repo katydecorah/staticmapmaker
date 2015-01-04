@@ -7,15 +7,28 @@
 <div class="main" ng-controller="{{ page.title | downcase }}Controller">
 <div class="col-left col">
 {% include toggle.html %}
-{% include controls.html %}
-</div>
+<div class="controls">
+<div class="container">
+<form>
+{% include controls/{{ page.title | downcase }}.html %}
+</form>
+</div><!-- /container -->
+</div><!-- /controls -->
+</div><!-- /col-left -->
 <div class="col-right col">
 <div class="static">
-{% include map.html %}
-</div>
-{% include tabs.html %}
-</div>
-</div>
+{% include map/{{ page.title | downcase }}.html %}
+</div><!-- /static -->
+<div class="tabs">
+<form>
+{% include tabs/code.html %}
+{% include tabs/usage.html %}
+{% include tabs/about.html %}
+</form>
+<p class="colophon">Made by <a href="http://katydecorah.com/">Katy DeCorah</a>. Powered by Jekyll and Angular and hosted on <a href="https://github.com/katydecorah/staticmapmaker">Github</a>.</p>
+</div><!-- /tabs -->
+</div><!-- /col-right -->
+</div><!-- /main -->
 {% include footer.html %}
 </body>
 </html>
