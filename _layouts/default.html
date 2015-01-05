@@ -6,7 +6,7 @@
 <input type="checkbox" class="toggle" id="toggle">
 <header class="col col-right">
 <h1>{% include svg/icon.svg %} {{ page.title }} Static Map Maker</h1>
-<a class="switch btn" href="{{ site.url }}/{% if page.title == 'Google' %}mapbox{% else %}google{% endif %}">create a {% if page.title == 'Google' %}Mapbox{% else %}Google{% endif %} static map</a>
+{% for api in site.apis %}{% if api != page.title %}<a class="switch btn" href="{{ site.url }}/{{ api | downcase }}">{{api}}</a>{% endif %}{% endfor %}
 </header>
 <div class="main" ng-controller="{{ page.title | downcase }}Controller">
 <div class="col-left col">

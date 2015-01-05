@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<html lang="en">
+{% include head.html %}
+<body class="front-page">
+<input type="checkbox" class="toggle" id="toggle">
+<header>
+<div class="container">
+<h1>{% include svg/icon.svg %} {{ page.title }} Static Map Maker</h1>
+</div>
+</header>
+<div class="container">
+{{content}}
+</div>
+{% include footer.html %}
+</body>
+</html>
