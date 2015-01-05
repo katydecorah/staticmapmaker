@@ -6,6 +6,10 @@ permalink: pretty
 mapboxAPI: https://www.mapbox.com/developers/api/static/
 googleAPI: https://developers.google.com/maps/documentation/staticmaps/
 
+# these will rotate
+mapboxKey: pk.eyJ1Ijoia2F0eWRlY29yYWgiLCJhIjoic01MOEhKOCJ9.eHjtfEIal6O0aDoAYQmwnA
+mapboxMapID: katydecorah.km1mo9eg
+
 exclude: ["node_modules", ".sass-cache","package.json","Gruntfile.js"]
 
 gems:

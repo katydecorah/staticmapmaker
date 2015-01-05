@@ -32,14 +32,14 @@ $scope.formats = [ "png", "gif", "jpg" ];
 myApp.controller('mapboxController', ['$scope', function($scope) {
   $scope.base = {
     location: "-73.7638,42.6564",
-    zoom: 14,
+    zoom: 13,
     minZoom: 0,
     maxZoom: 22,
     width: 600,
     height: 300,
     maxSize: 1280,
-    auto: true,
-    format: "@2x.png",
+    auto: false,
+    format: "png",
     markerSize: "s",
     API: "",
     mapID: "",

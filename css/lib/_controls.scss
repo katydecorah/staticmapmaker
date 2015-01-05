@@ -128,3 +128,7 @@ fieldset {
 :focus {
   outline: $accent auto 5px;
 }
+
+.error {
+  background: adjust-hue($bg-dark,150);
+}
