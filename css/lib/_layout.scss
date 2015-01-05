@@ -11,6 +11,17 @@
   position: relative;
   margin: 1em 0 0.5em;
   border: 0.5em solid transparent;
+  .attribution {
+    float: none;
+    position: absolute;
+    @extend small;
+    bottom: 0.5em;
+    right: 0.5em;
+    color: black;
+    @include bp(no-columns){
+      display: none;
+    }
+  }
 
   @include bp(with-columns){
     width: 32%;
