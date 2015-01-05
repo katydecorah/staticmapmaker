@@ -5,16 +5,23 @@
   padding: 0 1em;
 }
 .choose-map {
-  width: 32%;
-  float: left;
+
   text-decoration: none;
   display: block;
   position: relative;
-  margin: 1em 0;
+  margin: 1em 0 0.5em;
   border: 0.5em solid transparent;
+
+  @include bp(with-columns){
+    width: 32%;
+    float: left;
+  }
+
   &:nth-of-type(2){
-    margin-left: 1%;
+    @include bp(with-columns){
+      margin-left: 1%;
     margin-right: 1%;
+  }
   }
   &:hover {
     border-color: $bg-dark;
@@ -22,18 +29,22 @@
   .choose-map-title {
     font-size: 2em;
     text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
     padding: 0.5em 1em;
     width: 100%;
     background: $bg-dark;
     color: white;
-    z-index: 1;
+    @include bp(with-columns){
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
   img {
     max-width: 100%;
     display: block;
+  }
+  @include bp(no-columns) {
+    img { display: none; }
   }
 }
 .main {
