@@ -6,14 +6,18 @@
 <p>The Static Map Maker helps you configure the {{ page.title }} API parameters and gives you the code in real time.</p>
 
 
-{% if page.title == 'Google' %}<!-- Google -->
+{% if page.title == 'Google' %}
 <p>Check out the <a href="{{site.googleAPI}}">Static Maps API by Google</a>.</p>
 {% endif %}
 
-{% if page.title == 'Mapbox' %}<!-- Mapbox -->
+{% if page.title == 'Mapbox' %}
 <p>Check out the <a href="{{site.mapboxAPI}}">Static Maps API by Mapbox</a>.
 {% endif %}
 
+{% if page.title == 'MapQuest' %}
+<p>Check out the <a href="{{site.mapquestAPI}}">Static Maps API by MapQuest</a>.
+{% endif %}
 
-<p>Create a <a href="{{ site.url }}/google">Google static map</a> or a <a href="{{ site.url }}/mapbox">Mapbox static map</a>.</p>
+
+<p>Create a <a href="/google">Google</a>, <a href="/mapbox">Mapbox</a>, or <a href="/mapquest">MapQuest</a> static map.</p>
 </div>
