@@ -5,6 +5,12 @@ permalink: pretty
 
 mapboxAPI: https://www.mapbox.com/developers/api/static/
 googleAPI: https://developers.google.com/maps/documentation/staticmaps/
+mapquetAPI: http://www.mapquestapi.com/staticmap/
+
+
+
+
+mapquestAPI: Fmjtd%7Cluu8296rn5%2C8x%3Do5-9w1ld6
 
 exclude: ["node_modules", ".sass-cache","package.json","Gruntfile.js"]
 

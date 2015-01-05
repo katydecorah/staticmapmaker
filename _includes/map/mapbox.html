@@ -13,6 +13,6 @@
 
 {% capture mapcode %}http://api.tiles.mapbox.com/v4/[[ base.mapID ]][[ geojson != '' && '/geojson('+geojson+')' || '' | nospace | escape ]][[ showMarker == true && '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('') + '(' + base.location + ')' || '' | nospace]]/[[ base.auto == true && 'auto' || base.location+','+base.zoom | nospace ]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]]?access_token=[[ base.API ]]{% endcapture %}
 <div ng-if="base.mapID != '' && base.API != ''">
-  <img ng-src="{{ mapcode }}" alt="Mapbox map" class="static-map" id="map">
+  <img ng-src="{{ mapcode }}" alt="{{page.title}} map" class="static-map" id="map">
   <div class="attribution"><a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a></div>
 </div>

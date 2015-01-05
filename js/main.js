@@ -55,6 +55,35 @@ $scope.labels = [ "airfield", "airport", "alcohol-shop", "america-football", "ar
 $scope.formats = [ "png", "png32", "png64", "png128", "png256", "jpg70", "jpg80", "jpg90", "@2x.png" ];
 }]);
 
+
+myApp.controller('mapquestController', ['$scope', function($scope) {
+
+  $scope.base = {
+    location: "Albany, NY",
+    API: "",
+    zoom: 13,
+    minZoom: 0,
+    maxZoom: 22,
+    width: 600,
+    height: 300,
+    maxSize: 3840,
+    markerColor: "red",
+    mapType: "map",
+    format: "png",
+    markerSize: "mid",
+    autoCenter: false,
+    scaleBar: false
+  };
+  $scope.colors = [ "blue","green","orange","purple","white","yellow","blue_1","blue_2","blue_3","blue_4","green_1","green_2","green_3","green_4","orange_1","orange_2","orange_3","pink_1","pink_2","pink_3","purple_1","purple_2","purple_3","purple_4","white_1","yellow_1","yellow_2","yellow_3" ];
+  $scope.markerSizes = [
+{ "value": "tiny", "text": "small" },
+{ "value": "small", "text": "medium" },
+{ "value": "mid", "text": "large" }
+];
+$scope.mapTypes = [ "map", "sat", "hyb" ];
+$scope.formats = [ "png", "gif", "jpg", "jpeg" ];
+}]);
+
 //http://stackoverflow.com/a/16388643
 myApp.directive('capitalize', function() {
   return {
