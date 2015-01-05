@@ -3,6 +3,13 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1em;
+  .colophon {
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+}
+.choices {
+  @extend .clearfix;
 }
 .choose-map {
 

@@ -1,9 +1,11 @@
 ---
 layout: front-page
 ---
+<div class="choices">
 {% for api in site.apis %}
 <a href="/{{ api | downcase }}/" class="choose-map">
 <div class="choose-map-title">{{api}}</div>
 <div class="choose-map-example">{% include examples/{{api | downcase}}.html %}</div>
 </a>
 {% endfor %}
+</div>
