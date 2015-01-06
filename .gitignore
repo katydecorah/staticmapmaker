@@ -2,5 +2,5 @@ _site
 .sass-cache/
 node_modules/
 *.sublime-project
-img/
+ui
 *.lock
