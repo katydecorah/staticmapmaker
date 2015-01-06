@@ -6,7 +6,7 @@ layout: front-page
 {% for api in site.apis %}
 <a href="/{{ api | downcase }}/" class="choose-map">
 <div class="choose-map-title">{{api}}</div>
-<div class="choose-map-example"><img src="/img/{{api | downcase}}.png" alt="{{api}} static map API"></div>
+<div class="choose-map-example"><img src="/img/{{api | downcase}}.png" alt="{{api}} static map API">{% if api == 'Mapbox' %}<div class="attribution" target="_blank">&copy; Mapbox &copy; OpenStreetMap</div>{% endif %}</div>
 </a>
 {% endfor %}
 </div>
