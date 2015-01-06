@@ -4,9 +4,9 @@ layout: front-page
 <h2>Which static map API do you want to use?</h2>
 <div class="choices">
 {% for api in site.apis %}
-<a href="/{{ api | downcase }}/" class="choose-map">
+<a href="{{ site.url }}/{{ api | downcase }}/" class="choose-map">
 <div class="choose-map-title">{{api}}</div>
-<div class="choose-map-example"><img src="/img/{{api | downcase}}.png" alt="{{api}} static map API">{% if api == 'Mapbox' %}<div class="attribution" target="_blank">&copy; Mapbox &copy; OpenStreetMap</div>{% endif %}</div>
+<div class="choose-map-example"><img src="{{ site.url }}/img/{{api | downcase}}.png" alt="{{api}} static map API">{% if api == 'Mapbox' %}<div class="attribution" target="_blank">&copy; Mapbox &copy; OpenStreetMap</div>{% endif %}</div>
 </a>
 {% endfor %}
 </div>
