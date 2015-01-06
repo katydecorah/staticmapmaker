@@ -1,9 +1,10 @@
 Static Map Maker
 ==============
 
-[Need a static map? You got it!](http://staticmapmaker.com) Type in your location, customize, and get the code.
+Built with Jekyll and Angular. 
 
 * [Google Static Maps](https://developers.google.com/maps/documentation/staticmaps/)
 * [Mapbox Static Maps](https://www.mapbox.com/developers/api/static/)
+* [MapQuest Static Maps](http://www.mapquestapi.com/staticmap/)
 
 Check out the Polish version: http://staticmapmaker.pl/
