@@ -15,6 +15,7 @@ apis:
 
 # these will rotate
 mapquestKey: Fmjtd%7Cluu8296rn5%2C8x%3Do5-9w1ld6
+mapboxMapID: katydecorah.knbmj1hf
 
 exclude: ["node_modules", ".sass-cache","package.json","Gruntfile.js"]
 
