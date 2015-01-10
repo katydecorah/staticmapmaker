@@ -1,10 +1,10 @@
 
 .controls {
   background: $bg-dark;
-  padding: 0.5em;
   z-index: 100;
   color: white;
   position: relative;
+  padding-top: 0.5em;
   @include bp(no-columns) { width: 100%; }
   a {
     color: inherit;
@@ -30,7 +30,7 @@
   }
   @extend .clearfix;
     border-bottom: 1px solid rgba(black,0.2);
-    padding: 0.5em 0.25em 0.25em;
+    padding: 0.5em 1em 0.25em;
     min-height: 3em;
 
   @include bp(big-with-columns){
