@@ -19,6 +19,11 @@
   display: none;
 }
 
+[ng-show] .form-group,
+[ng-hide] .form-group {
+  background: rgba(white, 0.075);
+}
+
 .form-group {
   &:hover [data-toggle] {
     color: #ddd;

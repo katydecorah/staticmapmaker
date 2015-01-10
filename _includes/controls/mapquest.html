@@ -60,9 +60,11 @@ ng-options="format for format in formats" id="format">
 <label for="showTraffic">Show traffic?</label>
 <div class="form-control"><input type="checkbox" ng-model="base.showTraffic" id="showTraffic"></div>
 </div>
-<div class="form-group" ng-show="base.showTraffic">
+<div ng-show="base.showTraffic">
+<div class="form-group">
 <label for="traffic">Traffic type</label>
 <div class="form-control"><select ng-model="base.traffic" ng-options="traffic.value as traffic.text for traffic in traffics" id="traffic">
 </select></div>
+</div>
 </div>
 </fieldset>
