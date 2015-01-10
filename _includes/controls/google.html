@@ -45,9 +45,7 @@
 ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
 </select></div>
 </div>
-<ng-switch on="base.markerSize">
-<ng-switch ng-switch-when="mid">
-<div class="form-group">
+<div class="form-group" ng-if="base.markerSize == 'mid'">
 <label for="markerSize">Marker label</label>
 <div class="form-control"><input ng-model="base.markerLabel" type="text" id="markerLabel" maxlength="1" placeholder="Single digit or letter." capitalize></div>
 </div>
