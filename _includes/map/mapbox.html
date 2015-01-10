@@ -1,9 +1,18 @@
+<ng-switch on="base.mapID">
+  <ng-switch ng-switch-when="">
+    <div class="alert">You need to enter a Mapbox map ID. <a href="https://www.mapbox.com/projects/">Go get it.</a></div>
+  </ng-switch>
+</ng-switch>
+<ng-switch on="base.API">
+  <ng-switch ng-switch-when="">
+    <div class="alert">You need your Mapbox API token. <a href="https://www.mapbox.com/account/apps/">Go get it.</a></div>
+  </ng-switch>
+</ng-switch>
+
 <div class="alert" ng-show="base.auto !=true && base.location == ''">You need to enter a location.</a></div>
 
-{% capture mapcode %}http://api.tiles.mapbox.com/v[[ base.API != '' && '4' || '3' ]]/[[ base.mapID != '' && base.mapID || '{{site.mapboxMapID}}' ]][[ geojson != '' && '/geojson('+geojson+')' || '' | nospace | escape ]][[ showMarker == true && '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('') + '(' + base.location + ')' || '' | nospace]]/[[ base.auto == true && 'auto' || base.location+','+base.zoom | nospace ]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]][[ base.API != '' && '?access_token=' + base.API || '' ]]{% endcapture %}
-
-
-<img ng-src="{{ mapcode }}" alt="Mapbox map" class="static-map" id="map">
-<div class="attribution"><a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a></div>
-
-{% assign mapcode = mapcode | replace: {{site.mapboxMapID}},"YOUR-MAP-ID-HERE" %}
+{% capture mapcode %}http://api.tiles.mapbox.com/v4/[[ base.mapID ]][[ geojson != '' && '/geojson('+geojson+')' || '' | nospace | escape ]][[ showMarker == true && '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('') + '(' + base.location + ')' || '' | nospace]]/[[ base.auto == true && 'auto' || base.location+','+base.zoom | nospace ]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]]?access_token=[[ base.API ]]{% endcapture %}
+<div ng-if="base.mapID != '' && base.API != ''">
+  <img ng-src="{{ mapcode }}" alt="Mapbox map" class="static-map" id="map">
+  <div class="attribution"><a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a></div>
+</div>
