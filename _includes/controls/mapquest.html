@@ -23,63 +23,46 @@
       <div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[base.maxSize]]" id="height"></div>
     </div>
   </fieldset>
-  <!--
-  <fieldset>
-  <div class="form-group">
-  <label for="showMarker">Add a map marker?</label>
-  <div class="form-control"><input type="checkbox" ng-model="showMarker" id="showMarker"></div>
-</div>
 
-<div ng-show="showMarker">
-<div class="form-group">
-<label for="markerColor">Marker color</label>
-<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor">
-</select></div>
-</div>
-<div class="form-group">
-<label for="markerSize">Marker size</label>
-<div class="form-control"><select ng-model="base.markerSize"
-ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
-</select></div>
-</div>
-<ng-switch on="base.markerSize">
-<ng-switch ng-switch-when="mid">
-<div class="form-group">
-<label for="markerSize">Marker label</label>
-<div class="form-control"><input ng-model="base.markerLabel" type="text" id="markerLabel" maxlength="1" placeholder="Single digit or letter." capitalize></div>
-</div>
-<div class="form-group">
-<label for="autoCenter">Auto-center map?</label>
-<input type="checkbox" ng-model="base.autoCenter" id="autoCenter" ng-true-value="true" ng-false-value="false">
-</div>
-</div>
-</fieldset>-->
-<fieldset>
-  <div class="form-group">
-    <label for="scaleBar">Show the scalebar?</label>
-    <div class="form-control"><input type="checkbox" ng-model="base.scaleBar" id="scaleBar"></div>
-  </div>
-  <div class="form-group">
-    <label for="mapType">Map type</label>
-    <div class="form-control"><select ng-model="base.mapType"
-      ng-options="mapType for mapType in mapTypes" id="mapType">
-    </select></div>
-  </div>
-  <div class="form-group">
-    <label for="format">Image format</label>
-    <div class="form-control"><select ng-model="base.format"
-      ng-options="format for format in formats" id="format">
-    </select></div>
-  </div>
-</fieldset>
-<fieldset>
-  <div class="form-group">
-    <label for="showTraffic">Show traffic?</label>
-    <div class="form-control"><input type="checkbox" ng-model="base.showTraffic" id="showTraffic"></div>
-  </div>
-  <div class="form-group" ng-show="base.showTraffic">
-    <label for="traffic">Traffic type</label>
-    <div class="form-control"><select ng-model="base.traffic" ng-options="traffic.value as traffic.text for traffic in traffics" id="traffic">
-    </select></div>
-  </div>
-</fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label for="showMarker">Add a map marker?</label>
+      <div class="form-control"><input type="checkbox" ng-model="showMarker" id="showMarker"></div>
+    </div>
+    <div ng-show="showMarker">
+      <div class="form-group">
+        <label for="markerColor">Marker color</label>
+        <div class="form-control"><select ng-model="base.markerColor" ng-options="color for color in colors" id="markerColor">
+        </select></div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label for="scaleBar">Show the scalebar?</label>
+      <div class="form-control"><input type="checkbox" ng-model="base.scaleBar" id="scaleBar"></div>
+    </div>
+    <div class="form-group">
+      <label for="mapType">Map type</label>
+      <div class="form-control"><select ng-model="base.mapType"
+        ng-options="mapType for mapType in mapTypes" id="mapType">
+      </select></div>
+    </div>
+    <div class="form-group">
+      <label for="format">Image format</label>
+      <div class="form-control"><select ng-model="base.format"
+        ng-options="format for format in formats" id="format">
+      </select></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label for="showTraffic">Show traffic?</label>
+      <div class="form-control"><input type="checkbox" ng-model="base.showTraffic" id="showTraffic"></div>
+    </div>
+    <div class="form-group" ng-show="base.showTraffic">
+      <label for="traffic">Traffic type</label>
+      <div class="form-control"><select ng-model="base.traffic" ng-options="traffic.value as traffic.text for traffic in traffics" id="traffic">
+      </select></div>
+    </div>
+  </fieldset>
