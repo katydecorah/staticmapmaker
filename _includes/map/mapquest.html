@@ -1,4 +1,4 @@
-{% capture mapcode %}http://www.mapquestapi.com/staticmap/v4/getplacemap?key=[[ base.API != '' && base.API || '{{site.mapquestKey}}' ]]&location=[[base.location]]&size=[[base.width]],[[base.height]]&type=[[base.mapType]]&zoom=[[base.zoom]]&imagetype=[[base.format]]&scalebar=[[base.scaleBar]]{% endcapture %}
+{% capture mapcode %}http://www.mapquestapi.com/staticmap/v4/getplacemap?key=[[ base.API != '' && base.API || '{{site.mapquestKey}}' ]]&location=[[base.location]]&size=[[base.width]],[[base.height]]&type=[[base.mapType]]&zoom=[[base.zoom]]&imagetype=[[base.format]]&scalebar=[[base.scaleBar]][[base.showTraffic == true && '&traffic='+base.traffic || '']]{% endcapture %}
 <img ng-src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]" class="static-map" id="map">
 
 {% assign mapcode = mapcode | replace: {{site.mapquestKey}}, 'YOUR-API-KEY-HERE' %}

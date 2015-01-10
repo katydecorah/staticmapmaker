@@ -72,10 +72,17 @@ myApp.controller('mapquestController', ['$scope', function($scope) {
     format: "png",
     markerSize: "mid",
     autoCenter: false,
-    scaleBar: false
+    scaleBar: false,
+    showTraffic: false,
+    traffic: "flow"
   };
-  $scope.colors = [ "blue","green","orange","purple","white","yellow","blue_1","blue_2","blue_3","blue_4","green_1","green_2","green_3","green_4","orange_1","orange_2","orange_3","pink_1","pink_2","pink_3","purple_1","purple_2","purple_3","purple_4","white_1","yellow_1","yellow_2","yellow_3" ];
-  $scope.markerSizes = [
+  $scope.traffics = [
+    { "value": "flow", "text": "flowing" },
+    { "value": "con", "text": "construction" },
+    { "value": "inc", "text": "incidents" }
+  ];
+$scope.colors = [ "blue","green","orange","purple","white","yellow","blue_1","blue_2","blue_3","blue_4","green_1","green_2","green_3","green_4","orange_1","orange_2","orange_3","pink_1","pink_2","pink_3","purple_1","purple_2","purple_3","purple_4","white_1","yellow_1","yellow_2","yellow_3" ];
+$scope.markerSizes = [
 { "value": "tiny", "text": "small" },
 { "value": "small", "text": "medium" },
 { "value": "mid", "text": "large" }
