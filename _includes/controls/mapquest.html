@@ -1,5 +1,5 @@
 <fieldset>
-<div class="form-group[[ base.API != '' && ' ' || ' error' ]]">
+<div class="form-group[[ base.API && ' ' || ' error' ]]">
 <label for="api" class="cushion" data-toggle="popover" data-content="You need an API key to access MapQuest maps. Follow the link to the API Console.">
 <a href="http://developer.mapquest.com/" target="_blank">API Key</a></label>
 <div class="form-control"><input type="text" ng-model="base.API" id="api" placeholder="API Key (required)"></div>
