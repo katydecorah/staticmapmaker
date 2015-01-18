@@ -25,6 +25,7 @@
 }
 
 .form-group {
+  &.no-border {border-bottom: none;}
   &:hover [data-toggle] {
     color: #ddd;
   }
@@ -98,7 +99,7 @@ input, select, textarea {
   font-family: $monoFontFamily;;
   background: rgba(white,0.9);
   border: none;
-  border-radius: 0.2em;
+  border-radius: 0.45em;
   padding: 0.35em 0.5em;
   margin: 0;
   width: 100%;
