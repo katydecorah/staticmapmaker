@@ -41,10 +41,11 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     auto: false,
     format: "png",
     markerSize: "s",
-    API: "",
-    mapID: "",
+    API: null,
+    mapID: null,
     markerColor: "285A98",
-    markerLabel: "heart"
+    markerLabel: "heart",
+    markerCustom: null
   };
   $scope.markerSizes = [
 { "value": "s", "text": "small" },
@@ -123,6 +124,10 @@ myApp.filter('nospace', function () {
 });
 myApp.filter('escape', function() {
   return window.escape;
+});
+
+myApp.filter('encode', function() {
+  return window.encodeURIComponent;
 });
 ;$( document ).ready(function() {
 	$("[data-toggle=popover]").popover({

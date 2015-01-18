@@ -40,20 +40,28 @@
 <div class="form-control"><input type="checkbox" ng-model="showMarker" id="showMarker"></div>
 </div>
 <div ng-show="showMarker">
+<div ng-hide="base.markerCustom">
 <div class="form-group">
 <label for="markerColor">Marker color</label>
-<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor"></div>
+<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor" ng-disabled="base.markerCustom"></div>
 </div>
 <div class="form-group">
 <label for="markerLabel">Marker label</label>
-<div class="form-control"><select ng-model="base.markerLabel" ng-options="label for label in labels" id="markerLabel">
+<div class="form-control"><select ng-model="base.markerLabel" ng-options="label for label in labels" id="markerLabel" ng-disabled="base.markerCustom">
 </select></div>
 </div>
 <div class="form-group">
 <label for="markerSize">Marker size</label>
-<div class="form-control"><select ng-model="base.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
+<div class="form-control"><select ng-model="base.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize" >
 </select></div>
 </div>
+</div>
+<div class="form-group">
+<label for="markerCustom">Custom marker</label>
+<div class="form-control"><input type="text" placeholder="URL" ng-model="base.markerCustom" id="markerCustom">
+</select></div>
+</div>
+
 </div>
 
 <div class="form-group" ng-hide="showMarker">
