@@ -1,8 +1,15 @@
 <fieldset>
-<div class="form-group[[ base.mapID && ' ' || ' error' ]]">
+<div class="form-group">
 <label for="mapid" class="cushion" data-toggle="popover" data-content="Which one of your projects, styles, or data would you like to work with? Enter the map id here."><a href="https://www.mapbox.com/projects/">Map ID</a></label>
-<div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="Map ID (required)"></div>
+<div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="Map ID"></div>
 </div>
+
+<div class="form-group">
+  <label for="mapboxID" data-toggle="popover" data-content="Or use a Mapbox map style instead of your own."><a href="https://www.mapbox.com/developers/api/maps/#mapids">Mapbox map ID</a></label>
+  <div class="form-control"><select ng-model="base.mapboxID" ng-options="id for id in  mapboxids" id="mapboxID" ng-disabled="base.mapID">
+  </select></div>
+</div>
+
 <div class="form-group[[ base.API && ' ' || ' error' ]]">
 <label for="api" class="cushion" data-toggle="popover" data-content="You need a public API token to access the Mapbox static API. Follow the link to access your public token.">
 <a href="https://www.mapbox.com/account/apps/" target="_blank">Public API token</a></label>
