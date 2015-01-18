@@ -42,6 +42,14 @@
 <label for="scaleBar">Show the scalebar?</label>
 <div class="form-control"><input type="checkbox" ng-model="base.scaleBar" id="scaleBar"></div>
 </div>
+<div ng-show="base.scaleBar">
+<div class="form-group">
+<label for="scaleBarPos">Scalebar position</label>
+<div class="form-control"><select ng-model="base.scalebarPos"
+  ng-options="position for position in positions" id="scaleBarPos">
+</select></div>
+</div>
+</div>
 <div class="form-group">
 <label for="mapType">Map type</label>
 <div class="form-control"><select ng-model="base.mapType"

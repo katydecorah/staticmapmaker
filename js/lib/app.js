@@ -70,12 +70,14 @@ myApp.controller('mapquestController', ['$scope', function($scope) {
     markerColor: "blue",
     mapType: "map",
     format: "png",
-    //markerSize: "mid",
     autoCenter: false,
     scaleBar: false,
     showTraffic: false,
-    traffic: "flow"
+    traffic: "flow",
+    scalebarPos: "top"
   };
+  $scope.positions = [ "top", "bottom"];
+
   $scope.traffics = [
     { "value": "flow", "text": "flowing" },
     { "value": "con", "text": "construction" },
