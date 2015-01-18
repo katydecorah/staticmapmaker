@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="ie8"><![endif]-->
-<html lang="en">
-{% include head.html %}
+---
+layout: default
+---
 <body class="front-page">
-<input type="checkbox" class="toggle" id="toggle">
 <header>
 <div class="container">
 <h1>{% include svg/icon.svg %} {{ page.title }} Static Map Maker</h1>
@@ -13,6 +11,3 @@
 {{content}}
 {% include colophon.html %}
 </div>
-{% include footer.html %}
-</body>
-</html>
