@@ -3,12 +3,11 @@ layout: default
 ---
 <body ng-app="staticMapMaker">
 <input type="checkbox" class="toggle" id="toggle">
-<header class="col col-right">
-<h1>{% include svg/icon.svg %} {{ page.title }} Static Map Maker</h1>
-{% for api in site.apis %}{% if api != page.title %}<a class="switch btn" href="{{ site.url }}/{{ api | downcase }}">{{api}}</a>{% endif %}{% endfor %}
-</header>
 <div class="main" ng-controller="{{ page.title | downcase }}Controller">
 <div class="col-left col">
+<header>
+<h1>{% include svg/icon.svg %} {{ page.title }} Static Map Maker</h1>
+</header>
 <label for="toggle" class="label-toggle">{% include svg/arrow-left.svg %}{% include svg/arrow-right.svg %}</label>
 <div class="controls">
 <div class="container">
@@ -17,6 +16,10 @@ layout: default
 </form>
 </div><!-- /container -->
 </div><!-- /controls -->
+<div class="switcher">
+<p>Switch to:
+{% for api in site.apis %}{% if api != page.title %}<a class="switch btn" href="{{ site.url }}/{{ api | downcase }}">{{api}}</a>{% endif %}{% endfor %}</p>
+</div><!-- /switcher -->
 </div><!-- /col-left -->
 <div class="col-right col">
 <div class="static">

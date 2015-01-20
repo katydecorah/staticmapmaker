@@ -82,9 +82,7 @@
 
 }
 header {
-  background: $bg-dark;
-  padding: 1em;
-  z-index: 100;
+  padding: 0.5em 1em;
 }
 
 .header-icon {
@@ -98,23 +96,24 @@ header {
     fill: white;
   }
 }
+.switcher {
+  padding: 1em;
+  color: white;
+}
 
 .switch {
   color: $text-color;
   background-color: $accent;
   padding: 0.3em 0.75em;
   border-radius: 0.2em;
-  margin-top: 0.2em;
-  margin-left: 0.5em;
+  margin: 0 0.25em;
   display: inline-block;
   text-decoration: none;
   &:hover {
     background-color: lighten($accent,10%);
-    color: inherit;
+    color: $text-color;
   }
-  @include bp(with-columns){
-    float: right;
-  }
+
   @include bp(no-columns){
     margin-top: 1em;
   }
@@ -144,7 +143,7 @@ header {
 
 
 .static {
-  padding: 1em 3.5em 5em;
+  padding: 2em 3.5em 5em;
   background: $static-inner;
 }
 
