@@ -9,6 +9,12 @@ h1 {
   font-size: 1.5em;
   color: white;
   font-weight: normal;
+  a {
+    color: #ddd;
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
 h2 {font-size: 1.424em;}
