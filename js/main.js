@@ -133,6 +133,42 @@ myApp.filter('escape', function() {
 myApp.filter('encode', function() {
   return window.encodeURIComponent;
 });
+
+myApp.filter('strip', function() {
+    return function (value) {
+        return (!value) ? '' : value.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,'')
+    };
+});
+
+myApp.filter('isNumber', function() {
+    return function isInt(n) {
+   return n % 1 === 0;
+};
+});
+
+myApp.controller('bingController', ['$scope', function($scope) {
+
+  $scope.base = {
+    location: "Albany, NY",
+    zoom: 13,
+    minZoom: 0,
+    maxZoom: 21,
+    width: 600,
+    height: 300,
+    mapType: "Road",
+    format: "png",
+    showTraffic: false
+  };
+
+$scope.mapTypes = [
+{"value": "Aerial","text": "Aerial"},
+{"value": "AerialWithLabels","text": "Aerial with a road overlay"},
+{"value": "Road","text": "Roads without additional imagery"},
+{"value": "OrdnanceSurvey","text": "Ordnance Survey imagery (London area only)"},
+{"value": "CollinsBart","text": "Collins Bart imagery (London area only)"}
+ ];
+$scope.formats = [ "png", "gif", "jpeg" ];
+}]);
 ;$( document ).ready(function() {
 	$("[data-toggle=popover]").popover({
 		placement : 'right',
