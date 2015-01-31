@@ -43,7 +43,7 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     markerSize: "s",
     API: null,
     mapID: null,
-    mapboxID: "mapbox.dark",
+    mapboxID: "mapbox.emerald",
     markerColor: "285A98",
     markerLabel: "heart",
     markerCustom: null

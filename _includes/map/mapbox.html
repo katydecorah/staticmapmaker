@@ -1,7 +1,7 @@
-<div ng-if="!base.API" class="alert">You need your Mapbox API token. <a href="https://www.mapbox.com/account/apps/">Go get it.</a></div>
+<img ng-if='!base.API' src="/img/mapbox@2x.png" width="600" alt="" class="static-map">
 <div class="alert" ng-if="base.auto !=true && base.location == ''">You need to enter a location.</a></div>
 {% capture mapcode %}http://api.tiles.mapbox.com/v4/[[ base.mapID && base.mapID || base.mapboxID ]][[ geojson && '/geojson('+geojson+')' || '' | nospace | escape ]][[  showMarker == true && ( base.markerCustom  && '/url-'+ (base.markerCustom | encode ) || '/pin-' + base.markerSize + '-' + base.markerLabel + '+' + base.markerColor.split('#').join('')) || '' ]][[ showMarker == true && '(' + base.location + ')' || '' | nospace]]/[[ base.auto == true && 'auto' || base.location+','+base.zoom | nospace ]]/[[ base.width ]]x[[ base.height ]][[ base.format !== '@2x.png' && '.'+base.format || base.format ]]?access_token=[[ base.API && base.API || 'YOUR-API-KEY-HERE' ]]{% endcapture %}
 <div ng-if="base.API">
 <img ng-src="{{ mapcode }}" alt="Mapbox map" class="static-map" id="map">
-<div class="attribution"><a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a></div>
 </div>
+<div class="attribution"><a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a></div>

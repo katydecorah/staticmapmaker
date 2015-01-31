@@ -1,4 +1,6 @@
-
+fieldset.error ~ fieldset {
+  opacity: 0.25;
+}
 .controls {
   background: $bg-dark;
   z-index: 100;

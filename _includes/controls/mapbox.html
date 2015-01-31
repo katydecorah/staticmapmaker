@@ -1,9 +1,11 @@
-<fieldset>
-<div class="form-group[[ base.API && ' ' || ' error' ]]">
+<fieldset class="[[ base.API && ' ' || 'error' ]]">
+<div class="form-group">
 <label for="api" class="cushion" data-toggle="popover" data-content="You need a public API token to access the Mapbox static API. Follow the link to get your public token.">
 <a href="https://www.mapbox.com/account/apps/" target="_blank">Public API token</a></label>
 <div class="form-control"><input type="text" ng-model="base.API" id="api" placeholder="Public API Key (required)"></div>
 </div>
+</fieldset>
+<fieldset>
 <div class="form-group no-border">
 <label for="mapid" class="cushion" data-toggle="popover" data-content="Which one of your projects, styles, or data would you like to work with? Enter the map id here."><a href="https://www.mapbox.com/projects/">Your Map ID</a></label>
 <div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="Map ID"></div>
