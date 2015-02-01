@@ -3,12 +3,6 @@ description: "Create a Bing static map, Google static map, Mapbox static map, or
 url: http://staticmapmaker.com
 permalink: pretty
 
-apis:
-- Bing
-- Google
-- Mapbox
-- MapQuest
-
 port: 4000
 host: 127.0.0.1
 
