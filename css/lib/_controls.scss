@@ -22,8 +22,27 @@ fieldset.error ~ fieldset {
 }
 
 [ng-show] .form-group,
-[ng-hide] .form-group {
+[ng-hide] .form-group, tr {
   background: rgba(white, 0.075);
+}
+
+
+// tables to lay out pushpins
+table {
+  border-collapse: collapse;
+  input {min-width: 50px;}
+}
+
+tr {
+  padding: 0 1em;
+  display: block;
+  width: 100%;
+}
+
+td {
+  border-bottom: 1px solid rgba(black,0.2);
+  padding: 0.5em 0.25em 0.25em;
+  min-height: 3em;
 }
 
 .form-group {
@@ -123,13 +142,9 @@ input[type="checkbox"] {
 }
 
 fieldset {
-  //margin: 0 0 0.5em;
-  //padding: 1em;
   width: 100%;
   display: block;
-  //border-radius: 0.1em;
   color: $controls-color;
-  //background: $control-inner;
 }
 
 

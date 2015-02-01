@@ -46,7 +46,6 @@ ng-options="format for format in formats" id="format">
 </div>
 </fieldset>
 <fieldset>
-<div class="form-group">
 <table>
 <tr ng:repeat="pushpin in markers.pushpins">
 <td><input type="text" placeholder="coordinates" ng:model="pushpin.coordinates"></td>
@@ -55,6 +54,7 @@ ng-options="format for format in formats" id="format">
 <td><button class="btn-remove" ng:click="removePushpin($index)">&times;</button></td>
 </tr>
 </table>
+<div class="form-group">
 <button ng:click="addPushpin()" class="btn">Add a pushpin</button>
 </div>
 
