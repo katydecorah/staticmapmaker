@@ -85,9 +85,9 @@ myApp.directive('capitalize', function() {
 
   $scope.addPushpin = function() {
     $scope.markers.pushpins.push({
-      style: 1,
-      coordinates: '',
-      label: ''
+      style: 64,
+      coordinates: $scope.base.location,
+      label: 'Hi'
     });
   },
 
