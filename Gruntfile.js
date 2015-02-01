@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['js/lib/app.js','js/lib/main.js', 'js/lib/bootstrap.js'],
+        src: ['js/lib/main.js','js/lib/app.js','js/lib/bing.js','js/lib/google.js','js/lib/mapbox.js','js/lib/mapquest.js','js/lib/bootstrap.js'],
         dest: 'js/main.js',
       },
     },
