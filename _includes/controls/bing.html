@@ -44,4 +44,18 @@ ng-options="mapType.value as mapType.text for mapType in mapTypes" id="mapType">
 ng-options="format for format in formats" id="format">
 </select></div>
 </div>
-</fielset>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<table>
+<tr ng:repeat="pushpin in markers.pushpins">
+<td><input type="text" placeholder="coordinates" ng:model="pushpin.coordinates"></td>
+<td><input type="number" min="0" max="112" placeholder="icon style" ng:model="pushpin.style"></td>
+<td><input type="text" placeholder="label" ng:model="pushpin.label"></td>
+<td><button class="btn-remove" ng:click="removePushpin($index)">&times;</button></td>
+</tr>
+</table>
+<button ng:click="addPushpin()" class="btn">Add a pushpin</button>
+</div>
+
+</fieldset>

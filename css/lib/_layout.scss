@@ -101,6 +101,31 @@ header {
   color: white;
 }
 
+button {
+  border: none;
+  border-radius: 0.2em;
+  display: inline-block;
+  background: #ddd;
+}
+
+.btn {
+
+  padding: 0.3em 0.75em;
+
+
+}
+
+.btn-remove {
+  position: relative;
+  top: -10px;
+  background: none;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background: rgba(black,0.5);
+  }
+}
+
 .switch {
   color: $text-color;
   background-color: $accent;
