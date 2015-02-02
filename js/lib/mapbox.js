@@ -9,13 +9,9 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     maxSize: 1280,
     auto: false,
     format: "png",
-    markerSize: "s",
     API: null,
     mapID: null,
     mapboxID: "mapbox.emerald",
-    markerColor: "285A98",
-    markerLabel: "heart",
-    markerCustom: null
   };
   $scope.markerSizes = [
   { "value": "s", "text": "small" },

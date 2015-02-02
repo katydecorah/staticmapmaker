@@ -53,7 +53,7 @@
 <select ng-model="marker.markerLabel" ng-options="label for label in labels" id="markerLabel" ng-disabled="marker.markerCustom" class="sm"></select>
 <input ng-model="marker.markerColor" type="color" id="markerColor" ng-disabled="marker.markerCustom" class="sm">
 <select ng-model="marker.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize" class="sm" ng-disabled="marker.markerCustom"></select>
-<input type="text" placeholder="Custom marker URL" ng-model="marker.markerCustom" id="markerCustom">
+<input type="text" placeholder="Or enter a custom marker URL" ng-model="marker.markerCustom" id="markerCustom">
 </div>
 </div>
 </div>
