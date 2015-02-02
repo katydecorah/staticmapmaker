@@ -155,3 +155,32 @@ fieldset {
 .error {
   background: adjust-hue($bg-dark,150);
 }
+
+.marker-title {
+  @extend .clearfix;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  button {
+    float: right;
+    background: none;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      background: rgba(black,0.5);
+    }
+  }
+}
+.marker-fields {
+  input, select {
+    margin-bottom: .5em;
+  }
+  .sm {
+    width: 32.5%;
+    float: left;
+    display: block;
+    height: 28px;
+    &:nth-child(3) {
+      margin: 0 1%;
+    }
+  }
+}

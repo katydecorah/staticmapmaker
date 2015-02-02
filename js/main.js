@@ -161,6 +161,49 @@ myApp.directive('capitalize', function() {
 
   $scope.mapboxids = [ "mapbox.streets","mapbox.light","mapbox.dark","mapbox.satellite","mapbox.streets-satellite","mapbox.wheatpaste","mapbox.streets-basic","mapbox.comic","mapbox.outdoors","mapbox.run-bike-hike","mapbox.pencil","mapbox.pirates","mapbox.emerald","mapbox.high-contrast" ];
 
+  //http://jsfiddle.net/slav123/75m7e/3/
+  $scope.markers = {
+    pushpins: []
+  };
+
+  $scope.addPushpin = function() {
+    $scope.markers.pushpins.push({
+      markerSize: 's',
+      coordinates: $scope.base.location,
+      markerLabel: 'heart',
+      markerColor: '285A98',
+      markerCustom: ''
+    });
+  },
+
+  $scope.removePushpin = function(index) {
+    $scope.markers.pushpins.splice(index, 1);
+  },
+
+  $scope.pushpinSet = function() {
+    var total = '';
+    angular.forEach($scope.markers.pushpins, function(marker,i) {
+      if (i == 0) {
+        total += '/'
+      }else {
+        total += ','
+      }
+      if (marker.coordinates) {
+        if (marker.markerCustom){
+          var m = marker.markerCustom;
+          total +='url-'+encodeURIComponent(marker.markerCustom)+'('+marker.coordinates+')';
+        }
+        else {
+
+          total += 'pin-'+ marker.markerSize + '-'+ marker.markerLabel + '+' + marker.markerColor.split('#').join('') + '('+marker.coordinates +')';
+
+        }
+      }
+
+    })
+    return total;
+  }
+
 }]);
 ;myApp.controller('mapquestController', ['$scope', function($scope) {
 
