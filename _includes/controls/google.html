@@ -28,31 +28,23 @@
 </div>
 </fieldset>
 <fieldset>
-<div class="form-group">
-<label for="showMarker">Add a map marker?</label>
-<div class="form-control"><input type="checkbox" ng-model="showMarker" id="showMarker"></div>
-</div>
-
-<div ng-show="showMarker">
-<div class="form-group">
-<label for="markerColor">Marker color</label>
-<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor">
-</div>
-</div>
-<div class="form-group">
-<label for="markerSize">Marker size</label>
-<div class="form-control"><select ng-model="base.markerSize"
-ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
-</select></div>
-</div>
-<div class="form-group" ng-if="base.markerSize == 'mid'">
-<label for="markerSize">Marker label</label>
-<div class="form-control"><input ng-model="base.markerLabel" type="text" id="markerLabel" maxlength="1" placeholder="Single digit or letter." capitalize></div>
-</div>
-<div class="form-group">
+<div class="form-group" ng-show="pushpinSet()">
 <label for="autoCenter">Auto-center map?</label>
 <input type="checkbox" ng-model="base.autoCenter" id="autoCenter" ng-true-value="true" ng-false-value="false">
 </div>
+<div ng-repeat="marker in markers.pushpins">
+<div class="form-group">
+<div class="marker-title">Marker [[marker.coordinates]] <button class="pull-right" ng-click="removePushpin($index)">&times;</button></div>
+<div class="marker-fields">
+<input type="text" ng-model="marker.coordinates" placeholder="Address or coordinates">
+<select ng-model="marker.markerLabel" ng-disabled="marker.markerSize != 'mid'" placeholder="size" ng-options="markerLabel for markerLabel in markerLabels" id="markerLabel" class="sm"></select>
+<input ng-model="marker.markerColor" value="marker.markerColor" type="color" id="markerColor" class="sm">
+<select ng-model="marker.markerSize" placeholder="size" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize" class="sm"></select>
+</div>
+</div>
+</div>
+<div class="form-group" style="background:none;">
+<button ng-click="addPushpin()" class="btn">Add a marker</button>
 </div>
 </fieldset>
 <fieldset>

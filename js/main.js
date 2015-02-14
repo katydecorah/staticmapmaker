@@ -117,20 +117,47 @@ myApp.directive('capitalize', function() {
     width: 600,
     height: 300,
     maxSize: 640,
-    markerColor: "red",
     mapType: "roadmap",
     format: "png",
-    markerSize: "mid",
     autoCenter: false
   };
-  $scope.colors = [ "black", "brown", "green", "purple", "yellow", "blue", "gray", "orange", "red", "white" ];
   $scope.markerSizes = [
-  { "value": "tiny", "text": "small" },
-  { "value": "small", "text": "medium" },
-  { "value": "mid", "text": "large" }
+    { "value": "tiny", "text": "small" },
+    { "value": "small", "text": "medium" },
+    { "value": "mid", "text": "large" }
   ];
   $scope.mapTypes = [ "roadmap", "terrain", "satellite", "hybrid" ];
+  $scope.markerLabels = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
   $scope.formats = [ "png", "gif", "jpg" ];
+
+  //http://jsfiddle.net/slav123/75m7e/3/
+  $scope.markers = {
+    pushpins: []
+  };
+
+  $scope.addPushpin = function() {
+    $scope.markers.pushpins.push({
+      markerSize: 'mid',
+      coordinates: $scope.base.location,
+      markerLabel: '1',
+      markerColor: 'red'
+    });
+  },
+
+  $scope.removePushpin = function(index) {
+    $scope.markers.pushpins.splice(index, 1);
+  },
+
+  $scope.pushpinSet = function() {
+    var total = '';
+    angular.forEach($scope.markers.pushpins, function(marker,i) {
+      if (marker.coordinates) {
+        total += '&markers=size:'+ marker.markerSize + '%7Ccolor:'+ marker.markerColor.split('#').join('0x') + '%7Clabel:' + marker.markerLabel + '%7C' + marker.coordinates.split(' ').join('+') ;
+      }
+
+    })
+    return total;
+  }
 }]);
 ;myApp.controller('mapboxController', ['$scope', function($scope) {
   $scope.base = {
