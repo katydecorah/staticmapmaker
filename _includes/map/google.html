@@ -1,2 +1,4 @@
-{% capture mapcode %}http://maps.googleapis.com/maps/api/staticmap[[ base.autoCenter == true && showMarker == true && '?' || '?center='+base.location.split(' ').join('+')+'&zoom='+base.zoom+'&' ]]scale=[[scale]]&size=[[base.width]]x[[base.height]]&maptype=[[base.mapType]][[ base.API && '&key='+base.API || '' ]]&format=[[base.format]]&visual_refresh=true[[ showMarker == true && '&markers=size:'+base.markerSize+'%7Ccolor:'+base.markerColor.split('#').join('0x')+'%7Clabel:'+base.markerLabel+'%7C'+base.location.split(' ').join('+') || '' ]]{% endcapture %}
+{% capture mapcode %}http://maps.googleapis.com/maps/api/staticmap[[ base.autoCenter == true && pushpinSet() && '?' || '?center='+base.location.split(' ').join('+')+'&zoom='+base.zoom+'&' ]]scale=[[scale]]&size=[[base.width]]x[[base.height]]&maptype=[[base.mapType]][[ base.API && '&key='+base.API || '' ]]&format=[[base.format]]&visual_refresh=true[[ pushpinSet() ]]{% endcapture %}
 <img ng-src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]" class="static-map" id="map">
+
+

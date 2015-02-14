@@ -1,5 +1,5 @@
 <fieldset>
-<div class="form-group">
+<div class="form-group" ng-hide="base.autoCenter && pushpinSet()">
 <label for="location" class="cushion" data-toggle="popover" data-content="Try an address, a city, a place, or even latitude and longitude.">Location</label>
 <div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
 </div>
@@ -10,7 +10,7 @@
 </div>
 </fieldset>
 <fieldset>
-<div class="form-group">
+<div class="form-group" ng-hide="base.autoCenter && pushpinSet()">
 <label for="zoom">Zoom</label>
 <div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom" ng-disabled="base.autoCenter == true"></div>
 </div>
@@ -28,31 +28,29 @@
 </div>
 </fieldset>
 <fieldset>
-<div class="form-group">
-<label for="showMarker">Add a map marker?</label>
-<div class="form-control"><input type="checkbox" ng-model="showMarker" id="showMarker"></div>
-</div>
-
-<div ng-show="showMarker">
-<div class="form-group">
-<label for="markerColor">Marker color</label>
-<div class="form-control"><input ng-model="base.markerColor" type="color" id="markerColor">
-</div>
-</div>
-<div class="form-group">
-<label for="markerSize">Marker size</label>
-<div class="form-control"><select ng-model="base.markerSize"
-ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize">
-</select></div>
-</div>
-<div class="form-group" ng-if="base.markerSize == 'mid'">
-<label for="markerSize">Marker label</label>
-<div class="form-control"><input ng-model="base.markerLabel" type="text" id="markerLabel" maxlength="1" placeholder="Single digit or letter." capitalize></div>
-</div>
-<div class="form-group">
+<div class="form-group" ng-show="pushpinSet()">
 <label for="autoCenter">Auto-center map?</label>
 <input type="checkbox" ng-model="base.autoCenter" id="autoCenter" ng-true-value="true" ng-false-value="false">
 </div>
+<div ng-repeat="marker in markers.pushpins">
+<div class="form-group">
+<div class="marker-title">Marker [[marker.coordinates]] <button class="pull-right" ng-click="removePushpin($index)">&times;</button></div>
+<div class="marker-fields">
+<input type="text" ng-model="marker.coordinates" placeholder="Address or coordinates">
+<select ng-model="marker.markerLabel" ng-disabled="marker.markerSize != 'mid'" ng-hide="marker.markerCustom" placeholder="size" ng-options="markerLabel for markerLabel in markerLabels" id="markerLabel" class="sm"></select>
+<input ng-model="marker.markerColor" ng-hide="marker.markerCustom" value="marker.markerColor" type="color" id="markerColor" class="sm">
+<select ng-model="marker.markerSize" ng-hide="marker.markerCustom" placeholder="size" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize" class="sm"></select>
+<input ng-model="marker.markerCustom" value="marker.markerCustom" type="text" id="markerCustom" class="" placeholder="Or a custom marker URL (max 64x64)">
+<div ng-show="marker.markerCustom">
+<label for="markerShadow" class="cushion" data-toggle="popover" data-content="Maximum width is 640px or 1280px when scale 2x.">Marker shadow?</label>
+<div class="form-control"><input ng-model="marker.markerShadow" value="marker.markerShadow" type="checkbox" id="markerShadow">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group" style="background:none;">
+<button ng-click="addPushpin()" class="btn">Add a marker</button>
 </div>
 </fieldset>
 <fieldset>
