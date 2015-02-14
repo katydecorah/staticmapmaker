@@ -16,10 +16,6 @@ layout: default
 </form>
 </div><!-- /container -->
 </div><!-- /controls -->
-<div class="switcher">
-<p>Switch to:
-{% for api in site.pages %}{% if api.title %}{% if api.title != page.title %}<a class="switch btn" href="{{api.url}}">{{api.title}}</a>{% endif %}{% endif %}{% endfor %}</p>
-</div><!-- /switcher -->
 </div><!-- /col-left -->
 <div class="col-right col">
 <div class="static">
