@@ -1,15 +1,16 @@
 <fieldset>
-<div class="form-group" ng-hide="base.autoCenter && pushpinSet()">
-<label for="location" class="cushion" data-toggle="popover" data-content="Try an address, a city, a place, or even latitude and longitude.">Location</label>
-<div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
-</div>
 <div class="form-group">
 <label for="api" class="cushion" data-toggle="popover" data-content="You don't always need an API Key for Static Maps. Without a key you might receive an error image instead of a map if you go over the limit. Follow the link to the API Console.">
-<a href="https://code.google.com/apis/console/" target="_blank">API Key</a></label>
+<a href="https://code.google.com/apis/console/" target="_blank">API Key</a>
+</label>
 <div class="form-control"><input type="text" ng-model="base.API" id="api" ng-init="base.API=''" placeholder="API Key (optional)"></div>
 </div>
 </fieldset>
 <fieldset>
+<div class="form-group" ng-hide="base.autoCenter && pushpinSet()">
+<label for="location" class="cushion" data-toggle="popover" data-content="Try an address, a city, a place, or even latitude and longitude.">Location</label>
+<div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
+</div>
 <div class="form-group" ng-hide="base.autoCenter && pushpinSet()">
 <label for="zoom">Zoom</label>
 <div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom" ng-disabled="base.autoCenter == true"></div>
