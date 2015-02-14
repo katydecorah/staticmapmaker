@@ -26,7 +26,13 @@
 <div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[ base.format !== '@2x.png' && base.maxSize || '640' ]]" id="height"></div>
 </div>
 </fieldset>
-
+<fieldset>
+<div class="form-group">
+<label for="format">Format</label>
+<div class="form-control"><select ng-model="base.format" ng-options="format for format in formats" id="format">
+</select></div>
+</div>
+</fieldset>
 <fieldset>
 <div class="form-group">
 <label for="auto" data-toggle="popover" data-content="Make the map fit all the data from your mapd ID or the GeoJSON you enter below. Uncheck to manually enter coordinates and a zoom.">Auto adjust map?</label>
@@ -50,9 +56,9 @@
 <div class="marker-title">Marker [[marker.coordinates]] <button class="pull-right" ng-click="removePushpin($index)">&times;</button></div>
 <div class="marker-fields">
 <input type="text" ng-model="marker.coordinates" placeholder="Longitude,latitude">
-<select ng-model="marker.markerLabel" ng-options="label for label in labels" id="markerLabel" ng-disabled="marker.markerCustom" class="sm"></select>
-<input ng-model="marker.markerColor" type="color" id="markerColor" ng-disabled="marker.markerCustom" class="sm">
-<select ng-model="marker.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize" class="sm" ng-disabled="marker.markerCustom"></select>
+<select ng-model="marker.markerLabel" ng-options="label for label in labels" id="markerLabel" ng-hide="marker.markerCustom" class="sm"></select>
+<input ng-model="marker.markerColor" type="color" id="markerColor" ng-hide="marker.markerCustom" class="sm">
+<select ng-model="marker.markerSize" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize" class="sm" ng-hide="marker.markerCustom"></select>
 <input type="text" placeholder="Or enter a custom marker URL" ng-model="marker.markerCustom" id="markerCustom">
 </div>
 </div>
@@ -64,13 +70,5 @@
 <div class="form-group" ng-hide="pushpinSet()">
 <label for="geojson" data-toggle="popover" data-content="Paste in GeoJSON to add markers, lines, or polygons to the map.">Add GeoJSON?</label>
 <textarea id="geojson" name="geojson" ng-model="geojson" rows="3" ng-init="geojson=''"></textarea>
-</div>
-</fieldset>
-
-<fieldset>
-<div class="form-group">
-<label for="format">Format</label>
-<div class="form-control"><select ng-model="base.format" ng-options="format for format in formats" id="format">
-</select></div>
 </div>
 </fieldset>

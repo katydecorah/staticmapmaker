@@ -10,7 +10,8 @@ myApp.controller('googleController', ['$scope', function($scope) {
     maxSize: 640,
     mapType: "roadmap",
     format: "png",
-    autoCenter: false
+    autoCenter: false,
+    API: null
   };
   $scope.markerSizes = [
     { "value": "tiny", "text": "small" },
