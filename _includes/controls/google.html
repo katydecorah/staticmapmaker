@@ -1,5 +1,5 @@
 <fieldset>
-<div class="form-group">
+<div class="form-group" ng-hide="base.autoCenter">
 <label for="location" class="cushion" data-toggle="popover" data-content="Try an address, a city, a place, or even latitude and longitude.">Location</label>
 <div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
 </div>
@@ -10,7 +10,7 @@
 </div>
 </fieldset>
 <fieldset>
-<div class="form-group">
+<div class="form-group" ng-hide="base.autoCenter">
 <label for="zoom">Zoom</label>
 <div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom" ng-disabled="base.autoCenter == true"></div>
 </div>
