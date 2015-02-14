@@ -31,7 +31,9 @@ myApp.controller('googleController', ['$scope', function($scope) {
       markerSize: 'mid',
       coordinates: $scope.base.location,
       markerLabel: '1',
-      markerColor: 'red'
+      markerColor: 'red',
+      markerCustom: '',
+      markerShadow: true
     });
   },
 
@@ -43,7 +45,13 @@ myApp.controller('googleController', ['$scope', function($scope) {
     var total = '';
     angular.forEach($scope.markers.pushpins, function(marker,i) {
       if (marker.coordinates) {
-        total += '&markers=size:'+ marker.markerSize + '%7Ccolor:'+ marker.markerColor.split('#').join('0x') + '%7Clabel:' + marker.markerLabel + '%7C' + marker.coordinates.split(' ').join('+') ;
+        if (marker.markerCustom) {
+
+          total += '&markers=icon:'+ marker.markerCustom + '%7Cshadow:'+ marker.markerShadow + '%7C' + marker.coordinates.split(' ').join('+');
+
+        } else {
+          total += '&markers=size:'+ marker.markerSize + '%7Ccolor:'+ marker.markerColor.split('#').join('0x') + '%7Clabel:' + marker.markerLabel + '%7C' + marker.coordinates.split(' ').join('+');
+        }
       }
 
     })

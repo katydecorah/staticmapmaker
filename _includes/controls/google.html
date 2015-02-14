@@ -37,9 +37,15 @@
 <div class="marker-title">Marker [[marker.coordinates]] <button class="pull-right" ng-click="removePushpin($index)">&times;</button></div>
 <div class="marker-fields">
 <input type="text" ng-model="marker.coordinates" placeholder="Address or coordinates">
-<select ng-model="marker.markerLabel" ng-disabled="marker.markerSize != 'mid'" placeholder="size" ng-options="markerLabel for markerLabel in markerLabels" id="markerLabel" class="sm"></select>
-<input ng-model="marker.markerColor" value="marker.markerColor" type="color" id="markerColor" class="sm">
-<select ng-model="marker.markerSize" placeholder="size" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize" class="sm"></select>
+<select ng-model="marker.markerLabel" ng-disabled="marker.markerSize != 'mid'" ng-hide="marker.markerCustom" placeholder="size" ng-options="markerLabel for markerLabel in markerLabels" id="markerLabel" class="sm"></select>
+<input ng-model="marker.markerColor" ng-hide="marker.markerCustom" value="marker.markerColor" type="color" id="markerColor" class="sm">
+<select ng-model="marker.markerSize" ng-hide="marker.markerCustom" placeholder="size" ng-options="markerSize.value as markerSize.text for markerSize in markerSizes" id="markerSize" class="sm"></select>
+<input ng-model="marker.markerCustom" value="marker.markerCustom" type="text" id="markerCustom" class="" placeholder="Or a custom marker URL (max 64x64)">
+<div ng-show="marker.markerCustom">
+<label for="markerShadow" class="cushion" data-toggle="popover" data-content="Maximum width is 640px or 1280px when scale 2x.">Marker shadow?</label>
+<div class="form-control"><input ng-model="marker.markerShadow" value="marker.markerShadow" type="checkbox" id="markerShadow">
+</div>
+</div>
 </div>
 </div>
 </div>
