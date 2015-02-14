@@ -29,6 +29,20 @@
 </div>
 </fieldset>
 <fieldset>
+<div class="form-group">
+<label for="mapType">Map type</label>
+<div class="form-control"><select ng-model="base.mapType"
+ng-options="mapType for mapType in mapTypes" id="mapType">
+</select></div>
+</div>
+<div class="form-group">
+<label for="format">Image format</label>
+<div class="form-control"><select ng-model="base.format"
+ng-options="format for format in formats" id="format">
+</select></div>
+</div>
+</fieldset>
+<fieldset>
 <div class="form-group" ng-show="pushpinSet()">
 <label for="autoCenter">Auto-center map?</label>
 <input type="checkbox" ng-model="base.autoCenter" id="autoCenter" ng-true-value="true" ng-false-value="false">
@@ -52,19 +66,5 @@
 </div>
 <div class="form-group" style="background:none;">
 <button ng-click="addPushpin()" class="btn">Add a marker</button>
-</div>
-</fieldset>
-<fieldset>
-<div class="form-group">
-<label for="mapType">Map type</label>
-<div class="form-control"><select ng-model="base.mapType"
-ng-options="mapType for mapType in mapTypes" id="mapType">
-</select></div>
-</div>
-<div class="form-group">
-<label for="format">Image format</label>
-<div class="form-control"><select ng-model="base.format"
-ng-options="format for format in formats" id="format">
-</select></div>
 </div>
 </fieldset>
