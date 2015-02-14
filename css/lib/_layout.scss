@@ -73,7 +73,7 @@
 }
 .main {
   position: relative;
-  min-height: 100%;
+  //min-height: 100%;
   @extend .clearfix;
 }
 
@@ -147,11 +147,14 @@ button {
 .col-left {
   @include bp(with-columns){
     width: 30%;
-    position: absolute;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
     top: 0;
     bottom: 0;
     left: 0;
-    height: auto;
+    padding-bottom: 5em;
+    //height: auto;
   }
   transition: .2s;
   background: $bg-dark;
