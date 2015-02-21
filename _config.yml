@@ -1,6 +1,6 @@
 name: Static Map Maker
 description: "Create a Bing static map, Google static map, Mapbox static map, or MapQuest static map with Static Map Maker. Type in a location, customize, and get the map."
-url: http://staticmapmaker.com
+url: http://127.0.0.1:4000
 permalink: pretty
 
 port: 4000
@@ -19,3 +19,6 @@ gems:
 
 angularjs: 1.3.8
 jquery: 2.1.3
+
+sass:
+ style: :compressed
