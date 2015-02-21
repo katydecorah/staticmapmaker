@@ -1,0 +1,221 @@
+.front-page {
+  background: $bg;
+
+  .container {
+    @extend %clearfix;
+
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1em;
+
+    .colophon {
+      margin-bottom: 1em;
+      margin-top: 2em;
+    }
+
+  }
+
+  h2 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+}
+
+.choices {
+  @extend %clearfix;
+}
+
+.choose-map {
+  border: .5em solid $bg;
+  display: block;
+  margin: 1em 0 .5em;
+  position: relative;
+  text-decoration: none;
+
+  @include bp(with-columns) {
+    float: left;
+    width: 24%;
+  }
+
+  &:nth-of-type(2) {
+
+    @include bp(with-columns) {
+      margin-left: 1%;
+      margin-right: 1%;
+    }
+
+  }
+
+
+  &:hover {
+    border-color: $bg-dark;
+  }
+
+
+  .attribution {
+
+    @extend %small;
+
+    bottom: 0;
+    color: #000;
+    float: none;
+    position: absolute;
+    right: .25em;
+
+    @include bp(no-columns) {
+      display: none;
+    }
+
+  }
+
+  .choose-map-title {
+    background: $bg-dark;
+    color: #fff;
+    font-size: 1.5em;
+    padding: .5em 1em;
+    text-align: center;
+    width: 100%;
+
+    @include bp(with-columns) {
+      left: 0;
+      position: absolute;
+      top: 0;
+
+    }
+
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+
+    @include bp(no-columns) {
+      display: none;
+    }
+
+  }
+
+}
+
+.main {
+
+  @extend %clearfix;
+
+  position: relative;
+
+}
+
+.col {
+  position: relative;
+
+}
+
+header {
+  padding: .5em 1em;
+}
+
+.header-icon {
+  display: inline-block;
+  font-size: 1.25em;
+  height: 1em;
+  position: relative;
+  top: .2em;
+  width: 1em;
+
+  path {
+    fill: #fff;
+  }
+
+}
+
+.switcher {
+  color: #fff;
+  padding: 1em;
+}
+
+button {
+  background: #ddd;
+  border: 0;
+  border-radius: .2em;
+  display: inline-block;
+}
+
+.btn {
+  padding: .3em .75em;
+}
+
+.btn-remove {
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  top: -10px;
+
+  &:hover {
+    background: rgba(#000, .5);
+  }
+
+}
+
+.switch {
+  background-color: $accent;
+  border-radius: .2em;
+  color: $text-color;
+  display: inline-block;
+  margin: 0 .25em;
+  padding: .3em .75em;
+  text-decoration: none;
+
+  @include bp(no-columns) {
+    margin-top: 1em;
+  }
+
+  &:hover {
+    background-color: lighten($accent, 10%);
+    color: $text-color;
+  }
+
+}
+
+.col-left {
+  background: $bg-dark;
+  transition: .2s;
+
+  @include bp(with-columns) {
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 5em;
+    position: fixed;
+    top: 0;
+    width: 30%;
+  }
+
+}
+
+.col-right {
+
+  @include bp(with-columns) {
+    float: right;
+    transition: .2s;
+    width: 70%;
+  }
+
+}
+
+
+.static {
+  background: $static-inner;
+  padding: 2em 3.5em 5em;
+}
+
+.static-map {
+  border: .25em solid #fff;
+  border-radius: .2em;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  transition: 1s;
+}

@@ -1,19 +1,21 @@
-h2, h3, h4 {
-  margin: 1.414em 0 0.5em;
+h2,
+h3,
+h4 {
   font-weight: inherit;
   line-height: 1.2;
+  margin: 1.414em 0 .5em;
 }
 
 
 h1 {
+  color: #fff;
   font-size: 1.5em;
-  color: white;
   font-weight: normal;
 }
 
-h2 {font-size: 1.424em;}
+h2 { font-size: 1.424em; }
 
-h3 {font-size: 1.266em;}
+h3 { font-size: 1.266em; }
 
 p {
   margin: 0 0 1.3em;
@@ -26,42 +28,51 @@ li {
 
 a {
   color: $link-color;
+
   &:hover {
-    color: lighten($link-color,10%);
+    color: lighten($link-color, 10%);
     text-decoration: none;
   }
+
 }
-code, pre {
-  font-family: $monoFontFamily;
+
+code,
+pre {
+  font-family: $mono-font-family;
   font-weight: $mono-font-weight;
 }
+
 pre {
-  margin: 1em 0;
-  word-break: break-all;
-  white-space: pre-wrap;
-  padding: 1em;
   background: $bg;
-  border-left: 3px solid darken($bg,10%);
-  border-radius: 0.2em;
+  border-left: 3px solid darken($bg, 10%);
+  border-radius: .2em;
   display: block;
+  margin: 1em 0;
+  padding: 1em;
+  white-space: pre-wrap;
+  word-break: break-all;
+
   &::selection {
     background: $accent;
   }
+
 }
 
-small { font-size: 0.8em; }
+%small { font-size: .8em; }
 
 .colophon {
-  @extend small;
-  margin-top: 3em;
+
+  @extend %small;
+
   margin-bottom: 1em;
+  margin-top: 3em;
 }
 
 .link {
+  color: #fff;
   position: absolute;
   right: 1em;
   top: 1em;
-  color: white;
   z-index: 1;
 }
 
@@ -71,18 +82,24 @@ ol {
 
 .alert {
   background: #c0392b;
-  color: white;
-  max-width: 35em;
-  padding: 0.5em 1em;
+  color: #fff;
   margin-bottom: 1em;
+  max-width: 35em;
+  padding: .5em 1em;
+
   a {
+    color: #fff;
     text-decoration: underline;
-    color: white;
   }
+
 }
 
 .attribution {
-  @extend small;
+
+  @extend %small;
+
   text-align: right;
-  a {color: $text-color;}
+
+  a { color: $text-color; }
+
 }

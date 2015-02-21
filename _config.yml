@@ -10,7 +10,7 @@ host: 127.0.0.1
 mapquestKey: Fmjtd%7Cluu8296rn5%2C8x%3Do5-9w1ld6
 bingKey: Ag5uuxO0xffGEd9QQ5vIaOp_f1KlwIycTPD4dLaYGHdfwkr5QP-lTIXwZE-_2oos
 
-exclude: ["node_modules", ".sass-cache","package.json","Gruntfile.js"]
+exclude: [vendor,".sass-cache","CNAME","README.md"]
 
 gems:
 - jekyll-sitemap
@@ -19,3 +19,6 @@ gems:
 
 angularjs: 1.3.8
 jquery: 2.1.3
+
+sass:
+ style: :compressed
