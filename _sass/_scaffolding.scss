@@ -3,10 +3,10 @@
 
 
 body {
-  line-height: 1.4;
-  font-weight: $font-weight;
-  font-size: $font-size;
   background: $bg-body;
   color: $text-color;
-  font-family: $sansFontFamily;
+  font-family: $sans-font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: 1.4;
 }

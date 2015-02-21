@@ -1,45 +1,52 @@
 .tabs {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50em;
+  padding: 2em 1em;
   position: relative;
   width: 100%;
-  max-width: 50em;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 2em 1em;
 }
 
-.tab-input {display: none;}
+.tab-input { display: none;}
 
 .tab {
-  background: white;
+  background: #fff;
   display: none;
 }
 
 
 .tab-link {
+  background: $static-inner;
+  border-radius: .25em .25em 0 0;
+  cursor: pointer;
+  display: inline-block;
+  left: 1em;
+  padding: .5em 1em;
   position: absolute;
   top: -2.35em;
-  left: 1em;
-  background: $static-inner;
-  display: inline-block;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  border-radius: 0.25em 0.25em 0 0;
+
   &:nth-of-type(2) {
     left: 5.5em;
   }
+
   &:nth-of-type(3) {
     left: 12.5em;
   }
+
   &:hover {
     background: $accent;
   }
+
 }
 
 .tab-input:checked + label {
-  cursor: default;
   background: $bg-body;
+  cursor: default;
+
+  + .tab {
+    display: block;
+  }
+
 }
 
-.tab-input:checked + label + .tab {
-  display: block;
-}
+
