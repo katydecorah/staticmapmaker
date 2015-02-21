@@ -1,4 +1,4 @@
-Static Map Maker
+Static Map Maker [![Build Status](https://travis-ci.org/katydecorah/staticmapmaker.svg?)](https://travis-ci.org/katydecorah/staticmapmaker)
 ==============
 
 This app helps you build a static map URL.
