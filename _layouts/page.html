@@ -12,6 +12,7 @@ layout: default
 <div class="container">
 <form>
 {% include controls/{{ page.title | downcase }}.html %}
+<div class="form-group">Try another API: {% for api in site.pages %}{% if api.title and api.title != page.title %}<a href="{{api.url}}" class='api-link'>{{api.title}}</a> {% endif %}{% endfor %}</div>
 </form>
 </div><!-- /container -->
 </div><!-- /controls -->
