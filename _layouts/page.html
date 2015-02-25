@@ -33,7 +33,14 @@ layout: default
 </div><!-- /main -->
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/{{site.jquery}}/jquery.min.js'></script>
-<script src="{{ site.url }}/js/main.js"></script>
 <script src="{{ site.url }}/js/bootstrap.js"></script>
 <script src="{{ site.url }}/js/app.js"></script>
 <script src="{{ site.url }}/js/{{page.title | downcase}}.js"></script>
+<script>
+$( document ).ready(function() {
+	$("[data-toggle=popover]").popover({
+		placement : 'right',
+		trigger:'hover'
+	});
+});
+</script>
