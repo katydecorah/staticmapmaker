@@ -1,5 +1,5 @@
-<fieldset>
-<div class="form-group[[ base.API && ' ' || ' error' ]]">
+<fieldset class="[[ base.API && ' ' || 'error' ]]">
+<div class="form-group">
 <label for="api" class="cushion" data-toggle="popover" data-content="You'll need your Bing maps API token. Follow the link to get it.">
 <a href="{{page.docs-maps}}" target="_blank">API Key</a></label>
 <div class="form-control"><input type="text" ng-model="base.API" id="api" ng-init="base.API=''" placeholder="API Key (required)"></div>
@@ -23,26 +23,21 @@
 <div class="form-control"><input type="number" ng-model="base.height" min="80" max="834" id="height"></div>
 </div>
 </fieldset>
-
 <fieldset>
 <div class="form-group">
 <label for="showTraffic">Show traffic?</label>
 <div class="form-control"><input type="checkbox" ng-model="base.showTraffic" id="showTraffic"></div>
 </div>
 </fieldset>
-
 <fieldset>
 <div class="form-group">
 <label for="mapType">Map type</label>
-<div class="form-control"><select ng-model="base.mapType"
-ng-options="mapType.value as mapType.text for mapType in mapTypes" id="mapType">
+<div class="form-control"><select ng-model="base.mapType" ng-options="mapType.value as mapType.text for mapType in mapTypes" id="mapType">
 </select></div>
 </div>
 <div class="form-group">
 <label for="format">Image format</label>
-<div class="form-control"><select ng-model="base.format"
-ng-options="format for format in formats" id="format">
-</select></div>
+<div class="form-control"><select ng-model="base.format" ng-options="format for format in formats" id="format"></select></div>
 </div>
 </fieldset>
 <fieldset>

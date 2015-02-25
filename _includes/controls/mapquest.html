@@ -1,15 +1,15 @@
-<fieldset>
-<div class="form-group[[ base.API && ' ' || ' error' ]]">
+<fieldset class="[[ base.API && ' ' || 'error' ]]">
+<div class="form-group">
 <label for="api" class="cushion" data-toggle="popover" data-content="You need an API key to access MapQuest maps. Follow the link to the API Console.">
 <a href="http://developer.mapquest.com/" target="_blank">API Key</a></label>
 <div class="form-control"><input type="text" ng-model="base.API" id="api" placeholder="API Key (required)"></div>
 </div>
+</fieldset>
+<fieldset>
 <div class="form-group">
 <label for="location" class="cushion" data-toggle="popover" data-content="Try an address, a city, a place, or even latitude and longitude.">Location</label>
 <div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
 </div>
-</fieldset>
-<fieldset>
 <div class="form-group">
 <label for="zoom">Zoom</label>
 <div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom"></div>
