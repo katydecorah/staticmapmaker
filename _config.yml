@@ -10,7 +10,13 @@ host: 127.0.0.1
 mapquestKey: Fmjtd%7Cluu8296rn5%2C8x%3Do5-9w1ld6
 bingKey: Ag5uuxO0xffGEd9QQ5vIaOp_f1KlwIycTPD4dLaYGHdfwkr5QP-lTIXwZE-_2oos
 
-exclude: [vendor,".sass-cache","CNAME","README.md"]
+exclude:
+- vendor
+- .sass-cache
+- CNAME
+- README.md
+- Gemfile
+- Rakefile
 
 gems:
 - jekyll-sitemap
