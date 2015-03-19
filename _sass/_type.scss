@@ -8,7 +8,7 @@ h4 {
 
 
 h1 {
-  color: #fff;
+  color: $light;
   font-size: 1.5em;
   font-weight: normal;
 }
@@ -69,7 +69,7 @@ pre {
 }
 
 .link {
-  color: #fff;
+  color: $light;
   position: absolute;
   right: 1em;
   top: 1em;
@@ -81,14 +81,14 @@ ol {
 }
 
 .alert {
-  background: #c0392b;
-  color: #fff;
+  background: $danger;
+  color: $light;
   margin-bottom: 1em;
   max-width: 35em;
   padding: .5em 1em;
 
   a {
-    color: #fff;
+    color: $light;
     text-decoration: underline;
   }
 

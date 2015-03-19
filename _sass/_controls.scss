@@ -11,7 +11,7 @@ fieldset {
 
 .controls {
   background: $bg-dark;
-  color: #fff;
+  color: $light;
   padding-top: .5em;
   position: relative;
   z-index: 100;
@@ -23,7 +23,7 @@ fieldset {
     text-decoration: underline;
 
     &:hover {
-      color: #ddd;
+      color: $light-gray;
     }
 
   }
@@ -38,7 +38,7 @@ fieldset {
 [ng-show] .form-group,
 [ng-hide] .form-group,
 tr {
-  background: rgba(#fff, .075);
+  background: rgba($light, .075);
 }
 
 
@@ -57,7 +57,7 @@ tr {
 }
 
 td {
-  border-bottom: 1px solid rgba(#000, .2);
+  border-bottom: 1px solid rgba($dark, .2);
   min-height: 3em;
   padding: .5em .25em .25em;
 }
@@ -66,7 +66,7 @@ td {
 
   @extend %clearfix;
 
-  border-bottom: 1px solid rgba(#000, .2);
+  border-bottom: 1px solid rgba($dark, .2);
   min-height: 3em;
   padding: .5em 1em .25em;
 
@@ -87,7 +87,7 @@ td {
   &.no-border { border-bottom: 0;}
 
   &:hover [data-toggle] {
-    color: #ddd;
+    color: $light-gray;
   }
 
 
@@ -149,7 +149,7 @@ select,
 input,
 select,
 textarea {
-  background: rgba(#fff, .9);
+  background: rgba($light, .9);
   border: 0;
   border-radius: .45em;
   font-family: $mono-font-family;
@@ -198,12 +198,12 @@ textarea {
 
   button {
     background: none;
-    color: #fff;
+    color: $light;
     cursor: pointer;
     float: right;
 
     &:hover {
-      background: rgba(#000, .5);
+      background: rgba($dark, .5);
     }
 
   }

@@ -8,7 +8,7 @@
 
 .popover {
   background-clip: padding-box;
-  background-color: #fff;
+  background-color: $light;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 6px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
@@ -35,7 +35,7 @@
 
     .arrow:after {
       border-left-width: 0;
-      border-right-color: #fff;
+      border-right-color: $light;
       bottom: -10px;
       left: 1px;
     }
@@ -66,7 +66,7 @@
 
 
 .popover-content {
-  color: #222;
+  color: $dark-gray;
   font-size: .9em;
   font-weight: 400;
   line-height: 1.6;

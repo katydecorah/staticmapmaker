@@ -58,7 +58,7 @@
     @extend %small;
 
     bottom: 0;
-    color: #000;
+    color: $dark;
     float: none;
     position: absolute;
     right: .25em;
@@ -71,7 +71,7 @@
 
   .choose-map-title {
     background: $bg-dark;
-    color: #fff;
+    color: $light;
     font-size: 1.5em;
     padding: .5em 1em;
     text-align: center;
@@ -124,18 +124,18 @@ header {
   width: 1em;
 
   path {
-    fill: #fff;
+    fill: $light;
   }
 
 }
 
 .switcher {
-  color: #fff;
+  color: $light;
   padding: 1em;
 }
 
 button {
-  background: #ddd;
+  background: $light-gray;
   border: 0;
   border-radius: .2em;
   display: inline-block;
@@ -147,13 +147,13 @@ button {
 
 .btn-remove {
   background: none;
-  color: #fff;
+  color: $light;
   cursor: pointer;
   position: relative;
   top: -10px;
 
   &:hover {
-    background: rgba(#000, .5);
+    background: rgba($dark, .5);
   }
 
 }
@@ -212,7 +212,7 @@ button {
 }
 
 .static-map {
-  border: .25em solid #fff;
+  border: .25em solid $light;
   border-radius: .2em;
   display: block;
   margin: 0 auto;
