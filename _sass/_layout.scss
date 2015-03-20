@@ -5,7 +5,8 @@
 
     margin: 0 auto;
     max-width: 1200px;
-    padding: 0 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 
     .colophon {
       margin-bottom: 1em;
@@ -20,21 +21,24 @@
   @extend %clearfix;
 
   @include bp(with-columns) {
-    margin-left: 50%;
+    margin-left: 45%;
+    padding-bottom: 2em;
+    width: 55%;
   }
 
 }
 
 .choices,
 .cover {
-  padding: 0 5%;
+  padding-left: 5%;
+  padding-right: 5%;
 
   @include bp(with-columns) {
     float: left;
-    width: 50%;
   }
 
 }
+
 
 .cover {
 
@@ -48,6 +52,7 @@
     position: fixed;
     right: 0;
     top: 0;
+    width: 45%;
   }
 
   h2 {
@@ -65,7 +70,7 @@
     display: block;
     font-size: 2em;
     margin: .5em auto;
-    
+
     path {
       fill: $gold;
     }
@@ -91,7 +96,7 @@
   &:nth-of-type(2n+2) {
 
     @include bp(with-columns) {
-      margin-left: 5%;
+      margin-left: 8%;
     }
 
   }
