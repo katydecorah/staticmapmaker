@@ -1,12 +1,14 @@
 ---
 layout: front-page
 ---
-<h2>Which static map API do you want to use?</h2>
+<div class="cover">
+<h2>Which static map API do you want to use? {% include svg/icon.svg %}</h2>
+</div>
 <div class="choices">
 {% for page in site.pages %}{% if page.title %}
 <a href="{{ page.url }}" class="choose-map">
+<div class="choose-map-example"><img src="/img/{{page.title | downcase}}.png" alt="{{page.title}} static map API"></div>
 <div class="choose-map-title">{{page.title}}</div>
-<div class="choose-map-example"><img src="/img/{{page.title | downcase}}.png" alt="{{page.title}} static map API">{% if page.title == 'Mapbox' %}<div class="attribution" target="_blank">&copy; Mapbox &copy; OpenStreetMap</div>{% endif %}</div>
 </a>
 {% endif %}{% endfor %}
 </div>

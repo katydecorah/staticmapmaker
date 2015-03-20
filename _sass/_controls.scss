@@ -151,7 +151,7 @@ select,
 textarea {
   background: rgba($light, .9);
   border: 0;
-  border-radius: .45em;
+  border-radius: $border-radius;
   font-family: $mono-font-family;
   font-size: 1em;
   margin: 0;
@@ -186,7 +186,7 @@ textarea {
 }
 
 .error {
-  background: adjust-hue($bg-dark, 150);
+  background: $danger;
 }
 
 .marker-title {

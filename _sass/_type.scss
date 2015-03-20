@@ -43,9 +43,8 @@ pre {
 }
 
 pre {
-  background: $bg;
-  border-left: 3px solid darken($bg, 10%);
-  border-radius: .2em;
+  background: $light;
+  border-left: 3px solid darken($bg-body, 15%);
   display: block;
   margin: 1em 0;
   padding: 1em;
