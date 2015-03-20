@@ -11,7 +11,20 @@ h1 {
   color: $light;
   font-size: 1.5em;
   font-weight: normal;
+
+  a {
+    color: $light;
+    text-decoration: none;
+
+    &:hover {
+      color: $gold;
+    }
+
+  }
+
 }
+
+
 
 h2 { font-size: 1.424em; }
 
