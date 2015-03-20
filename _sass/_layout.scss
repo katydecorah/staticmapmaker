@@ -1,5 +1,4 @@
 .front-page {
-  background: $bg;
 
   .container {
     @extend %clearfix;
@@ -15,19 +14,66 @@
 
   }
 
-  h2 {
-    font-size: 2em;
-    text-align: center;
-  }
-
 }
 
 .choices {
   @extend %clearfix;
+
+  @include bp(with-columns) {
+    margin-left: 50%;
+  }
+
+}
+
+.choices,
+.cover {
+  padding: 0 5%;
+
+  @include bp(with-columns) {
+    float: left;
+    width: 50%;
+  }
+
+}
+
+.cover {
+
+  @extend %flex;
+
+  background: $bg-dark;
+
+  @include bp(with-columns) {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+  h2 {
+    color: $light;
+    font-size: 1.5em;
+    text-align: center;
+
+    @include bp(with-columns) {
+      font-size: 2.5em;
+    }
+
+  }
+
+  .header-icon {
+    display: block;
+    font-size: 2em;
+    margin: .5em auto;
+
+  }
+
 }
 
 .choose-map {
-  border: .5em solid $bg;
+  background: $light;
+  border: .5em solid transparent;
+  border-radius: $border-radius;
   display: block;
   margin: 1em 0 .5em;
   position: relative;
@@ -35,54 +81,28 @@
 
   @include bp(with-columns) {
     float: left;
-    width: 24%;
+    width: 46%;
   }
 
-  &:nth-of-type(2) {
+  &:nth-of-type(2n+2) {
 
     @include bp(with-columns) {
-      margin-left: 1%;
-      margin-right: 1%;
+      margin-left: 5%;
     }
 
   }
 
 
   &:hover {
-    border-color: $bg-dark;
-  }
-
-
-  .attribution {
-
-    @extend %small;
-
-    bottom: 0;
-    color: $dark;
-    float: none;
-    position: absolute;
-    right: .25em;
-
-    @include bp(no-columns) {
-      display: none;
-    }
-
+    background: $gold;
+    color: $light;
   }
 
   .choose-map-title {
-    background: $bg-dark;
-    color: $light;
     font-size: 1.5em;
-    padding: .5em 1em;
+    padding: .5em;
     text-align: center;
     width: 100%;
-
-    @include bp(with-columns) {
-      left: 0;
-      position: absolute;
-      top: 0;
-
-    }
 
   }
 
@@ -135,14 +155,22 @@ header {
 }
 
 button {
-  background: $light-gray;
+  background: $gold;
   border: 0;
-  border-radius: .2em;
+  border-radius: $border-radius;
+  cursor: pointer;
   display: inline-block;
+  font-family: $sans-font-family;
+  font-size: 1em;
+
+  &:hover {
+    background: lighten($gold, 10%);
+  }
+
 }
 
 .btn {
-  padding: .3em .75em;
+  padding: .5em 1em;
 }
 
 .btn-remove {
@@ -160,7 +188,6 @@ button {
 
 .switch {
   background-color: $accent;
-  border-radius: .2em;
   color: $text-color;
   display: inline-block;
   margin: 0 .25em;
@@ -212,8 +239,6 @@ button {
 }
 
 .static-map {
-  border: .25em solid $light;
-  border-radius: .2em;
   display: block;
   margin: 0 auto;
   max-width: 100%;
