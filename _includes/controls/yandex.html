@@ -1,0 +1,65 @@
+<fieldset>
+<div class="form-group">
+<label for="language">Language</label>
+<div class="form-control"><select ng-model="base.language"
+ng-options="language.value as language.text for language in languages" id="language">
+</select></div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="width" class="cushion" data-toggle="popover" data-content="Maximum width is [[base.maxWidth]]px">Width</label>
+<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[base.maxWidth]]" id="width"></div>
+</div>
+<div class="form-group">
+<label for="height" class="cushion" data-toggle="popover" data-content="Maximum height is [[base.maxHeight]]px">Height</label>
+<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[base.maxHeight]]" id="height"></div>
+</div>
+</fieldset>
+
+<fieldset>
+<div class="form-group" ng-show="pushpinSet()">
+<label for="autoCenter" data-toggle="popover" data-content="Make the map auto adjust with the markers added or the location">Auto adjust map?</label>
+<input type="checkbox" ng-model="base.autoCenter" id="autoCenter" ng-true-value="true" ng-false-value="false">
+</div>
+<div ng-hide="base.autoCenter">
+<div class="form-group">
+<label for="location" class="cushion" data-toggle="popover" data-content="Try an address, a city, a place, or even latitude and longitude.">Center location</label>
+<div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
+</div>
+<div class="form-group">
+<label for="zoom">Zoom</label>
+<div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom" ng-disabled="base.autoCenter == true"></div>
+</div>
+</div>
+</fieldset>
+
+<fieldset>
+<div class="form-group">
+<label for="mapType">Layers</label>
+<div class="form-control">
+<div ng-repeat="type in mapTypes">
+<label>
+<input class="cushion-right" type="checkbox" value="[[type.value]]" ng-checked="layers.indexOf(type.value) > -1 || type.value == base.mapType" ng-click="toggleLayers(type.value)"> [[type.text]]
+</label>
+</div>
+</div>
+</div>
+</fieldset>
+<fieldset>
+<div ng-repeat="pushpin in markers.pushpins">
+<div class="form-group">
+<div class="marker-title">Marker [[pushpin.coordinates]] <button class="pull-right" ng-click="removePushpin($index)">&times;</button></div>
+<div class="marker-fields">
+<input type="text" placeholder="coordinates" ng-model="pushpin.coordinates">
+<select class="sm" ng-model="pushpin.style" ng-options="style.value as style.text for style in styles" id="style"></select>
+<select class="sm" ng-hide="pushpin.style == 'flag'" ng-model="pushpin.color" ng-options="color.value as color.text for color in colors | filter:{ type : pushpin.style }:true" id="color"></select>
+<select class="sm" ng-hide="pushpin.style == 'flag'" ng-model="pushpin.size" ng-options="size.value as size.text for size in sizes | filter:{ type : pushpin.style }:true" id="size"></select>
+<input type="number" ng-show="pushpin.style == 'pm' || pushpin.style =='pm2'" min="1" max="100" placeholder="Number 1 through 99" ng-model="pushpin.label">
+</div>
+</div>
+</div>
+<div class="form-group">
+<button ng-click="addPushpin()" class="btn">Add a pushpin</button>
+</div>
+</fieldset>

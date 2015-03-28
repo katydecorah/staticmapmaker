@@ -95,7 +95,7 @@ td {
 
 select,
 .form-control {
-  height: 2em;
+  min-height: 2em;
 }
 
 .label-toggle {
@@ -169,6 +169,10 @@ textarea {
 
 }
 
+select {
+  height: 2em;
+}
+
 [type="checkbox"] {
   width: auto;
 }
@@ -176,6 +180,10 @@ textarea {
 .cushion,
 [type="checkbox"] {
   margin-top: .3em;
+}
+
+.cushion-right {
+  margin-right: .3em;
 }
 
 

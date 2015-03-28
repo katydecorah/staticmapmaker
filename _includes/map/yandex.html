@@ -1,0 +1,2 @@
+{% capture mapcode %}http://static-maps.yandex.ru/1.x/?lang=[[base.language]][[base.autoCenter == true && ' ' || '&ll=' + base.location + '&z=' + base.zoom | nospace ]]&l=[[ layers != '' && layers.join(',') || base.mapType]]&size=[[base.width]],[[base.height]][[ pushpinSet() ]]{% endcapture %}
+<img ng-src="{{ mapcode }}" alt="{{page.title}} Map" class="static-map" id="map" data-proofer-ignore>
