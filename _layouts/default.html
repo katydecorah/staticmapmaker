@@ -11,6 +11,7 @@
 <meta name="twitter:site" content="@katydecorah">
 <meta name="twitter:title" content="{{ site.name }}">
 <meta name="twitter:description" content="{{ site.description }}">
+{% if page.layout != 'front-page' %}<meta name="twitter:image" content="{{site.url}}/img/{{page.title | downcase}}.png" />{% endif %}
 <meta name="twitter:creator" content="@katydecorah">
 <meta name="twitter:domain" content="{{ site.url }}">
 <link href="{{ site.url }}/css/main.css" rel="stylesheet">
