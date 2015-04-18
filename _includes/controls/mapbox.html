@@ -12,8 +12,9 @@
 </div>
 <div class="form-group">
 <label for="mapboxID" data-toggle="popover" data-content="Or use a Mapbox style instead of your own.">or a Mapbox style</label>
-<div class="form-control"><select ng-model="base.mapboxID" ng-options="id for id in  mapboxids" id="mapboxID" ng-disabled="base.mapID">
-</select></div>
+<div class="form-control">
+<select ng-model="base.mapboxID" ng-options="id.value as id.text for id in mapboxids" id="mapID" class="sm" ng-disabled="base.mapID"></select>
+</div>
 </div>
 </fieldset>
 <fieldset>
