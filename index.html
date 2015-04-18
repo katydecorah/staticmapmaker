@@ -6,7 +6,7 @@ layout: front-page
 </div>
 <div class="choices">
 {% for page in site.pages reversed %}{% if page.title %}
-<a href="{{ page.url }}" class="choose-map">
+<a href="{{site.url}}{{ page.url }}" class="choose-map">
 <div class="choose-map-example"><img src="/img/{{page.title | downcase}}.png" alt="{{page.title}} static map API"></div>
 <div class="choose-map-title">{{page.title}}</div>
 </a>
