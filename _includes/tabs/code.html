@@ -2,7 +2,7 @@
 <label for="code" class="tab-link">Code</label>
 <div id="tab-code" class="tab">
 <pre>{{ mapcode }}</pre>
-<p>Treat the code like an image. You can use HTML or CSS to display it.</p>
+<p>Treat the code like an image &mdash; you can use HTML or CSS to display it.</p>
 <h2>HTML</h2>
 <pre>&lt;img src="{{ mapcode }}" alt="{{page.title}} Map[[base.auto != true && ' of '+ base.location || '' ]]"&gt;{% if page.title == 'Mapbox' %}
 &lt;a href="https://www.mapbox.com/about/maps/"&gt;&copy; Mapbox &copy; OpenStreetMap&lt;/a&gt;{% endif %}</pre>
