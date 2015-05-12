@@ -1,0 +1,12 @@
+
+{% capture mapcode %}http://image.maps.cit.api.here.com/mia/1.6/mapview?app_id=[[ base.API && base.API || '{{site.hereappid}}' ]]&app_code=[[ base.code_id && base.code_id || '{{site.herecodeid}}' ]]&ci=[[base.location.split(' ').join('+')]]&h=[[base.height]]&w=[[base.width]]&z=[[base.zoom]][[ base.u && '&u=' + base.u + base.distances || '']]&f=[[base.format]][[base.flag == true && '&i=true' || '']][[base.nodot == true && '&nodot=true' || '']][[base.language && '&ml=' + base.language || '']]&style=[[base.style]][[base.rotation > 0 && '&ra=' + base.rotation || '']]{% endcapture %}
+
+
+
+
+
+<img ng-src="{{ mapcode }}" alt="{{page.title}} Map of [[base.location]]" class="static-map" id="map" data-proofer-ignore>
+
+
+{% assign mapcode = mapcode | replace: {{site.hereappid}}, 'YOUR-APP-ID-HERE' %}
+{% assign mapcode = mapcode | replace: {{site.herecodeid}}, 'YOUR-CODE-ID-HERE' %}
