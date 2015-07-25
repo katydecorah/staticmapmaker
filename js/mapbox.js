@@ -1,4 +1,7 @@
 myApp.controller('mapboxController', ['$scope', function($scope) {
+  
+  $scope.geojson = undefined; 
+  
   $scope.base = {
     location: "-73.7638,42.6564",
     zoom: 13,
@@ -37,6 +40,48 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     { "value": "mapbox.emerald", "text" : "Emerald" },
     { "value": "mapbox.high-contrast", "text" : "High contrast" }
   ];
+  
+  $scope.buildMapURL = function() {
+    
+    var map = 'http://api.mapbox.com/v4/';
+    
+    if ($scope.base.mapID) {
+      map += $scope.base.mapID;
+    } else {
+      map += $scope.base.mapboxID;
+    }
+    
+    if ($scope.geojson) {
+      map += '/geojson('+ encodeURIComponent($scope.geojson).replace(/\s/g, '')+')';
+    }
+    
+    map += $scope.pushpinSet() + '/';
+    
+    if ($scope.base.auto == true) {
+      map += 'auto' + '/';
+    } else {
+      map +=  $scope.base.location.replace(/\s/g, '') +','+ $scope.base.zoom + '/';
+    } 
+    
+    map += $scope.base.width +'x'+ $scope.base.height;
+    
+    if ( $scope.base.format !== '@2x.png') {
+      map += '.'+$scope.base.format;
+    } else {
+      map += $scope.base.format;
+    }
+    
+    map +='?access_token=';
+    
+    if ($scope.base.API) {
+      map += $scope.base.API;
+    } else {
+      map += 'YOUR-API-KEY-HERE';
+    }
+    
+    return map
+    
+  };
 
   //http://jsfiddle.net/slav123/75m7e/3/
   $scope.markers = {
