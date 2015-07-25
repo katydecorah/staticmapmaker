@@ -13,13 +13,47 @@ myApp.controller('googleController', ['$scope', function($scope) {
     autoCenter: false,
     API: null
   };
+  
+  $scope.buildMapURL = function() {
+    
+    var map = "http://maps.googleapis.com/maps/api/staticmap?";
+    
+    if ($scope.base.autoCenter == true) {
+      map += 'auto';
+    } else {
+      map += 'center='+$scope.base.location.split(' ').join('+')+'&zoom='+$scope.base.zoom+'&';
+    }
+    
+    map += 'scale=' + $scope.scale;
+    
+    map += '&size='+$scope.base.width +'x'+$scope.base.height;
+    
+    map += '&maptype=' + $scope.base.mapType;
+    
+    if ($scope.base.API) {
+      map += '&key='+$scope.base.API;
+    }
+    
+    map += '&format=' + $scope.base.format;
+    
+    map += '&visual_refresh=true';
+    
+    map += $scope.pushpinSet()
+    
+    return map
+    
+  }
+  
   $scope.markerSizes = [
     { "value": "tiny", "text": "small" },
     { "value": "small", "text": "medium" },
     { "value": "mid", "text": "large" }
   ];
+  
   $scope.mapTypes = [ "roadmap", "terrain", "satellite", "hybrid" ];
+  
   $scope.markerLabels = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  
   $scope.formats = [ "png", "gif", "jpg" ];
 
   //http://jsfiddle.net/slav123/75m7e/3/
@@ -32,7 +66,7 @@ myApp.controller('googleController', ['$scope', function($scope) {
       markerSize: 'mid',
       coordinates: $scope.base.location,
       markerLabel: '1',
-      markerColor: 'red',
+      markerColor: '#ff0000',
       markerCustom: '',
       markerShadow: true
     });
