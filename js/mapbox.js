@@ -43,7 +43,7 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
   
   $scope.buildMapURL = function() {
     
-    var map = 'http://api.mapbox.com/v4/';
+    var map = 'https://api.mapbox.com/v4/';
     
     if ($scope.base.mapID) {
       map += $scope.base.mapID;
