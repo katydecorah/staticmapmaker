@@ -1,8 +1,12 @@
 <input id="code" name="tab" type="radio" class="tab-input" checked>
 <label for="code" class="tab-link">Code</label>
 <div id="tab-code" class="tab">
-<pre>{{ mapcode }}</pre>
 <p>Treat the code like an image &mdash; you can use HTML or CSS to display it.</p>
+<pre>{{ mapcode }}</pre>
+{% if page.title == 'Mapbox' %}
+<p>When using the Mapbox Static API, you must <a href="https://www.mapbox.com/help/attribution/">attribute Mapbox and OpenStreetMap</a> on the page:</p>
+<pre>&copy; &lt;a href='https://www.mapbox.com/map-feedback/'&gt;Mapbox&lt;/a&gt; &copy; &lt;a href='http://www.openstreetmap.org/copyright'&gt;OpenStreetMap contributors&lt;/a&gt;</pre>
+{% endif %}
 <h2>HTML</h2>
 <pre>&lt;img src="{{ mapcode }}" alt="{{page.title}} Map[[base.auto != true && ' of '+ base.location || '' ]]"&gt;{% if page.title == 'Mapbox' %}
 &copy; &lt;a href='https://www.mapbox.com/map-feedback/'&gt;Mapbox&lt;/a&gt; &copy; &lt;a href='http://www.openstreetmap.org/copyright'&gt;OpenStreetMap contributors&lt;/a&gt;{% endif %}</pre>
