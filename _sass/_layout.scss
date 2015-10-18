@@ -253,3 +253,17 @@ button {
   max-width: 100%;
   transition: 1s;
 }
+
+.page-compare {
+  
+  .container {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  ul { 
+    list-style: none; 
+    margin-bottom: 1em;
+  }
+  
+}

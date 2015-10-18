@@ -17,12 +17,11 @@ Check out the Polish version: http://staticmapmaker.pl/
 
 Each API has the following assets (using Mapbox as an example):
 
-* [mapbox/index.html](https://github.com/katydecorah/staticmapmaker/blob/gh-pages/mapbox/index.html)
-  - Generates the page
-	- Page includes the `page` layout, the API's name in normal case, and a link to the API's documentation:
+* [_posts/0000-01-01-mapbox.md](https://github.com/katydecorah/staticmapmaker/blob/gh-pages/_posts/0000-01-01-mapbox.md)
+  - A file in `_posts/`
+	- The file includes, the API's name in normal case, and a link to the API's documentation:
 	```
 	---
-	layout: page
 	title: Mapbox
 	link: https://www.mapbox.com/developers/api/static/
 	---
