@@ -32,6 +32,11 @@
 </div>
 
 <div class="form-group" ng-show="base.usingVector">
+<label for="tilt" class="cushion">Tilt</label>
+<div class="form-control"><input type="range" ng-model="base.tilt" min="0" max="360" id="tilt"></div>
+</div>
+
+<div class="form-group" ng-show="base.usingVector">
 <label for="retina" data-toggle="popover" data-content="">Retina maps?</label>
 <div class="form-control"><input type="checkbox" ng-model="base.retina" id="retina"></div>
 </div> 

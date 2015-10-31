@@ -11,7 +11,8 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     height: 300,
     maxSize: 1280,
     auto: false,
-    format: "png",
+    format: "@2x.png",
+    retina: true,
     API: null,
     mapID: null,
     mapboxID: "mapbox.emerald",
@@ -83,12 +84,16 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     map += $scope.pushpinSet() + '/';
     
     if ($scope.base.auto == true) {
-      map += 'auto' + '/';
+      map += 'auto';
     } else {
-      map +=  $scope.base.location.replace(/\s/g, '') +','+ $scope.base.zoom + '/';
+      map +=  $scope.base.location.replace(/\s/g, '') +','+ $scope.base.zoom;
     } 
     
-    map += $scope.base.width +'x'+ $scope.base.height;
+    if ($scope.base.usingVector && $scope.base.tilt) {
+      map += ',' + $scope.base.tilt;
+    }
+    
+    map += '/' + $scope.base.width +'x'+ $scope.base.height;
     
     if ( !$scope.base.usingVector ) {
     if ( $scope.base.format !== '@2x.png' ) {
