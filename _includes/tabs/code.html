@@ -8,7 +8,7 @@
 <pre>&copy; &lt;a href='https://www.mapbox.com/map-feedback/'&gt;Mapbox&lt;/a&gt; &copy; &lt;a href='http://www.openstreetmap.org/copyright'&gt;OpenStreetMap contributors&lt;/a&gt;</pre>
 {% endif %}
 <h2>HTML</h2>
-<pre>&lt;img src="{{ mapcode }}" alt="{{page.title}} Map[[base.auto != true && ' of '+ base.location || '' ]]"&gt;{% if page.title == 'Mapbox' %}
+<pre>&lt;img width="[[base.width]]" src="{{ mapcode }}" alt="{{page.title}} Map[[base.auto != true && ' of '+ base.location || '' ]]"&gt;{% if page.title == 'Mapbox' %}
 &copy; &lt;a href='https://www.mapbox.com/map-feedback/'&gt;Mapbox&lt;/a&gt; &copy; &lt;a href='http://www.openstreetmap.org/copyright'&gt;OpenStreetMap contributors&lt;/a&gt;{% endif %}</pre>
 
 {% if page.title == "Google" %}<!--////////////// Google -->
