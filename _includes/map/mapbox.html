@@ -1,4 +1,4 @@
-<img ng-if='!base.API' src="/img/mapbox@2x.png" width="600" alt=" " class="static-map">
+<img ng-if='!base.API' src="/img/mapbox@2x.png" width="600" alt="Mapbox" class="static-map">
 <div class="alert" ng-if="base.auto !=true && base.location == ''">You need to enter a location.</a></div>
 {% capture mapcode %}[[buildMapURL()]]{% endcapture %}
 <div ng-if="base.API">
