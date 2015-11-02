@@ -24,12 +24,13 @@
 <fieldset>
 <div class="form-group">
 <label for="width" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640.">Width</label>
-<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[ base.format !== '@2x.png' && base.maxSize || '640' ]]" id="width"></div>
+<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[ ((base.format !== '@2x.png' && !base.usingVestor) || base.usingVector) && base.maxSize || '640' ]]" id="width"></div>
 </div>
 <div class="form-group">
 <label for="height" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640.">Height</label>
-<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[ base.format !== '@2x.png' && base.maxSize || '640' ]]" id="height"></div>
+<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[ ((base.format !== '@2x.png' && !base.usingVestor) || base.usingVector) && base.maxSize || '640' ]]" id="height"></div>
 </div>
+
 
 <div class="form-group" ng-show="base.usingVector">
 <label for="rotate" class="cushion">Rotate</label>
