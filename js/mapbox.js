@@ -89,8 +89,8 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
       map +=  $scope.base.location.replace(/\s/g, '') +','+ $scope.base.zoom;
     } 
     
-    if ($scope.base.usingVector && $scope.base.tilt) {
-      map += ',' + $scope.base.tilt;
+    if ($scope.base.usingVector && $scope.base.rotate) {
+      map += ',' + $scope.base.rotate;
     }
     
     map += '/' + $scope.base.width +'x'+ $scope.base.height;
