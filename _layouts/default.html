@@ -8,7 +8,7 @@ layout: compress
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>{% if page.url != '/' %}{{ page.title }} {% endif%}{{ site.name }} | a static map API helper</title>
-<meta name="description" content="{% if page.url contains 'google' or page.url contains 'mapbox' or page.url contains 'bing' or page.url contains 'mapquest' or page.url contains 'yandex' or page.url contains 'here' %}Create a {{ page.title }} static map with {{ site.name }}. Type in a location, customize, and get the map.{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="{% if page.url contains 'google' or page.url contains 'mapbox' or page.url contains 'bing' or page.url contains 'mapquest' or page.url contains 'yandex' or page.url contains 'here' or page.url contains 'cartodb' %}Create a {{ page.title }} static map with {{ site.name }}. Type in a location, customize, and get the map.{% else %}{{ site.description }}{% endif %}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@katydecorah">

@@ -1,0 +1,43 @@
+<fieldset class="[[ (base.user && (base.token || base.named)) && ' ' || 'error' ]]">
+<div class="form-group">
+<label for="user" class="cushion" data-toggle="popover" data-content="Your username">
+Username</label>
+<div class="form-control"><input type="text" ng-model="base.user" id="user" placeholder="Username"></div>
+</div>
+<div class="form-group" ng-hide="base.named">
+<label for="token" class="cushion" data-toggle="popover" data-content="The layergroupid token from the map instantiation">
+Token <span ng-hide="base.token || base.named">or</span></label>
+<div class="form-control"><input type="text" ng-model="base.token" id="token" placeholder="Token"></div>
+</div>
+<div class="form-group" ng-hide="base.token">
+<label for="named" class="cushion" data-toggle="popover" data-content="The name of the named map">Named</label>
+<div class="form-control"><input type="text" ng-model="base.named" id="named" placeholder="Named map"></div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="width" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 8192x8192.">Width</label>
+<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[base.maxSize]]" id="width"></div>
+</div>
+<div class="form-group">
+<label for="height" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 8192x8192.">Height</label>
+<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[base.maxSize]]" id="height"></div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="format">Format</label>
+<div class="form-control"><select ng-model="base.format" ng-options="format for format in formats" id="format">
+</select></div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label for="location" class="cushion" data-toggle="popover" data-content="Enter the latitude and longitude of the location.">Lat,long</label>
+<div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
+</div>
+<div class="form-group">
+<label for="zoom">Zoom</label>
+<div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom"></div>
+</div>
+</fieldset>
