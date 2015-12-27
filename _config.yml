@@ -1,14 +1,17 @@
 name: Static Map Maker
-description: "Create a Bing static map, Google static map, Mapbox static map, MapQuest static map, or a Yandex static map. Type in a location, customize, and get the map."
+description: "Create a Bing static map, Google static map, Mapbox static map, MapQuest static map, a HERE static map, or a Yandex static map. Type in a location, customize, and get the map."
 url: http://staticmapmaker.com
-permalink: pretty
+#url: http://localhost:4000
+permalink: /:title/
 
 port: 4000
 host: 127.0.0.1
 
 # these will rotate
-mapquestKey: Fmjtd%7Cluu8296rn5%2C8x%3Do5-9w1ld6
+mapquestKey: HkQT4BGfQ9clGrwhLknjPxeF08UZ3k9K
 bingKey: Ag5uuxO0xffGEd9QQ5vIaOp_f1KlwIycTPD4dLaYGHdfwkr5QP-lTIXwZE-_2oos
+hereappid: Aa1YIIyNYjkb6oaXEBL4
+herecodeid: pVymqwwjz2o0icg1RF78OQ
 
 exclude:
 - vendor
@@ -23,8 +26,16 @@ gems:
 - jekyll-redirect-from
 - jemoji
 
-angularjs: 1.3.8
-jquery: 2.1.3
+angularjs: 1.4.7
+jquery: 2.1.4
 
 sass:
  style: :compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "page"

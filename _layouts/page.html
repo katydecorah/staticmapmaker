@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<body ng-app="staticMapMaker">
+<body ng-app="staticMapMaker" ng-cloak>
 <input type="checkbox" class="toggle" id="toggle">
 <div class="main" ng-controller="{{ page.title | downcase }}Controller">
 <div class="col-left col">
@@ -12,7 +12,7 @@ layout: default
 <div class="container">
 <form>
 {% include controls/{{ page.title | downcase }}.html %}
-<div class="form-group">Try another API: {% for api in site.pages sort %}{% if api.title and api.title != page.title %}<a href="{{site.url}}{{api.url}}" class='api-link'>{{api.title}}</a> {% endif %}{% endfor %}</div>
+<div class="form-group">Try another API: {% for api in site.posts reversed sort: title %}{% if api.title and api.title != page.title %}<a href="{{site.url}}{{api.url}}" class='api-link'>{{api.title}}</a> {% endif %}{% endfor %}</div>
 </form>
 </div><!-- /container -->
 </div><!-- /controls -->

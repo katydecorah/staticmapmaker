@@ -1,4 +1,7 @@
 myApp.controller('mapboxController', ['$scope', function($scope) {
+  
+  $scope.geojson = undefined; 
+  
   $scope.base = {
     location: "-73.7638,42.6564",
     zoom: 13,
@@ -8,10 +11,12 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     height: 300,
     maxSize: 1280,
     auto: false,
-    format: "png",
+    format: "@2x.png",
+    retina: true,
     API: null,
     mapID: null,
     mapboxID: "mapbox.emerald",
+    usingVector: false
   };
   $scope.markerSizes = [
     { "value": "s", "text": "small" },
@@ -22,21 +27,97 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
   $scope.formats = [ "png", "png32", "png64", "png128", "png256", "jpg70", "jpg80", "jpg90", "@2x.png" ];
 
   $scope.mapboxids = [
-    { "value": "mapbox.streets", "text" : "Streets" },
-    { "value": "mapbox.streets-basic", "text" : "Streets basic" },
-    { "value": "mapbox.streets-satellite", "text" : "Streets satellite" },
-    { "value": "mapbox.light", "text" : "Light" },
-    { "value": "mapbox.dark", "text" : "Dark" },
-    { "value": "mapbox.satellite", "text" : "Satellite" },
-    { "value": "mapbox.wheatpaste", "text" : "Wheatpaste" },
-    { "value": "mapbox.comic", "text" : "Comic" },
-    { "value": "mapbox.outdoors", "text" : "Outdoors" },
-    { "value": "mapbox.run-bike-hike", "text" : "Run, Bike, and Hike" },
-    { "value": "mapbox.pencil", "text" : "Pencil" },
-    { "value": "mapbox.pirates", "text" : "Pirates" },
-    { "value": "mapbox.emerald", "text" : "Emerald" },
-    { "value": "mapbox.high-contrast", "text" : "High contrast" }
+    { "value": "mapbox.streets", "text" : "Streets", "type": "raster" },
+    { "value": "mapbox.streets-basic", "text" : "Streets basic", "type": "raster" },
+    { "value": "mapbox.streets-satellite", "text" : "Streets satellite", "type": "raster" },
+    { "value": "mapbox.light", "text" : "Light", "type": "raster" },
+    { "value": "mapbox.dark", "text" : "Dark", "type": "raster" },
+    { "value": "mapbox.satellite", "text" : "Satellite", "type": "raster" },
+    { "value": "mapbox.wheatpaste", "text" : "Wheatpaste", "type": "raster" },
+    { "value": "mapbox.comic", "text" : "Comic", "type": "raster" },
+    { "value": "mapbox.outdoors", "text" : "Outdoors", "type": "raster" },
+    { "value": "mapbox.run-bike-hike", "text" : "Run, Bike, and Hike", "type": "raster" },
+    { "value": "mapbox.pencil", "text" : "Pencil", "type": "raster" },
+    { "value": "mapbox.pirates", "text" : "Pirates", "type": "raster" },
+    { "value": "mapbox.emerald", "text" : "Emerald", "type": "raster" },
+    { "value": "mapbox.high-contrast", "text" : "High contrast", "type": "raster" }
+    /* SOON
+    { "value": "mapbox/bright-v8", "text" : "Bright (vector)", "type": "vector" },
+    { "value": "mapbox/emerald-v8", "text" : "Emerald (vector)", "type": "vector" },
+    { "value": "mapbox/streets-v8", "text" : "Streets (vector)", "type": "vector" },
+    { "value": "mapbox/light-v8", "text" : "Light (vector)", "type": "vector" },
+    { "value": "mapbox/dark-v8", "text" : "Dark (vector)", "type": "vector" },
+    { "value": "mapbox/basic-v8", "text" : "Basic (vector)", "type": "vector" }*/
   ];
+  
+  $scope.buildMapURL = function() {
+    
+    var map = 'https://api.mapbox.com/';
+    
+    // Check to see what type of ID you're using
+    if ( $scope.base.mapID ) {
+      $scope.base.usingVector = $scope.base.mapID.indexOf("/") > 1;
+    } else if ($scope.base.mapboxID) {
+      $scope.base.usingVector = $scope.base.mapboxID.indexOf("/") > 1;
+    } 
+    
+    if ($scope.base.usingVector) {
+      map +=  'styles/v1/'
+    } else {
+      map += 'v4/'
+    }
+    
+    if ($scope.base.mapID) {
+      map += $scope.base.mapID;
+    } else {
+      map += $scope.base.mapboxID;
+    }
+    
+    if ($scope.base.usingVector) {
+      map +=  '/static'
+    } 
+    
+    if ($scope.geojson) {
+      map += '/geojson('+ encodeURIComponent($scope.geojson).replace(/\s/g, '')+')';
+    }
+    
+    map += $scope.pushpinSet() + '/';
+    
+    if ($scope.base.auto == true) {
+      map += 'auto';
+    } else {
+      map +=  $scope.base.location.replace(/\s/g, '') +','+ $scope.base.zoom;
+    } 
+    
+    if ($scope.base.usingVector && $scope.base.rotate) {
+      map += ',' + $scope.base.rotate;
+    }
+    
+    map += '/' + $scope.base.width +'x'+ $scope.base.height;
+    
+    if ( !$scope.base.usingVector ) {
+    if ( $scope.base.format !== '@2x.png' ) {
+      map += '.'+$scope.base.format;
+    } else {
+      map += $scope.base.format;
+    }
+  }
+  
+  if ( $scope.base.usingVector && $scope.base.retina ) {
+    map += '@2x'
+  }
+    
+    map +='?access_token=';
+    
+    if ($scope.base.API) {
+      map += $scope.base.API;
+    } else {
+      map += 'YOUR-API-KEY-HERE';
+    }
+    
+    return map
+    
+  };
 
   //http://jsfiddle.net/slav123/75m7e/3/
   $scope.markers = {
