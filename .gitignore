@@ -4,3 +4,4 @@ node_modules/
 *.sublime-project
 ui
 *.lock
+tmp
