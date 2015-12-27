@@ -26,7 +26,7 @@ gems:
 - jekyll-redirect-from
 - jemoji
 
-angularjs: 1.4.7
+angularjs: 1.4.8
 jquery: 2.1.4
 
 sass:
