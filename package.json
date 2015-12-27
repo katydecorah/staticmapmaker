@@ -1,0 +1,16 @@
+{
+  "name": "katy-decorah",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "scss-lint _sass/*.scss && htmlproof ./_site && tape test/*.js | tap-spec"
+  },
+  "dependencies": {
+    "scsslint": "0.0.3"
+  },
+  "devDependencies": {
+    "tape": "~4.2.2",
+    "tap-spec": "~4.1.1",
+    "js-yaml": "~2.1.3"
+  }
+}

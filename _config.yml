@@ -19,7 +19,7 @@ exclude:
 - CNAME
 - README.md
 - Gemfile
-- Rakefile
+- node_modules
 
 gems:
 - jekyll-sitemap
