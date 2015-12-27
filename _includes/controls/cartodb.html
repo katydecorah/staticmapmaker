@@ -1,30 +1,27 @@
-<fieldset class="[[ base.API && ' ' || 'error' ]]">
+<fieldset class="[[ (base.user && (base.token || base.named)) && ' ' || 'error' ]]">
 <div class="form-group">
-<label for="api" class="cushion" data-toggle="popover" data-content="You need a public API token to access the Mapbox static API. Follow the link to get your public token.">
-<a href="https://www.mapbox.com/account/apps/" target="_blank">Public API token</a></label>
-<div class="form-control"><input type="text" ng-model="base.API" id="api" placeholder="Public API Key (required)"></div>
+<label for="user" class="cushion" data-toggle="popover" data-content="Your username">
+Username</label>
+<div class="form-control"><input type="text" ng-model="base.user" id="user" placeholder="Username"></div>
 </div>
-</fieldset>
-<fieldset>
-<div class="form-group no-border">
-<label for="mapid" class="cushion" data-toggle="popover" data-content="Which one of your projects, styles, or data would you like to work with? Enter the map id here."><a href="https://www.mapbox.com/projects/">Your Map ID</a></label>
-<div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="Map ID"></div>
+<div class="form-group" ng-hide="base.named">
+<label for="token" class="cushion" data-toggle="popover" data-content="The layergroupid token from the map instantiation">
+Token <span ng-hide="base.token || base.named">or</span></label>
+<div class="form-control"><input type="text" ng-model="base.token" id="token" placeholder="Token"></div>
 </div>
-<div class="form-group">
-<label for="mapboxID" data-toggle="popover" data-content="Or use a Mapbox style instead of your own.">or a Mapbox style</label>
-<div class="form-control">
-<select ng-model="base.mapboxID" ng-options="id.value as id.text for id in mapboxids" id="mapID" class="sm" ng-disabled="base.mapID"></select>
-</div>
+<div class="form-group" ng-hide="base.token">
+<label for="named" class="cushion" data-toggle="popover" data-content="The name of the named map">Named</label>
+<div class="form-control"><input type="text" ng-model="base.named" id="named" placeholder="Named map"></div>
 </div>
 </fieldset>
 <fieldset>
 <div class="form-group">
-<label for="width" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640.">Width</label>
-<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[ base.format !== '@2x.png' && base.maxSize || '640' ]]" id="width"></div>
+<label for="width" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 8192x8192.">Width</label>
+<div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[base.maxSize]]" id="width"></div>
 </div>
 <div class="form-group">
-<label for="height" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640.">Height</label>
-<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[ base.format !== '@2x.png' && base.maxSize || '640' ]]" id="height"></div>
+<label for="height" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 8192x8192.">Height</label>
+<div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[base.maxSize]]" id="height"></div>
 </div>
 </fieldset>
 <fieldset>
@@ -36,17 +33,11 @@
 </fieldset>
 <fieldset>
 <div class="form-group">
-<label for="auto" data-toggle="popover" data-content="Make the map fit all the data from your mapd ID or the GeoJSON you enter below. Uncheck to manually enter coordinates and a zoom.">Auto adjust map?</label>
-<div class="form-control"><input type="checkbox" ng-model="base.auto" id="auto"></div>
-</div>
-<div ng-hide="base.auto">
-<div class="form-group">
-<label for="location" class="cushion" data-toggle="popover" data-content="Enter the longitude and latitude of the location.">Long,lat</label>
+<label for="location" class="cushion" data-toggle="popover" data-content="Enter the latitude and longitude of the location.">Lat,long</label>
 <div class="form-control"><input type="text" ng-model="base.location" id="location"></div>
 </div>
 <div class="form-group">
 <label for="zoom">Zoom</label>
 <div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" max="[[base.maxZoom]]" id="zoom"></div>
-</div>
 </div>
 </fieldset>
