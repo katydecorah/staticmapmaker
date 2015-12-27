@@ -20,8 +20,8 @@ myApp.controller('hereController', ['$scope', function($scope) {
     language: null,
     rotation: 0
   };
-
-
+  
+  
   $scope.formats = [
     {"value": 0, "text": "PNG" },
     {"value": 1, "text": "JPEG" },
@@ -30,7 +30,7 @@ myApp.controller('hereController', ['$scope', function($scope) {
     {"value": 4, "text": "PNG8" },
     {"value": 5, "text": "SVG (only for companylogo)" }
   ];
-
+  
   $scope.distances = [
     { "value": "d", "text": "decimeters" },
     { "value": "h", "text": "hectometers" },
@@ -40,9 +40,9 @@ myApp.controller('hereController', ['$scope', function($scope) {
     { "value": "mi", "text": "miles" },
     { "value": "ft", "text": "feet" }
   ]
-
+  
   $scope.styles = ["alps","dreamworks","flame","fleet","mini"];
-
+  
   $scope.languages = [
     { "value": "ara", "text": "Arabic" },
     { "value": "chi", "text": "Chinese (simplified)" },
@@ -69,8 +69,8 @@ myApp.controller('hereController', ['$scope', function($scope) {
     { "value": "urd", "text": "Urdu" },
     { "value": "vie", "text": "Vietnamese" },
     { "value": "wel", "text": "Welsh" }
-
+    
   ];
-
-
+  
+  
 }]);

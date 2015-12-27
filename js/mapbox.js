@@ -25,7 +25,7 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
   ];
   $scope.labels = [ "airfield", "airport", "alcohol-shop", "america-football", "art-gallery", "bakery", "bank", "bar", "baseball", "basketball", "beer", "bicycle", "building", "bus", "cafe", "camera", "campsite", "car", "cemetery", "chemist", "cinema", "circle-stroked", "circle", "city", "clothing-store", "college", "commercial", "cricket", "cross", "dam", "danger", "disability", "dog-park", "embassy", "emergency-telephone", "entrance", "farm", "fast-food", "ferry", "fire-station", "fuel", "garden", "golf", "grocery", "hairdresser", "harbor", "heart", "heliport", "hospital", "industrial", "land-use", "laundry", "library", "lighthouse", "lodging", "logging", "london-underground", "marker-stroked", "marker", "minefield", "mobilephone", "monument", "museum", "music", "oil-well", "park2", "park", "parking-garage", "parking", "pharmacy", "pitch", "place-of-worship", "playground", "police", "polling-place", "post", "prison", "rail-above", "rail-light", "rail-metro", "rail-underground", "rail", "religious-christian", "religious-jewish", "religious-muslim", "restaurant", "roadblock", "rocket", "school", "scooter", "shop", "skiing", "slaughterhouse", "soccer", "square-stroked", "square", "star-stroked", "star", "suitcase", "swimming", "telephone", "tennis", "theatre", "toilets", "town-hall", "town", "triangle-stroked", "triangle", "village", "warehouse", "waste-basket", "water", "wetland", "zoo","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ];
   $scope.formats = [ "png", "png32", "png64", "png128", "png256", "jpg70", "jpg80", "jpg90", "@2x.png" ];
-
+  
   $scope.mapboxids = [
     { "value": "mapbox.streets", "text" : "Streets", "type": "raster" },
     { "value": "mapbox.streets-basic", "text" : "Streets basic", "type": "raster" },
@@ -96,16 +96,16 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     map += '/' + $scope.base.width +'x'+ $scope.base.height;
     
     if ( !$scope.base.usingVector ) {
-    if ( $scope.base.format !== '@2x.png' ) {
-      map += '.'+$scope.base.format;
-    } else {
-      map += $scope.base.format;
+      if ( $scope.base.format !== '@2x.png' ) {
+        map += '.'+$scope.base.format;
+      } else {
+        map += $scope.base.format;
+      }
     }
-  }
-  
-  if ( $scope.base.usingVector && $scope.base.retina ) {
-    map += '@2x'
-  }
+    
+    if ( $scope.base.usingVector && $scope.base.retina ) {
+      map += '@2x'
+    }
     
     map +='?access_token=';
     
@@ -118,12 +118,12 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     return map
     
   };
-
+  
   //http://jsfiddle.net/slav123/75m7e/3/
   $scope.markers = {
     pushpins: []
   };
-
+  
   $scope.addPushpin = function() {
     $scope.markers.pushpins.push({
       markerSize: 's',
@@ -133,11 +133,11 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
       markerCustom: ''
     });
   },
-
+  
   $scope.removePushpin = function(index) {
     $scope.markers.pushpins.splice(index, 1);
   },
-
+  
   $scope.pushpinSet = function() {
     var total = '';
     angular.forEach($scope.markers.pushpins, function(marker,i) {
@@ -152,14 +152,14 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
           total +='url-'+encodeURIComponent(marker.markerCustom)+'('+marker.coordinates+')';
         }
         else {
-
+          
           total += 'pin-'+ marker.markerSize + '-'+ marker.markerLabel + '+' + marker.markerColor.split('#').join('') + '('+marker.coordinates +')';
-
+          
         }
       }
-
+      
     })
     return total;
   }
-
+  
 }]);

@@ -1,5 +1,5 @@
 myApp.controller('yandexController', ['$scope', function($scope) {
-
+	
 	$scope.base = {
 		location: "-73.7638,42.6564",
 		zoom: 13,
@@ -18,13 +18,13 @@ myApp.controller('yandexController', ['$scope', function($scope) {
 		size: "m",
 		label: null
 	};
-
+	
 	$scope.languages = [
 		{"value":"tr-TR","text":"Turkish"},
 		{"value":"ru-RU","text":"Russian"},
 		{"value":"en-US","text":"English"},
 	];
-
+	
 	$scope.markerSizes = [
 		{ "value": "tiny", "text": "small" },
 		{ "value": "small", "text": "medium" },
@@ -36,7 +36,7 @@ myApp.controller('yandexController', ['$scope', function($scope) {
 		{ "value": "skl", "text": "geo" },
 		{ "value": "trf", "text": "traffic" }
 	];
-
+	
 	$scope.layers=["map"];
 	$scope.toggleLayers = function toggleLayers(employeeName) {
 		var idx = $scope.layers.indexOf(employeeName);
@@ -47,15 +47,15 @@ myApp.controller('yandexController', ['$scope', function($scope) {
 			$scope.layers.push(employeeName);
 		}
 	};
-
-
+	
+	
 	$scope.styles = [
 		{ "value":"pm","text":"Placemarker"},
 		{ "value":"pm2","text":"Placemarker 2"},
 		{ "value":"flag","text":"Flag"},
 		{ "value":"vk","text":"VK"}
 	];
-
+	
 	$scope.colors = [
 		{"type":"pm","value":"wt","text":"white"},
 		{"type":"pm","value":"do","text":"dark orange"},
@@ -95,7 +95,7 @@ myApp.controller('yandexController', ['$scope', function($scope) {
 		{"type":"vk","value":"bk","text":"black"},
 		{"type":"vk","value":"gr","text":"grey"}
 	];
-
+	
 	$scope.sizes = [
 		{"type":"pm","value":"s","text":"small"},
 		{"type":"pm","value":"m","text":"medium"},
@@ -104,14 +104,14 @@ myApp.controller('yandexController', ['$scope', function($scope) {
 		{"type":"pm2","value":"l","text":"large"},
 		{"type":"vk","value":"m","text":"medium"}
 	];
-
-
-
+	
+	
+	
 	//http://jsfiddle.net/slav123/75m7e/3/
 	$scope.markers = {
 		pushpins: []
 	};
-
+	
 	$scope.addPushpin = function() {
 		$scope.markers.pushpins.push({
 			style: $scope.base.style,
@@ -121,44 +121,44 @@ myApp.controller('yandexController', ['$scope', function($scope) {
 			label: $scope.base.label
 		});
 	},
-
+	
 	$scope.removePushpin = function(index) {
 		$scope.markers.pushpins.splice(index, 1);
 	},
-
+	
 	$scope.pushpinSet = function() {
 		var total='';
-
+		
 		angular.forEach($scope.markers.pushpins, function(pushpin,i) {
-
+			
 			if (i == 0) {
 				total += '&pt='
 			} else {
 				total += '~'
 			}
-
+			
 			if (pushpin.coordinates) {
-
-
+				
+				
 				if (pushpin.style == 'flag') {
-
+					
 					total += pushpin.coordinates +','+ pushpin.style;
-
+					
 				} else if (pushpin.style == 'vk') {
-
+					
 					total += pushpin.coordinates +','+ pushpin.style + pushpin.color + pushpin.size;
-
+					
 				} else {
-
+					
 					total += pushpin.coordinates +','+ pushpin.style + pushpin.color + pushpin.size;
-
+					
 					if (pushpin.label) {
 						total += pushpin.label;
 					}
 				}
 			}
 		})
-
+		
 		return total;
 	}
 }]);
