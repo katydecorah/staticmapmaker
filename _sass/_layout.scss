@@ -93,7 +93,7 @@
     width: 46%;
   }
 
-  &:nth-of-type(2n+2) {
+  &:nth-child(2n+2) {
 
     @include bp(with-columns) {
       margin-left: 8%;
