@@ -29,6 +29,10 @@ gems:
 angularjs: 1.4.8
 jquery: 2.1.4
 
+# adsense
+client: ca-pub-5924879737462180
+slot: 3966465755
+
 sass:
  style: :compressed
 
