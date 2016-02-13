@@ -46,14 +46,14 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     { "value": "mapbox.emerald", "text" : "Emerald", "type": "raster" },
     { "value": "mapbox.high-contrast", "text" : "High contrast", "type": "raster" },
     
-    { "value": "mapbox/bright-v8", "text" : "Bright (vector)", "type": "vector" },
-    { "value": "mapbox/emerald-v8", "text" : "Emerald (vector)", "type": "vector" },
-    { "value": "mapbox/streets-v8", "text" : "Streets (vector)", "type": "vector" },
-    { "value": "mapbox/light-v8", "text" : "Light (vector)", "type": "vector" },
-    { "value": "mapbox/dark-v8", "text" : "Dark (vector)", "type": "vector" },
-    { "value": "mapbox/basic-v8", "text" : "Basic (vector)", "type": "vector" },
-    { "value": "mapbox/satellite-v8", "text" : "Satellite (vector)", "type": "vector" },
-    { "value": "mapbox/satellite-hybrid-v8", "text" : "Satellite streets (vector)", "type": "vector" }
+    { "value": "mapbox/bright-v8", "text" : "Bright", "type": "vector" },
+    { "value": "mapbox/emerald-v8", "text" : "Emerald", "type": "vector" },
+    { "value": "mapbox/streets-v8", "text" : "Streets", "type": "vector" },
+    { "value": "mapbox/light-v8", "text" : "Light", "type": "vector" },
+    { "value": "mapbox/dark-v8", "text" : "Dark", "type": "vector" },
+    { "value": "mapbox/basic-v8", "text" : "Basic", "type": "vector" },
+    { "value": "mapbox/satellite-v8", "text" : "Satellite", "type": "vector" },
+    { "value": "mapbox/satellite-hybrid-v8", "text" : "Satellite streets", "type": "vector" }
   ];
   
   $scope.buildMapURL = function() {
