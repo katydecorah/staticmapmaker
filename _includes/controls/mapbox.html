@@ -1,21 +1,20 @@
 <fieldset class="[[ base.API && ' ' || 'error' ]]">
 <div class="form-group">
 <label for="api" class="cushion" data-toggle="popover" data-content="You need a public API token to access the Mapbox static API. Follow the link to get your public token.">
-<a href="https://www.mapbox.com/account/apps/" target="_blank">Public API token</a></label>
+<a href="https://www.mapbox.com/studio/account/tokens/" target="_blank">Public API token</a></label>
 <div class="form-control"><input type="text" ng-model="base.API" id="api" placeholder="Public API Key (required)"></div>
 </div>
 </fieldset>
 
 <fieldset>
 <div class="form-group no-border">
-<label for="mapid" class="cushion" data-toggle="popover" data-content="Which one of your projects, styles, or data would you like to work with? Enter the map id here."><a href="https://www.mapbox.com/projects/">Your [[ base.usingVector == true && "Style" || "Map"]] ID</a></label>
+<label for="mapid" class="cushion" data-toggle="popover" data-content="Which one of your projects or styles would you like to work with? Enter the map ID or Mapbox Studio style URL here."><a href="https://www.mapbox.com/studio/">Your map ID or style URL</a></label>
 <div class="form-control"><input type="text" ng-model="base.mapID" id="mapid" placeholder="[[ base.usingVector == true && 'Style' || 'Map']] ID"></div>
 </div>
 <div class="form-group">
 <label for="mapboxID" data-toggle="popover" data-content="Or use a Mapbox style instead of your own.">or a Mapbox style</label>
 <div class="form-control">
-<select ng-model="base.mapboxID" ng-options="id.value as id.text for id in mapboxids" id="mapID" class="sm" ng-disabled="base.mapID"></select>
-<!--  | filter:id.type= (base.usingVector && 'vector' || base.mapType) -->
+<select ng-model="base.mapboxID" ng-options="id.value as id.text group by id.type for id in mapboxids" id="mapID" class="sm" ng-disabled="base.mapID"></select>
 </div>
 </div>
 
@@ -23,23 +22,38 @@
 </fieldset>
 <fieldset>
 <div class="form-group">
-<label for="width" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640.">Width</label>
+<label for="width" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280.">Width</label>
 <div class="form-control"><input type="number" ng-model="base.width" min="0" max="[[ ((base.format !== '@2x.png' && !base.usingVestor) || base.usingVector) && base.maxSize || '640' ]]" id="width"></div>
 </div>
 <div class="form-group">
-<label for="height" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280. This absolute pixel size limit does not change when using the @2x suffix making the max size for retina images 640x640.">Height</label>
+<label for="height" class="cushion" data-toggle="popover" data-content="The maximum size for a static map image is 1280x1280.">Height</label>
 <div class="form-control"><input type="number" ng-model="base.height" min="0" max="[[ ((base.format !== '@2x.png' && !base.usingVestor) || base.usingVector) && base.maxSize || '640' ]]" id="height"></div>
 </div>
 
 
 <div class="form-group" ng-show="base.usingVector">
-<label for="rotate" class="cushion">Rotate</label>
-<div class="form-control"><input type="range" ng-model="base.rotate" min="0" max="360" id="rotate"></div>
+<label for="bearing" class="cushion">Bearing</label>
+<div class="form-control"><input type="range" ng-model="base.bearing" min="0" max="360" id="bearing"></div>
+</div>
+
+<div class="form-group" ng-show="base.usingVector">
+<label for="pitch" class="cushion">Pitch</label>
+<div class="form-control"><input type="range" ng-model="base.pitch" min="0" max="60" id="pitch"></div>
 </div>
 
 <div class="form-group" ng-show="base.usingVector">
 <label for="retina" data-toggle="popover" data-content="">Retina maps?</label>
 <div class="form-control"><input type="checkbox" ng-model="base.retina" id="retina"></div>
+</div> 
+
+<div class="form-group" ng-show="base.usingVector">
+<label for="attribution" data-toggle="popover" data-content="">Show attribution?</label>
+<div class="form-control"><input type="checkbox" ng-model="base.attribution" id="attribution"></div>
+</div> 
+
+<div class="form-group" ng-show="base.usingVector">
+<label for="logo" data-toggle="popover" data-content="">Show logo?</label>
+<div class="form-control"><input type="checkbox" ng-model="base.logo" id="attribution"></div>
 </div> 
 
 </fieldset>
@@ -62,7 +76,7 @@
 </div>
 <div class="form-group">
 <label for="zoom">Zoom</label>
-<div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" step="[[base.usingVector && 0.25 || 1 ]]" max="[[base.maxZoom]]" id="zoom"></div>
+<div class="form-control"><input type="range" name="input" ng-model="base.zoom" min="[[base.minZoom]]" step="[[base.usingVector && 0.25 || 1 ]]" max="[[base.usingVector && 20 || base.maxZoom]]" id="zoom"></div>
 </div>
 </div>
 </fieldset>
