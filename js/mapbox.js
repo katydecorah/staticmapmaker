@@ -16,7 +16,11 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     API: null,
     mapID: null,
     mapboxID: "mapbox.emerald",
-    usingVector: false
+    usingVector: false,
+    bearing: 0,
+    pitch: 0,
+    attribution: true,
+    logo: true
   };
   $scope.markerSizes = [
     { "value": "s", "text": "small" },
@@ -40,14 +44,16 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     { "value": "mapbox.pencil", "text" : "Pencil", "type": "raster" },
     { "value": "mapbox.pirates", "text" : "Pirates", "type": "raster" },
     { "value": "mapbox.emerald", "text" : "Emerald", "type": "raster" },
-    { "value": "mapbox.high-contrast", "text" : "High contrast", "type": "raster" }
-    /* SOON
+    { "value": "mapbox.high-contrast", "text" : "High contrast", "type": "raster" },
+    
     { "value": "mapbox/bright-v8", "text" : "Bright (vector)", "type": "vector" },
     { "value": "mapbox/emerald-v8", "text" : "Emerald (vector)", "type": "vector" },
     { "value": "mapbox/streets-v8", "text" : "Streets (vector)", "type": "vector" },
     { "value": "mapbox/light-v8", "text" : "Light (vector)", "type": "vector" },
     { "value": "mapbox/dark-v8", "text" : "Dark (vector)", "type": "vector" },
-    { "value": "mapbox/basic-v8", "text" : "Basic (vector)", "type": "vector" }*/
+    { "value": "mapbox/basic-v8", "text" : "Basic (vector)", "type": "vector" },
+    { "value": "mapbox/satellite-v8", "text" : "Satellite (vector)", "type": "vector" },
+    { "value": "mapbox/satellite-hybrid-v8", "text" : "Satellite streets (vector)", "type": "vector" }
   ];
   
   $scope.buildMapURL = function() {
@@ -89,8 +95,17 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
       map +=  $scope.base.location.replace(/\s/g, '') +','+ $scope.base.zoom;
     } 
     
-    if ($scope.base.usingVector && $scope.base.rotate) {
-      map += ',' + $scope.base.rotate;
+    if ($scope.base.usingVector) {
+      if ($scope.base.bearing) {
+        map += ',' + $scope.base.bearing;
+      } else {
+        map += ',0';
+      }
+      
+    }
+    
+    if ($scope.base.usingVector && $scope.base.pitch) {
+      map += ',' + $scope.base.pitch;
     }
     
     map += '/' + $scope.base.width +'x'+ $scope.base.height;
@@ -114,6 +129,15 @@ myApp.controller('mapboxController', ['$scope', function($scope) {
     } else {
       map += 'YOUR-API-KEY-HERE';
     }
+    
+    if ( $scope.base.usingVector && !$scope.base.attribution ) {
+      map += '&attribution=' + $scope.base.attribution;
+    }
+    
+    if ( $scope.base.usingVector && !$scope.base.logo ) {
+      map += '&logo=' + $scope.base.logo;
+    }
+    
     
     return map
     

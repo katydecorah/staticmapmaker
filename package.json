@@ -11,6 +11,6 @@
   "devDependencies": {
     "js-yaml": "^2.1.3",
     "tap-spec": "~4.1.1",
-    "tape": "^4.2.2"
+    "tape": "^4.4.0"
   }
 }
