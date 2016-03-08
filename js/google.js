@@ -52,7 +52,7 @@ myApp.controller('googleController', ['$scope', function($scope) {
   
   $scope.mapTypes = [ "roadmap", "terrain", "satellite", "hybrid" ];
   
-  $scope.markerLabels = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  $scope.markerLabels = ["default","0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
   
   $scope.formats = [ "png", "gif", "jpg" ];
   
@@ -85,7 +85,9 @@ myApp.controller('googleController', ['$scope', function($scope) {
           total += '&markers=icon:'+ marker.markerCustom + '%7Cshadow:'+ marker.markerShadow + '%7C' + marker.coordinates.split(' ').join('+');
           
         } else {
-          total += '&markers=size:'+ marker.markerSize + '%7Ccolor:'+ marker.markerColor.split('#').join('0x') + '%7Clabel:' + marker.markerLabel + '%7C' + marker.coordinates.split(' ').join('+');
+          var label = marker.markerLabel == 'default' ? '' : marker.markerLabel;
+
+          total += '&markers=size:'+ marker.markerSize + '%7Ccolor:'+ marker.markerColor.split('#').join('0x') + '%7Clabel:' + label + '%7C' + marker.coordinates.split(' ').join('+');
         }
       }
       
