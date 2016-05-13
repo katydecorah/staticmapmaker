@@ -26,8 +26,8 @@ gems:
 - jekyll-redirect-from
 - jemoji
 
-angularjs: 1.4.8
-jquery: 2.1.4
+angularjs: 1.5.5
+jquery: 2.2.3
 
 # adsense
 client: ca-pub-5924879737462180

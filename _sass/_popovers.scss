@@ -9,9 +9,9 @@
 .popover {
   background-clip: padding-box;
   background-color: $light;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid $trasparent02;
   border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 10px $trasparent02;
   display: none;
   left: 0;
   max-width: 276px;
@@ -27,13 +27,13 @@
 
     .arrow {
       border-left-width: 0;
-      border-right-color: rgba(0, 0, 0, .25);
+      border-right-color: $trasparent02;
       left: -11px;
       margin-top: -11px;
       top: 50%;
     }
 
-    .arrow:after {
+    .arrow::after {
       border-left-width: 0;
       border-right-color: $light;
       bottom: -10px;
@@ -43,7 +43,7 @@
   }
 
   .arrow,
-  .arrow:after {
+  .arrow::after {
     border-color: transparent;
     border-style: solid;
     display: block;
@@ -55,7 +55,7 @@
   .arrow {
     border-width: 11px;
 
-    &:after {
+    &::after {
       border-width: 10px;
       content: '';
     }
