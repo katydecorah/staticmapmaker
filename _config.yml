@@ -20,6 +20,8 @@ exclude:
 - README.md
 - Gemfile
 - node_modules
+- package.json
+- test
 
 gems:
 - jekyll-sitemap
