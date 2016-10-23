@@ -11,8 +11,8 @@ layout: default
 <div class="controls">
 <div class="container">
 <form>
-{% include controls/{{ page.title | downcase }}.html %}
-<div class="form-group">Try another API: {% for api in site.posts reversed sort: title %}{% if api.title and api.title != page.title %}<a href="{{site.url}}{{api.url}}" class='api-link'>{{api.title}}</a> {% endif %}{% endfor %}</div>
+{% include controls/{{ page.title | downcase }}.html %}{% assign apis = site.posts | sort: title %}
+<div class="form-group">Try another API: {% for api in apis %}{% if api.title and api.title != page.title %}<a href="{{site.url}}{{api.url}}" class='api-link'>{{api.title}}</a> {% endif %}{% endfor %}</div>
 </form>
 </div><!-- /container -->
 </div><!-- /controls -->
