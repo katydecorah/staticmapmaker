@@ -1,6 +1,3 @@
----
-layout: compress
----
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie8"><![endif]-->
 <html lang="en">
@@ -8,25 +5,35 @@ layout: compress
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>{% if page.url != '/' %}{{ page.title }} {% endif%}{{ site.name }} | a static map API helper</title>
-<meta name="description" content="{% if page.url contains 'google' or page.url contains 'mapbox' or page.url contains 'bing' or page.url contains 'mapquest' or page.url contains 'yandex' or page.url contains 'here' or page.url contains 'cartodb' %}Create a {{ page.title }} static map with {{ site.name }}. Type in a location, customize, and get the map.{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="{% if page.title %}Create a {{ page.title }} static map with {{ site.name }}.{% else %}{{ site.description }}{% endif %}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@katydecorah">
-<meta name="twitter:title" content="{{ site.name }}">
-<meta name="twitter:description" content="{{ site.description }}">
-{% if page.layout != 'front-page' %}<meta name="twitter:image" content="{{site.url}}/img/{{page.title | downcase}}.png" />{% endif %}
-<meta name="twitter:creator" content="@katydecorah">
-<meta name="twitter:domain" content="{{ site.url }}">
+<!-- twitter-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{site.author.twitter}}">
+<meta name="twitter:title" content="{{site.name}}">
+<meta name="twitter:description" content="{% if page.title %}Create a {{ page.title }} static map with {{ site.name }}.{% else %}{{ site.description }}{% endif %}">
+{% if page.title %}<meta name="twitter:image" content="{{site.url}}/img/{{page.title | downcase}}.png">{% endif %}
+<!-- facebook-->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{site.url}}{{page.url | replace:'index.html',''}}" />
+<meta property="og:title" content="{% if page.title %}{{page.title}} - {% endif %}{{site.name}}" />
+<meta property="og:site_name" content="{{site.name}}" />
+<meta property="og:description" content="{% if page.title %}Create a {{ page.title }} static map with {{ site.name }}.{% else %}{{ site.description }}{% endif %}" />
+{% if page.title %}
+<meta property="og:image" content="{{site.url}}/img/{{page.title | downcase}}.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="400" />{% endif %}
+{% feed_meta %}
 <link href="{{ site.url }}/css/main.css" rel="stylesheet">
 <!--[if IE 8]>
 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
 <![endif]-->
-{% if page.title %}<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/{{site.angularjs}}/angular.min.js'></script>{% endif %}
+{% if page.title %}<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/{{site.angularjs}}/angular.min.js'></script>{% endif %}
 </head>
 {{ content }}
 <footer>
-<script src="//use.typekit.net/waj4zpx.js"></script>
+<script src="https://use.typekit.net/waj4zpx.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

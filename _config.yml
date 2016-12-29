@@ -1,8 +1,13 @@
+url: http://staticmapmaker.com
+permalink: /:title/
+author:
+  name: Katy DeCorah
+  email: katydecorah@gmail.com
+  uri: http://katydecorah.com
+  twitter: katydecorah
+
 name: Static Map Maker
 description: "Create a Bing static map, Google static map, Mapbox static map, MapQuest static map, a HERE static map, a CartoDB static map, or a Yandex static map. Type in a location, customize, and get the map."
-url: http://staticmapmaker.com
-#url: http://localhost:4000
-permalink: /:title/
 
 port: 4000
 host: 127.0.0.1
@@ -19,6 +24,7 @@ exclude:
 - CNAME
 - README.md
 - Gemfile
+- Gemfile.lock
 - node_modules
 - package.json
 - test
@@ -27,8 +33,9 @@ gems:
 - jekyll-sitemap
 - jekyll-redirect-from
 - jemoji
+- jekyll-feed
 
-angularjs: 1.5.8
+angularjs: 1.6.1
 jquery: 3.1.1
 
 # adsense

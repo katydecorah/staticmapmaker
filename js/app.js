@@ -18,7 +18,7 @@ myApp.filter('encode', function() {
 
 myApp.filter('strip', function() {
   return function (value) {
-    return (!value) ? '' : value.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,'')
+    return (!value) ? '' : value.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,'');
   };
 });
 
@@ -57,5 +57,5 @@ myApp.directive('myAdSense', function() {
     replace: true,
     template: '<div ng-transclude></div>',
     link: function ($scope, element, attrs) {}
-  }
+  };
 });
