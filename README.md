@@ -11,8 +11,6 @@ This app helps you build a static map URL.
 
 Built with Jekyll and Angular. 
 
-Check out the Polish version: http://staticmapmaker.pl/
-
 ## Notes
 
 Each API has the following assets (using Mapbox as an example):
