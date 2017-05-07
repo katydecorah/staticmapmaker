@@ -9,7 +9,7 @@ This app helps you build a static map URL.
 * [MapQuest Static Maps](http://www.mapquestapi.com/staticmap/)
 
 
-Built with Jekyll and Angular. 
+Built with Jekyll and Angular.
 
 ## Notes
 
@@ -17,15 +17,16 @@ Each API has the following assets (using Mapbox as an example):
 
 * [_posts/0000-01-01-mapbox.md](https://github.com/katydecorah/staticmapmaker/blob/gh-pages/_posts/0000-01-01-mapbox.md)
   - A file in `_posts/`
-	- The file includes, the API's name in normal case, and a link to the API's documentation:
-	```
-	---
-	title: Mapbox
-	link: https://www.mapbox.com/developers/api/static/
-	---
-	```
-* [_includes/controls/mapbox.html](https://github.com/katydecorah/staticmapmaker/blob/gh-pages/_includes/controls/mapbox.html)
-  - HTML for the API's controls
+  - The file includes, the API's name in normal case, and a link to the API's documentation.
+  - Place extra HTML for controls in the body of the page.
+```yaml
+---
+title: Mapbox
+link: https://www.mapbox.com/developers/api/static/
+controls:
+# metadata for each input
+---
+```
 * [js/mapbox.js](https://github.com/katydecorah/staticmapmaker/blob/gh-pages/js/mapbox.js)
   - Settings for the controls and API call
 * [_includes/map/mapbox.html](https://github.com/katydecorah/staticmapmaker/blob/gh-pages/_includes/map/mapbox.html)

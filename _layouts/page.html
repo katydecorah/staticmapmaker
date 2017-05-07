@@ -3,7 +3,7 @@ layout: default
 ---
 <body ng-app="staticMapMaker" ng-cloak>
 <input type="checkbox" class="toggle" id="toggle">
-<div class="main" ng-controller="{{ page.title | downcase }}Controller">
+<div class="main" ng-controller="{{ page.title | capitalize }}Controller">
 <div class="col-left col">
 <header>
 <h1><a href="{{site.url}}">{% include svg/icon.svg %} {{ page.title }} Static Map Maker</a></h1>
@@ -11,8 +11,13 @@ layout: default
 <div class="controls">
 <div class="container">
 <form>
-{% include controls/{{ page.title | downcase }}.html %}{% assign apis = site.posts | sort: title %}
-<div class="form-group">Try another API: {% for api in apis %}{% if api.title and api.title != page.title %}<a href="{{site.url}}{{api.url}}" class='api-link'>{{api.title}}</a> {% endif %}{% endfor %}</div>
+{% for el in page.controls %}
+<fieldset{% if el.hide %} ng-hide="{{el.hide}}"{% endif %}{% if el.show %} ng-show="{{el.show}}"{% endif %}{% if el.class %} class="{{el.class}}"{% endif %}>
+  {% include form/{{el.include}}.html type=el.type id=el.id popover=el.popover label=el.label model=el.model placeholder=el.placeholder true=el.trueValue false=el.falseValue init=el.init min=el.min max=el.max options=el.options disabled=el.disabled step=el.step html=el.html classInput=el.classInput %}
+</fieldset>
+{% endfor %}
+{{content}}
+{% assign apis = site.posts | sort: title %}<div class="form-group">Try another API:<br>{% for api in apis %}{% if api.title and api.title != page.title %}<a href="{{site.url}}{{api.url}}" class='api-link'>{{api.title}}</a> {% endif %}{% endfor %}</div>
 </form>
 </div><!-- /container -->
 </div><!-- /controls -->

@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label for="{{include.id}}" class="cushion" data-toggle="popover" data-content="{{include.popover}}">
+    {{include.label}}
+  </label>
+  <div class="form-control">
+    <input class="{{include.classInput}}" type="{{include.type}}" ng-model="{{include.model}}" id="{{include.id}}"{% if include.init %} ng-init="{{include.model}}='{{include.init}}'" {% endif %}placeholder="{{include.placeholder}}"{% if include.min %} min="{{include.min}}"{% endif %}{% if include.max %} max="{{include.max}}"{% endif %}{% if include.disabled %} ng-disabled="{{include.disabled}}"{% endif %}>
+    {{include.html}}
+  </div>
+</div>

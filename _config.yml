@@ -36,7 +36,7 @@ gems:
 - jekyll-feed
 
 angularjs: 1.6.1
-jquery: 3.1.1
+jquery: 3.2.1
 
 # adsense
 client: ca-pub-5924879737462180
