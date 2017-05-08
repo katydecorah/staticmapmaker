@@ -3,7 +3,7 @@ fieldset {
   display: block;
   width: 100%;
 
-  &.error ~ fieldset {
+  &.error ~ fieldset:not(.error) {
     opacity: .25;
   }
 

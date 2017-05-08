@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label for="{{include.id}}" data-toggle="popover" data-content="{{include.popover}}">
+    {{include.label}}
+  </label>
+  <div class="form-control">
+    <input type="checkbox" ng-model="{{include.model}}"{% if include.true %} ng-true-value="{{include.true}}" {% endif %}{% if include.false %} ng-false-value="{{include.false}}" {% endif %}id="{{include.id}}">
+  </div>
+</div>

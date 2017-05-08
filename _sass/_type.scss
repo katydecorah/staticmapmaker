@@ -73,11 +73,8 @@ pre {
 %small { font-size: .8em; }
 
 .colophon {
-
-  @extend %small;
-
   margin-bottom: 1em;
-  margin-top: 3em;
+  margin-top: 1em;
 }
 
 .link {

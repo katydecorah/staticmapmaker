@@ -1,74 +1,75 @@
-myApp.controller('cartodbController', ['$scope', function($scope) {
+angular.module('staticMapMaker').controller('CartodbController', function($scope) {
+  var vm = $scope;
 
-  $scope.geojson = undefined;
+  vm.geojson = undefined;
 
-  $scope.base = {
-    location: "42.6564,-73.7638",
+  vm.base = {
+    location: '42.6564,-73.7638',
     zoom: 13,
     minZoom: 0,
     maxZoom: 22,
     width: 600,
     height: 300,
     maxSize: 8192,
-    format: "png",
+    format: 'png',
     retina: true,
     token: null,
     named: null,
     user: null
   };
 
-  $scope.formats = [ "png","jpg"];
+  vm.formats = ['png', 'jpg'];
 
-  $scope.showPlaceholder = function() {
-    if ($scope.base.user && ($scope.base.token || $scope.base.named)) {
+  vm.showPlaceholder = function() {
+    if (vm.base.user && (vm.base.token || vm.base.named)) {
       return false;
     } else {
       return true;
     }
   };
 
-  $scope.buildMapURL = function() {
+  vm.buildMapURL = function() {
 
     var map = 'https://cartocdn-ashbu.global.ssl.fastly.net/';
 
-    if ($scope.base.user) {
-      map += $scope.base.user;
+    if (vm.base.user) {
+      map += vm.base.user;
     } else {
       map += 'USER';
     }
 
     map += '/api/v1/map/static/';
 
-    if ($scope.base.token) {
+    if (vm.base.token) {
 
       map += 'center/';
 
-      map += $scope.base.token;
+      map += vm.base.token;
 
-      map += '/' + $scope.base.zoom;
+      map += '/' + vm.base.zoom;
 
-      map += '/' + $scope.base.location.replace(',','/');
+      map += '/' + vm.base.location.replace(',','/');
 
-    } else if ($scope.base.named) {
-      map += 'named/' + $scope.base.named;
+    } else if (vm.base.named) {
+      map += 'named/' + vm.base.named;
     } else {
       map += 'center/';
 
       map += 'TOKEN';
 
-      map += '/' + $scope.base.zoom;
+      map += '/' + vm.base.zoom;
 
-      map += '/' + $scope.base.location.replace(',','/');
+      map += '/' + vm.base.location.replace(',','/');
     }
 
-    map += '/' + $scope.base.width;
+    map += '/' + vm.base.width;
 
-    map += '/' + $scope.base.height;
+    map += '/' + vm.base.height;
 
-    map += '.' + $scope.base.format;
+    map += '.' + vm.base.format;
 
     return map;
 
   };
 
-}]);
+});
