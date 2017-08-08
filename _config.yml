@@ -27,9 +27,10 @@ exclude:
 - Gemfile.lock
 - node_modules
 - package.json
+- package-lock.json
 - test
 
-gems:
+plugins:
 - jekyll-sitemap
 - jekyll-redirect-from
 - jemoji
