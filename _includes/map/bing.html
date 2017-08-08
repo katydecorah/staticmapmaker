@@ -1,3 +1,3 @@
-{% capture mapcode %}http://dev.virtualearth.net/REST/V1/Imagery/Map/[[base.mapType]]/[[ base.location | encode]][[ ((base.location | strip ) | isNumber) == true && '/'+base.zoom || '' ]]?mapSize=[[base.width]],[[base.height]][[base.showTraffic == true && '&mapLayer=TrafficFlow' || '']]&format=[[base.format]][[pushpinSet()]]&key=[[ base.API && base.API || '{{site.bingKey}}' ]]{% endcapture %}
+{% capture mapcode %}https://dev.virtualearth.net/REST/V1/Imagery/Map/[[base.mapType]]/[[ base.location | encode]][[ ((base.location | strip ) | isNumber) == true && '/'+base.zoom || '' ]]?mapSize=[[base.width]],[[base.height]][[base.showTraffic == true && '&mapLayer=TrafficFlow' || '']]&format=[[base.format]][[pushpinSet()]]&key=[[ base.API && base.API || '{{site.bingKey}}' ]]{% endcapture %}
 <img ng-src="{{ mapcode }}" alt="{{page.title}} Map" class="static-map" id="map" data-proofer-ignore>
 {% assign mapcode = mapcode | replace: {{site.bingKey}}, 'YOUR-API-KEY-HERE' %}
