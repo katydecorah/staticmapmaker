@@ -19,7 +19,7 @@ angular.module('staticMapMaker').filter('encode', function($window) {
 
 angular.module('staticMapMaker').filter('strip', function() {
   return function(value) {
-    return (!value) ? '' : value.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,'');
+    return (!value) ? '' : value.replace(/[.,-/#!$%^&*;:{}=\-_`~()]/g,'');
   };
 });
 
