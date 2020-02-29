@@ -27,6 +27,6 @@
     "eslint-plugin-angular": "^2.5.0",
     "js-yaml": "^3.13.1",
     "tap-spec": "^5.0.0",
-    "tape": "^4.8.0"
+    "tape": "^4.13.0"
   }
 }
