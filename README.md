@@ -22,7 +22,7 @@ Each API has the following assets (using Mapbox as an example):
 ```yaml
 ---
 title: Mapbox
-link: https://www.mapbox.com/developers/api/static/
+link: https://docs.mapbox.com/api/maps/#static-images
 controls:
 # metadata for each input
 ---

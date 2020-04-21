@@ -1,14 +1,2 @@
 language: node_js
 node_js: "stable"
-before_install: 
-  - rvm install 2.2.2
-  - rvm use 2.2.2
-  - gem install bundler
-  - bundle install
-  - gem install scss-lint
-  - gem install html-proofer
-  - bundle exec jekyll build
-sudo: false
-env:
-  global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
