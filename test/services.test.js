@@ -6,7 +6,7 @@ var jsyaml = require('js-yaml');
 var path = '_posts/';
 
 // and then build array of posts
-var posts = []
+var posts = [];
 var file = fs.readdirSync(path);
 file.forEach(function(i) {
   posts.push(path + i);
@@ -30,7 +30,7 @@ function readData(dir, filename) {
       file: file,
       metadata: jsyaml.load(file)
     };
-  } catch(err) {}
+  } catch (err) {}
 }
 
 function readPost(filename) {
@@ -47,8 +47,8 @@ function readPost(filename) {
       metadata: jsyaml.load(frontmatter),
       content: parts[2]
     };
-  } catch(err) {
-    console.log("\nCould not read metadata, check the syntax of the metadata and front matter.\n");
+  } catch (err) {
+    console.log('\nCould not read metadata, check the syntax of the metadata and front matter.\n', filename);
   }
 }
 
@@ -62,7 +62,6 @@ posts.forEach(function(post) {
   var file = readPost(post);
 
   var metadata = file.metadata;
-  var content = file.content;
 
   test(post, function(t) {
 
@@ -79,7 +78,6 @@ posts.forEach(function(post) {
       t.equal(control.model.substr(0, 5), 'base.', 'model must start with "base." not ' + control.model.substr(0, 5));
       t.ok(control.include, 'must have an include');
       t.ok(control.popover, 'must have a popover');
-      t.equal(control.popover[control.popover.length - 1], '.', 'popover must end in a period');
       t.notEqual(forms.indexOf(control.include), -1, 'include must be one of the following: ' + forms.join(', '));
       t.ok(control.label, 'must have a label');
       if (control.include == 'select') t.ok(control.options, 'must have options');
