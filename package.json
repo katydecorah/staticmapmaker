@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "scss-lint _sass/*.scss && tape test/*.js | tap-spec",
+    "test": "tape test/*.js | tap-spec",
     "lint": "eslint js"
   },
   "dependencies": {
