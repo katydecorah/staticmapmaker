@@ -1,10 +1,16 @@
 @mixin bp($point) {
   @if $point == big-with-columns {
-    @media (min-width: 900px) { @content; }
+    @media (min-width: 900px) {
+      @content;
+    }
   } @else if $point == with-columns {
-    @media (min-width: 650px) { @content; }
+    @media (min-width: 650px) {
+      @content;
+    }
   } @else if $point == no-columns {
-    @media (max-width: 650px)  { @content; }
+    @media (max-width: 650px) {
+      @content;
+    }
   }
 }
 
@@ -13,7 +19,7 @@
 
   &::before,
   &::after {
-    content: '\0020';
+    content: "\0020";
     display: block;
     height: 0;
     overflow: hidden;
@@ -22,7 +28,6 @@
   &::after {
     clear: both;
   }
-
 }
 
 %flex {

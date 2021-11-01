@@ -13,7 +13,9 @@
   "license": "MIT",
   "scripts": {
     "test": "tape test/*.js | tap-spec",
-    "lint": "eslint js"
+    "lint": "eslint js",
+    "prepare": "husky install",
+    "pretty-quick": "pretty-quick"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
@@ -21,6 +23,12 @@
     "eslint-plugin-angular": "^4.1.0",
     "js-yaml": "^4.1.0",
     "tap-spec": "^5.0.0",
-    "tape": "^5.3.1"
+    "tape": "^5.3.1",
+    "husky": "^7.0.0"
+  },
+  "dependencies": {
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1"
   }
 }

@@ -19,22 +19,22 @@ hereappid: Aa1YIIyNYjkb6oaXEBL4
 herecodeid: pVymqwwjz2o0icg1RF78OQ
 
 exclude:
-- vendor
-- .sass-cache
-- CNAME
-- README.md
-- Gemfile
-- Gemfile.lock
-- node_modules
-- package.json
-- package-lock.json
-- test
+  - vendor
+  - .sass-cache
+  - CNAME
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - test
 
 plugins:
-- jekyll-sitemap
-- jekyll-redirect-from
-- jemoji
-- jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+  - jekyll-feed
 
 angularjs: 1.6.1
 jquery: 3.2.1
@@ -44,11 +44,10 @@ client: ca-pub-5924879737462180
 slot: 3966465755
 
 sass:
- style: :compressed
+  style: :compressed
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:

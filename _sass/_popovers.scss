@@ -2,7 +2,7 @@
 // Popovers
 // --------------------------------------------------
 
-[data-toggle=popover] {
+[data-toggle="popover"] {
   cursor: help;
 }
 
@@ -39,7 +39,6 @@
       bottom: -10px;
       left: 1px;
     }
-
   }
 
   .arrow,
@@ -57,17 +56,14 @@
 
     &::after {
       border-width: 10px;
-      content: '';
+      content: "";
     }
-
   }
-
 }
-
 
 .popover-content {
   color: $dark-gray;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: 400;
   line-height: 1.6;
   padding: 9px 14px;
