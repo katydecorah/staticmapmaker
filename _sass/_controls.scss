@@ -4,19 +4,20 @@ fieldset {
   width: 100%;
 
   &.error ~ fieldset:not(.error) {
-    opacity: .25;
+    opacity: 0.25;
   }
-
 }
 
 .controls {
   background: $bg-dark;
   color: $light;
-  padding-top: .5em;
+  padding-top: 0.5em;
   position: relative;
   z-index: 100;
 
-  @include bp(no-columns) { width: 100%; }
+  @include bp(no-columns) {
+    width: 100%;
+  }
 
   a {
     color: inherit;
@@ -25,9 +26,7 @@ fieldset {
     &:hover {
       color: $gold;
     }
-
   }
-
 }
 
 .toggle,
@@ -38,16 +37,16 @@ fieldset {
 [ng-show] .form-group,
 [ng-hide] .form-group,
 tr {
-  background: rgba($light, .075);
+  background: rgba($light, 0.075);
 }
-
 
 // tables to lay out pushpins
 table {
   border-collapse: collapse;
 
-  input { min-width: 50px;}
-
+  input {
+    min-width: 50px;
+  }
 }
 
 tr {
@@ -57,18 +56,17 @@ tr {
 }
 
 td {
-  border-bottom: 1px solid rgba($dark, .2);
+  border-bottom: 1px solid rgba($dark, 0.2);
   min-height: 3em;
-  padding: .5em .25em .25em;
+  padding: 0.5em 0.25em 0.25em;
 }
 
 .form-group {
-
   @extend %clearfix;
 
-  border-bottom: 1px solid rgba($dark, .2);
+  border-bottom: 1px solid rgba($dark, 0.2);
   min-height: 3em;
-  padding: .5em 1em .25em;
+  padding: 0.5em 1em 0.25em;
 
   @include bp(big-with-columns) {
     label {
@@ -81,16 +79,15 @@ td {
       float: left;
       width: 60%;
     }
-
   }
 
-  &.no-border { border-bottom: 0;}
+  &.no-border {
+    border-bottom: 0;
+  }
 
   &:hover [data-toggle] {
     color: $light-gray;
   }
-
-
 }
 
 select,
@@ -103,7 +100,7 @@ select,
   display: inline-block;
   left: 1em;
   position: absolute;
-  top: .5em;
+  top: 0.5em;
 
   &:hover path {
     fill: $bg-dark;
@@ -115,23 +112,20 @@ select,
   }
 
   path {
-    fill: rgba($text-color, .5);
+    fill: rgba($text-color, 0.5);
   }
-
 }
 
 @include bp(no-columns) {
-
-  .label-toggle { display: none;}
-
+  .label-toggle {
+    display: none;
+  }
 }
 
-
 .toggle:checked {
-
   ~ .main .col-left {
     transform: translateX(-98%);
-    transition: .2s;
+    transition: 0.2s;
     z-index: 1;
   }
 
@@ -140,22 +134,25 @@ select,
     width: 100%;
   }
 
-  ~ .main .close-it { display: none; }
+  ~ .main .close-it {
+    display: none;
+  }
 
-  ~ .main .open-it { display: block; }
-
+  ~ .main .open-it {
+    display: block;
+  }
 }
 
 input,
 select,
 textarea {
-  background: rgba($light, .9);
+  background: rgba($light, 0.9);
   border: 0;
   border-radius: $border-radius;
   font-family: $mono-font-family;
   font-size: 1em;
   margin: 0;
-  padding: .35em .5em;
+  padding: 0.35em 0.5em;
   position: relative;
   width: 100%;
 
@@ -166,7 +163,6 @@ textarea {
   @include bp(mama-bear) {
     display: block;
   }
-
 }
 
 select {
@@ -179,15 +175,12 @@ select {
 
 .cushion,
 [type="checkbox"] {
-  margin-top: .3em;
+  margin-top: 0.3em;
 }
 
 .cushion-right {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
-
-
-
 
 :focus {
   outline: $accent auto 5px;
@@ -198,11 +191,10 @@ select {
 }
 
 .marker-title {
-
   @extend %clearfix;
 
   font-weight: bold;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 
   button {
     background: none;
@@ -211,18 +203,15 @@ select {
     float: right;
 
     &:hover {
-      background: rgba($dark, .5);
+      background: rgba($dark, 0.5);
     }
-
   }
-
 }
 
 .marker-fields {
-
   input,
   select {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 
   .sm {
@@ -234,7 +223,5 @@ select {
     &:nth-child(3) {
       margin: 0 1%;
     }
-
   }
-
 }

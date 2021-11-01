@@ -3,9 +3,8 @@ h3,
 h4 {
   font-weight: inherit;
   line-height: 1.2;
-  margin: 1.414em 0 .5em;
+  margin: 1.414em 0 0.5em;
 }
-
 
 h1 {
   color: $light;
@@ -19,16 +18,16 @@ h1 {
     &:hover {
       color: $gold;
     }
-
   }
-
 }
 
+h2 {
+  font-size: 1.424em;
+}
 
-
-h2 { font-size: 1.424em; }
-
-h3 { font-size: 1.266em; }
+h3 {
+  font-size: 1.266em;
+}
 
 p {
   margin: 0 0 1.3em;
@@ -46,7 +45,6 @@ a {
     color: lighten($link-color, 10%);
     text-decoration: none;
   }
-
 }
 
 code,
@@ -67,10 +65,11 @@ pre {
   &::selection {
     background: $accent;
   }
-
 }
 
-%small { font-size: .8em; }
+%small {
+  font-size: 0.8em;
+}
 
 .colophon {
   margin-bottom: 1em;
@@ -94,21 +93,20 @@ ol {
   color: $light;
   margin-bottom: 1em;
   max-width: 35em;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 
   a {
     color: $light;
     text-decoration: underline;
   }
-
 }
 
 .attribution {
-
   @extend %small;
 
   text-align: right;
 
-  a { color: $text-color; }
-
+  a {
+    color: $text-color;
+  }
 }

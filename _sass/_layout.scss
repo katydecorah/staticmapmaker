@@ -1,5 +1,4 @@
 .front-page {
-
   .container {
     @extend %clearfix;
 
@@ -12,9 +11,7 @@
       margin-bottom: 1em;
       margin-top: 2em;
     }
-
   }
-
 }
 
 .choices {
@@ -25,7 +22,6 @@
     padding-bottom: 2em;
     width: 55%;
   }
-
 }
 
 .choices,
@@ -36,12 +32,9 @@
   @include bp(with-columns) {
     float: left;
   }
-
 }
 
-
 .cover {
-
   @extend %flex;
 
   background: $bg-dark;
@@ -63,28 +56,25 @@
     @include bp(with-columns) {
       font-size: 2.5em;
     }
-
   }
 
   .header-icon {
     display: block;
     font-size: 2em;
-    margin: .5em auto;
+    margin: 0.5em auto;
 
     path {
       fill: $gold;
     }
-
   }
-
 }
 
 .choose-map {
   background: $light;
-  border: .5em solid transparent;
+  border: 0.5em solid transparent;
   border-radius: $border-radius;
   display: block;
-  margin: 1em 0 .5em;
+  margin: 1em 0 0.5em;
   position: relative;
   text-decoration: none;
 
@@ -93,14 +83,11 @@
     width: 46%;
   }
 
-  &:nth-child(2n+2) {
-
+  &:nth-child(2n + 2) {
     @include bp(with-columns) {
       margin-left: 8%;
     }
-
   }
-
 
   &:hover {
     background: $gold;
@@ -109,10 +96,9 @@
 
   .choose-map-title {
     font-size: 1.5em;
-    padding: .5em;
+    padding: 0.5em;
     text-align: center;
     width: 100%;
-
   }
 
   img {
@@ -122,26 +108,21 @@
     @include bp(no-columns) {
       display: none;
     }
-
   }
-
 }
 
 .main {
-
   @extend %clearfix;
 
   position: relative;
-
 }
 
 .col {
   position: relative;
-
 }
 
 header {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 }
 
 .header-icon {
@@ -149,13 +130,12 @@ header {
   font-size: 1.25em;
   height: 1em;
   position: relative;
-  top: .2em;
+  top: 0.2em;
   width: 1em;
 
   path {
     fill: $light;
   }
-
 }
 
 .switcher {
@@ -175,11 +155,10 @@ button {
   &:hover {
     background: lighten($gold, 10%);
   }
-
 }
 
 .btn {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 }
 
 .btn-remove {
@@ -190,17 +169,16 @@ button {
   top: -10px;
 
   &:hover {
-    background: rgba($dark, .5);
+    background: rgba($dark, 0.5);
   }
-
 }
 
 .switch {
   background-color: $accent;
   color: $text-color;
   display: inline-block;
-  margin: 0 .25em;
-  padding: .3em .75em;
+  margin: 0 0.25em;
+  padding: 0.3em 0.75em;
   text-decoration: none;
 
   @include bp(no-columns) {
@@ -211,12 +189,11 @@ button {
     background-color: lighten($accent, 10%);
     color: $text-color;
   }
-
 }
 
 .col-left {
   background: $bg-dark;
-  transition: .2s;
+  transition: 0.2s;
 
   @include bp(with-columns) {
     bottom: 0;
@@ -228,19 +205,15 @@ button {
     top: 0;
     width: 30%;
   }
-
 }
 
 .col-right {
-
   @include bp(with-columns) {
     float: right;
-    transition: .2s;
+    transition: 0.2s;
     width: 70%;
   }
-
 }
-
 
 .static {
   background: $static-inner;
@@ -255,7 +228,6 @@ button {
 }
 
 .page-compare {
-
   .container {
     margin: 0 auto;
     max-width: 800px;
@@ -265,5 +237,4 @@ button {
     list-style: none;
     margin-bottom: 1em;
   }
-
 }

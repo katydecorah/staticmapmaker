@@ -7,12 +7,13 @@
   width: 100%;
 }
 
-.tab-input { display: none;}
+.tab-input {
+  display: none;
+}
 
 .tab {
   display: none;
 }
-
 
 .tab-link {
   background: $static-inner;
@@ -20,7 +21,7 @@
   cursor: pointer;
   display: inline-block;
   left: 1em;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   position: absolute;
   top: -2.35em;
 
@@ -35,7 +36,6 @@
   &:hover {
     background: $accent;
   }
-
 }
 
 .tab-input:checked + label {
@@ -45,7 +45,4 @@
   + .tab {
     display: block;
   }
-
 }
-
-

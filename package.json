@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "A static map API helper.",
   "author": "Katy DeCorah",
-  "engines": {
-    "node": "4.4.3"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/katydecorah/staticmapmaker.git"
@@ -16,14 +13,22 @@
   "license": "MIT",
   "scripts": {
     "test": "tape test/*.js | tap-spec",
-    "lint": "eslint js"
+    "lint": "eslint js",
+    "prepare": "husky install",
+    "pretty-quick": "pretty-quick"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.32.0",
     "eslint-config-angular": "^0.5.0",
-    "eslint-plugin-angular": "^4.0.1",
-    "js-yaml": "^3.14.0",
+    "eslint-plugin-angular": "^4.1.0",
+    "js-yaml": "^4.1.0",
     "tap-spec": "^5.0.0",
-    "tape": "^4.13.3"
+    "tape": "^5.3.1",
+    "husky": "^7.0.0"
+  },
+  "dependencies": {
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1"
   }
 }
