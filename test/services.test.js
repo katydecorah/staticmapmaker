@@ -1,36 +1,16 @@
 var test = require("tape");
 var fs = require("fs");
-var path = require("path");
 var jsyaml = require("js-yaml");
 
-var path = "_posts/";
-
 // and then build array of posts
-var posts = [];
-var file = fs.readdirSync(path);
-file.forEach(function (i) {
-  posts.push(path + i);
+var posts = fs.readdirSync("_posts/").map(function (i) {
+  return "_posts/" + i;
 });
 
 // build list of form includes
-var forms = [];
-var file = fs.readdirSync("_includes/form/");
-file.forEach(function (i) {
-  forms.push(i.replace(".html", ""));
+var forms = fs.readdirSync("_includes/form/").map(function (i) {
+  return i.replace(".html", "");
 });
-
-function readData(dir, filename) {
-  var buffer = fs.readFileSync(dir + filename),
-    file = buffer.toString("utf8");
-
-  try {
-    return {
-      name: filename,
-      file: file,
-      metadata: jsyaml.load(file),
-    };
-  } catch (err) {}
-}
 
 function readPost(filename) {
   var buffer = fs.readFileSync(filename),
