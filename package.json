@@ -18,18 +18,18 @@
     "pretty-quick": "pretty-quick"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
+    "eslint": "^8.6.0",
     "eslint-config-angular": "^0.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-angular": "^4.1.0",
     "husky": "^7.0.0",
     "js-yaml": "^4.1.0",
     "tap-spec": "^5.0.0",
-    "tape": "^5.3.1"
+    "tape": "^5.4.0"
   },
   "dependencies": {
     "husky": "^7.0.4",
-    "prettier": "^2.4.1",
-    "pretty-quick": "^3.1.1"
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3"
   }
 }
