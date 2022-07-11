@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-      {% if page.url != '/' %}{{ page.title }} {% endif%}{{ site.name }} | a
+      {% if page.url != '/' %}{{ page.title }} {% endif%}{{ site.title }} | a
       static map API helper
     </title>
     <meta
       name="description"
-      content="{% if page.title %}Create a {{ page.title }} static map with {{ site.name }}.{% else %}{{ site.description }}{% endif %}"
+      content="{% if page.title %}Create a {{ page.title }} static map with {{ site.title }}.{% else %}{{ site.description }}{% endif %}"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- twitter-->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@{{site.author.twitter}}" />
-    <meta name="twitter:title" content="{{site.name}}" />
+    <meta name="twitter:title" content="{{site.title}}" />
     <meta
       name="twitter:description"
-      content="{% if page.title %}Create a {{ page.title }} static map with {{ site.name }}.{% else %}{{ site.description }}{% endif %}"
+      content="{% if page.title %}Create a {{ page.title }} static map with {{ site.title }}.{% else %}{{ site.description }}{% endif %}"
     />
     {% if page.title %}
     <meta
@@ -34,12 +34,12 @@
     />
     <meta
       property="og:title"
-      content="{% if page.title %}{{page.title}} - {% endif %}{{site.name}}"
+      content="{% if page.title %}{{page.title}} - {% endif %}{{site.title}}"
     />
-    <meta property="og:site_name" content="{{site.name}}" />
+    <meta property="og:site_name" content="{{site.title}}" />
     <meta
       property="og:description"
-      content="{% if page.title %}Create a {{ page.title }} static map with {{ site.name }}.{% else %}{{ site.description }}{% endif %}"
+      content="{% if page.title %}Create a {{ page.title }} static map with {{ site.title }}.{% else %}{{ site.description }}{% endif %}"
     />
     {% if page.title %}
     <meta
