@@ -1,0 +1,49 @@
+@import "vars";
+@import "mixins";
+
+.fieldset.error {
+  ~ .fieldset:not(.error) {
+    opacity: 0.25;
+  }
+}
+
+.error {
+  background: $danger;
+  border-radius: 0 0.25em 0.25em 0;
+}
+
+.fieldset-row {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  @include bp(big-with-columns) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  min-height: 3em;
+  padding: 0.5em 1em;
+
+  .label {
+    flex-shrink: 1;
+    @include bp(big-with-columns) {
+      min-width: 100px;
+    }
+  }
+}
+
+.checkbox-fieldset {
+  padding: 0.5em 1em;
+  min-height: 2.25em;
+  @include bp(big-with-columns) {
+    padding-left: 115px;
+  }
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+  align-content: center;
+}

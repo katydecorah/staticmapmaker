@@ -1,0 +1,56 @@
+@import "vars";
+@import "mixins";
+
+.btn {
+  @extend %btn;
+
+  &:hover {
+    background: lighten($accent, 10%);
+  }
+}
+
+.btn-remove {
+  background: none;
+  color: $light;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    background: rgba($dark, 0.5);
+  }
+}
+
+.form-group {
+  padding: 0.5em 1em 0.25em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+
+.marker-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.marker-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  input,
+  select {
+    height: 26px;
+  }
+
+  .sm {
+    flex-grow: 1;
+  }
+}

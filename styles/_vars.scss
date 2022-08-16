@@ -1,0 +1,21 @@
+// Color
+$light: #fff;
+$dark: #000;
+$background-color: #f1f5f9;
+$text-color: #2e3a5c;
+$danger: $light;
+$accent: #d5ae6c;
+$link-color: #287cb4;
+$trasparent02: rgb(0 0 0 / 20%);
+
+// Radius
+$border-radius: 0.25em;
+
+// Fonts
+$sans-font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+  helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$mono-font-family: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
+  "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+  "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+$mono-font-weight: 500;

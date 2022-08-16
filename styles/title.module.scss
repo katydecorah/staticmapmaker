@@ -1,0 +1,15 @@
+@import "vars";
+
+.title {
+  a {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    color: $text-color;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
