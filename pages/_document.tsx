@@ -7,9 +7,6 @@ export default function Document() {
       <Head />
       <body>
         <Main />
-        <footer className="footer">
-          For inquiries staticmapmaker@gmail.com
-        </footer>
         <NextScript />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=UA-44264627-1"
