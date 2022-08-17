@@ -1,0 +1,18 @@
+@import "vars";
+@import "mixins";
+
+.feather {
+  width: 1em;
+  height: 1em;
+}
+
+.header-icon {
+  font-size: 1.25em;
+  height: 1em;
+  width: 1em;
+  margin-right: 0.25em;
+
+  path {
+    fill: $accent;
+  }
+}

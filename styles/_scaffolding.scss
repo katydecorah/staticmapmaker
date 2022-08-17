@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $background-color;
+  color: $text-color;
+  font-family: $sans-font-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+h2 {
+  font-weight: inherit;
+  line-height: 1.2;
+  margin: 1.4em 0 0.5em;
+  font-size: 1.4em;
+}
+
+p {
+  margin: 0 0 1.3em;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: lighten($link-color, 10%);
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+code,
+pre {
+  font-family: $mono-font-family;
+  font-weight: $mono-font-weight;
+}
+
+pre {
+  background: $text-color;
+  border: 1px solid darken($text-color, 15%);
+  color: $light;
+  display: block;
+  margin: 1em 0;
+  padding: 1em;
+  white-space: pre-wrap;
+  word-break: break-all;
+  border-radius: 0.25em;
+}
+
+ol {
+  margin-left: 1.25em;
+}
+
+input,
+select,
+textarea {
+  border-radius: $border-radius;
+  font-family: $mono-font-family;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: $text-color;
+  border: 1px solid;
+  display: block;
+  accent-color: $text-color;
+}
+
+input,
+textarea {
+  padding: 0.35em 0.5em;
+}
+
+select {
+  padding: 0.35em 0.2em;
+}
+
+[type="checkbox"] {
+  width: auto;
+}
+
+:focus {
+  outline: $accent auto 5px;
+}
+
+.footer {
+  max-width: 800px;
+  margin: 5em auto 2em;
+  text-align: center;
+}

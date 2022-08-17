@@ -1,0 +1,420 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <div
+      class="col-left"
+    >
+      <div
+        class="sticky"
+      >
+        <div
+          class="header"
+        >
+          <header
+            class="title"
+          >
+            <h1>
+              <a
+                href="https://staticmapmaker.com"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="header-icon"
+                  data-icon="map"
+                  focusable="false"
+                  height="128"
+                  role="img"
+                  viewBox="0 0 128 128"
+                  width="128"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 0C2.367 0 0 2.367 0 5.5v117c0 3.133 2.367 5.5 5.5 5.5h117c3.133 0 5.5-2.367 5.5-5.5V5.5c0-3.133-2.367-5.5-5.5-5.5H5.5zM8 8h112v112H8V8zm35.188 2l15 15-9.594 9.594a2 2 0 1 0 2.813 2.813L61 27.813 101.19 68l-50.032 50h5.688l47.156-47.187 14 14v-5.625L106.814 68l11.188-11.188v-5.625l-14 14L63.814 25l15-15H73.19L61 22.186 48.814 10h-5.625zM48 52c-8.8 0-16 7.2-16 16 0 12 16 32 16 32s16-20 16-32c0-8.8-7.2-16-16-16zm0 8c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8z"
+                  />
+                </svg>
+                <div>
+                  Google
+                   Static Map Maker
+                </div>
+              </a>
+            </h1>
+          </header>
+        </div>
+        <div
+          class="controls"
+        >
+          <div
+            class="container"
+          >
+            <div
+              class="fieldset error fieldset-row"
+            >
+              <label
+                class="label"
+                data-content="Your API key."
+                data-toggle="popover"
+                for="api"
+              >
+                API Key
+              </label>
+              <input
+                id="api"
+                placeholder="API Key (required)"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                data-content="API signature"
+                data-toggle="popover"
+                for="signature"
+              >
+                Signature
+              </label>
+              <input
+                id="signature"
+                placeholder="API signature (recommended)"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <label
+                class="checkbox-label"
+                data-content="Double the height and width."
+                data-toggle="popover"
+                for="scale"
+              >
+                <input
+                  checked=""
+                  id="scale"
+                  type="checkbox"
+                />
+                Retina (2x)
+              </label>
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                data-content="Maximum width is 640px unless you are on a Google Maps APIs Premium Plan."
+                data-toggle="popover"
+                for="width"
+              >
+                Width
+              </label>
+              <input
+                id="width"
+                max="640"
+                min="0"
+                type="number"
+                value="600"
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                data-content="Maximum height is 640px unless you are on a Google Maps APIs Premium Plan."
+                data-toggle="popover"
+                for="height"
+              >
+                Height
+              </label>
+              <input
+                id="height"
+                max="640"
+                min="0"
+                type="number"
+                value="300"
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                data-content="Change the type of map."
+                data-toggle="popover"
+                for="mapType"
+              >
+                Map type
+              </label>
+              <select
+                id="mapType"
+              >
+                <option
+                  value="roadmap"
+                >
+                  roadmap
+                </option>
+                <option
+                  value="terrain"
+                >
+                  terrain
+                </option>
+                <option
+                  value="satellite"
+                >
+                  satellite
+                </option>
+                <option
+                  value="hybrid"
+                >
+                  hybrid
+                </option>
+              </select>
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                data-content="Change the file format."
+                data-toggle="popover"
+                for="format"
+              >
+                Image format
+              </label>
+              <select
+                id="format"
+              >
+                <option
+                  value="png"
+                >
+                  png
+                </option>
+                <option
+                  value="gif"
+                >
+                  gif
+                </option>
+                <option
+                  value="jpg"
+                >
+                  jpg
+                </option>
+              </select>
+            </div>
+            <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <label
+                class="checkbox-label"
+                data-content="Make the map auto adjust with the markers added or the location."
+                data-toggle="popover"
+                for="autoCenter"
+              >
+                <input
+                  id="autoCenter"
+                  type="checkbox"
+                />
+                Auto adjust map
+              </label>
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                data-content="Try an address, a city, a place, or even latitude and longitude."
+                data-toggle="popover"
+                for="location"
+              >
+                Location
+              </label>
+              <input
+                id="location"
+                type="text"
+                value="Albany, NY"
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                data-content="Zoom in or zoom out on the current coordinates."
+                data-toggle="popover"
+                for="zoom"
+              >
+                Zoom
+              </label>
+              <input
+                id="zoom"
+                max="22"
+                min="0"
+                type="range"
+                value="13"
+              />
+            </div>
+            <div
+              class="fieldset"
+            >
+              <div
+                class="form-group"
+              >
+                <button
+                  class="btn"
+                >
+                  <svg
+                    class="feather"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="12"
+                      x2="12"
+                      y1="5"
+                      y2="19"
+                    />
+                    <line
+                      x1="5"
+                      x2="19"
+                      y1="12"
+                      y2="12"
+                    />
+                  </svg>
+                   Add a marker
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-right"
+    >
+      <div
+        class="static"
+      >
+        <div
+          class="static-wrapper api-required"
+        >
+          <img
+            alt="Google Map of Albany, NY"
+            class="static-map"
+            id="map"
+            src="/img/google-placeholder.png"
+            width="600"
+          />
+        </div>
+      </div>
+      <div
+        class="wrapper"
+      >
+        <div
+          class="info"
+        >
+          <div
+            class="code"
+          >
+            <pre>
+              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C%20NY&zoom=13&scale=2&size=600x300&maptype=roadmap&key=YOUR-API-KEY-HERE&format=png
+            </pre>
+          </div>
+          <p>
+            Treat the code like an image — you can use HTML or CSS to display it.
+          </p>
+          <h2>
+            HTML
+          </h2>
+          <div
+            class="code"
+          >
+            <pre>
+              &lt;img width="
+              600
+              " src="
+              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C%20NY&zoom=13&scale=2&size=600x300&maptype=roadmap&key=YOUR-API-KEY-HERE&format=png
+              " alt="
+              Google Map of Albany, NY
+              " /&gt;
+            </pre>
+          </div>
+          <h2>
+            CSS
+          </h2>
+          <div
+            class="code"
+          >
+            <pre>
+              background-image: url(
+              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C%20NY&zoom=13&scale=2&size=600x300&maptype=roadmap&key=YOUR-API-KEY-HERE&format=png
+              );
+            </pre>
+          </div>
+          <h2>
+            How to use
+          </h2>
+          <ol>
+            <li>
+              You must create an
+               
+              <a
+                href="https://developers.google.com/maps/documentation/maps-static/get-api-key#get-an-api-key"
+              >
+                API Key
+              </a>
+               
+              to use Google Static maps
+            </li>
+            <li>
+              Customize the fields to build your map.
+            </li>
+            <li>
+              Copy the generated static API request URL.
+            </li>
+            <li>
+              Copy and paste the code into your HTML document or a stylesheet.
+            </li>
+          </ol>
+          <h2>
+            About
+          </h2>
+          <p>
+            You can add a static map to any website with simple HTML and no JavaScript. Using URL parameters, you can describe the type of map that you want and 
+            Google
+             will send it back.
+          </p>
+          <p>
+            The Static Map Maker helps you configure the 
+            Google
+             API parameters and gives you the code in real time.
+          </p>
+          <p>
+            Check out 
+            <a
+              href="https://developers.google.com/maps/documentation/staticmaps/"
+            >
+              Google
+              's static maps API
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

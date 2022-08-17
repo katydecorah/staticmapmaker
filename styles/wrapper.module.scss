@@ -1,0 +1,122 @@
+@import "vars";
+@import "mixins";
+
+.main {
+  position: relative;
+  @include bp(with-columns) {
+    display: flex;
+  }
+}
+
+.header {
+  padding: 0.5em 1em;
+}
+
+.col-left {
+  transition: 0.2s;
+  position: relative;
+}
+
+.col-left,
+.sticky {
+  width: 100%;
+  @include bp(with-columns) {
+    max-width: 400px;
+    width: 30%;
+  }
+}
+
+.sticky {
+  @include bp(with-columns) {
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 5em;
+    position: fixed;
+    top: 0;
+  }
+}
+
+.col-right {
+  @include bp(with-columns) {
+    transition: 0.2s;
+    width: 70%;
+  }
+}
+
+.wrapper {
+  background: $light;
+  padding: 1em;
+  @include bp(with-columns) {
+    margin-left: 1.5em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    padding: 1em 1em 1em 3em;
+  }
+}
+
+.static {
+  padding: 1em;
+  @include bp(with-columns) {
+    margin: 3.5em 0 1em 1.5em;
+    padding: 1em 1em 1em 3em;
+  }
+}
+
+.static-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.static-wrapper.api-required::before {
+  content: "Authentication required";
+  background: rgba($light, 0.75);
+  border: 1px solid;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.static-map {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  transition: 1s;
+}
+
+.static-map[alt]::after {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid;
+  font-size: 1.5em;
+  font-weight: bold;
+  content: "Error: visit the generated static map URL for details.";
+}
+
+.controls {
+  padding-top: 0.5em;
+  position: relative;
+  z-index: 100;
+
+  @include bp(no-columns) {
+    width: 100%;
+  }
+}
+
+.attribution {
+  @extend %small;
+}

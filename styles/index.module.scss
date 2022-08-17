@@ -1,0 +1,49 @@
+@import "vars";
+@import "mixins";
+
+.providers,
+.cover {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.cover {
+  padding-top: 3em;
+  margin-bottom: 2em;
+}
+
+.providers {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+
+.provider {
+  background: $light;
+  border: 0.5em solid transparent;
+  border-radius: $border-radius;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  width: 250px;
+
+  &:hover {
+    background: $accent;
+    color: $light;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+
+    @include bp(no-columns) {
+      display: none;
+    }
+  }
+}
+
+.provider-title {
+  font-size: 1.5em;
+  padding: 0.5em;
+  text-align: center;
+}

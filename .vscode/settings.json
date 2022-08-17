@@ -1,0 +1,10 @@
+{
+  "typescript.reportStyleChecksAsWarnings": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 4,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "editor.formatOnSave": true,
+  "stylelint.validate": ["css", "scss"]
+}

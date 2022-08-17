@@ -1,0 +1,14 @@
+@import "vars";
+@import "mixins";
+
+.code {
+  position: relative;
+}
+
+.btn {
+  @extend %btn;
+
+  position: absolute;
+  top: 0.25em;
+  right: 0.25em;
+}
