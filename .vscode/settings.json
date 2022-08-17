@@ -1,16 +1,10 @@
 {
-  //"typescript.reportStyleChecksAsWarnings": true,
-  //"typescript.preferences.importModuleSpecifier": "non-relative",
-
+  "typescript.reportStyleChecksAsWarnings": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 4,
-  "html.format.endWithNewline": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-  //"prettier.requireConfig": true,
   "editor.formatOnSave": true,
-  "editor.rulers": [100, 140]
-  //"typescript.tsdk": "node_modules/typescript/lib",
-  //"eslint.workingDirectories": [{ "pattern": "./packages/*/" }, { "directory": "./" }],
-  //"stylelint.validate": ["css", "scss"]
+  "stylelint.validate": ["css", "scss"]
 }
