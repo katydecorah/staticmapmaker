@@ -36,6 +36,10 @@
 .checkbox-fieldset {
   padding: 0.5em 1em;
   min-height: 2.25em;
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+
   @include bp(big-with-columns) {
     padding-left: 115px;
   }

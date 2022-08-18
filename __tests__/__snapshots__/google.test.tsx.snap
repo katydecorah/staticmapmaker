@@ -55,8 +55,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Your API key."
-                data-toggle="popover"
                 for="api"
               >
                 API Key
@@ -73,8 +71,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="API signature"
-                data-toggle="popover"
                 for="signature"
               >
                 Signature
@@ -89,17 +85,15 @@ exports[`renders homepage unchanged 1`] = `
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                checked=""
+                id="scale"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Double the height and width."
-                data-toggle="popover"
                 for="scale"
               >
-                <input
-                  checked=""
-                  id="scale"
-                  type="checkbox"
-                />
                 Retina (2x)
               </label>
             </div>
@@ -108,8 +102,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Maximum width is 640px unless you are on a Google Maps APIs Premium Plan."
-                data-toggle="popover"
                 for="width"
               >
                 Width
@@ -127,8 +119,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Maximum height is 640px unless you are on a Google Maps APIs Premium Plan."
-                data-toggle="popover"
                 for="height"
               >
                 Height
@@ -146,8 +136,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Change the type of map."
-                data-toggle="popover"
                 for="mapType"
               >
                 Map type
@@ -182,8 +170,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Change the file format."
-                data-toggle="popover"
                 for="format"
               >
                 Image format
@@ -209,28 +195,10 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
-              class="fieldset checkbox-fieldset fieldsetRow"
-            >
-              <label
-                class="checkbox-label"
-                data-content="Make the map auto adjust with the markers added or the location."
-                data-toggle="popover"
-                for="autoCenter"
-              >
-                <input
-                  id="autoCenter"
-                  type="checkbox"
-                />
-                Auto adjust map
-              </label>
-            </div>
-            <div
               class="fieldset  fieldset-row"
             >
               <label
                 class="label"
-                data-content="Try an address, a city, a place, or even latitude and longitude."
-                data-toggle="popover"
                 for="location"
               >
                 Location
@@ -246,8 +214,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Zoom in or zoom out on the current coordinates."
-                data-toggle="popover"
                 for="zoom"
               >
                 Zoom
@@ -259,6 +225,20 @@ exports[`renders homepage unchanged 1`] = `
                 type="range"
                 value="13"
               />
+            </div>
+            <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <input
+                id="autoCenter"
+                type="checkbox"
+              />
+              <label
+                class="checkbox-label"
+                for="autoCenter"
+              >
+                Fit map to markers
+              </label>
             </div>
             <div
               class="fieldset"

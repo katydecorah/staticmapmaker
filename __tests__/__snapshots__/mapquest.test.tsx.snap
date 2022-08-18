@@ -55,8 +55,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="You need an API key to access MapQuest maps. Follow the link to the API Console."
-                data-toggle="popover"
                 for="api"
               >
                 API Key
@@ -73,8 +71,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Try an address, a city, a place, or even latitude and longitude."
-                data-toggle="popover"
                 for="location"
               >
                 Location
@@ -90,8 +86,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Zoom in or zoom out on the current coordinates."
-                data-toggle="popover"
                 for="zoom"
               >
                 Zoom
@@ -109,8 +103,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Maximum width is 3840px."
-                data-toggle="popover"
                 for="width"
               >
                 Width
@@ -128,8 +120,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Maximum height is 3840px."
-                data-toggle="popover"
                 for="height"
               >
                 Height
@@ -145,32 +135,28 @@ exports[`renders homepage unchanged 1`] = `
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                id="showMarker"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Add a marker at the current location."
-                data-toggle="popover"
                 for="showMarker"
               >
-                <input
-                  id="showMarker"
-                  type="checkbox"
-                />
                 Add a map marker
               </label>
             </div>
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                id="scaleBar"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Show the scale bar on the map."
-                data-toggle="popover"
                 for="scaleBar"
               >
-                <input
-                  id="scaleBar"
-                  type="checkbox"
-                />
                 Show the scale bar
               </label>
             </div>
@@ -179,8 +165,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Change the map style."
-                data-toggle="popover"
                 for="mapType"
               >
                 Map type
@@ -210,14 +194,12 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Change the file format."
-                data-toggle="popover"
-                for="form-group"
+                for="imageFormat"
               >
                 Image format
               </label>
               <select
-                id="form-group"
+                id="imageFormat"
               >
                 <option
                   value="png"
@@ -244,16 +226,14 @@ exports[`renders homepage unchanged 1`] = `
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                id="showTraffic"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Show traffic data."
-                data-toggle="popover"
                 for="showTraffic"
               >
-                <input
-                  id="showTraffic"
-                  type="checkbox"
-                />
                 Show traffic
               </label>
             </div>

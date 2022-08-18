@@ -5,7 +5,6 @@ export default function Select({
   id,
   value,
   label,
-  popover,
   options,
   onChange,
   fieldSetClassName = "",
@@ -16,7 +15,6 @@ export default function Select({
   options: { text: string; value: string }[];
   onChange: (e: any) => void;
   label?: string;
-  popover?: string;
   fieldSetClassName?: string;
   disabled?: boolean;
 }) {
@@ -27,17 +25,11 @@ export default function Select({
       })}
     >
       {label && (
-        <label
-          className={styles.label}
-          htmlFor={id}
-          data-toggle="popover"
-          data-content={popover}
-        >
+        <label className={styles.label} htmlFor={id}>
           {label}
         </label>
       )}
       <select
-        // className={styles.formControl}
         value={value}
         id={id}
         onChange={(e) => onChange(e.target.value)}

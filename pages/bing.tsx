@@ -87,7 +87,6 @@ export default function Bing() {
         label="API Key"
         value={API}
         onChange={setAPI}
-        popover="You'll need your Bing maps API token. Follow the link to get it."
         placeholder="API Key (required)"
         type="text"
         fieldSetClassName={API ? "" : stylesForms.error}
@@ -97,7 +96,6 @@ export default function Bing() {
         label="Location"
         value={location}
         onChange={setLocation}
-        popover="Try an address, a city, a place, or even latitude and longitude."
         type="text"
       />
       <Input
@@ -105,7 +103,6 @@ export default function Bing() {
         label="Zoom"
         value={zoom}
         onChange={setZoom}
-        popover="Zoom only available when using coordinates for location."
         min={minZoom}
         max={maxZoom}
         type="range"
@@ -115,7 +112,6 @@ export default function Bing() {
         label="Width"
         value={width}
         onChange={setWidth}
-        popover="Maximum width is 900px."
         min="80"
         max="900"
         type="number"
@@ -125,7 +121,6 @@ export default function Bing() {
         label="Height"
         value={height}
         onChange={setHeight}
-        popover="Maximum height is 834px."
         min="80"
         max="834"
         type="number"
@@ -135,7 +130,6 @@ export default function Bing() {
         label="Show traffic"
         value={showTraffic}
         onChange={setShowTraffic}
-        popover="Show traffic data."
       />
       <Select
         id="mapType"
@@ -173,7 +167,6 @@ export default function Bing() {
             text: "Canvas Gray: A grayscale version of the road maps.",
           },
         ]}
-        popover="Change the type of map."
       />
       <Select
         id="format"
@@ -181,7 +174,6 @@ export default function Bing() {
         value={format}
         onChange={setFormat}
         options={optionize(["png", "gif", "jpeg"])}
-        popover="Change the image format."
       />
       <div className={stylesForms["fieldset"]}>
         <div className={styles["form-group"]}>

@@ -4,7 +4,6 @@ import styles from "../../styles/forms.module.scss";
 export default function Input({
   id,
   value,
-  popover,
   label,
   type,
   placeholder,
@@ -22,7 +21,6 @@ export default function Input({
   placeholder?: string;
   min?: string | number;
   max?: string | number;
-  popover?: string;
   label?: string;
   step?: string | number;
   fieldSetClassName?: string;
@@ -41,17 +39,11 @@ export default function Input({
       })}
     >
       {label && (
-        <label
-          className={styles.label}
-          htmlFor={id}
-          data-toggle="popover"
-          data-content={popover}
-        >
+        <label className={styles.label} htmlFor={id}>
           {label}
         </label>
       )}
       <input
-        // className={styles.formControl}
         type={type}
         id={id}
         value={value}

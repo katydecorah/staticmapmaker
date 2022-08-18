@@ -55,8 +55,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="You need a public API token to access the Mapbox static API. Follow the link to get your public token."
-                data-toggle="popover"
                 for="api"
               >
                 API Token
@@ -73,8 +71,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Which one of your styles would you like to work with?"
-                data-toggle="popover"
                 for="mapid"
               >
                 Your style
@@ -91,8 +87,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Choose a Mapbox style."
-                data-toggle="popover"
                 for="mapboxID"
               >
                 Mapbox style
@@ -137,8 +131,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="The maximum size for a static map image is 1280x1280 (640x640 for retina)."
-                data-toggle="popover"
                 for="width"
               >
                 Width
@@ -156,8 +148,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="The maximum size for a static map image is 1280x1280 (640x640 for retina)."
-                data-toggle="popover"
                 for="height"
               >
                 Height
@@ -173,51 +163,45 @@ exports[`renders homepage unchanged 1`] = `
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                checked=""
+                id="retina"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Double the height and width."
-                data-toggle="popover"
                 for="retina"
               >
-                <input
-                  checked=""
-                  id="retina"
-                  type="checkbox"
-                />
                 Retina maps
               </label>
             </div>
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                checked=""
+                id="attribution"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Show the standard attribution for the map's data."
-                data-toggle="popover"
                 for="attribution"
               >
-                <input
-                  checked=""
-                  id="attribution"
-                  type="checkbox"
-                />
                 Show attribution
               </label>
             </div>
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                checked=""
+                id="logo"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Show the Mapbox logo in the lower-left of the map."
-                data-toggle="popover"
                 for="logo"
               >
-                <input
-                  checked=""
-                  id="logo"
-                  type="checkbox"
-                />
                 Show logo
               </label>
             </div>
@@ -226,8 +210,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Enter the longitude and latitude of the location."
-                data-toggle="popover"
                 for="location"
               >
                 Long, lat
@@ -243,8 +225,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Zoom in or zoom out on the current coordinates."
-                data-toggle="popover"
                 for="zoom"
               >
                 Zoom
@@ -263,11 +243,9 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Rotate the map."
-                data-toggle="popover"
                 for="bearing"
               >
-                Bearing
+                Bearing (rotate)
               </label>
               <input
                 id="bearing"
@@ -282,11 +260,9 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Tilt the map."
-                data-toggle="popover"
                 for="pitch"
               >
-                Pitch
+                Pitch (tilt)
               </label>
               <input
                 id="pitch"
@@ -299,17 +275,15 @@ exports[`renders homepage unchanged 1`] = `
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                id="auto"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Make the map fit to your data. Uncheck to manually enter coordinates and a zoom."
-                data-toggle="popover"
                 for="auto"
               >
-                <input
-                  id="auto"
-                  type="checkbox"
-                />
-                Auto adjust map
+                Fit map to markers
               </label>
             </div>
             <div

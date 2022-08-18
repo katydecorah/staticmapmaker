@@ -55,8 +55,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="You'll need your Bing maps API token. Follow the link to get it."
-                data-toggle="popover"
                 for="api"
               >
                 API Key
@@ -73,8 +71,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Try an address, a city, a place, or even latitude and longitude."
-                data-toggle="popover"
                 for="location"
               >
                 Location
@@ -90,8 +86,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Zoom only available when using coordinates for location."
-                data-toggle="popover"
                 for="zoom"
               >
                 Zoom
@@ -109,8 +103,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Maximum width is 900px."
-                data-toggle="popover"
                 for="width"
               >
                 Width
@@ -128,8 +120,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Maximum height is 834px."
-                data-toggle="popover"
                 for="height"
               >
                 Height
@@ -145,16 +135,14 @@ exports[`renders homepage unchanged 1`] = `
             <div
               class="fieldset checkbox-fieldset fieldsetRow"
             >
+              <input
+                id="showTraffic"
+                type="checkbox"
+              />
               <label
                 class="checkbox-label"
-                data-content="Show traffic data."
-                data-toggle="popover"
                 for="showTraffic"
               >
-                <input
-                  id="showTraffic"
-                  type="checkbox"
-                />
                 Show traffic
               </label>
             </div>
@@ -163,8 +151,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Change the type of map."
-                data-toggle="popover"
                 for="mapType"
               >
                 Map type
@@ -234,8 +220,6 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                data-content="Change the image format."
-                data-toggle="popover"
                 for="format"
               >
                 Image format

@@ -13,9 +13,9 @@
 }
 
 .providers {
-  display: flex;
   gap: 1.5em;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: grid;
 }
 
 .provider {
@@ -25,7 +25,6 @@
   position: relative;
   text-decoration: none;
   display: block;
-  width: 250px;
 
   &:hover {
     background: $accent;
@@ -35,10 +34,6 @@
   img {
     display: block;
     max-width: 100%;
-
-    @include bp(no-columns) {
-      display: none;
-    }
   }
 }
 

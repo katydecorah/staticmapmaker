@@ -56,7 +56,6 @@ export default function MapQuest() {
         label="API Key"
         value={API}
         onChange={setAPI}
-        popover="You need an API key to access MapQuest maps. Follow the link to the API Console."
         placeholder="API Key (required)"
         type="text"
         fieldSetClassName={API ? " " : styles.error}
@@ -66,7 +65,6 @@ export default function MapQuest() {
         label="Location"
         value={location}
         onChange={setLocation}
-        popover="Try an address, a city, a place, or even latitude and longitude."
         type="text"
       />
       <Input
@@ -74,7 +72,6 @@ export default function MapQuest() {
         label="Zoom"
         value={zoom}
         onChange={setZoom}
-        popover="Zoom in or zoom out on the current coordinates."
         min={minZoom}
         max={maxZoom}
         type="range"
@@ -84,7 +81,6 @@ export default function MapQuest() {
         label="Width"
         value={width}
         onChange={setWidth}
-        popover="Maximum width is 3840px."
         min="0"
         max={maxSize}
         type="number"
@@ -94,7 +90,6 @@ export default function MapQuest() {
         label="Height"
         value={height}
         onChange={setHeight}
-        popover="Maximum height is 3840px."
         min="0"
         max={maxSize}
         type="number"
@@ -104,7 +99,6 @@ export default function MapQuest() {
         label="Add a map marker"
         value={showMarker}
         onChange={setShowMarker}
-        popover="Add a marker at the current location."
       />
       {showMarker && (
         <Select
@@ -147,7 +141,6 @@ export default function MapQuest() {
             "yellow_2",
             "yellow_3",
           ])}
-          popover="Change the marker's color."
         />
       )}
       <Checkbox
@@ -155,7 +148,6 @@ export default function MapQuest() {
         label="Show the scale bar"
         value={scaleBar}
         onChange={setScaleBar}
-        popover="Show the scale bar on the map."
       />
       {scaleBar && (
         <Select
@@ -164,7 +156,6 @@ export default function MapQuest() {
           value={scalebarPos}
           onChange={setScalebarPos}
           options={optionize(["top", "bottom"])}
-          popover="Move the scale bar on the map."
         />
       )}
       <Select
@@ -177,22 +168,19 @@ export default function MapQuest() {
           { value: "sat", text: "satellite" },
           { value: "hyb", text: "hybrid" },
         ]}
-        popover="Change the map style."
       />
       <Select
-        id="form-group"
+        id="imageFormat"
         label="Image format"
         value={format}
         onChange={setFormat}
         options={optionize(["png", "gif", "jpg", "jpeg"])}
-        popover="Change the file format."
       />
       <Checkbox
         id="showTraffic"
         label="Show traffic"
         value={showTraffic}
         onChange={setShowTraffic}
-        popover="Show traffic data."
       />
       {showTraffic && (
         <Select
@@ -205,7 +193,6 @@ export default function MapQuest() {
             { value: "con", text: "construction" },
             { value: "inc", text: "incidents" },
           ]}
-          popover="Change the type of traffic data shown."
         />
       )}
     </Wrapper>

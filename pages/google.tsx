@@ -123,7 +123,6 @@ function Google() {
           label="API Key"
           value={API}
           onChange={setAPI}
-          popover="Your API key."
           placeholder="API Key (required)"
           fieldSetClassName={API ? " " : stylesForms.error}
         />
@@ -133,13 +132,11 @@ function Google() {
           label="Signature"
           value={signature}
           onChange={setSignature}
-          popover="API signature"
           placeholder="API signature (recommended)"
         />
 
         <Checkbox
           id="scale"
-          popover="Double the height and width."
           label="Retina (2x)"
           value={scale}
           onChange={setScale}
@@ -148,7 +145,6 @@ function Google() {
         <Input
           type="number"
           id="width"
-          popover="Maximum width is 640px unless you are on a Google Maps APIs Premium Plan."
           label="Width"
           value={width}
           onChange={setWidth}
@@ -160,7 +156,6 @@ function Google() {
           type="number"
           id="height"
           label="Height"
-          popover="Maximum height is 640px unless you are on a Google Maps APIs Premium Plan."
           value={height}
           onChange={setHeight}
           min={0}
@@ -173,7 +168,6 @@ function Google() {
           value={mapType}
           onChange={setMapType}
           options={optionize(["roadmap", "terrain", "satellite", "hybrid"])}
-          popover="Change the type of map."
         />
 
         <Select
@@ -182,15 +176,6 @@ function Google() {
           value={format}
           onChange={setFormat}
           options={optionize(["png", "gif", "jpg"])}
-          popover="Change the file format."
-        />
-
-        <Checkbox
-          id="autoCenter"
-          popover="Make the map auto adjust with the markers added or the location."
-          label="Auto adjust map"
-          value={autoCenter}
-          onChange={setAutoCenter}
         />
 
         {!autoCenter && (
@@ -199,7 +184,6 @@ function Google() {
               type="text"
               id="location"
               label="Location"
-              popover="Try an address, a city, a place, or even latitude and longitude."
               value={location}
               onChange={setLocation}
               disabled={autoCenter == true}
@@ -214,10 +198,16 @@ function Google() {
               min={minZoom}
               max={maxZoom}
               disabled={autoCenter == true}
-              popover="Zoom in or zoom out on the current coordinates."
             />
           </>
         )}
+
+        <Checkbox
+          id="autoCenter"
+          label="Fit map to markers"
+          value={autoCenter}
+          onChange={setAutoCenter}
+        />
 
         <div className={stylesForms["fieldset"]}>
           {markers.map((marker, index) => {
@@ -291,7 +281,6 @@ function Google() {
                       label="Marker shadow"
                       type="checkbox"
                       id={`${index}-marker-shadow`}
-                      data-content="Maximum width is 640px or 1280px when scale 2x."
                     />
                   )}
                 </div>

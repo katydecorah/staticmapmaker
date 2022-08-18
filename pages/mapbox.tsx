@@ -90,7 +90,7 @@ export default function Mapbox() {
       mapID || mapboxID
     }/static${pushpinSet()}${
       auto ? "auto" : `${location},${zoom},${bearing},${pitch}`
-    }/${width}x${height}${retina && "@2x"}?access_token=${
+    }/${width}x${height}${retina ? "@2x" : ""}?access_token=${
       API || "YOUR-API-TOKEN-HERE"
     }&attribution=${attribution}&logo=${logo}`;
     return map;
@@ -114,7 +114,6 @@ export default function Mapbox() {
           id="api"
           value={API}
           onChange={setAPI}
-          popover="You need a public API token to access the Mapbox static API. Follow the link to get your public token."
           fieldSetClassName={API ? " " : stylesForms.error}
           placeholder="Public API Key (required)"
         />
@@ -124,7 +123,6 @@ export default function Mapbox() {
           id="mapid"
           value={mapID}
           onChange={setMapID}
-          popover="Which one of your styles would you like to work with?"
           placeholder="username/style_id"
         />
         <Select
@@ -143,7 +141,6 @@ export default function Mapbox() {
           ]}
           value={mapboxID}
           onChange={setMapboxID}
-          popover="Choose a Mapbox style."
           disabled={mapID !== ""}
         />
         <Input
@@ -154,7 +151,6 @@ export default function Mapbox() {
           onChange={setWidth}
           min={0}
           max={maxSize}
-          popover="The maximum size for a static map image is 1280x1280 (640x640 for retina)."
         />
         <Input
           type="number"
@@ -164,7 +160,6 @@ export default function Mapbox() {
           onChange={setHeight}
           min={0}
           max={maxSize}
-          popover="The maximum size for a static map image is 1280x1280 (640x640 for retina)."
         />
 
         <Checkbox
@@ -172,22 +167,14 @@ export default function Mapbox() {
           id="retina"
           value={retina}
           onChange={setRetina}
-          popover="Double the height and width."
         />
         <Checkbox
           label="Show attribution"
           id="attribution"
           value={attribution}
           onChange={setAttribution}
-          popover="Show the standard attribution for the map's data."
         />
-        <Checkbox
-          label="Show logo"
-          id="logo"
-          value={logo}
-          onChange={setLogo}
-          popover="Show the Mapbox logo in the lower-left of the map."
-        />
+        <Checkbox label="Show logo" id="logo" value={logo} onChange={setLogo} />
 
         {!auto && (
           <>
@@ -197,7 +184,6 @@ export default function Mapbox() {
               id="location"
               value={location}
               onChange={setLocation}
-              popover="Enter the longitude and latitude of the location."
             />
             <Input
               type="range"
@@ -208,36 +194,32 @@ export default function Mapbox() {
               min={minZoom}
               step="0.25"
               max={maxZoom}
-              popover="Zoom in or zoom out on the current coordinates."
             />
             <Input
               type="range"
-              label="Bearing"
+              label="Bearing (rotate)"
               id="bearing"
               value={bearing}
               onChange={setBearing}
               min="0"
               max="360"
-              popover="Rotate the map."
             />
             <Input
               type="range"
-              label="Pitch"
+              label="Pitch (tilt)"
               id="pitch"
               value={pitch}
               onChange={setPitch}
               min="0"
               max="60"
-              popover="Tilt the map."
             />
           </>
         )}
         <Checkbox
-          label="Auto adjust map"
+          label="Fit map to markers"
           id="auto"
           value={auto}
           onChange={setAuto}
-          popover="Make the map fit to your data. Uncheck to manually enter coordinates and a zoom."
         />
 
         <div className={stylesForms["fieldset"]}>

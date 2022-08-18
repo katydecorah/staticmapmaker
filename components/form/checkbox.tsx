@@ -5,14 +5,12 @@ export default function Checkbox({
   id,
   value,
   onChange,
-  popover,
   label,
   fieldSetClassName,
 }: {
   id: string;
   value: boolean;
   onChange: (value: boolean) => void;
-  popover?: string;
   label?: string;
   fieldSetClassName?: string;
 }): JSX.Element {
@@ -26,19 +24,14 @@ export default function Checkbox({
         }
       )}
     >
+      <input
+        type="checkbox"
+        checked={value}
+        id={id}
+        onChange={() => onChange(!value)}
+      />
       {label && (
-        <label
-          className={styles["checkbox-label"]}
-          htmlFor={id}
-          data-toggle="popover"
-          data-content={popover}
-        >
-          <input
-            type="checkbox"
-            checked={value}
-            id={id}
-            onChange={() => onChange(!value)}
-          />
+        <label className={styles["checkbox-label"]} htmlFor={id}>
           {label}
         </label>
       )}
