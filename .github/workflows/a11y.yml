@@ -1,0 +1,30 @@
+name: Accessibility Insights
+
+on:
+  workflow_dispatch: # enable run button on github.com
+  pull_request:
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Build site
+        run: npm run build
+      - name: Run Accessibility Insights
+        uses: microsoft/accessibility-insights-action@v3
+        with:
+          static-site-dir: ${{ github.workspace }}/_out
+          scan-timeout: 1800000
+          fail-on-accessibility-error: false
+      - name: Upload Accessibility Insights report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: accessibility-reports
+          path: ${{ github.workspace }}/_accessibility-reports
