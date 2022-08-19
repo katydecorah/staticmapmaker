@@ -2,10 +2,10 @@
 
 exports[`renders homepage unchanged 1`] = `
 <div>
-  <div
+  <header
     class="cover"
   >
-    <header
+    <div
       class="title"
     >
       <h1>
@@ -32,9 +32,9 @@ exports[`renders homepage unchanged 1`] = `
           </div>
         </a>
       </h1>
-    </header>
-  </div>
-  <div
+    </div>
+  </header>
+  <main
     class="providers"
   >
     <a
@@ -93,6 +93,6 @@ exports[`renders homepage unchanged 1`] = `
         MapQuest
       </div>
     </a>
-  </div>
+  </main>
 </div>
 `;

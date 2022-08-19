@@ -2,7 +2,7 @@
 
 exports[`renders homepage unchanged 1`] = `
 <div>
-  <div
+  <main
     class="main"
   >
     <div
@@ -11,10 +11,10 @@ exports[`renders homepage unchanged 1`] = `
       <div
         class="sticky"
       >
-        <div
+        <header
           class="header"
         >
-          <header
+          <div
             class="title"
           >
             <h1>
@@ -42,8 +42,8 @@ exports[`renders homepage unchanged 1`] = `
                 </div>
               </a>
             </h1>
-          </header>
-        </div>
+          </div>
+        </header>
         <div
           class="controls"
         >
@@ -401,6 +401,6 @@ exports[`renders homepage unchanged 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </div>
 `;

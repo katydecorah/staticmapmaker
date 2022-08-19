@@ -1,7 +1,6 @@
 import Info from "./info";
 import classnames from "classnames";
 import Meta from "./meta";
-import classNames from "classnames";
 import styles from "../styles/wrapper.module.scss";
 import Title from "./title";
 
@@ -18,7 +17,6 @@ type WrapperProps = {
 };
 
 export default function Wrapper(props: WrapperProps): JSX.Element {
-  // const [sidebarOpen, setSidebarOpen] = useState(true);
   const slug = props.title.toLowerCase();
   const url = `https://staticmapmaker.com/${slug}/`;
   return (
@@ -29,47 +27,27 @@ export default function Wrapper(props: WrapperProps): JSX.Element {
         image={`https://staticmapmaker.com/img/${slug}.png`}
         url={url}
       />
-      <div
-        className={classNames(styles.main, {
-          //"sidebar-open": sidebarOpen,
-          //"sidebar-closed": !sidebarOpen,
-        })}
-      >
+      <main className={styles.main}>
         <div className={styles["col-left"]}>
           <div className={styles.sticky}>
-            <div className={styles.header}>
+            <header className={styles.header}>
               <Title title={props.title} />
-            </div>
+            </header>
             <div className={styles.controls}>
               <div className={styles.container}>{props.children}</div>
             </div>
           </div>
         </div>
         <div className={styles["col-right"]}>
-          {/*<Toggle sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
           <Map {...props} />
           <div className={styles["wrapper"]}>
             <Info {...props} />
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }
-/*
-function Toggle({ sidebarOpen, setSidebarOpen }): JSX.Element {
-  return (
-    <button
-      onClick={() => setSidebarOpen(!sidebarOpen)}
-      aria-label={sidebarOpen ? "hide sidebar" : "show sidebar"}
-      className={styles.labelToggle}
-    >
-      {sidebarOpen && <IconMinimize />}
-      {!sidebarOpen && <IconMaximize />}
-    </button>
-  );
-}
-*/
 
 function Map({
   API,

@@ -12,10 +12,10 @@ function HomePage() {
         url={url}
         description="Create a Bing static map, Google static map, Mapbox static map, MapQuest static map, a HERE static map, a CartoDB static map, or a Yandex static map. Type in a location, customize, and get the map."
       />
-      <div className={styles.cover}>
+      <header className={styles.cover}>
         <Title />
-      </div>
-      <div className={styles.providers}>
+      </header>
+      <main className={styles.providers}>
         {providers.map((provider) => {
           return (
             <a
@@ -32,7 +32,7 @@ function HomePage() {
             </a>
           );
         })}
-      </div>
+      </main>
     </>
   );
 }

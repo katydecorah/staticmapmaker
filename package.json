@@ -13,8 +13,8 @@
   "license": "MIT",
   "scripts": {
     "start": "next dev",
-    "build": "next build && next export -o _site/",
-    "build:sitemap": "next-sitemap",
+    "build": "next build && next export",
+    "postbuild": "next-sitemap",
     "lint": "next lint && npm run stylelint",
     "stylelint": "stylelint '**/*.scss'",
     "pretest": "npm run lint",

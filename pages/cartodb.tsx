@@ -12,11 +12,11 @@ function CartoDB() {
         url={url}
         description="Create a CartoDB static map. Type in a location, customize, and get the map."
       />
-      <div className={styles.cover}>
+      <main className={styles.cover}>
         <Title title={title} />
         <p></p>
         <p>Unavailable.</p>
-      </div>
+      </main>
     </>
   );
 }
