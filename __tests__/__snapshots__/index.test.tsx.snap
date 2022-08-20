@@ -53,6 +53,20 @@ exports[`renders homepage unchanged 1`] = `
     </a>
     <a
       class="provider"
+      href="/google-street-view/"
+    >
+      <img
+        alt="Google Street View static map API"
+        src="/img/google-street-view.png"
+      />
+      <div
+        class="provider-title"
+      >
+        Google Street View
+      </div>
+    </a>
+    <a
+      class="provider"
       href="/mapbox/"
     >
       <img
