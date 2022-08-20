@@ -17,17 +17,13 @@ function HomePage() {
       </header>
       <main className={styles.providers}>
         {providers.map((provider) => {
+          const slug = provider.split(" ").join("-").toLowerCase();
           return (
-            <a
-              key={provider}
-              href={`/${provider.toLowerCase()}/`}
-              className={styles.provider}
-            >
+            <a key={provider} href={`/${slug}/`} className={styles.provider}>
               <img
-                src={`/img/${provider.toLowerCase()}.png`}
+                src={`/img/${slug}.png`}
                 alt={`${provider} static map API`}
               />
-
               <div className={styles["provider-title"]}>{provider}</div>
             </a>
           );
