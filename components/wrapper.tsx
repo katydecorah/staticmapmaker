@@ -17,7 +17,7 @@ type WrapperProps = {
 };
 
 export default function Wrapper(props: WrapperProps): JSX.Element {
-  const slug = props.title.toLowerCase();
+  const slug = props.title.split(" ").join("-").toLowerCase();
   const url = `https://staticmapmaker.com/${slug}/`;
   return (
     <>
