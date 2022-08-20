@@ -62,6 +62,7 @@ function Map({
   width: number;
   location: string;
 }) {
+  const imageSlug = title.split(" ").join("-").toLowerCase();
   return (
     <div className={styles.static}>
       <div
@@ -70,7 +71,7 @@ function Map({
         })}
       >
         <img
-          src={API ? mapcode : `/img/${title.toLowerCase()}-placeholder.png`}
+          src={API ? mapcode : `/img/${imageSlug}-placeholder.png`}
           width={width || "600"}
           alt={`${title} Map of ${location}`}
           className={styles["static-map"]}
