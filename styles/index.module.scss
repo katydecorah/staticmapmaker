@@ -5,6 +5,7 @@
 .cover {
   padding-left: 5%;
   padding-right: 5%;
+  max-width: 1200px;
 }
 
 .cover {
@@ -20,25 +21,20 @@
 
 .provider {
   background: $light;
-  border: 0.5em solid transparent;
   border-radius: $border-radius;
   position: relative;
   text-decoration: none;
   display: block;
-
-  &:hover {
-    background: $accent;
-    color: $light;
-  }
+  box-shadow: 0 0.5em 1em -1em $text-color;
 
   img {
     display: block;
     max-width: 100%;
+    border-radius: $border-radius $border-radius 0 0;
   }
 }
 
 .provider-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   padding: 0.5em;
-  text-align: center;
 }
