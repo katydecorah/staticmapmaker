@@ -9,6 +9,7 @@ import IconTrash from "../components/svg/trash";
 import IconPlus from "../components/svg/plus";
 import styles from "../styles/providers.module.scss";
 import stylesForms from "../styles/forms.module.scss";
+import { sign } from "../utils/google/sign";
 
 function Google() {
   const title = "Google";
@@ -49,17 +50,20 @@ function Google() {
 
   function buildMapURL() {
     const scaleNum = scale === true ? 2 : 1;
-    const addSignature = signature
-      ? `&key=${signature || "YOUR-SIGNATURE-HERE"}`
-      : "";
-    const place =
-      autoCenter === true
-        ? "auto"
-        : `center=${encodeURIComponent(location)}&zoom=${zoom}`;
+    const params = new URLSearchParams("");
+    if (autoCenter === true) params.set("auto", "");
+    if (!autoCenter) {
+      params.set("center", location);
+      params.set("zoom", zoom.toString());
+    }
+    params.set("scale", scaleNum.toString());
+    params.set("size", `${width}x${height}`);
+    params.set("maptype", mapType);
+    params.set("format", format);
+    params.set("key", API || "YOUR-API-KEY-HERE");
 
-    return `https://maps.googleapis.com/maps/api/staticmap?${place}&scale=${scaleNum}&size=${width}x${height}&maptype=${mapType}&key=${
-      API || "YOUR-API-KEY-HERE"
-    }&format=${format}${pushpinSet()}${addSignature}`;
+    const unsigned = `https://maps.googleapis.com/maps/api/staticmap?${params.toString()}${pushpinSet()}`;
+    return signature ? sign(unsigned, signature) : unsigned;
   }
 
   function createMarker(marker) {

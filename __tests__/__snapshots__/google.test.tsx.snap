@@ -310,7 +310,7 @@ exports[`renders homepage unchanged 1`] = `
             class="code"
           >
             <pre>
-              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C%20NY&zoom=13&scale=2&size=600x300&maptype=roadmap&key=YOUR-API-KEY-HERE&format=png
+              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C+NY&zoom=13&scale=2&size=600x300&maptype=roadmap&format=png&key=YOUR-API-KEY-HERE
             </pre>
           </div>
           <p>
@@ -326,7 +326,7 @@ exports[`renders homepage unchanged 1`] = `
               &lt;img width="
               600
               " src="
-              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C%20NY&zoom=13&scale=2&size=600x300&maptype=roadmap&key=YOUR-API-KEY-HERE&format=png
+              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C+NY&zoom=13&scale=2&size=600x300&maptype=roadmap&format=png&key=YOUR-API-KEY-HERE
               " alt="
               Google Map of Albany, NY
               " /&gt;
@@ -340,7 +340,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <pre>
               background-image: url(
-              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C%20NY&zoom=13&scale=2&size=600x300&maptype=roadmap&key=YOUR-API-KEY-HERE&format=png
+              https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C+NY&zoom=13&scale=2&size=600x300&maptype=roadmap&format=png&key=YOUR-API-KEY-HERE
               );
             </pre>
           </div>
