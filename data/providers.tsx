@@ -1,1 +1,8 @@
-export default ["Google", "Google Street View", "Mapbox", "Bing", "MapQuest"];
+export default [
+  "Google",
+  "Google Street View",
+  "Mapbox",
+  "Bing",
+  "MapQuest",
+  "Here",
+];
