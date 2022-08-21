@@ -3,41 +3,511 @@
 exports[`renders homepage unchanged 1`] = `
 <div>
   <main
-    class="cover"
+    class="main"
   >
     <div
-      class="title"
+      class="col-left"
     >
-      <h1>
-        <a
-          href="https://staticmapmaker.com"
+      <div
+        class="sticky"
+      >
+        <header
+          class="header"
         >
-          <svg
-            aria-hidden="true"
-            class="header-icon"
-            data-icon="map"
-            focusable="false"
-            height="128"
-            role="img"
-            viewBox="0 0 128 128"
-            width="128"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="title"
           >
-            <path
-              d="M5.5 0C2.367 0 0 2.367 0 5.5v117c0 3.133 2.367 5.5 5.5 5.5h117c3.133 0 5.5-2.367 5.5-5.5V5.5c0-3.133-2.367-5.5-5.5-5.5H5.5zM8 8h112v112H8V8zm35.188 2l15 15-9.594 9.594a2 2 0 1 0 2.813 2.813L61 27.813 101.19 68l-50.032 50h5.688l47.156-47.187 14 14v-5.625L106.814 68l11.188-11.188v-5.625l-14 14L63.814 25l15-15H73.19L61 22.186 48.814 10h-5.625zM48 52c-8.8 0-16 7.2-16 16 0 12 16 32 16 32s16-20 16-32c0-8.8-7.2-16-16-16zm0 8c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8z"
-            />
-          </svg>
-          <div>
-            Here
-             Static Map Maker
+            <h1>
+              <a
+                href="https://staticmapmaker.com"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="header-icon"
+                  data-icon="map"
+                  focusable="false"
+                  height="128"
+                  role="img"
+                  viewBox="0 0 128 128"
+                  width="128"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 0C2.367 0 0 2.367 0 5.5v117c0 3.133 2.367 5.5 5.5 5.5h117c3.133 0 5.5-2.367 5.5-5.5V5.5c0-3.133-2.367-5.5-5.5-5.5H5.5zM8 8h112v112H8V8zm35.188 2l15 15-9.594 9.594a2 2 0 1 0 2.813 2.813L61 27.813 101.19 68l-50.032 50h5.688l47.156-47.187 14 14v-5.625L106.814 68l11.188-11.188v-5.625l-14 14L63.814 25l15-15H73.19L61 22.186 48.814 10h-5.625zM48 52c-8.8 0-16 7.2-16 16 0 12 16 32 16 32s16-20 16-32c0-8.8-7.2-16-16-16zm0 8c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8z"
+                  />
+                </svg>
+                <div>
+                  Here
+                   Static Map Maker
+                </div>
+              </a>
+            </h1>
           </div>
-        </a>
-      </h1>
+        </header>
+        <div
+          class="controls"
+        >
+          <div
+            class="container"
+          >
+            <div
+              class="fieldset error fieldset-row"
+            >
+              <label
+                class="label"
+                for="api"
+              >
+                API Key
+              </label>
+              <input
+                id="api"
+                placeholder="API Key (required)"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="location"
+              >
+                Location
+              </label>
+              <input
+                id="location"
+                type="text"
+                value="42.6564,-73.7638"
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="zoom"
+              >
+                Zoom
+              </label>
+              <input
+                id="zoom"
+                max="22"
+                min="0"
+                type="range"
+                value="13"
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="width"
+              >
+                Width
+              </label>
+              <input
+                id="width"
+                max="900"
+                min="80"
+                type="number"
+                value="600"
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="height"
+              >
+                Height
+              </label>
+              <input
+                id="height"
+                max="834"
+                min="80"
+                type="number"
+                value="300"
+              />
+            </div>
+            <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <input
+                id="dot"
+                type="checkbox"
+              />
+              <label
+                class="checkbox-label"
+                for="dot"
+              >
+                No dot
+              </label>
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="style"
+              >
+                Map style
+              </label>
+              <select
+                id="style"
+              >
+                <option
+                  value="alps"
+                >
+                  alps
+                </option>
+                <option
+                  value="dreamworks"
+                >
+                  dreamworks
+                </option>
+                <option
+                  value="flame"
+                >
+                  flame
+                </option>
+                <option
+                  value="fleet"
+                >
+                  fleet
+                </option>
+                <option
+                  value="mini"
+                >
+                  mini
+                </option>
+              </select>
+            </div>
+            <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <input
+                id="map-header"
+                type="checkbox"
+              />
+              <label
+                class="checkbox-label"
+                for="map-header"
+              >
+                Map header
+              </label>
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="rotate"
+              >
+                Rotate
+              </label>
+              <input
+                id="rotate"
+                max="360"
+                min="0"
+                type="range"
+                value="0"
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="formate"
+              >
+                Format
+              </label>
+              <select
+                id="formate"
+              >
+                <option
+                  value="0"
+                >
+                  PNG
+                </option>
+                <option
+                  value="1"
+                >
+                  JPEG
+                </option>
+                <option
+                  value="2"
+                >
+                  GIF
+                </option>
+                <option
+                  value="3"
+                >
+                  BMP
+                </option>
+                <option
+                  value="4"
+                >
+                  PNG8
+                </option>
+                <option
+                  value="5"
+                >
+                  SVG (only for companylogo)
+                </option>
+              </select>
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="language"
+              >
+                Language
+              </label>
+              <select
+                id="language"
+              >
+                <option
+                  value=""
+                />
+                <option
+                  value="ara"
+                >
+                  Arabic
+                </option>
+                <option
+                  value="chi"
+                >
+                  Chinese (simplified)
+                </option>
+                <option
+                  value="cht"
+                >
+                  Chinese (traditional)
+                </option>
+                <option
+                  value="dut"
+                >
+                  Dutch
+                </option>
+                <option
+                  value="eng"
+                >
+                  English
+                </option>
+                <option
+                  value="fre"
+                >
+                  French
+                </option>
+                <option
+                  value="ger"
+                >
+                  German
+                </option>
+                <option
+                  value="gle"
+                >
+                  Gaelic
+                </option>
+                <option
+                  value="gre"
+                >
+                  Greek
+                </option>
+                <option
+                  value="heb"
+                >
+                  Hebrew
+                </option>
+                <option
+                  value="hin"
+                >
+                  Hindi
+                </option>
+                <option
+                  value="ind"
+                >
+                  Indonesian
+                </option>
+                <option
+                  value="ita"
+                >
+                  Italian
+                </option>
+                <option
+                  value="per"
+                >
+                  Persian
+                </option>
+                <option
+                  value="pol"
+                >
+                  Polish
+                </option>
+                <option
+                  value="por"
+                >
+                  Portuguese
+                </option>
+                <option
+                  value="rus"
+                >
+                  Russian
+                </option>
+                <option
+                  value="sin"
+                >
+                  Sinhalese
+                </option>
+                <option
+                  value="spa"
+                >
+                  Spanish
+                </option>
+                <option
+                  value="tha"
+                >
+                  Thai
+                </option>
+                <option
+                  value="tur"
+                >
+                  Turkish
+                </option>
+                <option
+                  value="ukr"
+                >
+                  Ukranian
+                </option>
+                <option
+                  value="urd"
+                >
+                  Urdu
+                </option>
+                <option
+                  value="vie"
+                >
+                  Vietnamese
+                </option>
+                <option
+                  value="wel"
+                >
+                  Welsh
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p />
-    <p>
-      Unavailable.
-    </p>
+    <div
+      class="col-right"
+    >
+      <div
+        class="static"
+      >
+        <div
+          class="static-wrapper api-required"
+        >
+          <img
+            alt="Here Map of 42.6564,-73.7638"
+            class="static-map"
+            id="map"
+            src="/img/here-placeholder.png"
+            width="600"
+          />
+        </div>
+      </div>
+      <div
+        class="wrapper"
+      >
+        <div
+          class="info"
+        >
+          <div
+            class="code"
+          >
+            <pre>
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564,-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=your-token-here
+            </pre>
+          </div>
+          <p>
+            Treat the code like an image — you can use HTML or CSS to display it.
+          </p>
+          <h2>
+            HTML
+          </h2>
+          <div
+            class="code"
+          >
+            <pre>
+              &lt;img width="
+              600
+              " src="
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564,-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=your-token-here
+              " alt="
+              Here Map of 42.6564,-73.7638
+              " /&gt;
+            </pre>
+          </div>
+          <h2>
+            CSS
+          </h2>
+          <div
+            class="code"
+          >
+            <pre>
+              background-image: url(
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564,-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=your-token-here
+              );
+            </pre>
+          </div>
+          <h2>
+            How to use
+          </h2>
+          <ol>
+            <li>
+              Customize the fields to build your map.
+            </li>
+            <li>
+              Copy the generated static API request URL.
+            </li>
+            <li>
+              Copy and paste the code into your HTML document or a stylesheet.
+            </li>
+          </ol>
+          <h2>
+            About
+          </h2>
+          <p>
+            You can add a static map to any website with simple HTML and no JavaScript. Using URL parameters, you can describe the type of map that you want and 
+            Here
+             will send it back.
+          </p>
+          <p>
+            The Static Map Maker helps you configure the 
+            Here
+             API parameters and gives you the code in real time.
+          </p>
+          <p>
+            Check out 
+            <a
+              href="https://developer.here.com/documentation/map-image/dev_guide/topics/introduction.html"
+            >
+              Here
+              's static maps API
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
   </main>
 </div>
 `;

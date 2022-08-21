@@ -107,6 +107,20 @@ exports[`renders homepage unchanged 1`] = `
         MapQuest
       </div>
     </a>
+    <a
+      class="provider"
+      href="/here/"
+    >
+      <img
+        alt="Here static map API"
+        src="/img/here.png"
+      />
+      <div
+        class="provider-title"
+      >
+        Here
+      </div>
+    </a>
   </main>
 </div>
 `;
