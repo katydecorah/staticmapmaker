@@ -5,12 +5,18 @@ import Title from "../components/title";
 
 function HomePage() {
   const url = "https://staticmapmaker.com";
+  const listOfProviders = providers
+    .map(
+      (provider, index) =>
+        `${index === providers.length - 1 ? "or a " : ""}${provider} static map`
+    )
+    .join(", ");
   return (
     <>
       <Meta
         title="Static Map Maker"
         url={url}
-        description="Create a Bing static map, Google static map, Mapbox static map, MapQuest static map, a HERE static map, a CartoDB static map, or a Yandex static map. Type in a location, customize, and get the map."
+        description={`Create a ${listOfProviders}. Type in a location, customize the parameters, and get a static map request URL.`}
       />
       <header className={styles.cover}>
         <Title />
