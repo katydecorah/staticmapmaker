@@ -14,6 +14,7 @@ type WrapperProps = {
   location: string;
   auto?: boolean;
   link: string;
+  apiLink: string;
 };
 
 export default function Wrapper(props: WrapperProps): JSX.Element {

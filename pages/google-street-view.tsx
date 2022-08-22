@@ -8,6 +8,8 @@ function GoogleStreetView() {
   const title = "Google Street View";
   const link =
     "https://developers.google.com/maps/documentation/streetview/request-streetview";
+  const apiLink =
+    "https://developers.google.com/maps/documentation/streetview/get-api-key";
   const maxSize = 640;
 
   const [location, setLocation] = useState("41.8893164,12.4932938");
@@ -44,6 +46,7 @@ function GoogleStreetView() {
       width={width}
       height={height}
       API={API}
+      apiLink={apiLink}
     >
       <>
         <Input

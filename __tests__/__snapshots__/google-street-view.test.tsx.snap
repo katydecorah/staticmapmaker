@@ -210,6 +210,9 @@ exports[`renders homepage unchanged 1`] = `
         <div
           class="info"
         >
+          <h2>
+            Request
+          </h2>
           <div
             class="code"
           >
@@ -217,12 +220,7 @@ exports[`renders homepage unchanged 1`] = `
               https://maps.googleapis.com/maps/api/streetview?location=41.8893164%2C12.4932938&size=600x300&heading=315&fov=90&pitch=0&key=YOUR-API-KEY-HERE
             </pre>
           </div>
-          <p>
-            Treat the code like an image — you can use HTML or CSS to display it.
-          </p>
-          <h2>
-            HTML
-          </h2>
+          Display the map as an image:
           <div
             class="code"
           >
@@ -232,13 +230,11 @@ exports[`renders homepage unchanged 1`] = `
               " src="
               https://maps.googleapis.com/maps/api/streetview?location=41.8893164%2C12.4932938&size=600x300&heading=315&fov=90&pitch=0&key=YOUR-API-KEY-HERE
               " alt="
-              Google Street View Map of 41.8893164,12.4932938
+              Google Street View map of 41.8893164,12.4932938
               " /&gt;
             </pre>
           </div>
-          <h2>
-            CSS
-          </h2>
+          Display the map as a CSS background image:
           <div
             class="code"
           >
@@ -253,13 +249,20 @@ exports[`renders homepage unchanged 1`] = `
           </h2>
           <ol>
             <li>
+              Get a 
+              <a
+                href="https://developers.google.com/maps/documentation/streetview/get-api-key"
+              >
+                Google Street View
+                 API key
+              </a>
+              .
+            </li>
+            <li>
               Customize the fields to build your map.
             </li>
             <li>
-              Copy the generated static API request URL.
-            </li>
-            <li>
-              Copy and paste the code into your HTML document or a stylesheet.
+              Copy and paste the generated code into your HTML document or a stylesheet.
             </li>
           </ol>
           <h2>
@@ -273,7 +276,7 @@ exports[`renders homepage unchanged 1`] = `
           <p>
             The Static Map Maker helps you configure the 
             Google Street View
-             API parameters and gives you the code in real time.
+             API parameters.
           </p>
           <p>
             Check out 

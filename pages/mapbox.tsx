@@ -13,6 +13,8 @@ import stylesForms from "../styles/forms.module.scss";
 export default function Mapbox() {
   const title = "Mapbox";
   const link = "https://docs.mapbox.com/api/maps/#static-images";
+  const apiLink =
+    "https://docs.mapbox.com/api/overview/#access-tokens-and-token-scopes";
   const minZoom = 0;
   const maxZoom = 22;
 
@@ -108,6 +110,7 @@ export default function Mapbox() {
       width={width}
       height={height}
       API={API}
+      apiLink={apiLink}
     >
       <>
         <Input

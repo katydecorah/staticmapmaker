@@ -7,9 +7,11 @@ import optionize from "../utils/optionize";
 import stylesForms from "../styles/forms.module.scss";
 
 export default function Here() {
-  const title = "Here";
+  const title = "HERE";
   const link =
     "https://developer.here.com/documentation/map-image/dev_guide/topics/introduction.html";
+  const apiLink =
+    "https://developer.here.com/documentation/map-image/dev_guide/topics/request-format.html";
   const minZoom = 0;
   const maxZoom = 22;
 
@@ -52,6 +54,7 @@ export default function Here() {
       width={width}
       height={height}
       API={API}
+      apiLink={apiLink}
     >
       <Input
         id="api"

@@ -265,6 +265,9 @@ exports[`renders homepage unchanged 1`] = `
         <div
           class="info"
         >
+          <h2>
+            Request
+          </h2>
           <div
             class="code"
           >
@@ -272,12 +275,7 @@ exports[`renders homepage unchanged 1`] = `
               https://www.mapquestapi.com/staticmap/v4/getplacemap?location=Albany%2C+NY&size=600%2C300&type=map&zoom=13&imagetype=png&scalebar=false&key=YOUR-API-KEY-HERE
             </pre>
           </div>
-          <p>
-            Treat the code like an image — you can use HTML or CSS to display it.
-          </p>
-          <h2>
-            HTML
-          </h2>
+          Display the map as an image:
           <div
             class="code"
           >
@@ -287,13 +285,11 @@ exports[`renders homepage unchanged 1`] = `
               " src="
               https://www.mapquestapi.com/staticmap/v4/getplacemap?location=Albany%2C+NY&size=600%2C300&type=map&zoom=13&imagetype=png&scalebar=false&key=YOUR-API-KEY-HERE
               " alt="
-              MapQuest Map of Albany, NY
+              MapQuest map of Albany, NY
               " /&gt;
             </pre>
           </div>
-          <h2>
-            CSS
-          </h2>
+          Display the map as a CSS background image:
           <div
             class="code"
           >
@@ -308,13 +304,20 @@ exports[`renders homepage unchanged 1`] = `
           </h2>
           <ol>
             <li>
+              Get a 
+              <a
+                href="https://developer.mapquest.com/documentation/"
+              >
+                MapQuest
+                 API key
+              </a>
+              .
+            </li>
+            <li>
               Customize the fields to build your map.
             </li>
             <li>
-              Copy the generated static API request URL.
-            </li>
-            <li>
-              Copy and paste the code into your HTML document or a stylesheet.
+              Copy and paste the generated code into your HTML document or a stylesheet.
             </li>
           </ol>
           <h2>
@@ -328,7 +331,7 @@ exports[`renders homepage unchanged 1`] = `
           <p>
             The Static Map Maker helps you configure the 
             MapQuest
-             API parameters and gives you the code in real time.
+             API parameters.
           </p>
           <p>
             Check out 

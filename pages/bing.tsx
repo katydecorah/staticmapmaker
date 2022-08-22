@@ -12,6 +12,8 @@ import stylesForms from "../styles/forms.module.scss";
 export default function Bing() {
   const title = "Bing";
   const link = "https://msdn.microsoft.com/en-us/library/ff701724.aspx";
+  const apiLink =
+    "https://docs.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key";
   const minZoom = 0;
   const maxZoom = 21;
 
@@ -82,6 +84,7 @@ export default function Bing() {
       width={width}
       height={height}
       API={API}
+      apiLink={apiLink}
     >
       <Input
         id="api"

@@ -14,6 +14,8 @@ import { sign } from "../utils/google/sign";
 function Google() {
   const title = "Google";
   const link = "https://developers.google.com/maps/documentation/staticmaps/";
+  const apiLink =
+    "https://developers.google.com/maps/documentation/maps-static/get-api-key";
   const maxSize = 640;
   const minZoom = 0;
   const maxZoom = 22;
@@ -119,6 +121,7 @@ function Google() {
       width={width}
       height={height}
       API={API}
+      apiLink={apiLink}
     >
       <>
         <Input

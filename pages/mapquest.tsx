@@ -9,6 +9,7 @@ import styles from "../styles/forms.module.scss";
 export default function MapQuest() {
   const title = "MapQuest";
   const link = "https://www.mapquestapi.com/staticmap/";
+  const apiLink = "https://developer.mapquest.com/documentation/";
   const maxSize = 3840;
   const minZoom = 1;
   const maxZoom = 18;
@@ -53,6 +54,7 @@ export default function MapQuest() {
       width={width}
       height={height}
       API={API}
+      apiLink={apiLink}
     >
       <Input
         id="api"

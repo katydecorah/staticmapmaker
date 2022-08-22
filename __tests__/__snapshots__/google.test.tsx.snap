@@ -306,6 +306,9 @@ exports[`renders homepage unchanged 1`] = `
         <div
           class="info"
         >
+          <h2>
+            Request
+          </h2>
           <div
             class="code"
           >
@@ -313,12 +316,7 @@ exports[`renders homepage unchanged 1`] = `
               https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C+NY&zoom=13&scale=2&size=600x300&maptype=roadmap&format=png&key=YOUR-API-KEY-HERE
             </pre>
           </div>
-          <p>
-            Treat the code like an image — you can use HTML or CSS to display it.
-          </p>
-          <h2>
-            HTML
-          </h2>
+          Display the map as an image:
           <div
             class="code"
           >
@@ -328,13 +326,11 @@ exports[`renders homepage unchanged 1`] = `
               " src="
               https://maps.googleapis.com/maps/api/staticmap?center=Albany%2C+NY&zoom=13&scale=2&size=600x300&maptype=roadmap&format=png&key=YOUR-API-KEY-HERE
               " alt="
-              Google Map of Albany, NY
+              Google map of Albany, NY
               " /&gt;
             </pre>
           </div>
-          <h2>
-            CSS
-          </h2>
+          Display the map as a CSS background image:
           <div
             class="code"
           >
@@ -349,24 +345,20 @@ exports[`renders homepage unchanged 1`] = `
           </h2>
           <ol>
             <li>
-              You must create an
-               
+              Get a 
               <a
-                href="https://developers.google.com/maps/documentation/maps-static/get-api-key#get-an-api-key"
+                href="https://developers.google.com/maps/documentation/maps-static/get-api-key"
               >
-                API Key
+                Google
+                 API key
               </a>
-               
-              to use Google Static maps
+              .
             </li>
             <li>
               Customize the fields to build your map.
             </li>
             <li>
-              Copy the generated static API request URL.
-            </li>
-            <li>
-              Copy and paste the code into your HTML document or a stylesheet.
+              Copy and paste the generated code into your HTML document or a stylesheet.
             </li>
           </ol>
           <h2>
@@ -380,7 +372,7 @@ exports[`renders homepage unchanged 1`] = `
           <p>
             The Static Map Maker helps you configure the 
             Google
-             API parameters and gives you the code in real time.
+             API parameters.
           </p>
           <p>
             Check out 
