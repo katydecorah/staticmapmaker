@@ -434,7 +434,7 @@ exports[`renders homepage unchanged 1`] = `
             class="code"
           >
             <pre>
-              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564,-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=your-token-here
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=YOUR-API-TOKEN-HERE
             </pre>
           </div>
           <p>
@@ -450,7 +450,7 @@ exports[`renders homepage unchanged 1`] = `
               &lt;img width="
               600
               " src="
-              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564,-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=your-token-here
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=YOUR-API-TOKEN-HERE
               " alt="
               Here Map of 42.6564,-73.7638
               " /&gt;
@@ -464,7 +464,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <pre>
               background-image: url(
-              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564,-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=your-token-here
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=YOUR-API-TOKEN-HERE
               );
             </pre>
           </div>

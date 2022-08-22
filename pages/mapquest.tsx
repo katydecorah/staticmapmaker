@@ -28,15 +28,18 @@ export default function MapQuest() {
   const [API, setAPI] = useState("");
 
   function buildMapURL() {
-    return `https://www.mapquestapi.com/staticmap/v4/getplacemap?key=${
-      API || "YOUR-API-KEY-HERE"
-    }&location=${encodeURIComponent(
-      location
-    )}&size=${width},${height}&type=${mapType}&zoom=${zoom}&imagetype=${format}&scalebar=${scaleBar}${
-      scaleBar ? `&scalebarPos=${scalebarPos}` : ""
-    }${showTraffic ? `&traffic=${traffic}` : ""}${
-      showMarker ? `&showicon=${markerColor}-1` : ""
-    }`;
+    const params = new URLSearchParams("");
+    params.set("location", location);
+    params.set("size", `${width},${height}`);
+    params.set("type", mapType);
+    params.set("zoom", zoom.toString());
+    params.set("imagetype", format);
+    params.set("scalebar", scaleBar.toString());
+    if (scaleBar) params.set("scalebarPos", scalebarPos);
+    if (showTraffic) params.set("traffic", traffic);
+    if (showMarker) params.set("showicon", `${markerColor}-1`);
+    params.set("key", API || "YOUR-API-KEY-HERE");
+    return `https://www.mapquestapi.com/staticmap/v4/getplacemap?${params}`;
   }
 
   const mapcode = buildMapURL();

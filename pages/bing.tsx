@@ -41,22 +41,23 @@ export default function Bing() {
   }
 
   function buildMapURL() {
+    const params = new URLSearchParams("");
+    params.set("mapSize", `${width},${height}`);
+    if (showTraffic) params.set("mapLayer", "TrafficFlow");
+    params.set("format", format);
+
+    for (const marker of markers) {
+      params.append(
+        "pushpin",
+        `${marker.coordinates};${marker.style};${marker.label}`
+      );
+    }
+
+    params.set("key", API || "YOUR-API-KEY-HERE");
+
     return `https://dev.virtualearth.net/REST/V1/Imagery/Map/${mapType}/${encodeURIComponent(
       location
-    )}${location ? `/${zoom}` : ""}?mapSize=${width},${height}${
-      showTraffic ? "&mapLayer=TrafficFlow" : ""
-    }&format=${format}${pushpinSet()}&key=${API ? API : "your-token-here"}`;
-  }
-
-  function pushpinSet() {
-    return markers.reduce((string, marker) => {
-      if (marker.coordinates) {
-        string += `&pushpin=${marker.coordinates};${marker.style};${marker.label
-          .split(" ")
-          .join("%20")}`;
-      }
-      return string;
-    }, "");
+    )}${location ? `/${zoom}` : ""}?${params.toString()}`;
   }
 
   function setMarker(value: string, index: number, label: string) {

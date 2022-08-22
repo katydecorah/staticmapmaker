@@ -2,6 +2,7 @@ import Wrapper from "../components/wrapper";
 import Input from "../components/form/input";
 import { useState } from "react";
 import stylesForms from "../styles/forms.module.scss";
+import { sign } from "../utils/google/sign";
 
 function GoogleStreetView() {
   const title = "Google Street View";
@@ -17,19 +18,18 @@ function GoogleStreetView() {
   const [heading, setHeading] = useState(315);
   const [fov, setFov] = useState(90);
   const [pitch, setPitch] = useState(0);
-  // const [radius, setRadius] = useState(50);
 
   function buildMapURL() {
-    const addSignature = signature
-      ? `&key=${signature || "YOUR-SIGNATURE-HERE"}`
-      : "";
-    const place = `location=${encodeURIComponent(location)}`;
+    const params = new URLSearchParams("");
+    params.set("location", location);
+    params.set("size", `${width}x${height}`);
+    if (heading) params.set("heading", heading.toString());
+    params.set("fov", fov.toString());
+    params.set("pitch", pitch.toString());
+    params.set("key", API || "YOUR-API-KEY-HERE");
 
-    return `https://maps.googleapis.com/maps/api/streetview?${place}&size=${width}x${height}${
-      heading ? `&heading=${heading}` : ""
-    }&fov=${fov}&pitch=${pitch}&key=${
-      API || "YOUR-API-KEY-HERE"
-    }${addSignature}`;
+    const unsigned = `https://maps.googleapis.com/maps/api/streetview?${params.toString()}`;
+    return signature ? sign(unsigned, signature) : unsigned;
   }
 
   const mapcode = buildMapURL();

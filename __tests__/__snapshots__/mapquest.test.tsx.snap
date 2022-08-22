@@ -269,7 +269,7 @@ exports[`renders homepage unchanged 1`] = `
             class="code"
           >
             <pre>
-              https://www.mapquestapi.com/staticmap/v4/getplacemap?key=YOUR-API-KEY-HERE&location=Albany%2C%20NY&size=600,300&type=map&zoom=13&imagetype=png&scalebar=false
+              https://www.mapquestapi.com/staticmap/v4/getplacemap?location=Albany%2C+NY&size=600%2C300&type=map&zoom=13&imagetype=png&scalebar=false&key=YOUR-API-KEY-HERE
             </pre>
           </div>
           <p>
@@ -285,7 +285,7 @@ exports[`renders homepage unchanged 1`] = `
               &lt;img width="
               600
               " src="
-              https://www.mapquestapi.com/staticmap/v4/getplacemap?key=YOUR-API-KEY-HERE&location=Albany%2C%20NY&size=600,300&type=map&zoom=13&imagetype=png&scalebar=false
+              https://www.mapquestapi.com/staticmap/v4/getplacemap?location=Albany%2C+NY&size=600%2C300&type=map&zoom=13&imagetype=png&scalebar=false&key=YOUR-API-KEY-HERE
               " alt="
               MapQuest Map of Albany, NY
               " /&gt;
@@ -299,7 +299,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <pre>
               background-image: url(
-              https://www.mapquestapi.com/staticmap/v4/getplacemap?key=YOUR-API-KEY-HERE&location=Albany%2C%20NY&size=600,300&type=map&zoom=13&imagetype=png&scalebar=false
+              https://www.mapquestapi.com/staticmap/v4/getplacemap?location=Albany%2C+NY&size=600%2C300&type=map&zoom=13&imagetype=png&scalebar=false&key=YOUR-API-KEY-HERE
               );
             </pre>
           </div>

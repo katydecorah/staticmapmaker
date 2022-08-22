@@ -86,14 +86,16 @@ export default function Mapbox() {
   }
 
   function buildMapURL() {
-    const map = `https://api.mapbox.com/styles/v1/${
+    const params = new URLSearchParams("");
+    params.set("attribution", attribution.toString());
+    params.set("logo", logo.toString());
+    params.set("access_token", API || "YOUR-ACCESS-TOKEN-HERE");
+
+    return `https://api.mapbox.com/styles/v1/${
       mapID || mapboxID
     }/static${pushpinSet()}${
       auto ? "auto" : `${location},${zoom},${bearing},${pitch}`
-    }/${width}x${height}${retina ? "@2x" : ""}?access_token=${
-      API || "YOUR-API-TOKEN-HERE"
-    }&attribution=${attribution}&logo=${logo}`;
-    return map;
+    }/${width}x${height}${retina ? "@2x" : ""}?${params.toString()}`;
   }
 
   return (

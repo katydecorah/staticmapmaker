@@ -317,7 +317,7 @@ exports[`renders homepage unchanged 1`] = `
             class="code"
           >
             <pre>
-              https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/42.6564%2C-73.7638/13?mapSize=600,300&format=png&key=your-token-here
+              https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/42.6564%2C-73.7638/13?mapSize=600%2C300&format=png&key=YOUR-API-KEY-HERE
             </pre>
           </div>
           <p>
@@ -333,7 +333,7 @@ exports[`renders homepage unchanged 1`] = `
               &lt;img width="
               600
               " src="
-              https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/42.6564%2C-73.7638/13?mapSize=600,300&format=png&key=your-token-here
+              https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/42.6564%2C-73.7638/13?mapSize=600%2C300&format=png&key=YOUR-API-KEY-HERE
               " alt="
               Bing Map of 42.6564,-73.7638
               " /&gt;
@@ -347,7 +347,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <pre>
               background-image: url(
-              https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/42.6564%2C-73.7638/13?mapSize=600,300&format=png&key=your-token-here
+              https://dev.virtualearth.net/REST/V1/Imagery/Map/Road/42.6564%2C-73.7638/13?mapSize=600%2C300&format=png&key=YOUR-API-KEY-HERE
               );
             </pre>
           </div>

@@ -383,7 +383,7 @@ exports[`renders homepage unchanged 1`] = `
             class="code"
           >
             <pre>
-              https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-73.7638,42.6564,13,0,0/600x300@2x?access_token=YOUR-API-TOKEN-HERE&attribution=true&logo=true
+              https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-73.7638,42.6564,13,0,0/600x300@2x?attribution=true&logo=true&access_token=YOUR-ACCESS-TOKEN-HERE
             </pre>
           </div>
           <p>
@@ -410,7 +410,7 @@ exports[`renders homepage unchanged 1`] = `
               &lt;img width="
               600
               " src="
-              https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-73.7638,42.6564,13,0,0/600x300@2x?access_token=YOUR-API-TOKEN-HERE&attribution=true&logo=true
+              https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-73.7638,42.6564,13,0,0/600x300@2x?attribution=true&logo=true&access_token=YOUR-ACCESS-TOKEN-HERE
               " alt="
               Mapbox Map of -73.7638,42.6564
               " /&gt;
@@ -424,7 +424,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <pre>
               background-image: url(
-              https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-73.7638,42.6564,13,0,0/600x300@2x?access_token=YOUR-API-TOKEN-HERE&attribution=true&logo=true
+              https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-73.7638,42.6564,13,0,0/600x300@2x?attribution=true&logo=true&access_token=YOUR-ACCESS-TOKEN-HERE
               );
             </pre>
           </div>

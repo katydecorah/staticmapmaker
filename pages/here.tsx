@@ -26,11 +26,19 @@ export default function Here() {
   const [format, setFormat] = useState("0");
 
   function buildMapURL() {
-    return `https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=${location}&w=${width}&h=${height}&z=${zoom}&nodot=${noDot}&style=${style}${
-      mapHeader ? `&i=1` : ""
-    }${language ? `&ml=${language}` : ""}${format ? `&f=${format}` : ""}${
-      rotate ? `&ra=${rotate}` : ""
-    }&apiKey=${API ? API : "your-token-here"}`;
+    const params = new URLSearchParams("");
+    params.set("c", location);
+    params.set("w", width.toString());
+    params.set("h", height.toString());
+    params.set("z", zoom.toString());
+    params.set("nodot", noDot.toString());
+    params.set("style", style);
+    if (mapHeader) params.set("i", "1");
+    if (language) params.set("ml", language);
+    if (format) params.set("f", format);
+    if (rotate) params.set("ra", rotate.toString());
+    params.set("apiKey", API || "YOUR-API-TOKEN-HERE");
+    return `https://image.maps.ls.hereapi.com/mia/1.6/mapview?${params.toString()}`;
   }
 
   const mapcode = buildMapURL();
