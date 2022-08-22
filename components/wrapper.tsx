@@ -25,7 +25,7 @@ export default function Wrapper(props: WrapperProps): JSX.Element {
       <Meta
         title={`${props.title} Static Map Maker`}
         description={`Create a ${props.title} static map with Static Map Maker.`}
-        image={`https://staticmapmaker.com/img/${slug}.png`}
+        image={`https://staticmapmaker.com/img/${slug}-placeholder.png`}
         url={url}
       />
       <main className={styles.main}>

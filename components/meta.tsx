@@ -4,14 +4,18 @@ export default function Meta({
   title,
   description,
   image,
+  width = "600",
+  height = "300",
   url,
 }: {
   title: string;
   description: string;
   image?: string;
   url: string;
+  width?: string;
+  height?: string;
 }): JSX.Element {
-  const metaTitle = `${title} | a static map API helper`;
+  const metaTitle = `${title} | a static map API generator`;
   return (
     <Head>
       <title>{metaTitle}</title>
@@ -30,8 +34,8 @@ export default function Meta({
       {image && (
         <>
           <meta property="og:image" content={image} />
-          <meta property="og:image:width" content="400" />
-          <meta property="og:image:height" content="400" />
+          <meta property="og:image:width" content={width} />
+          <meta property="og:image:height" content={height} />
         </>
       )}
     </Head>

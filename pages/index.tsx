@@ -17,6 +17,9 @@ function HomePage() {
         title="Static Map Maker"
         url={url}
         description={`Create a ${listOfProviders}. Type in a location, customize the parameters, and get a static map request URL.`}
+        image="https://staticmapmaker.com/img/social.png"
+        width="800"
+        height="494"
       />
       <header className={styles.cover}>
         <Title />
