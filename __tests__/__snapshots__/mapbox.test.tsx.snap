@@ -57,11 +57,11 @@ exports[`renders homepage unchanged 1`] = `
                 class="label"
                 for="api"
               >
-                API Token
+                Access token
               </label>
               <input
                 id="api"
-                placeholder="Public API Key (required)"
+                placeholder="Access token (required)"
                 type="text"
                 value=""
               />

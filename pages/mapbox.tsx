@@ -115,12 +115,12 @@ export default function Mapbox() {
       <>
         <Input
           type="text"
-          label="API Token"
+          label="Access token"
           id="api"
           value={API}
           onChange={setAPI}
           fieldSetClassName={API ? " " : stylesForms.error}
-          placeholder="Public API Key (required)"
+          placeholder="Access token (required)"
         />
         <Input
           type="text"
