@@ -50,6 +50,7 @@ export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
                     options={optionize(markerLabels)}
                     id={`${index}-marker-label`}
                     fieldSetClassName={styles.sm}
+                    disabled={marker.markerSize !== "mid"}
                   />
                   <Input
                     value={marker.markerColor}
@@ -65,7 +66,11 @@ export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
                     onChange={(value) =>
                       updateMarker(value, index, "markerSize")
                     }
-                    options={optionize(["tiny", "small", "mid"])}
+                    options={[
+                      { value: "tiny", text: "small" },
+                      { value: "small", text: "medium" },
+                      { value: "mid", text: "large" },
+                    ]}
                     id={`${index}-marker-size`}
                     fieldSetClassName={styles.sm}
                   />
