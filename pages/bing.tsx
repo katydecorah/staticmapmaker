@@ -4,10 +4,9 @@ import Input from "../components/form/input";
 import Select from "../components/form/select";
 import { useState } from "react";
 import optionize from "../utils/optionize";
-import IconTrash from "../components/svg/trash";
-import IconPlus from "../components/svg/plus";
-import styles from "../styles/providers.module.scss";
 import stylesForms from "../styles/forms.module.scss";
+import { Markers } from "../components/markers/bing";
+import useMarkers from "../components/markers/hook";
 
 export default function Bing() {
   const title = "Bing";
@@ -25,22 +24,11 @@ export default function Bing() {
   const [format, setFormat] = useState("png");
   const [showTraffic, setShowTraffic] = useState(false);
   const [API, setAPI] = useState("");
-  const [markers, setMarkers] = useState([]);
-
-  function addMarker() {
-    setMarkers((prevMarkers) => [
-      ...prevMarkers,
-      {
-        style: 64,
-        coordinates: location,
-        label: "Hi",
-      },
-    ]);
-  }
-
-  function removeMarker(index: number) {
-    setMarkers((prevMarkers) => prevMarkers.filter((m, i) => i !== index));
-  }
+  const { markers, addMarker, updateMarker, removeMarker } = useMarkers({
+    style: 64,
+    coordinates: location,
+    label: "Hi",
+  });
 
   function buildMapURL() {
     const params = new URLSearchParams("");
@@ -60,17 +48,6 @@ export default function Bing() {
     return `https://dev.virtualearth.net/REST/V1/Imagery/Map/${mapType}/${encodeURIComponent(
       location
     )}${location ? `/${zoom}` : ""}?${params.toString()}`;
-  }
-
-  function setMarker(value: string, index: number, label: string) {
-    setMarkers((prevMarkers) =>
-      prevMarkers.map((marker, markerIndex) => {
-        return {
-          ...marker,
-          ...(index === markerIndex && { [label]: value }),
-        };
-      })
-    );
   }
 
   const mapcode = buildMapURL();
@@ -179,51 +156,13 @@ export default function Bing() {
         onChange={setFormat}
         options={optionize(["png", "gif", "jpeg"])}
       />
-      <div className={stylesForms["fieldset"]}>
-        <div className={styles["form-group"]}>
-          {markers.map((marker, index) => {
-            return (
-              <div className={styles["flex-column"]} key={`marker-${index}`}>
-                <Input
-                  id="coordinates"
-                  type="text"
-                  placeholder="coordinates"
-                  value={marker.coordinates}
-                  onChange={(value) => setMarker(value, index, "coordinates")}
-                />
-                <Input
-                  id="marker-style"
-                  type="number"
-                  min="0"
-                  max="112"
-                  placeholder="icon style"
-                  value={marker.style}
-                  onChange={(value) => setMarker(value, index, "style")}
-                />
-                <Input
-                  id="marker-label"
-                  type="text"
-                  placeholder="label"
-                  value={marker.label}
-                  onChange={(value) => setMarker(value, index, "label")}
-                />
-                <button
-                  aria-label="Remove marker"
-                  className={styles.btn}
-                  onClick={() => removeMarker(index)}
-                >
-                  <IconTrash />
-                </button>
-              </div>
-            );
-          })}
-        </div>
-        <div className={styles["form-group"]}>
-          <button onClick={() => addMarker()} className={styles.btn}>
-            <IconPlus /> Add a pushpin
-          </button>
-        </div>
-      </div>
+
+      <Markers
+        markers={markers}
+        addMarker={addMarker}
+        updateMarker={updateMarker}
+        removeMarker={removeMarker}
+      />
     </Wrapper>
   );
 }
