@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useMarkers = (initialMarker) => {
+export default function useMarkers(initialMarker) {
   const [markers, setMarkers] = useState([]);
 
   const removeMarker = (index: number) => {
@@ -27,6 +27,4 @@ const useMarkers = (initialMarker) => {
   };
 
   return { markers, addMarker, updateMarker, removeMarker };
-};
-
-export default useMarkers;
+}
