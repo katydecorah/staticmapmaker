@@ -4,11 +4,8 @@ import Input from "../components/form/input";
 import Select from "../components/form/select";
 import { useState } from "react";
 import stylesForms from "../styles/forms.module.scss";
-import {
-  Markers,
-  useMarkers,
-  buildMarkerRequest,
-} from "../components/markers/mapbox";
+import { Markers, buildMarkerRequest } from "../components/markers/mapbox";
+import useMarkers from "../components/markers/hook";
 
 export default function Mapbox() {
   const title = "Mapbox";
@@ -17,7 +14,6 @@ export default function Mapbox() {
     "https://docs.mapbox.com/api/overview/#access-tokens-and-token-scopes";
   const minZoom = 0;
   const maxZoom = 22;
-  const { markers, addMarker, updateMarker, removeMarker } = useMarkers();
 
   const [API, setAPI] = useState("");
   const [mapID, setMapID] = useState("");
@@ -33,6 +29,13 @@ export default function Mapbox() {
   const [location, setLocation] = useState("-73.7638,42.6564");
   const [zoom, setZoom] = useState(13);
   const [maxSize, setMaxSize] = useState(1280);
+  const { markers, addMarker, updateMarker, removeMarker } = useMarkers({
+    markerSize: "s",
+    coordinates: location,
+    markerLabel: "heart",
+    markerColor: "285A98",
+    markerCustom: "",
+  });
 
   const mapcode = buildMapURL();
 

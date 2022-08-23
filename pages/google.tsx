@@ -6,11 +6,8 @@ import { useState } from "react";
 import optionize from "../utils/optionize";
 import stylesForms from "../styles/forms.module.scss";
 import { sign } from "../utils/google/sign";
-import {
-  useMarkers,
-  buildMarkerRequest,
-  Markers,
-} from "../components/markers/google";
+import { buildMarkerRequest, Markers } from "../components/markers/google";
+import useMarkers from "../components/markers/hook";
 
 function Google() {
   const title = "Google";
@@ -20,7 +17,6 @@ function Google() {
   const maxSize = 640;
   const minZoom = 0;
   const maxZoom = 22;
-  const { markers, addMarker, updateMarker, removeMarker } = useMarkers();
 
   const [location, setLocation] = useState("Albany, NY");
   const [zoom, setZoom] = useState(13);
@@ -32,6 +28,14 @@ function Google() {
   const [autoCenter, setAutoCenter] = useState(false);
   const [API, setAPI] = useState();
   const [signature, setSignature] = useState();
+  const { markers, addMarker, updateMarker, removeMarker } = useMarkers({
+    markerSize: "mid",
+    coordinates: location,
+    markerLabel: "1",
+    markerColor: "#2e3a5c",
+    markerCustom: "",
+    markerShadow: false,
+  });
 
   function buildMapURL() {
     const scaleNum = scale === true ? 2 : 1;

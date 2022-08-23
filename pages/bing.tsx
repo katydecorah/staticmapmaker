@@ -5,7 +5,8 @@ import Select from "../components/form/select";
 import { useState } from "react";
 import optionize from "../utils/optionize";
 import stylesForms from "../styles/forms.module.scss";
-import { useMarkers, Markers } from "../components/markers/bing";
+import { Markers } from "../components/markers/bing";
+import useMarkers from "../components/markers/hook";
 
 export default function Bing() {
   const title = "Bing";
@@ -14,7 +15,6 @@ export default function Bing() {
     "https://docs.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key";
   const minZoom = 0;
   const maxZoom = 21;
-  const { markers, addMarker, updateMarker, removeMarker } = useMarkers();
 
   const [location, setLocation] = useState("42.6564,-73.7638");
   const [zoom, setZoom] = useState(13);
@@ -24,6 +24,11 @@ export default function Bing() {
   const [format, setFormat] = useState("png");
   const [showTraffic, setShowTraffic] = useState(false);
   const [API, setAPI] = useState("");
+  const { markers, addMarker, updateMarker, removeMarker } = useMarkers({
+    style: 64,
+    coordinates: location,
+    label: "Hi",
+  });
 
   function buildMapURL() {
     const params = new URLSearchParams("");

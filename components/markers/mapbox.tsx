@@ -6,7 +6,6 @@ import styles from "../../styles/providers.module.scss";
 import stylesForms from "../../styles/forms.module.scss";
 import Input from "../form/input";
 import Select from "../form/select";
-import { useState } from "react";
 
 export type Marker = {
   markerSize: string;
@@ -102,46 +101,6 @@ export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
       </div>
     </div>
   );
-};
-
-export const useMarkers = () => {
-  const [markers, setMarkers] = useState([]);
-
-  const removeMarker = (index: number) => {
-    setMarkers((prevMarkers: Marker[]) =>
-      prevMarkers.filter((_, i) => i !== index)
-    );
-  };
-
-  const addMarker = () => {
-    setMarkers((prevMarkers: Marker[]) => [
-      ...prevMarkers,
-      {
-        markerSize: "s",
-        coordinates: "-73.7638,42.6564",
-        markerLabel: "heart",
-        markerColor: "285A98",
-        markerCustom: "",
-      },
-    ]);
-  };
-
-  const updateMarker = (
-    value: string | boolean,
-    index: number,
-    label: string
-  ) => {
-    setMarkers((prevMarkers: Marker[]) =>
-      prevMarkers.map((marker, markerIndex) => {
-        return {
-          ...marker,
-          ...(index === markerIndex && { [label]: value }),
-        };
-      })
-    );
-  };
-
-  return { markers, addMarker, updateMarker, removeMarker };
 };
 
 export const buildMarkerRequest = (markers: Marker[]) => {

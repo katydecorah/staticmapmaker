@@ -1,4 +1,3 @@
-import { useState } from "react";
 import markerLabels from "../../data/google/marker-labels";
 import IconTrash from "../svg/trash";
 import IconPlus from "../svg/plus";
@@ -102,47 +101,6 @@ export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
       </div>
     </div>
   );
-};
-
-export const useMarkers = () => {
-  const [markers, setMarkers] = useState([]);
-
-  const removeMarker = (index: number) => {
-    setMarkers((prevMarkers: Marker[]) =>
-      prevMarkers.filter((_, i) => i !== index)
-    );
-  };
-
-  const addMarker = () => {
-    setMarkers((prevMarkers: Marker[]) => [
-      ...prevMarkers,
-      {
-        markerSize: "mid",
-        coordinates: "Albany, NY",
-        markerLabel: "1",
-        markerColor: "#2e3a5c",
-        markerCustom: "",
-        markerShadow: false,
-      },
-    ]);
-  };
-
-  const updateMarker = (
-    value: string | boolean,
-    index: number,
-    label: string
-  ) => {
-    setMarkers((prevMarkers: Marker[]) =>
-      prevMarkers.map((marker, markerIndex) => {
-        return {
-          ...marker,
-          ...(index === markerIndex && { [label]: value }),
-        };
-      })
-    );
-  };
-
-  return { markers, addMarker, updateMarker, removeMarker };
 };
 
 export const buildMarkerRequest = (markers: Marker[]) => {
