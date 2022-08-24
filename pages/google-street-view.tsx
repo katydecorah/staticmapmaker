@@ -16,7 +16,7 @@ function GoogleStreetView() {
   const [width, setWidth] = useState(600);
   const [height, setHeight] = useState(300);
   const [API, setAPI] = useState("");
-  const [signature, setSignature] = useState();
+  const [signature, setSignature] = useState("");
   const [heading, setHeading] = useState(315);
   const [fov, setFov] = useState(90);
   const [pitch, setPitch] = useState(0);

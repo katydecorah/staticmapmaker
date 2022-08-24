@@ -16,7 +16,21 @@ export type Marker = {
   markerShadow: string | boolean;
 };
 
-export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
+export function Markers({
+  markers,
+  addMarker,
+  updateMarker,
+  removeMarker,
+}: {
+  markers: Marker[];
+  addMarker: () => void;
+  updateMarker: (
+    value: string | boolean,
+    index: number,
+    label: keyof Marker
+  ) => void;
+  removeMarker: (index: number) => void;
+}): JSX.Element {
   return (
     <div className={stylesForms["fieldset"]}>
       {markers.map((marker: Marker, index: number) => {
@@ -106,7 +120,7 @@ export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
       </div>
     </div>
   );
-};
+}
 
 export const buildMarkerRequest = (markers: Marker[]) => {
   const createMarker = (marker: Marker) => {

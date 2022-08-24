@@ -10,7 +10,17 @@ export type Marker = {
   label: string;
 };
 
-export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
+export function Markers({
+  markers,
+  addMarker,
+  updateMarker,
+  removeMarker,
+}: {
+  markers: Marker[];
+  addMarker: () => void;
+  updateMarker: (value: string, index: number, label: keyof Marker) => void;
+  removeMarker: (index: number) => void;
+}): JSX.Element {
   return (
     <div className={stylesForms["fieldset"]}>
       <div className={styles["form-group"]}>
@@ -58,4 +68,4 @@ export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
       </div>
     </div>
   );
-};
+}

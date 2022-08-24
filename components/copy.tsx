@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import IconCheck from "./svg/check";
 import IconCopy from "./svg/copy";
 import IconAlert from "./svg/alert";
@@ -7,10 +7,11 @@ export default function Copy({
   text,
   className,
 }: {
-  text: string;
+  text: ReactNode;
   className?: string;
-}): JSX.Element {
+}): JSX.Element | null {
   const [copySuccess, setCopySuccess] = useState("");
+  if (!text) return null;
 
   const copyToClipBoard = async (text: string) => {
     try {
@@ -31,7 +32,7 @@ export default function Copy({
     <button
       aria-label="Copy code"
       className={className}
-      onClick={() => copyToClipBoard(text)}
+      onClick={() => copyToClipBoard(text.toString())}
     >
       {pickIcon()}
     </button>

@@ -8,11 +8,11 @@ export default function Map({
   location,
   width,
 }: {
-  API: string;
-  mapcode: string;
+  API: string | null;
+  mapcode?: string;
   title: string;
-  width: number;
-  location: string;
+  width?: number;
+  location?: string;
 }): JSX.Element {
   const imageSlug = title.split(" ").join("-").toLowerCase();
   return (
