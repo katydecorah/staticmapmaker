@@ -1,14 +1,15 @@
-import { ReactNode, useState } from "react";
+import { ReactFragment, useState } from "react";
 import styles from "../styles/code.module.scss";
 import Copy from "./copy";
+
+export type CodeChildren = ReactFragment;
 
 export default function Code({
   children,
 }: {
-  children: ReactNode;
-}): JSX.Element | null {
+  children: CodeChildren;
+}): JSX.Element {
   const [showCopy, setShowCopy] = useState(false);
-  if (!children) return null;
   return (
     <div
       className={styles.code}

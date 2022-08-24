@@ -1,17 +1,17 @@
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import IconCheck from "./svg/check";
 import IconCopy from "./svg/copy";
 import IconAlert from "./svg/alert";
+import { CodeChildren } from "./code";
 
 export default function Copy({
   text,
   className,
 }: {
-  text: ReactNode;
+  text: CodeChildren;
   className?: string;
-}): JSX.Element | null {
+}): JSX.Element {
   const [copySuccess, setCopySuccess] = useState("");
-  if (!text) return null;
 
   const copyToClipBoard = async (text: string) => {
     try {
