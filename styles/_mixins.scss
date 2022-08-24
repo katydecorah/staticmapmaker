@@ -24,10 +24,20 @@
   font-family: $sans-font-family;
   font-size: 1em;
   padding: 0.5em 1em;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-around;
   align-content: center;
   gap: 6px;
   width: fit-content;
+  color: $text-color;
+  text-decoration: none;
+
+  svg {
+    margin-left: -0.25em;
+  }
+
+  &:hover {
+    color: $text-color;
+  }
 }

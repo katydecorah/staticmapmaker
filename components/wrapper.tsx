@@ -4,6 +4,7 @@ import styles from "../styles/wrapper.module.scss";
 import Title from "./title";
 import Map from "./map";
 import { ReactNode } from "react";
+import TryAnother from "./try-another";
 
 type WrapperProps = {
   title: string;
@@ -38,6 +39,7 @@ export default function Wrapper(props: WrapperProps): JSX.Element {
             <div className={styles.controls}>
               <div className={styles.container}>{props.children}</div>
             </div>
+            <TryAnother title={props.title} />
           </div>
         </div>
         <div className={styles["col-right"]}>

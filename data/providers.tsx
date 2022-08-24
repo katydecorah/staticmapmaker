@@ -2,7 +2,7 @@ export default [
   "Bing",
   "Google",
   "Google Street View",
-  "Here",
+  "HERE",
   "Mapbox",
   "MapQuest",
 ];

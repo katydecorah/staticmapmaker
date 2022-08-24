@@ -84,13 +84,13 @@ exports[`renders homepage unchanged 1`] = `
       href="/here/"
     >
       <img
-        alt="Here static map API"
+        alt="HERE static map API"
         src="/img/here.png"
       />
       <div
         class="provider-title"
       >
-        Here
+        HERE
       </div>
     </a>
     <a
