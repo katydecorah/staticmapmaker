@@ -54,3 +54,13 @@
     flex-grow: 1;
   }
 }
+
+.try-another {
+  padding: 1em;
+}
+
+.try-another-btn-group {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
