@@ -3,10 +3,11 @@ import Meta from "./meta";
 import styles from "../styles/wrapper.module.scss";
 import Title from "./title";
 import Map from "./map";
+import { ReactNode } from "react";
 
 type WrapperProps = {
   title: string;
-  children: any;
+  children: ReactNode;
   API: string | null;
   mapcode: string;
   width: number;

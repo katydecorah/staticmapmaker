@@ -15,7 +15,17 @@ export type Marker = {
   markerCustom: string;
 };
 
-export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
+export function Markers({
+  markers,
+  addMarker,
+  updateMarker,
+  removeMarker,
+}: {
+  markers: Marker[];
+  addMarker: () => void;
+  updateMarker: (value: string, index: number, label: keyof Marker) => void;
+  removeMarker: (index: number) => void;
+}): JSX.Element {
   return (
     <div className={stylesForms["fieldset"]}>
       {markers.length > 0 && (
@@ -101,25 +111,27 @@ export const Markers = ({ markers, addMarker, updateMarker, removeMarker }) => {
       </div>
     </div>
   );
-};
+}
 
 export const buildMarkerRequest = (markers: Marker[]) => {
-  const createPin = ({ coordinates, markerSize, markerLabel, markerColor }) => {
+  const createPin = ({
+    coordinates,
+    markerSize,
+    markerLabel,
+    markerColor,
+  }: Marker) => {
     return `pin-${markerSize}-${markerLabel}+${markerColor
       .split("#")
       .join("")}(${coordinates})`;
   };
 
-  const createCustom = ({ markerCustom, coordinates }) => {
+  const createCustom = ({ markerCustom, coordinates }: Marker) => {
     return `url-${encodeURIComponent(markerCustom)}(${coordinates})`;
   };
 
   if (markers.length < 1) return "/";
-  const set = markers.reduce((arr, marker) => {
-    if (marker.coordinates) {
-      arr.push(marker.markerCustom ? createCustom(marker) : createPin(marker));
-    }
-    return arr;
-  }, []);
+  const set = markers.map((marker) =>
+    marker.markerCustom ? createCustom(marker) : createPin(marker)
+  );
   return `/${set.join(",")}/`;
 };

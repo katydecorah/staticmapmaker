@@ -6,7 +6,11 @@ import { useState } from "react";
 import optionize from "../utils/optionize";
 import stylesForms from "../styles/forms.module.scss";
 import { sign } from "../utils/google/sign";
-import { buildMarkerRequest, Markers } from "../components/markers/google";
+import {
+  buildMarkerRequest,
+  Marker,
+  Markers,
+} from "../components/markers/google";
 import useMarkers from "../components/markers/hook";
 
 function Google() {
@@ -26,16 +30,18 @@ function Google() {
   const [format, setFormat] = useState("png");
   const [scale, setScale] = useState(true);
   const [autoCenter, setAutoCenter] = useState(false);
-  const [API, setAPI] = useState();
-  const [signature, setSignature] = useState();
-  const { markers, addMarker, updateMarker, removeMarker } = useMarkers({
-    markerSize: "mid",
-    coordinates: location,
-    markerLabel: "1",
-    markerColor: "#2e3a5c",
-    markerCustom: "",
-    markerShadow: false,
-  });
+  const [API, setAPI] = useState("");
+  const [signature, setSignature] = useState("");
+  const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
+    {
+      markerSize: "mid",
+      coordinates: location,
+      markerLabel: "1",
+      markerColor: "#2e3a5c",
+      markerCustom: "",
+      markerShadow: false,
+    }
+  );
 
   function buildMapURL() {
     const scaleNum = scale === true ? 2 : 1;
@@ -141,9 +147,7 @@ function Google() {
             label="Location"
             value={location}
             onChange={setLocation}
-            disabled={autoCenter == true}
           />
-
           <Input
             type="range"
             label="Zoom"
@@ -152,7 +156,6 @@ function Google() {
             onChange={setZoom}
             min={minZoom}
             max={maxZoom}
-            disabled={autoCenter == true}
           />
         </>
       )}

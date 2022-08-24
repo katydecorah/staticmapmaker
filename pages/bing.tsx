@@ -5,7 +5,7 @@ import Select from "../components/form/select";
 import { useState } from "react";
 import optionize from "../utils/optionize";
 import stylesForms from "../styles/forms.module.scss";
-import { Markers } from "../components/markers/bing";
+import { Marker, Markers } from "../components/markers/bing";
 import useMarkers from "../components/markers/hook";
 
 export default function Bing() {
@@ -24,11 +24,13 @@ export default function Bing() {
   const [format, setFormat] = useState("png");
   const [showTraffic, setShowTraffic] = useState(false);
   const [API, setAPI] = useState("");
-  const { markers, addMarker, updateMarker, removeMarker } = useMarkers({
-    style: 64,
-    coordinates: location,
-    label: "Hi",
-  });
+  const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
+    {
+      style: 64,
+      coordinates: location,
+      label: "Hi",
+    }
+  );
 
   function buildMapURL() {
     const params = new URLSearchParams("");
@@ -156,7 +158,6 @@ export default function Bing() {
         onChange={setFormat}
         options={optionize(["png", "gif", "jpeg"])}
       />
-
       <Markers
         markers={markers}
         addMarker={addMarker}

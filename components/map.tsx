@@ -6,9 +6,9 @@ export default function Map({
   mapcode,
   title,
   location,
-  width,
+  width = 600,
 }: {
-  API: string;
+  API: string | null;
   mapcode: string;
   title: string;
   width: number;
@@ -24,7 +24,7 @@ export default function Map({
       >
         <img
           src={API ? mapcode : `/img/${imageSlug}-placeholder.png`}
-          width={width || "600"}
+          width={width}
           alt={`${title} Map of ${location}`}
           className={styles["static-map"]}
           id="map"

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import IconCheck from "./svg/check";
 import IconCopy from "./svg/copy";
 import IconAlert from "./svg/alert";
+import { CodeChildren } from "./code";
 
 export default function Copy({
   text,
   className,
 }: {
-  text: string;
+  text: CodeChildren;
   className?: string;
 }): JSX.Element {
   const [copySuccess, setCopySuccess] = useState("");
@@ -31,7 +32,7 @@ export default function Copy({
     <button
       aria-label="Copy code"
       className={className}
-      onClick={() => copyToClipBoard(text)}
+      onClick={() => copyToClipBoard(text.toString())}
     >
       {pickIcon()}
     </button>

@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-export default function useMarkers(initialMarker) {
-  const [markers, setMarkers] = useState([]);
+export default function useMarkers<Marker>(initialMarker: Marker) {
+  const [markers, setMarkers] = useState<Marker[]>([]);
 
   const removeMarker = (index: number) => {
     setMarkers((prevMarkers) => prevMarkers.filter((_, i) => i !== index));
   };
 
-  const addMarker = () => {
+  function addMarker(): void {
     setMarkers((prevMarkers) => [...prevMarkers, initialMarker]);
-  };
+  }
 
   const updateMarker = (
     value: string | boolean,
