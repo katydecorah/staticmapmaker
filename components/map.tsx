@@ -1,5 +1,6 @@
 import classnames from "classnames";
 import styles from "../styles/wrapper.module.scss";
+import slugify from "../utils/slugify";
 
 export default function Map({
   API,
@@ -14,7 +15,7 @@ export default function Map({
   width: number;
   location: string;
 }): JSX.Element {
-  const imageSlug = title.split(" ").join("-").toLowerCase();
+  const imageSlug = slugify(title);
   return (
     <div className={styles.static}>
       <div

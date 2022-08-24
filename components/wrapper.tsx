@@ -5,6 +5,7 @@ import Title from "./title";
 import Map from "./map";
 import { ReactNode } from "react";
 import TryAnother from "./try-another";
+import slugify from "../utils/slugify";
 
 type WrapperProps = {
   title: string;
@@ -20,7 +21,7 @@ type WrapperProps = {
 };
 
 export default function Wrapper(props: WrapperProps): JSX.Element {
-  const slug = props.title.split(" ").join("-").toLowerCase();
+  const slug = slugify(props.title);
   const url = `https://staticmapmaker.com/${slug}/`;
   return (
     <>

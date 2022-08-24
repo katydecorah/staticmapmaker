@@ -2,6 +2,7 @@ import Meta from "../components/meta";
 import providers from "../data/providers";
 import styles from "../styles/index.module.scss";
 import Title from "../components/title";
+import slugify from "../utils/slugify";
 
 function HomePage() {
   const url = "https://staticmapmaker.com";
@@ -26,7 +27,7 @@ function HomePage() {
       </header>
       <main className={styles.providers}>
         {providers.map((provider) => {
-          const slug = provider.split(" ").join("-").toLowerCase();
+          const slug = slugify(provider);
           return (
             <a key={provider} href={`/${slug}/`} className={styles.provider}>
               <img
