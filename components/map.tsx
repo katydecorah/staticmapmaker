@@ -6,12 +6,12 @@ export default function Map({
   mapcode,
   title,
   location,
-  width,
+  width = 600,
 }: {
   API: string | null;
-  mapcode?: string;
+  mapcode: string;
   title: string;
-  width?: number;
+  width: number;
   location?: string;
 }): JSX.Element {
   const imageSlug = title.split(" ").join("-").toLowerCase();
@@ -24,7 +24,7 @@ export default function Map({
       >
         <img
           src={API ? mapcode : `/img/${imageSlug}-placeholder.png`}
-          width={width || "600"}
+          width={width}
           alt={`${title} Map of ${location}`}
           className={styles["static-map"]}
           id="map"
