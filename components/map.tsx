@@ -12,7 +12,7 @@ export default function Map({
   mapcode: string;
   title: string;
   width: number;
-  location?: string;
+  location: string;
 }): JSX.Element {
   const imageSlug = title.split(" ").join("-").toLowerCase();
   return (
