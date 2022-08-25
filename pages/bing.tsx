@@ -26,6 +26,7 @@ export default function Bing() {
   const [API, setAPI] = useState("");
   const [dpi, setDpi] = useState(false);
   const [declutterPins, setDeclutterPins] = useState(false);
+  const [style, setStyle] = useState("");
   const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
     {
       style: 1,
@@ -41,6 +42,8 @@ export default function Bing() {
     params.set("format", format);
     if (dpi === true) params.set("dpi", "Large");
     if (declutterPins === true) params.set("dcl", "1");
+
+    if (style) params.set("st", style);
 
     for (const marker of markers) {
       params.append(
@@ -154,6 +157,14 @@ export default function Bing() {
             text: "Canvas Gray: A grayscale version of the road maps.",
           },
         ]}
+      />
+      <Input
+        id="style"
+        type="text"
+        placeholder="[elementName]|[styleParam1]:[value];[styleParam2]:[value];"
+        label="Custom map style"
+        value={style}
+        onChange={setStyle}
       />
       <Select
         id="format"

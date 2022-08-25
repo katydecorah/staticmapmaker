@@ -220,6 +220,22 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
+                for="style"
+              >
+                Custom map style
+              </label>
+              <input
+                id="style"
+                placeholder="[elementName]|[styleParam1]:[value];[styleParam2]:[value];"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
                 for="format"
               >
                 Image format
