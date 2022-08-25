@@ -38,7 +38,7 @@ export function Markers({
                 id="marker-style"
                 type="number"
                 min="0"
-                max="112"
+                max="136"
                 placeholder="icon style"
                 value={marker.style}
                 onChange={(value) => updateMarker(value, index, "style")}

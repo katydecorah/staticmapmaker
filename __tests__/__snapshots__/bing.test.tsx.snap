@@ -245,6 +245,20 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <input
+                id="dpi"
+                type="checkbox"
+              />
+              <label
+                class="checkbox-label"
+                for="dpi"
+              >
+                High resolution labels
+              </label>
+            </div>
+            <div
               class="fieldset"
             >
               <div

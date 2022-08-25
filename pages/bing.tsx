@@ -24,9 +24,11 @@ export default function Bing() {
   const [format, setFormat] = useState("png");
   const [showTraffic, setShowTraffic] = useState(false);
   const [API, setAPI] = useState("");
+  const [dpi, setDpi] = useState(false);
+  const [declutterPins, setDeclutterPins] = useState(false);
   const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
     {
-      style: 64,
+      style: 1,
       coordinates: location,
       label: "Hi",
     }
@@ -37,6 +39,8 @@ export default function Bing() {
     params.set("mapSize", `${width},${height}`);
     if (showTraffic) params.set("mapLayer", "TrafficFlow");
     params.set("format", format);
+    if (dpi === true) params.set("dpi", "Large");
+    if (declutterPins === true) params.set("dcl", "1");
 
     for (const marker of markers) {
       params.append(
@@ -158,12 +162,26 @@ export default function Bing() {
         onChange={setFormat}
         options={optionize(["png", "gif", "jpeg"])}
       />
+      <Checkbox
+        id="dpi"
+        label="High resolution labels"
+        value={dpi}
+        onChange={setDpi}
+      />
       <Markers
         markers={markers}
         addMarker={addMarker}
         updateMarker={updateMarker}
         removeMarker={removeMarker}
       />
+      {markers.length > 0 && (
+        <Checkbox
+          value={declutterPins}
+          id="declutter-pins"
+          label="Declutter pins"
+          onChange={setDeclutterPins}
+        />
+      )}
     </Wrapper>
   );
 }
