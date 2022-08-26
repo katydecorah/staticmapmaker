@@ -198,9 +198,12 @@ exports[`renders homepage unchanged 1`] = `
               href="/bing/"
             >
               <svg
+                aria-hidden="true"
                 class="feather"
                 fill="none"
+                focusable="false"
                 height="24"
+                role="img"
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -226,9 +229,12 @@ exports[`renders homepage unchanged 1`] = `
               href="/google/"
             >
               <svg
+                aria-hidden="true"
                 class="feather"
                 fill="none"
+                focusable="false"
                 height="24"
+                role="img"
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -254,9 +260,12 @@ exports[`renders homepage unchanged 1`] = `
               href="/here/"
             >
               <svg
+                aria-hidden="true"
                 class="feather"
                 fill="none"
+                focusable="false"
                 height="24"
+                role="img"
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -282,9 +291,12 @@ exports[`renders homepage unchanged 1`] = `
               href="/mapbox/"
             >
               <svg
+                aria-hidden="true"
                 class="feather"
                 fill="none"
+                focusable="false"
                 height="24"
+                role="img"
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -310,9 +322,12 @@ exports[`renders homepage unchanged 1`] = `
               href="/mapquest/"
             >
               <svg
+                aria-hidden="true"
                 class="feather"
                 fill="none"
+                focusable="false"
                 height="24"
+                role="img"
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"

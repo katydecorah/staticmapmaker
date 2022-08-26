@@ -13,6 +13,9 @@ export default function IconMaximize() {
       strokeLinecap="round"
       strokeLinejoin="round"
       className={styles.feather}
+      aria-hidden="true"
+      focusable="false"
+      role="img"
     >
       <polyline points="15 3 21 3 21 9"></polyline>
       <polyline points="9 21 3 21 3 15"></polyline>

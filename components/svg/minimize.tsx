@@ -13,6 +13,9 @@ export default function IconMinimize() {
       strokeLinecap="round"
       strokeLinejoin="round"
       className={styles.feather}
+      aria-hidden="true"
+      focusable="false"
+      role="img"
     >
       <polyline points="4 14 10 14 10 20"></polyline>
       <polyline points="20 10 14 10 14 4"></polyline>
