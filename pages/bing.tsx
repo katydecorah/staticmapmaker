@@ -70,10 +70,9 @@ export default function Bing() {
       }
     }
 
-    // https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0=Seattle,WA;64;1&wp.1=Redmond,WA;66;2&key={BingMapsKey}
     if (route.length > 0) {
       for (const leg of route) {
-        params.append(`wp.${leg.index}`, `${leg.location}`);
+        params.set(`wp.${leg.index}`, `${leg.location}`);
       }
     }
 
