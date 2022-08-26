@@ -7,6 +7,8 @@ import optionize from "../utils/optionize";
 import stylesForms from "../styles/forms.module.scss";
 import { Marker, Markers } from "../components/markers/bing";
 import useMarkers from "../components/markers/hook";
+import { Routes, Leg } from "../components/routes/bing";
+import useRoute from "../components/routes/hook";
 
 export default function Bing() {
   const title = "Bing";
@@ -34,8 +36,22 @@ export default function Bing() {
       label: "Hi",
     }
   );
+  const { route, addRoute, updateRoute, removeRoute } = useRoute<Leg>([
+    {
+      index: 0,
+      location: "Albany, NY",
+    },
+    {
+      index: 1,
+      location: "Troy, NY",
+    },
+  ]);
 
   function buildMapURL() {
+    const locationOrRoute =
+      route.length > 0
+        ? "Routes"
+        : `${encodeURIComponent(location)}${location ? `/${zoom}` : ""}`;
     const params = new URLSearchParams("");
     params.set("mapSize", `${width},${height}`);
     if (showTraffic) params.set("mapLayer", "TrafficFlow");
@@ -45,18 +61,24 @@ export default function Bing() {
 
     if (style) params.set("st", style);
 
-    for (const marker of markers) {
-      params.append(
-        "pushpin",
-        `${marker.coordinates};${marker.style};${marker.label}`
-      );
+    if (markers.length > 0) {
+      for (const marker of markers) {
+        params.append(
+          "pushpin",
+          `${marker.coordinates};${marker.style};${marker.label}`
+        );
+      }
+    }
+
+    if (route.length > 0) {
+      for (const leg of route) {
+        params.set(`wp.${leg.index}`, `${leg.location}`);
+      }
     }
 
     params.set("key", API || "YOUR-API-KEY-HERE");
 
-    return `https://dev.virtualearth.net/REST/V1/Imagery/Map/${mapType}/${encodeURIComponent(
-      location
-    )}${location ? `/${zoom}` : ""}?${params.toString()}`;
+    return `https://dev.virtualearth.net/REST/V1/Imagery/Map/${mapType}/${locationOrRoute}?${params.toString()}`;
   }
 
   const mapcode = buildMapURL();
@@ -81,22 +103,33 @@ export default function Bing() {
         type="text"
         fieldSetClassName={API ? "" : stylesForms.error}
       />
-      <Input
-        id="location"
-        label="Location"
-        value={location}
-        onChange={setLocation}
-        type="text"
+      {route.length === 0 && (
+        <>
+          <Input
+            id="location"
+            label="Location"
+            value={location}
+            onChange={setLocation}
+            type="text"
+          />
+          <Input
+            id="zoom"
+            label="Zoom"
+            value={zoom}
+            onChange={setZoom}
+            min={minZoom}
+            max={maxZoom}
+            type="range"
+          />
+        </>
+      )}
+      <Routes
+        route={route}
+        addRoute={addRoute}
+        updateRoute={updateRoute}
+        removeRoute={removeRoute}
       />
-      <Input
-        id="zoom"
-        label="Zoom"
-        value={zoom}
-        onChange={setZoom}
-        min={minZoom}
-        max={maxZoom}
-        type="range"
-      />
+
       <Input
         id="width"
         label="Width"
