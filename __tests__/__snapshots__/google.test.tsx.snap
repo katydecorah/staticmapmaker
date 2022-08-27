@@ -208,6 +208,16 @@ exports[`renders homepage unchanged 1`] = `
                 >
                   jpg
                 </option>
+                <option
+                  value="png32"
+                >
+                  png32
+                </option>
+                <option
+                  value="jpg-baseline"
+                >
+                  jpg-baseline
+                </option>
               </select>
             </div>
             <div

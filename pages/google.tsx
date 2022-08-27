@@ -153,7 +153,7 @@ function Google() {
         label="Image format"
         value={format}
         onChange={setFormat}
-        options={optionize(["png", "gif", "jpg"])}
+        options={optionize(["png", "gif", "jpg", "png32", "jpg-baseline"])}
       />
 
       {!autoCenter && (
