@@ -170,6 +170,22 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
+                for="style"
+              >
+                Custom style
+              </label>
+              <input
+                id="style"
+                placeholder="style=feature:myFeatureArgument|element:myElementArgument|myRule1:myRule1Argument|myRule2:myRule2Argument"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
                 for="format"
               >
                 Image format

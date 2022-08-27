@@ -32,6 +32,7 @@ function Google() {
   const [autoCenter, setAutoCenter] = useState(false);
   const [API, setAPI] = useState("");
   const [signature, setSignature] = useState("");
+  const [style, setStyle] = useState("");
   const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
     {
       markerSize: "mid",
@@ -53,7 +54,13 @@ function Google() {
     }
     params.set("scale", scaleNum.toString());
     params.set("size", `${width}x${height}`);
-    params.set("maptype", mapType);
+
+    if (style) {
+      params.set("style", style);
+    } else {
+      params.set("maptype", mapType);
+    }
+
     params.set("format", format);
     params.set("key", API || "YOUR-API-KEY-HERE");
 
@@ -129,6 +136,16 @@ function Google() {
         value={mapType}
         onChange={setMapType}
         options={optionize(["roadmap", "terrain", "satellite", "hybrid"])}
+        disabled={style !== ""}
+      />
+
+      <Input
+        id="style"
+        label="Custom style"
+        value={style}
+        onChange={setStyle}
+        type="text"
+        placeholder="style=feature:myFeatureArgument|element:myElementArgument|myRule1:myRule1Argument|myRule2:myRule2Argument"
       />
 
       <Select
