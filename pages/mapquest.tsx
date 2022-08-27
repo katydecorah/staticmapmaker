@@ -5,6 +5,9 @@ import Select from "../components/form/select";
 import { useState } from "react";
 import optionize from "../utils/optionize";
 import styles from "../styles/forms.module.scss";
+import markerColors from "../data/mapquest/marker-colors";
+import mapTypes from "../data/mapquest/map-types";
+import trafficTypes from "../data/mapquest/traffic-types";
 
 export default function MapQuest() {
   const title = "MapQuest";
@@ -111,41 +114,7 @@ export default function MapQuest() {
           label="Marker color"
           value={markerColor}
           onChange={setMarkerColor}
-          options={optionize([
-            "blue",
-            "green",
-            "orange",
-            "purple",
-            "white",
-            "yellow",
-            "blue_1",
-            "blue_2",
-            "blue_3",
-            "blue_4",
-            "bluegreen_1",
-            "bluegreen_2",
-            "bluegreen_3",
-            "green_1",
-            "green_2",
-            "green_3",
-            "green_4",
-            "orange_1",
-            "orange_2",
-            "orange_3",
-            "pink_1",
-            "pink_2",
-            "pink_3",
-            "purple_1",
-            "purple_2",
-            "purple_3",
-            "purple_4",
-            "red_1",
-            "red_2",
-            "white_1",
-            "yellow_1",
-            "yellow_2",
-            "yellow_3",
-          ])}
+          options={optionize(markerColors)}
         />
       )}
       <Checkbox
@@ -168,11 +137,7 @@ export default function MapQuest() {
         label="Map type"
         value={mapType}
         onChange={setMapType}
-        options={[
-          { value: "map", text: "map" },
-          { value: "sat", text: "satellite" },
-          { value: "hyb", text: "hybrid" },
-        ]}
+        options={mapTypes}
       />
       <Select
         id="imageFormat"
@@ -193,11 +158,7 @@ export default function MapQuest() {
           label="Traffic type"
           value={traffic}
           onChange={setTraffic}
-          options={[
-            { value: "flow", text: "flowing" },
-            { value: "con", text: "construction" },
-            { value: "inc", text: "incidents" },
-          ]}
+          options={trafficTypes}
         />
       )}
     </Wrapper>

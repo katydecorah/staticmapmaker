@@ -19,7 +19,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <h1>
               <a
-                href="https://staticmapmaker.com"
+                href="/"
               >
                 <svg
                   aria-hidden="true"
@@ -323,7 +323,8 @@ exports[`renders homepage unchanged 1`] = `
                       y2="12"
                     />
                   </svg>
-                   Add a marker
+                   Add a 
+                  marker
                 </button>
               </div>
             </div>
@@ -340,7 +341,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <a
               class="btn"
-              href="/bing/"
+              href="/bing"
             >
               <svg
                 aria-hidden="true"
@@ -371,7 +372,7 @@ exports[`renders homepage unchanged 1`] = `
             </a>
             <a
               class="btn"
-              href="/google/"
+              href="/google"
             >
               <svg
                 aria-hidden="true"
@@ -402,7 +403,7 @@ exports[`renders homepage unchanged 1`] = `
             </a>
             <a
               class="btn"
-              href="/google-street-view/"
+              href="/google-street-view"
             >
               <svg
                 aria-hidden="true"
@@ -433,7 +434,7 @@ exports[`renders homepage unchanged 1`] = `
             </a>
             <a
               class="btn"
-              href="/here/"
+              href="/here"
             >
               <svg
                 aria-hidden="true"
@@ -464,7 +465,7 @@ exports[`renders homepage unchanged 1`] = `
             </a>
             <a
               class="btn"
-              href="/mapquest/"
+              href="/mapquest"
             >
               <svg
                 aria-hidden="true"

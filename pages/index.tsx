@@ -3,6 +3,7 @@ import providers from "../data/providers";
 import styles from "../styles/index.module.scss";
 import Title from "../components/title";
 import slugify from "../utils/slugify";
+import Link from "next/link";
 
 function HomePage() {
   const url = "https://staticmapmaker.com";
@@ -29,13 +30,15 @@ function HomePage() {
         {providers.map((provider) => {
           const slug = slugify(provider);
           return (
-            <a key={provider} href={`/${slug}/`} className={styles.provider}>
-              <img
-                src={`/img/${slug}.png`}
-                alt={`${provider} static map API`}
-              />
-              <div className={styles["provider-title"]}>{provider}</div>
-            </a>
+            <Link key={provider} href={`/${slug}/`}>
+              <a className={styles.provider}>
+                <img
+                  src={`/img/${slug}.png`}
+                  alt={`${provider} static map API`}
+                />
+                <div className={styles["provider-title"]}>{provider}</div>
+              </a>
+            </Link>
           );
         })}
       </main>

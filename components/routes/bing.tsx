@@ -35,11 +35,11 @@ export function Routes({
         ))}
       <div className={styles["form-group"]}>
         {route.length === 0 ? (
-          <button onClick={() => addRoute()} className={styles.btn}>
+          <button onClick={addRoute} className={styles.btn}>
             <IconPlus /> Add route
           </button>
         ) : (
-          <button onClick={() => removeRoute()} className={styles.btn}>
+          <button onClick={removeRoute} className={styles.btn}>
             <IconTrash /> Remove route
           </button>
         )}

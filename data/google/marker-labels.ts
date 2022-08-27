@@ -1,4 +1,4 @@
-export default [
+const markerLabels = [
   "default",
   "0",
   "1",
@@ -37,3 +37,5 @@ export default [
   "Y",
   "Z",
 ];
+
+export default markerLabels;

@@ -1,8 +1,8 @@
-import IconTrash from "../svg/trash";
-import IconPlus from "../svg/plus";
 import styles from "../../styles/providers.module.scss";
 import stylesForms from "../../styles/forms.module.scss";
 import Input from "../form/input";
+import AddMarker from "./add-marker";
+import RemoveMarker from "./remove-marker";
 
 export type Marker = {
   style: number;
@@ -50,22 +50,12 @@ export function Markers({
                 value={marker.label}
                 onChange={(value) => updateMarker(value, index, "label")}
               />
-              <button
-                aria-label="Remove marker"
-                className={styles.btn}
-                onClick={() => removeMarker(index)}
-              >
-                <IconTrash />
-              </button>
+              <RemoveMarker removeMarker={removeMarker} index={index} />
             </div>
           );
         })}
       </div>
-      <div className={styles["form-group"]}>
-        <button onClick={() => addMarker()} className={styles.btn}>
-          <IconPlus /> Add a pushpin
-        </button>
-      </div>
+      <AddMarker label="pushpin" addMarker={addMarker} />
     </div>
   );
 }

@@ -10,6 +10,7 @@ import {
   Marker,
 } from "../components/markers/mapbox";
 import useMarkers from "../components/markers/hook";
+import mapStyles from "../data/mapbox/map-styles";
 
 export default function Mapbox() {
   const title = "Mapbox";
@@ -18,6 +19,7 @@ export default function Mapbox() {
     "https://docs.mapbox.com/api/overview/#access-tokens-and-token-scopes";
   const minZoom = 0;
   const maxZoom = 22;
+  const maxSize = 1280;
 
   const [API, setAPI] = useState("");
   const [mapID, setMapID] = useState("");
@@ -32,7 +34,6 @@ export default function Mapbox() {
   const [auto, setAuto] = useState(false);
   const [location, setLocation] = useState("-73.7638,42.6564");
   const [zoom, setZoom] = useState(13);
-  const [maxSize, setMaxSize] = useState(1280);
   const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
     {
       markerSize: "s",
@@ -91,17 +92,7 @@ export default function Mapbox() {
         <Select
           label="Mapbox style"
           id="mapboxID"
-          options={[
-            { value: "mapbox/streets-v11", text: "Streets" },
-            { value: "mapbox/light-v10", text: "Light" },
-            { value: "mapbox/dark-v10", text: "Dark" },
-            { value: "mapbox/satellite-v9", text: "Satellite" },
-            {
-              value: "mapbox/satellite-streets-v11",
-              text: "Satellite streets",
-            },
-            { value: "mapbox/outdoors-v11", text: "Outdoors" },
-          ]}
+          options={mapStyles}
           value={mapboxID}
           onChange={setMapboxID}
           disabled={mapID !== ""}

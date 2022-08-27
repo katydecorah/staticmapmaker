@@ -1,11 +1,12 @@
 import markerLabels from "../../data/google/marker-labels";
-import IconTrash from "../svg/trash";
-import IconPlus from "../svg/plus";
 import styles from "../../styles/providers.module.scss";
 import stylesForms from "../../styles/forms.module.scss";
 import Input from "../form/input";
 import Select from "../form/select";
 import optionize from "../../utils/optionize";
+import AddMarker from "./add-marker";
+import RemoveMarker from "./remove-marker";
+import markerSizes from "../../data/google/marker-sizes";
 
 export type Marker = {
   markerSize: string;
@@ -38,13 +39,7 @@ export function Markers({
           <div key={`${index}-marker`} className={styles["form-group"]}>
             <div className={styles["marker-title"]}>
               <div>Marker {marker.coordinates}</div>
-              <button
-                aria-label="Remove marker"
-                className={styles["btn"]}
-                onClick={() => removeMarker(index)}
-              >
-                <IconTrash />
-              </button>
+              <RemoveMarker removeMarker={removeMarker} index={index} />
             </div>
             <div className={styles["marker-fields"]}>
               <Input
@@ -80,11 +75,7 @@ export function Markers({
                     onChange={(value) =>
                       updateMarker(value, index, "markerSize")
                     }
-                    options={[
-                      { value: "tiny", text: "small" },
-                      { value: "small", text: "medium" },
-                      { value: "mid", text: "large" },
-                    ]}
+                    options={markerSizes}
                     id={`${index}-marker-size`}
                     fieldSetClassName={styles.sm}
                   />
@@ -113,11 +104,7 @@ export function Markers({
           </div>
         );
       })}
-      <div className={styles["form-group"]}>
-        <button onClick={() => addMarker()} className={styles["btn"]}>
-          <IconPlus /> Add a marker
-        </button>
-      </div>
+      <AddMarker addMarker={addMarker} />
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import markerLabels from "../../data/mapbox/marker-labels";
 import optionize from "../../utils/optionize";
-import IconTrash from "../svg/trash";
-import IconPlus from "../svg/plus";
 import styles from "../../styles/providers.module.scss";
 import stylesForms from "../../styles/forms.module.scss";
 import Input from "../form/input";
 import Select from "../form/select";
+import AddMarker from "./add-marker";
+import RemoveMarker from "./remove-marker";
+import markerSizes from "../../data/mapbox/marker-size";
 
 export type Marker = {
   markerSize: string;
@@ -35,13 +36,7 @@ export function Markers({
               <div key={`marker-${index}`} className={styles["form-group"]}>
                 <div className={styles["marker-title"]}>
                   <div>Marker {marker.coordinates}</div>
-                  <button
-                    aria-label="Remove marker"
-                    className={styles["btn"]}
-                    onClick={() => removeMarker(index)}
-                  >
-                    <IconTrash />
-                  </button>
+                  <RemoveMarker removeMarker={removeMarker} index={index} />
                 </div>
                 <div className={styles["marker-fields"]}>
                   <Input
@@ -78,11 +73,7 @@ export function Markers({
                         onChange={(value) =>
                           updateMarker(value, index, "markerSize")
                         }
-                        options={[
-                          { value: "s", text: "small" },
-                          { value: "m", text: "medium" },
-                          { value: "l", text: "large" },
-                        ]}
+                        options={markerSizes}
                         id={`marker-${index}-size`}
                         fieldSetClassName={styles.sm}
                       />
@@ -104,11 +95,7 @@ export function Markers({
           })}
         </>
       )}
-      <div className={styles["form-group"]}>
-        <button onClick={() => addMarker()} className={styles["btn"]}>
-          <IconPlus /> Add a marker
-        </button>
-      </div>
+      <AddMarker addMarker={addMarker} />
     </div>
   );
 }

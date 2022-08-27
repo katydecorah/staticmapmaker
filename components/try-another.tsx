@@ -1,3 +1,4 @@
+import Link from "next/link";
 import providers from "../data/providers";
 import styles from "../styles/providers.module.scss";
 import slugify from "../utils/slugify";
@@ -12,9 +13,11 @@ export default function TryAnother({ title }: { title: string }): JSX.Element {
         {filtered.map((provider) => {
           const slug = slugify(provider);
           return (
-            <a href={`/${slug}/`} className={styles.btn} key={provider}>
-              <IconPin /> {provider}
-            </a>
+            <Link href={`/${slug}/`} key={provider}>
+              <a className={styles.btn}>
+                <IconPin /> {provider}
+              </a>
+            </Link>
           );
         })}
       </div>

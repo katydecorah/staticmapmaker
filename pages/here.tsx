@@ -5,6 +5,8 @@ import Select from "../components/form/select";
 import { useState } from "react";
 import optionize from "../utils/optionize";
 import stylesForms from "../styles/forms.module.scss";
+import formats from "../data/here/formats";
+import languages from "../data/here/languages";
 
 export default function Here() {
   const title = "HERE";
@@ -129,48 +131,14 @@ export default function Here() {
         value={format}
         onChange={setFormat}
         label="Format"
-        options={[
-          { value: "0", text: "PNG" },
-          { value: "1", text: "JPEG" },
-          { value: "2", text: "GIF" },
-          { value: "3", text: "BMP" },
-          { value: "4", text: "PNG8" },
-          { value: "5", text: "SVG (only for companylogo)" },
-        ]}
+        options={formats}
       />
       <Select
         id="language"
         value={language}
         onChange={setLanguage}
         label="Language"
-        options={[
-          { value: "", text: "" },
-          { value: "ara", text: "Arabic" },
-          { value: "chi", text: "Chinese (simplified)" },
-          { value: "cht", text: "Chinese (traditional)" },
-          { value: "dut", text: "Dutch" },
-          { value: "eng", text: "English" },
-          { value: "fre", text: "French" },
-          { value: "ger", text: "German" },
-          { value: "gle", text: "Gaelic" },
-          { value: "gre", text: "Greek" },
-          { value: "heb", text: "Hebrew" },
-          { value: "hin", text: "Hindi" },
-          { value: "ind", text: "Indonesian" },
-          { value: "ita", text: "Italian" },
-          { value: "per", text: "Persian" },
-          { value: "pol", text: "Polish" },
-          { value: "por", text: "Portuguese" },
-          { value: "rus", text: "Russian" },
-          { value: "sin", text: "Sinhalese" },
-          { value: "spa", text: "Spanish" },
-          { value: "tha", text: "Thai" },
-          { value: "tur", text: "Turkish" },
-          { value: "ukr", text: "Ukranian" },
-          { value: "urd", text: "Urdu" },
-          { value: "vie", text: "Vietnamese" },
-          { value: "wel", text: "Welsh" },
-        ]}
+        options={languages}
       />
     </Wrapper>
   );

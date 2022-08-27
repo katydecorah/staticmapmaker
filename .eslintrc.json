@@ -3,13 +3,19 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react-perf/recommended",
     "prettier"
   ],
   "rules": {
     "prefer-template": "error",
     "prefer-const": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+
+    // Fix later
     "react/no-unescaped-entities": "off",
-    "@next/next/no-img-element": "off",
-    "@next/next/no-html-link-for-pages": "off"
+    "react-perf/jsx-no-new-function-as-prop": "off",
+
+    // Not compatible with static build
+    "@next/next/no-img-element": "off"
   }
 }

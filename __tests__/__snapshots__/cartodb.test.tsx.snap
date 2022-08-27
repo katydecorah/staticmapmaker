@@ -10,7 +10,7 @@ exports[`renders homepage unchanged 1`] = `
     >
       <h1>
         <a
-          href="https://staticmapmaker.com"
+          href="/"
         >
           <svg
             aria-hidden="true"

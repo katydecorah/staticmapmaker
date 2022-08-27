@@ -1,4 +1,4 @@
-export default [
+const markerLabels = [
   "airfield",
   "airport",
   "alcohol-shop",
@@ -150,3 +150,5 @@ export default [
   "8",
   "9",
 ];
+
+export default markerLabels;
