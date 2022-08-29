@@ -678,6 +678,7 @@ exports[`renders homepage unchanged 1`] = `
           <img
             alt="HERE Map of 42.6564,-73.7638"
             class="static-map"
+            height="300"
             id="map"
             src="/img/here-placeholder.png"
             width="600"

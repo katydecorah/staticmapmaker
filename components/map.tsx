@@ -8,11 +8,13 @@ export default function Map({
   title,
   location,
   width = 600,
+  height = 300,
 }: {
   API: string | null;
   mapcode: string;
   title: string;
   width: number;
+  height: number;
   location: string;
 }): JSX.Element {
   const imageSlug = slugify(title);
@@ -26,6 +28,7 @@ export default function Map({
         <img
           src={API ? mapcode : `/img/${imageSlug}-placeholder.png`}
           width={width}
+          height={height}
           alt={`${title} Map of ${location}`}
           className={styles["static-map"]}
           id="map"

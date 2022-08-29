@@ -58,6 +58,7 @@
 
 .static {
   padding: 1em;
+  overflow: scroll;
   @include bp(with-columns) {
     margin: 3.5em 0 1em 1.5em;
     padding: 1em 1em 1em 3em;
@@ -87,7 +88,6 @@
 .static-map {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
   transition: 1s;
 }
 

@@ -364,6 +364,7 @@ exports[`renders homepage unchanged 1`] = `
           <img
             alt="Google Street View Map of 41.8893164,12.4932938"
             class="static-map"
+            height="300"
             id="map"
             src="/img/google-street-view-placeholder.png"
             width="600"
