@@ -91,6 +91,13 @@ select {
   padding: 0.35em 0.2em;
 }
 
+[type="color"] {
+  padding: 0;
+  height: 24px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
 [type="checkbox"] {
   width: auto;
 }

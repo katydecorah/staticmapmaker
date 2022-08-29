@@ -496,6 +496,48 @@ exports[`renders homepage unchanged 1`] = `
                 </option>
               </select>
             </div>
+            <div
+              class="fieldset"
+            >
+              <div
+                class="form-group"
+              >
+                <button
+                  class="btn"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="feather"
+                    fill="none"
+                    focusable="false"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="12"
+                      x2="12"
+                      y1="5"
+                      y2="19"
+                    />
+                    <line
+                      x1="5"
+                      x2="19"
+                      y1="12"
+                      y2="12"
+                    />
+                  </svg>
+                   Add a 
+                  POI
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <div
