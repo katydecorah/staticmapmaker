@@ -200,6 +200,20 @@ exports[`renders homepage unchanged 1`] = `
               </label>
             </div>
             <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <input
+                id="no-crop"
+                type="checkbox"
+              />
+              <label
+                class="checkbox-label"
+                for="no-crop"
+              >
+                Don't crop labels
+              </label>
+            </div>
+            <div
               class="fieldset  fieldset-row"
             >
               <label
@@ -221,12 +235,12 @@ exports[`renders homepage unchanged 1`] = `
             >
               <label
                 class="label"
-                for="formate"
+                for="format"
               >
                 Format
               </label>
               <select
-                id="formate"
+                id="format"
               >
                 <option
                   value="0"
@@ -259,6 +273,86 @@ exports[`renders homepage unchanged 1`] = `
                   SVG (only for companylogo)
                 </option>
               </select>
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="ppi"
+              >
+                Resolution
+              </label>
+              <select
+                id="ppi"
+              >
+                <option
+                  value="72"
+                >
+                  72 (default)
+                </option>
+                <option
+                  value="250"
+                >
+                  250 (mobile)
+                </option>
+                <option
+                  value="320"
+                >
+                  320 (hi-res)
+                </option>
+                <option
+                  value="500"
+                >
+                  500
+                </option>
+              </select>
+            </div>
+            <div
+              class="fieldset  fieldset-row"
+            >
+              <label
+                class="label"
+                for="scalebar"
+              >
+                Scalebar
+              </label>
+              <select
+                id="scalebar"
+              >
+                <option
+                  value=""
+                />
+                <option
+                  value="k"
+                >
+                  kilometers/meters
+                </option>
+                <option
+                  value="m"
+                >
+                  miles/feet
+                </option>
+                <option
+                  value="km"
+                >
+                  both
+                </option>
+              </select>
+            </div>
+            <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <input
+                id="pip"
+                type="checkbox"
+              />
+              <label
+                class="checkbox-label"
+                for="pip"
+              >
+                Enable picture in picture
+              </label>
             </div>
             <div
               class="fieldset  fieldset-row"
@@ -603,7 +697,7 @@ exports[`renders homepage unchanged 1`] = `
             class="code"
           >
             <pre>
-              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=YOUR-API-TOKEN-HERE
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=1&ppi=72&apiKey=YOUR-API-TOKEN-HERE
             </pre>
           </div>
           Display the map as an image:
@@ -614,7 +708,7 @@ exports[`renders homepage unchanged 1`] = `
               &lt;img width="
               600
               " src="
-              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=YOUR-API-TOKEN-HERE
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=1&ppi=72&apiKey=YOUR-API-TOKEN-HERE
               " alt="
               HERE map of 42.6564,-73.7638
               " /&gt;
@@ -626,7 +720,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <pre>
               background-image: url(
-              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=0&apiKey=YOUR-API-TOKEN-HERE
+              https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=42.6564%2C-73.7638&w=600&h=300&z=13&nodot=false&style=flame&f=1&ppi=72&apiKey=YOUR-API-TOKEN-HERE
               );
             </pre>
           </div>
