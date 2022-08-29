@@ -9,6 +9,8 @@ import formats from "../data/here/formats";
 import languages from "../data/here/languages";
 import ppis from "../data/here/ppi";
 import scalebars from "../data/here/scalebars";
+import { Marker, Markers } from "../components/markers/here";
+import useMarkers from "../components/markers/hook";
 
 export default function Here() {
   const title = "HERE";
@@ -35,6 +37,14 @@ export default function Here() {
   const [pipZoom, setPipZoom] = useState(14);
   const [ppi, setPpi] = useState("72");
   const [scalebar, setScalebar] = useState("");
+  const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
+    {
+      coordinates: "42.6564,-73.7638",
+    }
+  );
+  const [markerColor, setMarkerColor] = useState("#2e3a5c");
+  const [markerLabel, setMarkerLabel] = useState("0");
+  const [markerTheme, setMarkerTheme] = useState("2");
 
   function buildMapURL() {
     const params = new URLSearchParams("");
@@ -52,6 +62,13 @@ export default function Here() {
     if (pip && pipZoom) params.set("pip", pipZoom.toString());
     if (ppi) params.set("ppi", ppi);
     if (scalebar) params.set("sb", scalebar);
+    if (markers.length > 0) {
+      params.set("poi", markers.map((m) => m.coordinates).join(","));
+      params.set("poifc", `FF${markerColor.replace("#", "")}`);
+      params.set("poilbl", markerLabel);
+      params.set("poithm", markerTheme);
+    }
+
     params.set("apiKey", API || "YOUR-API-TOKEN-HERE");
     return `https://image.maps.ls.hereapi.com/mia/1.6/mapview?${params.toString()}`;
   }
@@ -187,6 +204,18 @@ export default function Here() {
         onChange={setLanguage}
         label="Language"
         options={languages}
+      />
+      <Markers
+        markers={markers}
+        addMarker={addMarker}
+        updateMarker={updateMarker}
+        removeMarker={removeMarker}
+        markerColor={markerColor}
+        setMarkerColor={setMarkerColor}
+        markerLabel={markerLabel}
+        setMarkerLabel={setMarkerLabel}
+        markerTheme={markerTheme}
+        setMarkerTheme={setMarkerTheme}
       />
     </Wrapper>
   );
