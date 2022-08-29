@@ -7,6 +7,8 @@ import optionize from "../utils/optionize";
 import stylesForms from "../styles/forms.module.scss";
 import formats from "../data/here/formats";
 import languages from "../data/here/languages";
+import ppis from "../data/here/ppi";
+import scalebars from "../data/here/scalebars";
 
 export default function Here() {
   const title = "HERE";
@@ -27,7 +29,12 @@ export default function Here() {
   const [mapHeader, setMapHeader] = useState(false);
   const [language, setLanguage] = useState("");
   const [rotate, setRotate] = useState(0);
-  const [format, setFormat] = useState("0");
+  const [format, setFormat] = useState("1");
+  const [noCrop, setNoCrop] = useState(false);
+  const [pip, setPip] = useState(false);
+  const [pipZoom, setPipZoom] = useState(14);
+  const [ppi, setPpi] = useState("72");
+  const [scalebar, setScalebar] = useState("");
 
   function buildMapURL() {
     const params = new URLSearchParams("");
@@ -41,6 +48,10 @@ export default function Here() {
     if (language) params.set("ml", language);
     if (format) params.set("f", format);
     if (rotate) params.set("ra", rotate.toString());
+    if (noCrop) params.set("nocrop", "");
+    if (pip && pipZoom) params.set("pip", pipZoom.toString());
+    if (ppi) params.set("ppi", ppi);
+    if (scalebar) params.set("sb", scalebar);
     params.set("apiKey", API || "YOUR-API-TOKEN-HERE");
     return `https://image.maps.ls.hereapi.com/mia/1.6/mapview?${params.toString()}`;
   }
@@ -116,6 +127,12 @@ export default function Here() {
         value={mapHeader}
         onChange={setMapHeader}
       />
+      <Checkbox
+        id="no-crop"
+        label="Don't crop labels"
+        value={noCrop}
+        onChange={setNoCrop}
+      />
       <Input
         id="rotate"
         label="Rotate"
@@ -127,12 +144,43 @@ export default function Here() {
       />
 
       <Select
-        id="formate"
+        id="format"
         value={format}
         onChange={setFormat}
         label="Format"
         options={formats}
       />
+      <Select
+        id="ppi"
+        value={ppi}
+        onChange={setPpi}
+        label="Resolution"
+        options={ppis}
+      />
+      <Select
+        id="scalebar"
+        value={scalebar}
+        onChange={setScalebar}
+        label="Scalebar"
+        options={scalebars}
+      />
+      <Checkbox
+        id="pip"
+        label="Enable picture in picture"
+        value={pip}
+        onChange={setPip}
+      />
+      {pip && (
+        <Input
+          id="pip-zoom"
+          label="Picture in picture zoom"
+          value={pipZoom}
+          onChange={setPipZoom}
+          min={minZoom}
+          max={maxZoom}
+          type="range"
+        />
+      )}
       <Select
         id="language"
         value={language}
