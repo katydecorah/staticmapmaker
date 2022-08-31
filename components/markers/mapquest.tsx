@@ -20,35 +20,27 @@ export function Markers({
   removeMarker: (index: number) => void;
 }): JSX.Element {
   return (
-    <div className={stylesForms["fieldset"]}>
-      {markers.length > 0 && (
-        <>
-          {markers.map((marker: Marker, index: number) => {
-            return (
-              <div key={`marker-${index}`} className={styles["form-group"]}>
-                <div className={styles["marker-title"]}>
-                  <div>
-                    Marker {marker.coordinates} ({index + 1})
-                  </div>
-                  <RemoveMarker removeMarker={removeMarker} index={index} />
-                </div>
-                <div className={styles["marker-fields"]}>
-                  <Input
-                    id={`marker-${index}-coordinates`}
-                    type="text"
-                    value={marker.coordinates}
-                    onChange={(value) =>
-                      updateMarker(value, index, "coordinates")
-                    }
-                    placeholder="Longitude,latitude"
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </>
-      )}
-      <AddMarker addMarker={addMarker} />
-    </div>
+    <>
+      {markers.map((marker: Marker, index: number) => {
+        return (
+          <div key={`marker-${index}`} className={stylesForms["fieldset-side"]}>
+            <div className={styles["flex-column"]}>
+              <Input
+                id={`marker-${index}-coordinates`}
+                type="text"
+                label={`Marker (${index + 1})`}
+                value={marker.coordinates}
+                onChange={(value) => updateMarker(value, index, "coordinates")}
+                placeholder="Longitude,latitude"
+              />
+              <RemoveMarker removeMarker={removeMarker} index={index} />
+            </div>
+          </div>
+        );
+      })}
+      <div className={stylesForms["fieldset-side"]}>
+        <AddMarker addMarker={addMarker} />
+      </div>
+    </>
   );
 }

@@ -22,40 +22,46 @@ export function Markers({
   removeMarker: (index: number) => void;
 }): JSX.Element {
   return (
-    <div className={stylesForms["fieldset"]}>
-      <div className={styles["form-group"]}>
-        {markers.map((marker: Marker, index: number) => {
-          return (
-            <div className={styles["flex-column"]} key={`marker-${index}`}>
-              <Input
-                id="coordinates"
-                type="text"
-                placeholder="coordinates"
-                value={marker.coordinates}
-                onChange={(value) => updateMarker(value, index, "coordinates")}
-              />
-              <Input
-                id="marker-style"
-                type="number"
-                min="0"
-                max="136"
-                placeholder="icon style"
-                value={marker.style}
-                onChange={(value) => updateMarker(value, index, "style")}
-              />
-              <Input
-                id="marker-label"
-                type="text"
-                placeholder="label"
-                value={marker.label}
-                onChange={(value) => updateMarker(value, index, "label")}
-              />
+    <>
+      {markers.map((marker: Marker, index: number) => {
+        return (
+          <div key={`marker-${index}`} className={stylesForms["fieldset-side"]}>
+            <div className={styles["marker-title"]}>
+              Pushpin ({index + 1})
               <RemoveMarker removeMarker={removeMarker} index={index} />
             </div>
-          );
-        })}
+            <Input
+              id="coordinates"
+              type="text"
+              label="Coordinates"
+              placeholder="coordinates"
+              value={marker.coordinates}
+              onChange={(value) => updateMarker(value, index, "coordinates")}
+            />
+            <Input
+              id="marker-style"
+              type="number"
+              min="0"
+              max="136"
+              label="Style"
+              placeholder="icon style"
+              value={marker.style}
+              onChange={(value) => updateMarker(value, index, "style")}
+            />
+            <Input
+              id="marker-label"
+              type="text"
+              label="Label"
+              placeholder="label"
+              value={marker.label}
+              onChange={(value) => updateMarker(value, index, "label")}
+            />
+          </div>
+        );
+      })}
+      <div className={stylesForms["fieldset-side"]}>
+        <AddMarker label="pushpin" addMarker={addMarker} />
       </div>
-      <AddMarker label="pushpin" addMarker={addMarker} />
-    </div>
+    </>
   );
 }

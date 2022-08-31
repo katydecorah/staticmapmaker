@@ -33,79 +33,82 @@ export function Markers({
   removeMarker: (index: number) => void;
 }): JSX.Element {
   return (
-    <div className={stylesForms["fieldset"]}>
+    <>
       {markers.map((marker: Marker, index: number) => {
         return (
-          <div key={`${index}-marker`} className={styles["form-group"]}>
+          <div key={`${index}-marker`} className={stylesForms["fieldset-side"]}>
             <div className={styles["marker-title"]}>
-              <div>Marker {marker.coordinates}</div>
+              <div>Marker ({index + 1})</div>
               <RemoveMarker removeMarker={removeMarker} index={index} />
             </div>
-            <div className={styles["marker-fields"]}>
-              <Input
-                id={`${index}-marker-coordinates`}
-                type="text"
-                value={marker.coordinates}
-                onChange={(value) => updateMarker(value, index, "coordinates")}
-                placeholder="Address or coordinates"
-              />
-              {!marker.markerCustom && (
-                <div className={styles["flex-column"]}>
-                  <Select
-                    value={marker.markerLabel}
-                    onChange={(value) =>
-                      updateMarker(value, index, "markerLabel")
-                    }
-                    options={optionize(markerLabels)}
-                    id={`${index}-marker-label`}
-                    fieldSetClassName={styles.sm}
-                    disabled={marker.markerSize !== "mid"}
-                  />
-                  <Input
-                    value={marker.markerColor}
-                    onChange={(value) =>
-                      updateMarker(value, index, "markerColor")
-                    }
-                    type="color"
-                    id={`${index}-marker-color`}
-                    fieldSetClassName={styles.sm}
-                  />
-                  <Select
-                    value={marker.markerSize}
-                    onChange={(value) =>
-                      updateMarker(value, index, "markerSize")
-                    }
-                    options={markerSizes}
-                    id={`${index}-marker-size`}
-                    fieldSetClassName={styles.sm}
-                  />
-                </div>
-              )}
-              <Input
-                value={marker.markerCustom}
-                onChange={(value) => updateMarker(value, index, "markerCustom")}
-                type="text"
-                id={`${index}-marker-custom`}
-                placeholder="Or a custom marker URL (max 64x64)"
-              />
-
-              {marker.markerCustom && (
-                <Input
-                  value={marker.markerShadow.toString()}
-                  onChange={() =>
-                    updateMarker(!marker.markerShadow, index, "markerShadow")
+            <Input
+              id={`${index}-marker-coordinates`}
+              type="text"
+              label="Coordinates"
+              value={marker.coordinates}
+              onChange={(value) => updateMarker(value, index, "coordinates")}
+              placeholder="Address or coordinates"
+            />
+            {!marker.markerCustom && (
+              <>
+                <Select
+                  value={marker.markerLabel}
+                  label="Label"
+                  onChange={(value) =>
+                    updateMarker(value, index, "markerLabel")
                   }
-                  label="Marker shadow"
-                  type="checkbox"
-                  id={`${index}-marker-shadow`}
+                  options={optionize(markerLabels)}
+                  id={`${index}-marker-label`}
+                  fieldSetClassName={styles.sm}
+                  disabled={marker.markerSize !== "mid"}
                 />
-              )}
-            </div>
+                <Input
+                  value={marker.markerColor}
+                  label="Color"
+                  onChange={(value) =>
+                    updateMarker(value, index, "markerColor")
+                  }
+                  type="color"
+                  id={`${index}-marker-color`}
+                  fieldSetClassName={styles.sm}
+                />
+                <Select
+                  value={marker.markerSize}
+                  label="Size"
+                  onChange={(value) => updateMarker(value, index, "markerSize")}
+                  options={markerSizes}
+                  id={`${index}-marker-size`}
+                  fieldSetClassName={styles.sm}
+                />
+              </>
+            )}
+            <Input
+              value={marker.markerCustom}
+              label="Custom"
+              onChange={(value) => updateMarker(value, index, "markerCustom")}
+              type="text"
+              id={`${index}-marker-custom`}
+              placeholder="Or a custom marker URL (max 64x64)"
+            />
+
+            {marker.markerCustom && (
+              <Input
+                value={marker.markerShadow.toString()}
+                onChange={() =>
+                  updateMarker(!marker.markerShadow, index, "markerShadow")
+                }
+                label="Marker shadow"
+                type="checkbox"
+                id={`${index}-marker-shadow`}
+              />
+            )}
           </div>
         );
       })}
-      <AddMarker addMarker={addMarker} />
-    </div>
+      <div className={stylesForms["fieldset-side"]}>
+        <AddMarker addMarker={addMarker} />
+      </div>
+    </>
   );
 }
 

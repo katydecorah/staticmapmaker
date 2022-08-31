@@ -51,7 +51,7 @@ exports[`renders homepage unchanged 1`] = `
             class="container"
           >
             <div
-              class="fieldset error fieldset-row"
+              class="error fieldset-row"
             >
               <label
                 class="label"
@@ -67,7 +67,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -83,22 +83,26 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset checkbox-fieldset fieldsetRow"
+              class="fieldset-side fieldsetRow"
             >
-              <input
-                checked=""
-                id="scale"
-                type="checkbox"
-              />
-              <label
-                class="checkbox-label"
-                for="scale"
+              <div
+                class="checkbox-fieldset"
               >
-                Retina (2x)
-              </label>
+                <input
+                  checked=""
+                  id="scale"
+                  type="checkbox"
+                />
+                <label
+                  class="checkbox-label"
+                  for="scale"
+                >
+                  Retina (2x)
+                </label>
+              </div>
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -115,7 +119,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -132,7 +136,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -166,7 +170,7 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -182,7 +186,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -221,7 +225,7 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -236,7 +240,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -253,60 +257,60 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset checkbox-fieldset fieldsetRow"
-            >
-              <input
-                id="autoCenter"
-                type="checkbox"
-              />
-              <label
-                class="checkbox-label"
-                for="autoCenter"
-              >
-                Fit map to markers
-              </label>
-            </div>
-            <div
-              class="fieldset"
+              class="fieldset-side fieldsetRow"
             >
               <div
-                class="form-group"
+                class="checkbox-fieldset"
               >
-                <button
-                  class="btn"
+                <input
+                  id="autoCenter"
+                  type="checkbox"
+                />
+                <label
+                  class="checkbox-label"
+                  for="autoCenter"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="feather"
-                    fill="none"
-                    focusable="false"
-                    height="24"
-                    role="img"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <line
-                      x1="12"
-                      x2="12"
-                      y1="5"
-                      y2="19"
-                    />
-                    <line
-                      x1="5"
-                      x2="19"
-                      y1="12"
-                      y2="12"
-                    />
-                  </svg>
-                   Add a 
-                  marker
-                </button>
+                  Fit map to markers
+                </label>
               </div>
+            </div>
+            <div
+              class="fieldset-side"
+            >
+              <button
+                class="btn"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="feather"
+                  fill="none"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="12"
+                    x2="12"
+                    y1="5"
+                    y2="19"
+                  />
+                  <line
+                    x1="5"
+                    x2="19"
+                    y1="12"
+                    y2="12"
+                  />
+                </svg>
+                 Add a 
+                marker
+              </button>
             </div>
           </div>
         </div>

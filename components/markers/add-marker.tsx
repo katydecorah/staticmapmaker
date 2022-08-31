@@ -9,10 +9,8 @@ export default function AddMarker({
   addMarker: () => void;
 }): JSX.Element {
   return (
-    <div className={styles["form-group"]}>
-      <button onClick={addMarker} className={styles.btn}>
-        <IconPlus /> Add a {label}
-      </button>
-    </div>
+    <button onClick={addMarker} className={styles.btn}>
+      <IconPlus /> Add a {label}
+    </button>
   );
 }

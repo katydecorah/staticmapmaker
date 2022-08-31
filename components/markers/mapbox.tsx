@@ -28,75 +28,71 @@ export function Markers({
   removeMarker: (index: number) => void;
 }): JSX.Element {
   return (
-    <div className={stylesForms["fieldset"]}>
-      {markers.length > 0 && (
-        <>
-          {markers.map((marker: Marker, index: number) => {
-            return (
-              <div key={`marker-${index}`} className={styles["form-group"]}>
-                <div className={styles["marker-title"]}>
-                  <div>Marker {marker.coordinates}</div>
-                  <RemoveMarker removeMarker={removeMarker} index={index} />
-                </div>
-                <div className={styles["marker-fields"]}>
-                  <Input
-                    id={`marker-${index}-coordinates`}
-                    type="text"
-                    value={marker.coordinates}
-                    onChange={(value) =>
-                      updateMarker(value, index, "coordinates")
-                    }
-                    placeholder="Longitude,latitude"
-                  />
-                  {!marker.markerCustom && (
-                    <div className={styles["flex-column"]}>
-                      <Select
-                        value={marker.markerLabel}
-                        onChange={(value) =>
-                          updateMarker(value, index, "markerLabel")
-                        }
-                        options={optionize(markerLabels)}
-                        id={`marker-${index}-label`}
-                        fieldSetClassName={styles.sm}
-                      />
-                      <Input
-                        value={marker.markerColor}
-                        onChange={(value) =>
-                          updateMarker(value, index, "markerColor")
-                        }
-                        type="color"
-                        id={`marker-${index}-color`}
-                        fieldSetClassName={styles.sm}
-                      />
-                      <Select
-                        value={marker.markerSize}
-                        onChange={(value) =>
-                          updateMarker(value, index, "markerSize")
-                        }
-                        options={markerSizes}
-                        id={`marker-${index}-size`}
-                        fieldSetClassName={styles.sm}
-                      />
-                    </div>
-                  )}
+    <>
+      {markers.map((marker: Marker, index: number) => {
+        return (
+          <div key={`marker-${index}`} className={stylesForms["fieldset-side"]}>
+            <div className={styles["marker-title"]}>
+              <div>Marker ({index + 1})</div>
+              <RemoveMarker removeMarker={removeMarker} index={index} />
+            </div>
+            <Input
+              id={`marker-${index}-coordinates`}
+              type="text"
+              value={marker.coordinates}
+              label="Coordinates"
+              onChange={(value) => updateMarker(value, index, "coordinates")}
+              placeholder="Longitude,latitude"
+            />
+            {!marker.markerCustom && (
+              <>
+                <Select
+                  value={marker.markerLabel}
+                  label="Label"
+                  onChange={(value) =>
+                    updateMarker(value, index, "markerLabel")
+                  }
+                  options={optionize(markerLabels)}
+                  id={`marker-${index}-label`}
+                  fieldSetClassName={styles.sm}
+                />
+                <Input
+                  value={marker.markerColor}
+                  label="Color"
+                  onChange={(value) =>
+                    updateMarker(value, index, "markerColor")
+                  }
+                  type="color"
+                  id={`marker-${index}-color`}
+                  fieldSetClassName={styles.sm}
+                />
+                <Select
+                  value={marker.markerSize}
+                  label="Size"
+                  onChange={(value) => updateMarker(value, index, "markerSize")}
+                  options={markerSizes}
+                  id={`marker-${index}-size`}
+                  fieldSetClassName={styles.sm}
+                />
+              </>
+            )}
 
-                  <Input
-                    type="text"
-                    placeholder="Or enter a custom marker URL"
-                    value={marker.markerCustom}
-                    onChange={(value) =>
-                      updateMarker(value, index, "markerCustom")
-                    }
-                    id={`marker-${index}-custom`}
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </>
-      )}
-      <AddMarker addMarker={addMarker} />
-    </div>
+            <Input
+              type="text"
+              placeholder="Or enter a custom marker URL"
+              label="Custom"
+              value={marker.markerCustom}
+              onChange={(value) => updateMarker(value, index, "markerCustom")}
+              id={`marker-${index}-custom`}
+            />
+          </div>
+        );
+      })}
+
+      <div className={stylesForms["fieldset-side"]}>
+        <AddMarker addMarker={addMarker} />
+      </div>
+    </>
   );
 }
 

@@ -20,7 +20,7 @@ export default function Select({
 }) {
   return (
     <div
-      className={classNames(`${styles.fieldset} ${fieldSetClassName}`, {
+      className={classNames(fieldSetClassName, {
         [`${styles["fieldset-row"]}`]: label,
       })}
     >
