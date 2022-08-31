@@ -7,12 +7,14 @@ export default function Checkbox({
   onChange,
   label,
   fieldSetClassName,
+  disabled = false,
 }: {
   id: string;
   value: boolean;
   onChange: (value: boolean) => void;
   label?: string;
   fieldSetClassName?: string;
+  disabled?: boolean;
 }): JSX.Element {
   return (
     <div
@@ -29,6 +31,7 @@ export default function Checkbox({
         checked={value}
         id={id}
         onChange={() => onChange(!value)}
+        disabled={disabled}
       />
       {label && (
         <label className={styles["checkbox-label"]} htmlFor={id}>
