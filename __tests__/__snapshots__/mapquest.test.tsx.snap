@@ -92,11 +92,68 @@ exports[`renders homepage unchanged 1`] = `
               </label>
               <input
                 id="zoom"
-                max="18"
-                min="1"
+                max="20"
+                min="0"
                 type="range"
                 value="13"
               />
+            </div>
+            <div
+              class="fieldset"
+            >
+              <div
+                class="form-group"
+              >
+                <button
+                  class="btn"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="feather"
+                    fill="none"
+                    focusable="false"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="12"
+                      x2="12"
+                      y1="5"
+                      y2="19"
+                    />
+                    <line
+                      x1="5"
+                      x2="19"
+                      y1="12"
+                      y2="12"
+                    />
+                  </svg>
+                   Add a 
+                  marker
+                </button>
+              </div>
+            </div>
+            <div
+              class="fieldset checkbox-fieldset fieldsetRow"
+            >
+              <input
+                disabled=""
+                id="autofit"
+                type="checkbox"
+              />
+              <label
+                class="checkbox-label"
+                for="autofit"
+              >
+                Fit markers to map
+              </label>
             </div>
             <div
               class="fieldset  fieldset-row"
@@ -109,7 +166,7 @@ exports[`renders homepage unchanged 1`] = `
               </label>
               <input
                 id="width"
-                max="3840"
+                max="1920"
                 min="0"
                 type="number"
                 value="600"
@@ -126,7 +183,7 @@ exports[`renders homepage unchanged 1`] = `
               </label>
               <input
                 id="height"
-                max="3840"
+                max="1920"
                 min="0"
                 type="number"
                 value="300"
@@ -136,14 +193,15 @@ exports[`renders homepage unchanged 1`] = `
               class="fieldset checkbox-fieldset fieldsetRow"
             >
               <input
-                id="showMarker"
+                checked=""
+                id="retina"
                 type="checkbox"
               />
               <label
                 class="checkbox-label"
-                for="showMarker"
+                for="retina"
               >
-                Add a map marker
+                Retina
               </label>
             </div>
             <div
@@ -187,39 +245,15 @@ exports[`renders homepage unchanged 1`] = `
                 >
                   hybrid
                 </option>
-              </select>
-            </div>
-            <div
-              class="fieldset  fieldset-row"
-            >
-              <label
-                class="label"
-                for="imageFormat"
-              >
-                Image format
-              </label>
-              <select
-                id="imageFormat"
-              >
                 <option
-                  value="png"
+                  value="light"
                 >
-                  png
+                  light
                 </option>
                 <option
-                  value="gif"
+                  value="dark"
                 >
-                  gif
-                </option>
-                <option
-                  value="jpg"
-                >
-                  jpg
-                </option>
-                <option
-                  value="jpeg"
-                >
-                  jpeg
+                  dark
                 </option>
               </select>
             </div>
@@ -439,7 +473,7 @@ exports[`renders homepage unchanged 1`] = `
             class="code"
           >
             <pre>
-              https://www.mapquestapi.com/staticmap/v4/getplacemap?location=Albany%2C+NY&size=600%2C300&type=map&zoom=13&imagetype=png&scalebar=false&key=YOUR-API-KEY-HERE
+              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&scalebar=false%7Ctop&key=YOUR-API-KEY-HERE
             </pre>
           </div>
           Display the map as an image:
@@ -450,7 +484,7 @@ exports[`renders homepage unchanged 1`] = `
               &lt;img width="
               600
               " src="
-              https://www.mapquestapi.com/staticmap/v4/getplacemap?location=Albany%2C+NY&size=600%2C300&type=map&zoom=13&imagetype=png&scalebar=false&key=YOUR-API-KEY-HERE
+              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&scalebar=false%7Ctop&key=YOUR-API-KEY-HERE
               " alt="
               MapQuest map of Albany, NY
               " /&gt;
@@ -462,7 +496,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <pre>
               background-image: url(
-              https://www.mapquestapi.com/staticmap/v4/getplacemap?location=Albany%2C+NY&size=600%2C300&type=map&zoom=13&imagetype=png&scalebar=false&key=YOUR-API-KEY-HERE
+              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&scalebar=false%7Ctop&key=YOUR-API-KEY-HERE
               );
             </pre>
           </div>
@@ -473,7 +507,7 @@ exports[`renders homepage unchanged 1`] = `
             <li>
               Get a 
               <a
-                href="https://developer.mapquest.com/documentation/"
+                href="https://developer.mapquest.com/documentation/static-map-api/v5/"
               >
                 MapQuest
                  API key

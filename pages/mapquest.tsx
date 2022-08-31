@@ -5,45 +5,62 @@ import Select from "../components/form/select";
 import { useState } from "react";
 import optionize from "../utils/optionize";
 import styles from "../styles/forms.module.scss";
-import markerColors from "../data/mapquest/marker-colors";
 import mapTypes from "../data/mapquest/map-types";
 import trafficTypes from "../data/mapquest/traffic-types";
+import { Markers, Marker } from "../components/markers/mapquest";
+import useMarkers from "../components/markers/hook";
 
 export default function MapQuest() {
   const title = "MapQuest";
   const link = "https://www.mapquestapi.com/staticmap/";
-  const apiLink = "https://developer.mapquest.com/documentation/";
-  const maxSize = 3840;
-  const minZoom = 1;
-  const maxZoom = 18;
+  const apiLink =
+    "https://developer.mapquest.com/documentation/static-map-api/v5/";
+  const maxSize = 1920;
+  const minZoom = 0;
+  const maxZoom = 20;
 
   const [location, setLocation] = useState("Albany, NY");
   const [zoom, setZoom] = useState(13);
   const [width, setWidth] = useState(600);
   const [height, setHeight] = useState(300);
   const [mapType, setMapType] = useState("map");
-  const [format, setFormat] = useState("png");
-  const [showMarker, setShowMarker] = useState(false);
-  const [markerColor, setMarkerColor] = useState("blue");
   const [scaleBar, setScaleBar] = useState(false);
   const [showTraffic, setShowTraffic] = useState(false);
   const [traffic, setTraffic] = useState("flow");
   const [scalebarPos, setScalebarPos] = useState("top");
   const [API, setAPI] = useState("");
+  const [retina, setRetina] = useState(true);
+  const [fit, setFit] = useState(false);
+  const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
+    {
+      coordinates: location,
+    }
+  );
 
   function buildMapURL() {
     const params = new URLSearchParams("");
-    params.set("location", location);
-    params.set("size", `${width},${height}`);
+
+    if (markers.length > 0) {
+      params.set("locations", markers.map((m) => m.coordinates).join("||"));
+    } else {
+      params.set("center", location);
+    }
+    if (fit !== true) {
+      params.set("zoom", zoom.toString());
+    }
+    params.set("size", `${width},${height}${retina ? "@2x" : ""}`);
     params.set("type", mapType);
-    params.set("zoom", zoom.toString());
-    params.set("imagetype", format);
-    params.set("scalebar", scaleBar.toString());
-    if (scaleBar) params.set("scalebarPos", scalebarPos);
-    if (showTraffic) params.set("traffic", traffic);
-    if (showMarker) params.set("showicon", `${markerColor}-1`);
+
+    params.set(
+      "scalebar",
+      `${scaleBar.toString()}${scalebarPos ? `|${scalebarPos}` : ""}`
+    );
+    if (showTraffic === true) {
+      params.set("traffic", traffic);
+    }
     params.set("key", API || "YOUR-API-KEY-HERE");
-    return `https://www.mapquestapi.com/staticmap/v4/getplacemap?${params}`;
+
+    return `https://www.mapquestapi.com/staticmap/v5/map?${params}`;
   }
 
   const mapcode = buildMapURL();
@@ -68,12 +85,14 @@ export default function MapQuest() {
         type="text"
         fieldSetClassName={API ? " " : styles.error}
       />
+
       <Input
         id="location"
         label="Location"
         value={location}
         onChange={setLocation}
         type="text"
+        disabled={markers.length > 0}
       />
       <Input
         id="zoom"
@@ -83,6 +102,21 @@ export default function MapQuest() {
         min={minZoom}
         max={maxZoom}
         type="range"
+        disabled={fit === true}
+      />
+
+      <Markers
+        markers={markers}
+        addMarker={addMarker}
+        updateMarker={updateMarker}
+        removeMarker={removeMarker}
+      />
+      <Checkbox
+        id="autofit"
+        label="Fit markers to map"
+        value={fit}
+        onChange={setFit}
+        disabled={markers.length === 0}
       />
       <Input
         id="width"
@@ -103,20 +137,11 @@ export default function MapQuest() {
         type="number"
       />
       <Checkbox
-        id="showMarker"
-        label="Add a map marker"
-        value={showMarker}
-        onChange={setShowMarker}
+        id="retina"
+        label="Retina"
+        value={retina}
+        onChange={setRetina}
       />
-      {showMarker && (
-        <Select
-          id="markerColor"
-          label="Marker color"
-          value={markerColor}
-          onChange={setMarkerColor}
-          options={optionize(markerColors)}
-        />
-      )}
       <Checkbox
         id="scaleBar"
         label="Show the scale bar"
@@ -138,13 +163,6 @@ export default function MapQuest() {
         value={mapType}
         onChange={setMapType}
         options={mapTypes}
-      />
-      <Select
-        id="imageFormat"
-        label="Image format"
-        value={format}
-        onChange={setFormat}
-        options={optionize(["png", "gif", "jpg", "jpeg"])}
       />
       <Checkbox
         id="showTraffic"
