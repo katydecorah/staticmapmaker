@@ -22,7 +22,7 @@
   width: 100%;
   @include bp(with-columns) {
     max-width: 400px;
-    width: 30%;
+    width: 40%;
   }
 }
 
@@ -41,7 +41,7 @@
 .col-right {
   @include bp(with-columns) {
     transition: 0.2s;
-    width: 70%;
+    width: 60%;
   }
 }
 
