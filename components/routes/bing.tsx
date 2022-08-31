@@ -33,7 +33,7 @@ export function Routes({
             value={leg.location}
           />
         ))}
-      <div className={styles["form-group"]}>
+      <div className={stylesForms["fieldset-side"]}>
         {route.length === 0 ? (
           <button onClick={addRoute} className={styles.btn}>
             <IconPlus /> Add route

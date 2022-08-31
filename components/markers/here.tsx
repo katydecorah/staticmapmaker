@@ -35,12 +35,9 @@ export function Markers({
   setMarkerTheme: (value: string) => void;
 }): JSX.Element {
   return (
-    <div className={stylesForms["fieldset"]}>
+    <>
       {markers.length > 0 && (
-        <>
-          <div className={styles["form-group"]}>
-            <strong>POIs</strong>
-          </div>
+        <div className={stylesForms["fieldset-side"]}>
           <Input
             id="poi-color"
             value={markerColor}
@@ -70,6 +67,7 @@ export function Markers({
                     id={`poi-coordinates-${index}`}
                     type="text"
                     placeholder="coordinates"
+                    label={`POI (${index + 1})`}
                     value={marker.coordinates}
                     onChange={(value) =>
                       updateMarker(value, index, "coordinates")
@@ -80,9 +78,11 @@ export function Markers({
               );
             })}
           </div>
-        </>
+        </div>
       )}
-      <AddMarker label="POI" addMarker={addMarker} />
-    </div>
+      <div className={stylesForms["fieldset-side"]}>
+        <AddMarker label="POI" addMarker={addMarker} />
+      </div>
+    </>
   );
 }

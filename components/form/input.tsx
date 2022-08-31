@@ -34,7 +34,7 @@ export default function Input({
 
   return (
     <div
-      className={classNames(`${styles.fieldset} ${fieldSetClassName}`, {
+      className={classNames(fieldSetClassName, {
         [`${styles["fieldset-row"]}`]: label,
       })}
     >

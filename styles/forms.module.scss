@@ -7,35 +7,40 @@
 }
 
 .fieldset-row {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   row-gap: 5px;
-
-  @include bp(big-with-columns) {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  min-height: 3em;
   padding: 0.5em 1em;
 
-  .label {
-    flex-shrink: 1;
-    @include bp(big-with-columns) {
-      min-width: 100px;
+  @include bp(big-with-columns) {
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+  }
+}
+
+.fieldset-side {
+  display: grid;
+  row-gap: 5px;
+  padding: 0.5em 1em;
+
+  @include bp(big-with-columns) {
+    grid-template-columns: 100px 1fr;
+
+    > * {
+      grid-column: 2;
     }
+  }
+
+  .fieldset-row {
+    padding: 0;
+    flex-grow: 1;
   }
 }
 
 .checkbox-fieldset {
-  padding: 0.5em 1em;
-  min-height: 2.25em;
   display: flex;
   column-gap: 5px;
-  align-items: center;
-
   @include bp(big-with-columns) {
-    padding-left: 115px;
+    align-items: center;
   }
 }
 

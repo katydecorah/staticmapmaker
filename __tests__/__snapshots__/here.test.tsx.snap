@@ -51,7 +51,7 @@ exports[`renders homepage unchanged 1`] = `
             class="container"
           >
             <div
-              class="fieldset error fieldset-row"
+              class="error fieldset-row"
             >
               <label
                 class="label"
@@ -67,7 +67,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -82,7 +82,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -99,7 +99,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -116,7 +116,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -133,21 +133,25 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset checkbox-fieldset fieldsetRow"
+              class="fieldset-side fieldsetRow"
             >
-              <input
-                id="dot"
-                type="checkbox"
-              />
-              <label
-                class="checkbox-label"
-                for="dot"
+              <div
+                class="checkbox-fieldset"
               >
-                No dot
-              </label>
+                <input
+                  id="dot"
+                  type="checkbox"
+                />
+                <label
+                  class="checkbox-label"
+                  for="dot"
+                >
+                  No dot
+                </label>
+              </div>
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -186,35 +190,43 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
-              class="fieldset checkbox-fieldset fieldsetRow"
+              class="fieldset-side fieldsetRow"
             >
-              <input
-                id="map-header"
-                type="checkbox"
-              />
-              <label
-                class="checkbox-label"
-                for="map-header"
+              <div
+                class="checkbox-fieldset"
               >
-                Map header
-              </label>
+                <input
+                  id="map-header"
+                  type="checkbox"
+                />
+                <label
+                  class="checkbox-label"
+                  for="map-header"
+                >
+                  Map header
+                </label>
+              </div>
             </div>
             <div
-              class="fieldset checkbox-fieldset fieldsetRow"
+              class="fieldset-side fieldsetRow"
             >
-              <input
-                id="no-crop"
-                type="checkbox"
-              />
-              <label
-                class="checkbox-label"
-                for="no-crop"
+              <div
+                class="checkbox-fieldset"
               >
-                Don't crop labels
-              </label>
+                <input
+                  id="no-crop"
+                  type="checkbox"
+                />
+                <label
+                  class="checkbox-label"
+                  for="no-crop"
+                >
+                  Don't crop labels
+                </label>
+              </div>
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -231,7 +243,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -275,7 +287,7 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -309,7 +321,7 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -341,21 +353,25 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
-              class="fieldset checkbox-fieldset fieldsetRow"
+              class="fieldset-side fieldsetRow"
             >
-              <input
-                id="pip"
-                type="checkbox"
-              />
-              <label
-                class="checkbox-label"
-                for="pip"
+              <div
+                class="checkbox-fieldset"
               >
-                Enable picture in picture
-              </label>
+                <input
+                  id="pip"
+                  type="checkbox"
+                />
+                <label
+                  class="checkbox-label"
+                  for="pip"
+                >
+                  Enable picture in picture
+                </label>
+              </div>
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -497,46 +513,42 @@ exports[`renders homepage unchanged 1`] = `
               </select>
             </div>
             <div
-              class="fieldset"
+              class="fieldset-side"
             >
-              <div
-                class="form-group"
+              <button
+                class="btn"
               >
-                <button
-                  class="btn"
+                <svg
+                  aria-hidden="true"
+                  class="feather"
+                  fill="none"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="feather"
-                    fill="none"
-                    focusable="false"
-                    height="24"
-                    role="img"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <line
-                      x1="12"
-                      x2="12"
-                      y1="5"
-                      y2="19"
-                    />
-                    <line
-                      x1="5"
-                      x2="19"
-                      y1="12"
-                      y2="12"
-                    />
-                  </svg>
-                   Add a 
-                  POI
-                </button>
-              </div>
+                  <line
+                    x1="12"
+                    x2="12"
+                    y1="5"
+                    y2="19"
+                  />
+                  <line
+                    x1="5"
+                    x2="19"
+                    y1="12"
+                    y2="12"
+                  />
+                </svg>
+                 Add a 
+                POI
+              </button>
             </div>
           </div>
         </div>

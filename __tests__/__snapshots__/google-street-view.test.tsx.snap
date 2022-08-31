@@ -51,7 +51,7 @@ exports[`renders homepage unchanged 1`] = `
             class="container"
           >
             <div
-              class="fieldset error fieldset-row"
+              class="error fieldset-row"
             >
               <label
                 class="label"
@@ -67,7 +67,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -83,7 +83,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -100,7 +100,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -117,7 +117,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -132,7 +132,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -149,7 +149,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
@@ -166,7 +166,7 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
-              class="fieldset  fieldset-row"
+              class="fieldset-row"
             >
               <label
                 class="label"
