@@ -99,6 +99,47 @@ exports[`renders homepage unchanged 1`] = `
               />
             </div>
             <div
+              class="fieldset"
+            >
+              <div
+                class="fieldset-side"
+              >
+                <button
+                  class="btn"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="feather"
+                    fill="none"
+                    focusable="false"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="12"
+                      x2="12"
+                      y1="5"
+                      y2="19"
+                    />
+                    <line
+                      x1="5"
+                      x2="19"
+                      y1="12"
+                      y2="12"
+                    />
+                  </svg>
+                   Add route
+                </button>
+              </div>
+            </div>
+            <div
               class="fieldset-side"
             >
               <button
@@ -209,22 +250,33 @@ exports[`renders homepage unchanged 1`] = `
               </div>
             </div>
             <div
-              class="fieldset-side fieldsetRow"
+              class="fieldset-row"
             >
-              <div
-                class="checkbox-fieldset"
+              <label
+                class="label"
+                for="scalebar"
               >
-                <input
-                  id="scaleBar"
-                  type="checkbox"
-                />
-                <label
-                  class="checkbox-label"
-                  for="scaleBar"
+                Scale bar
+              </label>
+              <select
+                id="scalebar"
+              >
+                <option
+                  value=""
                 >
-                  Show the scale bar
-                </label>
-              </div>
+                  none
+                </option>
+                <option
+                  value="top"
+                >
+                  at top
+                </option>
+                <option
+                  value="bottom"
+                >
+                  at bottom
+                </option>
+              </select>
             </div>
             <div
               class="fieldset-row"
@@ -485,7 +537,7 @@ exports[`renders homepage unchanged 1`] = `
             class="code"
           >
             <pre>
-              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&scalebar=false%7Ctop&key=YOUR-API-KEY-HERE
+              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&key=YOUR-API-KEY-HERE
             </pre>
           </div>
           Display the map as an image:
@@ -496,7 +548,7 @@ exports[`renders homepage unchanged 1`] = `
               &lt;img width="
               600
               " src="
-              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&scalebar=false%7Ctop&key=YOUR-API-KEY-HERE
+              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&key=YOUR-API-KEY-HERE
               " alt="
               MapQuest map of Albany, NY
               " /&gt;
@@ -508,7 +560,7 @@ exports[`renders homepage unchanged 1`] = `
           >
             <pre>
               background-image: url(
-              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&scalebar=false%7Ctop&key=YOUR-API-KEY-HERE
+              https://www.mapquestapi.com/staticmap/v5/map?center=Albany%2C+NY&zoom=13&size=600%2C300%402x&type=map&key=YOUR-API-KEY-HERE
               );
             </pre>
           </div>
