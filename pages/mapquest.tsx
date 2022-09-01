@@ -9,6 +9,8 @@ import trafficTypes from "../data/mapquest/traffic-types";
 import { Markers, Marker, buildMarkers } from "../components/markers/mapquest";
 import useMarkers from "../components/markers/hook";
 import scalebarPositions from "../data/mapquest/scalebar";
+import { Routes, Leg } from "../components/routes/mapquest";
+import useRoute from "../components/routes/hook";
 
 export default function MapQuest() {
   const title = "MapQuest";
@@ -39,16 +41,30 @@ export default function MapQuest() {
       type: "marker",
     }
   );
+  const { route, addRoute, updateRoute, removeRoute } = useRoute<Leg>([
+    {
+      index: 0,
+      location: "Albany, NY",
+    },
+    {
+      index: 1,
+      location: "Troy, NY",
+    },
+  ]);
 
   function buildMapURL() {
     const params = new URLSearchParams("");
 
     if (markers.length > 0) {
       params.set("locations", buildMarkers(markers));
+    } else if (route.length > 0) {
+      params.set("start", route[0].location);
+      params.set("end", route[1].location);
     } else {
       params.set("center", location);
     }
-    if (fit !== true) {
+
+    if (fit !== true && route.length === 0) {
       params.set("zoom", zoom.toString());
     }
     params.set("size", `${width},${height}${retina ? "@2x" : ""}`);
@@ -89,23 +105,34 @@ export default function MapQuest() {
         fieldSetClassName={API ? " " : styles.error}
       />
 
-      <Input
-        id="location"
-        label="Location"
-        value={location}
-        onChange={setLocation}
-        type="text"
-        disabled={markers.length > 0}
-      />
-      <Input
-        id="zoom"
-        label="Zoom"
-        value={zoom}
-        onChange={setZoom}
-        min={minZoom}
-        max={maxZoom}
-        type="range"
-        disabled={fit === true}
+      {route.length === 0 && (
+        <>
+          <Input
+            id="location"
+            label="Location"
+            value={location}
+            onChange={setLocation}
+            type="text"
+            disabled={markers.length > 0}
+          />
+          <Input
+            id="zoom"
+            label="Zoom"
+            value={zoom}
+            onChange={setZoom}
+            min={minZoom}
+            max={maxZoom}
+            type="range"
+            disabled={fit === true}
+          />
+        </>
+      )}
+
+      <Routes
+        route={route}
+        addRoute={addRoute}
+        updateRoute={updateRoute}
+        removeRoute={removeRoute}
       />
 
       <Markers
