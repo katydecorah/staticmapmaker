@@ -3,12 +3,12 @@ import Checkbox from "../components/form/checkbox";
 import Input from "../components/form/input";
 import Select from "../components/form/select";
 import { useState } from "react";
-import optionize from "../utils/optionize";
 import styles from "../styles/forms.module.scss";
 import mapTypes from "../data/mapquest/map-types";
 import trafficTypes from "../data/mapquest/traffic-types";
-import { Markers, Marker } from "../components/markers/mapquest";
+import { Markers, Marker, buildMarkers } from "../components/markers/mapquest";
 import useMarkers from "../components/markers/hook";
+import scalebarPositions from "../data/mapquest/scalebar";
 
 export default function MapQuest() {
   const title = "MapQuest";
@@ -24,16 +24,19 @@ export default function MapQuest() {
   const [width, setWidth] = useState(600);
   const [height, setHeight] = useState(300);
   const [mapType, setMapType] = useState("map");
-  const [scaleBar, setScaleBar] = useState(false);
+  const [scalebar, setScalebar] = useState("");
   const [showTraffic, setShowTraffic] = useState(false);
   const [traffic, setTraffic] = useState("flow");
-  const [scalebarPos, setScalebarPos] = useState("top");
   const [API, setAPI] = useState("");
   const [retina, setRetina] = useState(true);
   const [fit, setFit] = useState(false);
   const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
     {
       coordinates: location,
+      color: "#285A98",
+      size: "md",
+      symbol: "",
+      type: "marker",
     }
   );
 
@@ -41,7 +44,7 @@ export default function MapQuest() {
     const params = new URLSearchParams("");
 
     if (markers.length > 0) {
-      params.set("locations", markers.map((m) => m.coordinates).join("||"));
+      params.set("locations", buildMarkers(markers));
     } else {
       params.set("center", location);
     }
@@ -51,10 +54,10 @@ export default function MapQuest() {
     params.set("size", `${width},${height}${retina ? "@2x" : ""}`);
     params.set("type", mapType);
 
-    params.set(
-      "scalebar",
-      `${scaleBar.toString()}${scalebarPos ? `|${scalebarPos}` : ""}`
-    );
+    if (scalebar) {
+      params.set("scalebar", `true|${scalebar}`);
+    }
+
     if (showTraffic === true) {
       params.set("traffic", traffic);
     }
@@ -142,21 +145,15 @@ export default function MapQuest() {
         value={retina}
         onChange={setRetina}
       />
-      <Checkbox
-        id="scaleBar"
-        label="Show the scale bar"
-        value={scaleBar}
-        onChange={setScaleBar}
+
+      <Select
+        id="scalebar"
+        label="Scale bar"
+        value={scalebar}
+        onChange={setScalebar}
+        options={scalebarPositions}
       />
-      {scaleBar && (
-        <Select
-          id="scaleBarPos"
-          label="Scale bar position"
-          value={scalebarPos}
-          onChange={setScalebarPos}
-          options={optionize(["top", "bottom"])}
-        />
-      )}
+
       <Select
         id="mapType"
         label="Map type"
