@@ -16,12 +16,12 @@ jobs:
         with:
           node-version: "16"
       - run: npm ci
-      - name: Build site
-        run: npm run build
+      - name: Start development server
+        run: npm start
       - name: Run Accessibility Insights
         uses: microsoft/accessibility-insights-action@v3
         with:
-          static-site-dir: ${{ github.workspace }}/out
+          url: http://localhost:3000
           scan-timeout: 1800000
       - name: Upload Accessibility Insights report as artifact
         uses: actions/upload-artifact@v3
