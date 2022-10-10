@@ -17,7 +17,7 @@ jobs:
           node-version: "16"
       - run: npm ci
       - name: Start development server
-        run: npm start
+        run: npm start -- &
       - name: Run Accessibility Insights
         uses: microsoft/accessibility-insights-action@v3
         with:
