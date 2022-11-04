@@ -13,10 +13,8 @@ export default function TryAnother({ title }: { title: string }): JSX.Element {
         {filtered.map((provider) => {
           const slug = slugify(provider);
           return (
-            <Link href={`/${slug}/`} key={provider}>
-              <a className={styles.btn}>
-                <IconPin /> {provider}
-              </a>
+            <Link href={`/${slug}/`} key={provider} className={styles.btn}>
+              <IconPin /> {provider}
             </Link>
           );
         })}

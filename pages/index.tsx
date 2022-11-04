@@ -30,14 +30,12 @@ function HomePage() {
         {providers.map((provider) => {
           const slug = slugify(provider);
           return (
-            <Link key={provider} href={`/${slug}/`}>
-              <a className={styles.provider}>
-                <img
-                  src={`/img/${slug}.png`}
-                  alt={`${provider} static map API`}
-                />
-                <div className={styles["provider-title"]}>{provider}</div>
-              </a>
+            <Link key={provider} href={`/${slug}/`} className={styles.provider}>
+              <img
+                src={`/img/${slug}.png`}
+                alt={`${provider} static map API`}
+              />
+              <div className={styles["provider-title"]}>{provider}</div>
             </Link>
           );
         })}

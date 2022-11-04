@@ -7,10 +7,8 @@ export default function Title({ title }: { title?: string }): JSX.Element {
     <div className={styles.title}>
       <h1>
         <Link href="/">
-          <a>
-            <IconLogo />
-            <div>{title || ""} Static Map Maker</div>
-          </a>
+          <IconLogo />
+          <div>{title || ""} Static Map Maker</div>
         </Link>
       </h1>
     </div>
