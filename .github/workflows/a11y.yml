@@ -18,13 +18,14 @@ jobs:
       - run: npm ci
       - name: Start development server
         run: npm start -- &
-      - name: Run Accessibility Insights
-        uses: microsoft/accessibility-insights-action@v3
+      - name: Scan site
+        uses: double-great/accessibility-scan-action@v0.2.0
         with:
           url: http://localhost:3000
-          scan-timeout: 1800000
-      - name: Upload Accessibility Insights report as artifact
+          # scan-timeout: 1800000
+      - name: Upload report as artifact
         uses: actions/upload-artifact@v3
+        if: success() || failure()
         with:
-          name: accessibility-reports
-          path: ${{ github.workspace }}/_accessibility-reports
+          name: "Accessibility report"
+          path: ${{ github.workspace }}/_accessibility-reports/index.html
