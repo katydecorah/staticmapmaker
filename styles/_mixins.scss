@@ -2,15 +2,15 @@
 
 @mixin bp($point) {
   @if $point == big-with-columns {
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
       @content;
     }
   } @else if $point == with-columns {
-    @media (min-width: 650px) {
+    @media (width >= 650px) {
       @content;
     }
   } @else if $point == no-columns {
-    @media (max-width: 650px) {
+    @media (width <= 650px) {
       @content;
     }
   }
