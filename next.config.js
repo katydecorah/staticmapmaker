@@ -6,6 +6,7 @@
 const { withSentryConfig } = require("@sentry/nextjs");
 
 const moduleExports = {
+  output: "export",
   trailingSlash: true,
   // Your existing module.exports
 
