@@ -6,6 +6,7 @@ import Map from "./map";
 import { ReactNode } from "react";
 import TryAnother from "./try-another";
 import slugify from "../utils/slugify";
+import ViewOnGitHub from "./github";
 
 type WrapperProps = {
   title: string;
@@ -44,6 +45,7 @@ export default function Wrapper(props: WrapperProps): JSX.Element {
           </div>
         </div>
         <div className={styles["col-right"]}>
+          <ViewOnGitHub />
           <Map {...props} />
           <div className={styles["wrapper"]}>
             <Info {...props} />

@@ -724,6 +724,16 @@ exports[`renders homepage unchanged 1`] = `
       class="col-right"
     >
       <div
+        class="view-on-github"
+      >
+        <a
+          href="https://github.com/katydecorah/staticmapmaker"
+          rel="noopener noreferrer"
+        >
+          View on GitHub
+        </a>
+      </div>
+      <div
         class="static"
       >
         <div

@@ -33,6 +33,16 @@ exports[`renders homepage unchanged 1`] = `
         </a>
       </h1>
     </div>
+    <div
+      class="view-on-github"
+    >
+      <a
+        href="https://github.com/katydecorah/staticmapmaker"
+        rel="noopener noreferrer"
+      >
+        View on GitHub
+      </a>
+    </div>
   </header>
   <main
     class="providers"

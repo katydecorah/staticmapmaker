@@ -11,6 +11,12 @@
 .cover {
   padding-top: 3em;
   margin-bottom: 2em;
+
+  @include bp(with-columns) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .providers {

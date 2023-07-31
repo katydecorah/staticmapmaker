@@ -43,6 +43,16 @@
     transition: 0.2s;
     width: 60%;
   }
+
+  :global {
+    .view-on-github {
+      display: flex;
+      justify-content: flex-end;
+      min-height: 40px;
+      align-items: center;
+      padding-right: 1em;
+    }
+  }
 }
 
 .wrapper {
@@ -60,7 +70,7 @@
   padding: 1em;
   overflow: scroll;
   @include bp(with-columns) {
-    margin: 3.5em 0 1em 1.5em;
+    margin: 0 0 1em 1.5em;
     padding: 1em 1em 1em 3em;
   }
 }

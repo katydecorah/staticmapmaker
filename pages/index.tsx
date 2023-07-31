@@ -4,6 +4,7 @@ import styles from "../styles/index.module.scss";
 import Title from "../components/title";
 import slugify from "../utils/slugify";
 import Link from "next/link";
+import ViewOnGitHub from "../components/github";
 
 function HomePage() {
   const url = "https://staticmapmaker.com";
@@ -25,6 +26,7 @@ function HomePage() {
       />
       <header className={styles.cover}>
         <Title />
+        <ViewOnGitHub />
       </header>
       <main className={styles.providers}>
         {providers.map((provider) => {

@@ -4,6 +4,7 @@
     "stylelint-config-prettier-scss"
   ],
   "rules": {
-    "scss/no-global-function-names": null
+    "scss/no-global-function-names": null,
+    "selector-pseudo-class-no-unknown": null
   }
 }
