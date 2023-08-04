@@ -13,6 +13,7 @@ export default function Select({
   id: string;
   value: string | number;
   options: { text: string; value: string }[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange: (e: any) => void;
   label?: string;
   fieldSetClassName?: string;

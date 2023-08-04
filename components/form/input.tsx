@@ -16,6 +16,7 @@ export default function Input({
 }: {
   id: string;
   value: string | number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange: (e: any) => void;
   type: string;
   placeholder?: string;
