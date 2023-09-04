@@ -19,7 +19,7 @@ jobs:
       - name: Start development server
         run: npm start -- &
       - name: Scan site
-        uses: double-great/accessibility-scan-action@v0.2.0
+        uses: double-great/accessibility-scan-action@v0.3.0
         with:
           url: http://localhost:3000
           # scan-timeout: 1800000
