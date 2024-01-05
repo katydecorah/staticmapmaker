@@ -30,8 +30,7 @@
   @include bp(with-columns) {
     bottom: 0;
     left: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: hidden scroll;
     padding-bottom: 5em;
     position: fixed;
     top: 0;

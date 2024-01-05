@@ -26,8 +26,7 @@
   padding: 0.5em 1em;
   display: inline-flex;
   align-items: center;
-  justify-content: space-around;
-  align-content: center;
+  place-content: center space-around;
   gap: 6px;
   width: fit-content;
   color: $text-color;
