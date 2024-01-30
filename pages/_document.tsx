@@ -6,18 +6,11 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=UA-44264627-1"
+          defer
+          data-domain="staticmapmaker.com"
+          src="https://plausible.io/js/script.js"
           strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-44264627-1');
-        `}
-        </Script>
+        ></Script>
       </Head>
       <body>
         <Main />
