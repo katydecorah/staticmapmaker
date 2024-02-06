@@ -42,7 +42,6 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@sentry/nextjs": "^7.92.0",
     "classnames": "^2.5.1",
     "next": "^14.0.4",
     "react": "^18.2.0",
