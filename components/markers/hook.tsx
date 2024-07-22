@@ -14,7 +14,7 @@ export default function useMarkers<Marker>(initialMarker: Marker) {
   const updateMarker = (
     value: string | boolean,
     index: number,
-    label: string
+    label: string,
   ) => {
     setMarkers((prevMarkers) =>
       prevMarkers.map((marker, markerIndex) => {
@@ -22,7 +22,7 @@ export default function useMarkers<Marker>(initialMarker: Marker) {
           ...marker,
           ...(index === markerIndex && { [label]: value }),
         };
-      })
+      }),
     );
   };
 

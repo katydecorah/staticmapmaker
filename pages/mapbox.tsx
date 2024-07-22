@@ -41,7 +41,7 @@ export default function Mapbox() {
       markerLabel: "heart",
       markerColor: "285A98",
       markerCustom: "",
-    }
+    },
   );
 
   const mapcode = buildMapURL();

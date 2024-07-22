@@ -114,7 +114,7 @@ export const buildMarkerRequest = (markers: Marker[]) => {
 
   if (markers.length < 1) return "/";
   const set = markers.map((marker) =>
-    marker.markerCustom ? createCustom(marker) : createPin(marker)
+    marker.markerCustom ? createCustom(marker) : createPin(marker),
   );
   return `/${set.join(",")}/`;
 };

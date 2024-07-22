@@ -14,7 +14,7 @@ export default function useRoute<Leg>(initialRoute: Leg[]) {
   const updateRoute = (
     value: string | boolean,
     index: number,
-    label: string
+    label: string,
   ) => {
     setRoutes((prevRoutes) =>
       prevRoutes.map((leg, legIndex) => {
@@ -22,7 +22,7 @@ export default function useRoute<Leg>(initialRoute: Leg[]) {
           ...leg,
           ...(index === legIndex && { [label]: value }),
         };
-      })
+      }),
     );
   };
 
