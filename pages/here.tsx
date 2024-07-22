@@ -40,7 +40,7 @@ export default function Here() {
   const { markers, addMarker, updateMarker, removeMarker } = useMarkers<Marker>(
     {
       coordinates: "42.6564,-73.7638",
-    }
+    },
   );
   const [markerColor, setMarkerColor] = useState("#2e3a5c");
   const [markerLabel, setMarkerLabel] = useState("0");

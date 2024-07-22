@@ -39,7 +39,7 @@ export default function MapQuest() {
       size: "md",
       symbol: "",
       type: "marker",
-    }
+    },
   );
   const { route, addRoute, updateRoute, removeRoute } = useRoute<Leg>([
     {

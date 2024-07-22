@@ -11,7 +11,7 @@ function HomePage() {
   const listOfProviders = providers
     .map(
       (provider, index) =>
-        `${index === providers.length - 1 ? "or a " : ""}${provider} static map`
+        `${index === providers.length - 1 ? "or a " : ""}${provider} static map`,
     )
     .join(", ");
   return (

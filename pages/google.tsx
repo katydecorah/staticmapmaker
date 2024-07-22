@@ -41,7 +41,7 @@ function Google() {
       markerColor: "#2e3a5c",
       markerCustom: "",
       markerShadow: false,
-    }
+    },
   );
 
   function buildMapURL() {
@@ -65,7 +65,7 @@ function Google() {
     params.set("key", API || "YOUR-API-KEY-HERE");
 
     const unsigned = `https://maps.googleapis.com/maps/api/staticmap?${params.toString()}${buildMarkerRequest(
-      markers
+      markers,
     )}`;
     return signature ? sign(unsigned, signature) : unsigned;
   }

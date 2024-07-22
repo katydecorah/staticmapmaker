@@ -35,7 +35,7 @@ export default function Bing() {
       style: 1,
       coordinates: location,
       label: "Hi",
-    }
+    },
   );
   const { route, addRoute, updateRoute, removeRoute } = useRoute<Leg>([
     {
@@ -66,7 +66,7 @@ export default function Bing() {
       for (const marker of markers) {
         params.append(
           "pushpin",
-          `${marker.coordinates};${marker.style};${marker.label}`
+          `${marker.coordinates};${marker.style};${marker.label}`,
         );
       }
     }
