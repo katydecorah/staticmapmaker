@@ -42,16 +42,6 @@
     transition: 0.2s;
     width: 60%;
   }
-
-  :global {
-    .view-on-github {
-      display: flex;
-      justify-content: flex-end;
-      min-height: 40px;
-      align-items: center;
-      padding-right: 1em;
-    }
-  }
 }
 
 .wrapper {
@@ -128,4 +118,37 @@
 
 .attribution a {
   color: $text-color;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+/* stylelint-disable-next-line media-feature-range-notation */
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
 }
