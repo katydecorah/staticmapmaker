@@ -1,4 +1,4 @@
-@import "vars";
+@use "vars";
 
 .title {
   a {
@@ -6,10 +6,10 @@
     align-items: flex-start;
     align-content: center;
     text-decoration: none;
-    color: $text-color;
+    color: vars.$text-color;
 
     &:hover {
-      color: $accent;
+      color: vars.$accent;
     }
   }
 }

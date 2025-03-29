@@ -1,6 +1,7 @@
 import classnames from "classnames";
 import styles from "../styles/wrapper.module.scss";
 import slugify from "../utils/slugify";
+import React, { JSX } from "react";
 
 export default function Map({
   API,

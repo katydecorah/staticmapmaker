@@ -6,6 +6,7 @@ import RemoveMarker from "./remove-marker";
 import Select from "../form/select";
 import optionize from "../../utils/optionize";
 import markerLabels from "../../data/mapquest/marker-label";
+import React, { JSX } from "react";
 
 export type Marker = {
   coordinates: string;

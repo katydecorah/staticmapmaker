@@ -7,6 +7,7 @@ import optionize from "../../utils/optionize";
 import AddMarker from "./add-marker";
 import RemoveMarker from "./remove-marker";
 import markerSizes from "../../data/google/marker-sizes";
+import React, { JSX } from "react";
 
 export type Marker = {
   markerSize: string;
@@ -28,7 +29,7 @@ export function Markers({
   updateMarker: (
     value: string | boolean,
     index: number,
-    label: keyof Marker,
+    label: keyof Marker
   ) => void;
   removeMarker: (index: number) => void;
 }): JSX.Element {
@@ -118,7 +119,7 @@ export const buildMarkerRequest = (markers: Marker[]) => {
     return `&markers=size:${marker.markerSize}%7Ccolor:${marker.markerColor
       .split("#")
       .join("0x")}%7Clabel:${label}%7C${encodeURIComponent(
-      marker.coordinates,
+      marker.coordinates
     )}`;
   };
 
@@ -134,7 +135,7 @@ export const buildMarkerRequest = (markers: Marker[]) => {
         arr.push(
           marker.markerCustom
             ? createCustomMarker(marker)
-            : createMarker(marker),
+            : createMarker(marker)
         );
       }
       return arr;

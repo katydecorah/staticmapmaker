@@ -3,6 +3,7 @@ import providers from "../data/providers";
 import styles from "../styles/providers.module.scss";
 import slugify from "../utils/slugify";
 import IconPin from "./svg/pin";
+import React, { JSX } from "react";
 
 export default function TryAnother({ title }: { title: string }): JSX.Element {
   const filtered = providers.filter((f) => f !== title);

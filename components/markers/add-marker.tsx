@@ -1,5 +1,6 @@
 import IconPlus from "../svg/plus";
 import styles from "../../styles/providers.module.scss";
+import React, { JSX } from "react";
 
 export default function AddMarker({
   label = "marker",

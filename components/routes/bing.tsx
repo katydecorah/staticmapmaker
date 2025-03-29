@@ -3,6 +3,7 @@ import IconPlus from "../svg/plus";
 import styles from "../../styles/providers.module.scss";
 import stylesForms from "../../styles/forms.module.scss";
 import Input from "../form/input";
+import React, { JSX } from "react";
 
 export type Leg = {
   index: number;

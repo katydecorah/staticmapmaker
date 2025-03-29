@@ -7,6 +7,7 @@ import Select from "../form/select";
 import AddMarker from "./add-marker";
 import RemoveMarker from "./remove-marker";
 import markerSizes from "../../data/mapbox/marker-size";
+import React, { JSX } from "react";
 
 export type Marker = {
   markerSize: string;
@@ -114,7 +115,7 @@ export const buildMarkerRequest = (markers: Marker[]) => {
 
   if (markers.length < 1) return "/";
   const set = markers.map((marker) =>
-    marker.markerCustom ? createCustom(marker) : createPin(marker),
+    marker.markerCustom ? createCustom(marker) : createPin(marker)
   );
   return `/${set.join(",")}/`;
 };

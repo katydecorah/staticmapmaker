@@ -1,22 +1,23 @@
-@import "vars";
-@import "mixins";
+@use "sass:color";
+@use "vars";
+@use "mixins";
 
 .btn {
   @extend %btn;
 
   &:hover {
-    background: lighten($accent, 10%);
+    background: color.adjust(vars.$accent, $lightness: 10%);
   }
 }
 
 .btn-remove {
   background: none;
-  color: $light;
+  color: vars.$light;
   cursor: pointer;
   position: relative;
 
   &:hover {
-    background: rgba($dark, 0.5);
+    background: rgba(vars.$dark, 0.5);
   }
 }
 

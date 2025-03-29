@@ -1,11 +1,14 @@
+@use "sass:color";
+@use "vars";
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: $background-color;
-  color: $text-color;
-  font-family: $sans-font-family;
+  background: vars.$background-color;
+  color: vars.$text-color;
+  font-family: vars.$sans-font-family;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
@@ -34,10 +37,10 @@ p {
 }
 
 a {
-  color: $link-color;
+  color: vars.$link-color;
 
   &:hover {
-    color: lighten($link-color, 10%);
+    color: color.adjust(vars.$link-color, $lightness: 10%);
   }
 }
 
@@ -47,14 +50,14 @@ strong {
 
 code,
 pre {
-  font-family: $mono-font-family;
-  font-weight: $mono-font-weight;
+  font-family: vars.$mono-font-family;
+  font-weight: vars.$mono-font-weight;
 }
 
 pre {
-  background: $text-color;
-  border: 1px solid darken($text-color, 15%);
-  color: $light;
+  background: vars.$text-color;
+  border: 1px solid color.adjust(vars.$text-color, $lightness: -15%);
+  color: vars.$light;
   display: block;
   margin: 1em 0;
   padding: 1em;
@@ -70,15 +73,15 @@ ol {
 input,
 select,
 textarea {
-  border-radius: $border-radius;
-  font-family: $mono-font-family;
+  border-radius: vars.$border-radius;
+  font-family: vars.$mono-font-family;
   margin: 0;
   position: relative;
   width: 100%;
-  color: $text-color;
+  color: vars.$text-color;
   border: 1px solid;
   display: block;
-  accent-color: $text-color;
+  accent-color: vars.$text-color;
 }
 
 input,
@@ -103,7 +106,7 @@ select {
 }
 
 :focus {
-  outline: $accent auto 5px;
+  outline: vars.$accent auto 5px;
 }
 
 .github-corner:hover .octo-arm {
