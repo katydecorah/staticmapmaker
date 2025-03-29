@@ -1,9 +1,9 @@
-@import "vars";
-@import "mixins";
+@use "vars";
+@use "mixins";
 
 .main {
   position: relative;
-  @include bp(with-columns) {
+  @include mixins.bp(with-columns) {
     display: flex;
   }
 }
@@ -20,14 +20,14 @@
 .col-left,
 .sticky {
   width: 100%;
-  @include bp(with-columns) {
+  @include mixins.bp(with-columns) {
     max-width: 400px;
     width: 40%;
   }
 }
 
 .sticky {
-  @include bp(with-columns) {
+  @include mixins.bp(with-columns) {
     bottom: 0;
     left: 0;
     overflow: hidden scroll;
@@ -38,16 +38,16 @@
 }
 
 .col-right {
-  @include bp(with-columns) {
+  @include mixins.bp(with-columns) {
     transition: 0.2s;
     width: 60%;
   }
 }
 
 .wrapper {
-  background: $light;
+  background: vars.$light;
   padding: 1em;
-  @include bp(with-columns) {
+  @include mixins.bp(with-columns) {
     margin-left: 1.5em;
     border-top-left-radius: 0.5em;
     border-bottom-left-radius: 0.5em;
@@ -58,7 +58,7 @@
 .static {
   padding: 1em;
   overflow: scroll;
-  @include bp(with-columns) {
+  @include mixins.bp(with-columns) {
     margin: 0 0 1em 1.5em;
     padding: 1em 1em 1em 3em;
   }
@@ -71,7 +71,7 @@
 
 .static-wrapper.api-required::before {
   content: "Authentication required";
-  background: rgba($light, 0.75);
+  background: rgba(vars.$light, 0.75);
   border: 1px solid;
   position: absolute;
   top: 0;
@@ -111,13 +111,13 @@
   position: relative;
   z-index: 100;
 
-  @include bp(no-columns) {
+  @include mixins.bp(no-columns) {
     width: 100%;
   }
 }
 
 .attribution a {
-  color: $text-color;
+  color: vars.$text-color;
 }
 
 .github-corner:hover .octo-arm {

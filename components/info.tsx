@@ -1,5 +1,6 @@
 import styles from "../styles/info.module.scss";
 import Code from "./code";
+import React, { JSX } from "react";
 
 export default function Info({
   title,

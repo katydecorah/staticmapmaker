@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import styles from "../../styles/forms.module.scss";
+import React, { JSX } from "react";
 
 export default function Checkbox({
   id,

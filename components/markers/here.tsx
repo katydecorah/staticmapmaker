@@ -6,6 +6,7 @@ import RemoveMarker from "./remove-marker";
 import Select from "../form/select";
 import poiLabels from "../../data/here/poi-labels";
 import poiThemes from "../../data/here/poi-themes";
+import React, { JSX } from "react";
 
 export type Marker = {
   coordinates: string;

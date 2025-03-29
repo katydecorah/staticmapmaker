@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, JSX } from "react";
 import IconCheck from "./svg/check";
 import IconCopy from "./svg/copy";
 import IconAlert from "./svg/alert";
@@ -32,7 +32,11 @@ export default function Copy({
     <button
       aria-label="Copy code"
       className={className}
-      onClick={() => copyToClipBoard(text.toString())}
+      onClick={() =>
+        text
+          ? copyToClipBoard(text.toString())
+          : setCopySuccess("Failed to copy!")
+      }
     >
       {pickIcon()}
     </button>

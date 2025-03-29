@@ -1,3 +1,5 @@
+import React, { JSX } from "react";
+
 /* eslint-disable react-perf/jsx-no-new-object-as-prop */
 export default function ViewOnGitHub(): JSX.Element {
   return (

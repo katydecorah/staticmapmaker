@@ -1,4 +1,4 @@
-@import "vars";
+@use "vars";
 
 @mixin bp($point) {
   @if $point == big-with-columns {
@@ -17,11 +17,11 @@
 }
 
 %btn {
-  background: $accent;
+  background: vars.$accent;
   border: 0;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   cursor: pointer;
-  font-family: $sans-font-family;
+  font-family: vars.$sans-font-family;
   font-size: 1em;
   padding: 0.5em 1em;
   display: inline-flex;
@@ -29,7 +29,7 @@
   place-content: center space-around;
   gap: 6px;
   width: fit-content;
-  color: $text-color;
+  color: vars.$text-color;
   text-decoration: none;
 
   svg {
@@ -37,6 +37,6 @@
   }
 
   &:hover {
-    color: $text-color;
+    color: vars.$text-color;
   }
 }

@@ -1,6 +1,7 @@
 import IconLogo from "./svg/logo";
 import styles from "../styles/title.module.scss";
 import Link from "next/link";
+import React, { JSX } from "react";
 
 export default function Title({ title }: { title?: string }): JSX.Element {
   return (

@@ -7,6 +7,7 @@ import { ReactNode } from "react";
 import TryAnother from "./try-another";
 import slugify from "../utils/slugify";
 import ViewOnGitHub from "./github";
+import React, { JSX } from "react";
 
 type WrapperProps = {
   title: string;

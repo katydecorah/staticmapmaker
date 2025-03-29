@@ -1,8 +1,9 @@
-import { ReactFragment, useState } from "react";
+import { useState } from "react";
+import React, { JSX } from "react";
 import styles from "../styles/code.module.scss";
 import Copy from "./copy";
 
-export type CodeChildren = ReactFragment;
+export type CodeChildren = React.ReactNode;
 
 export default function Code({
   children,

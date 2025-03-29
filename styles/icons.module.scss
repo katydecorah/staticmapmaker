@@ -1,5 +1,5 @@
-@import "vars";
-@import "mixins";
+@use "vars";
+@use "mixins";
 
 .feather {
   width: 1em;
@@ -13,6 +13,6 @@
   margin-right: 0.25em;
 
   path {
-    fill: $accent;
+    fill: vars.$accent;
   }
 }

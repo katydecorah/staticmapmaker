@@ -1,8 +1,8 @@
-@import "vars";
-@import "mixins";
+@use "vars";
+@use "mixins";
 
 .error {
-  background: $danger;
+  background: vars.$danger;
   border-radius: 0 0.25em 0.25em 0;
 }
 
@@ -11,7 +11,7 @@
   row-gap: 5px;
   padding: 0.5em 1em;
 
-  @include bp(big-with-columns) {
+  @include mixins.bp(big-with-columns) {
     grid-template-columns: 100px 1fr;
     align-items: center;
   }
@@ -22,7 +22,7 @@
   row-gap: 5px;
   padding: 0.5em 1em;
 
-  @include bp(big-with-columns) {
+  @include mixins.bp(big-with-columns) {
     grid-template-columns: 100px 1fr;
 
     > * {
@@ -39,7 +39,7 @@
 .checkbox-fieldset {
   display: flex;
   column-gap: 5px;
-  @include bp(big-with-columns) {
+  @include mixins.bp(big-with-columns) {
     align-items: center;
   }
 }

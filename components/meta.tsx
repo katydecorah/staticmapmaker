@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React, { JSX } from "react";
 
 export default function Meta({
   title,

@@ -3,6 +3,7 @@ import stylesForms from "../../styles/forms.module.scss";
 import Input from "../form/input";
 import AddMarker from "./add-marker";
 import RemoveMarker from "./remove-marker";
+import React, { JSX } from "react";
 
 export type Marker = {
   style: number;
