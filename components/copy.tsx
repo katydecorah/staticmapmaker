@@ -17,7 +17,7 @@ export default function Copy({
     try {
       await navigator.clipboard.writeText(text);
       setCopySuccess("Copied!");
-    } catch (err) {
+    } catch {
       setCopySuccess("Failed to copy!");
     }
   };

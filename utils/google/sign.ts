@@ -25,7 +25,7 @@ function decodeBase64Hash(code: string): Buffer {
 /**
  * Takes a key and signs the data with it.
  */
-function encodeBase64Hash(key: Buffer, data: any): string {
+function encodeBase64Hash(key: Buffer, data: string): string {
   return crypto.createHmac("sha1", key).update(data).digest("base64");
 }
 
@@ -35,6 +35,7 @@ function encodeBase64Hash(key: Buffer, data: any): string {
 export function sign(path: string, secret: string) {
   const uri = url.parse(path);
   const safeSecret = decodeBase64Hash(removeWebSafe(secret));
-  const hashedSignature = makeWebSafe(encodeBase64Hash(safeSecret, uri.path));
+  const pathToSign = uri.path || '/';
+  const hashedSignature = makeWebSafe(encodeBase64Hash(safeSecret, pathToSign));
   return `${url.format(uri)}&signature=${hashedSignature}`;
 }
