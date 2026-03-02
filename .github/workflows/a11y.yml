@@ -24,7 +24,7 @@ jobs:
           url: http://localhost:3000
           # scan-timeout: 1800000
       - name: Upload report as artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         if: success() || failure()
         with:
           name: "Accessibility report"
